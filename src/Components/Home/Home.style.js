@@ -9,11 +9,7 @@ const HomeStyle = StyleSheet.create({
         flex: 1,
         flexDirection: "column",
         alignItems: 'center',
-<<<<<<< HEAD
-        backgroundColor: '#F5FCFF'
-=======
         backgroundColor: '#FEFBEB'
->>>>>>> Animation
     },
     pageNavBar: {
         width: 400,
@@ -27,27 +23,17 @@ const HomeStyle = StyleSheet.create({
     featureContainer: {
         flex: 1,
         justifyContent: 'center',
-<<<<<<< HEAD
         alignItems: 'center',
-        backgroundColor: '#F5FCFF'
-=======
-        alignItems: 'center'
->>>>>>> Animation
+        backgroundColor: '#FEFBEB'
     },
     animationContainer: {
         width: 300,
         height: 100
     },
-<<<<<<< HEAD
-    clerc: {
-        width: 300,
-        height: 300
-=======
     backgroundVideo: {
         width: 400,
         height: 400,
         backgroundColor: "transparent"
->>>>>>> Animation
     },
     welcome: {
         fontSize: 30,

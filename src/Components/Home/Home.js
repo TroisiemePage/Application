@@ -11,7 +11,7 @@ import {PageDetector} from "../../Plugins/PageDetector";
 import HomeStyle from "./Home.style";
 import voiceAnimation from "../../Assets/Animations/Voice.json";
 import Video from "react-native-video";
-import ClercAnimation from "../../Assets/Animations/word/lotis/lotis.png";
+import ClercAnimation from "../../Assets/Animations/Words/compiled/lotis.png";
 
 
 @observer

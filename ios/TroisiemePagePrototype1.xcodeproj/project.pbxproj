@@ -1544,7 +1544,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.gobelins.troisiemepgebeta;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.gobelins.troisiemepage;
 				PRODUCT_NAME = TroisiemePagePrototype1;
 				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1574,7 +1574,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.gobelins.troisiemepgebeta;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.gobelins.troisiemepage;
 				PRODUCT_NAME = TroisiemePagePrototype1;
 				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
