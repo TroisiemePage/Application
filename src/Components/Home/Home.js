@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, TouchableHighlight, SegmentedControlIOS} from 'react-native';
+import {Text, View, TouchableHighlight, SegmentedControlIOS, Image} from 'react-native';
 
 import {Animated, Easing} from 'react-native';
 import LottieView from 'lottie-react-native';
@@ -7,11 +7,9 @@ import {WordDetector} from "../../Plugins/WordDetector";
 import {observable} from "mobx";
 import {observer} from "mobx-react";
 import {PageDetector} from "../../Plugins/PageDetector";
-
 import HomeStyle from "./Home.style";
 import voiceAnimation from "../../Assets/Animations/Voice.json";
-import Video from "react-native-video";
-import ClercAnimation from "../../Assets/Animations/Words/compiled/lotis.png";
+import lotisAnimation from "../../Assets/Animations/Words/compiled/lotis.png";
 
 
 @observer
@@ -64,12 +62,10 @@ export default class Home extends Component {
         this.wordDetector.recognizeWord()
             .then((results) => {
                 this.wordDetectorResult = (
-                    <Video source={ClercAnimation}
-                           playInBackground={false}
-                           playWhenInactive={false}
-                           muted={true}
-                           onEnd={this.onEnd}// Callback when the stream receive some metadata
-                           style={HomeStyle.backgroundVideo} />
+                    <Image
+                        style={HomeStyle.animationContainer}
+                        source={lotisAnimation}
+                    />
                 );
             })
             .catch((err) => {

@@ -28,7 +28,7 @@ const HomeStyle = StyleSheet.create({
     },
     animationContainer: {
         width: 300,
-        height: 100
+        height: 300
     },
     backgroundVideo: {
         width: 400,

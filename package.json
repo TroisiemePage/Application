@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "compileAnimation": "./Utils/apngasm-2.91-bin-macos/apngasm ./src/Assets/Animations/Words/compiled/*.png ./src/Assets/Animations/Words/raw/*/*.png 1 30 -l1",
+    "compileAnimation": "./Utils/apngasm-2.91-bin-macos/apngasm ./src/Assets/Animations/Words/compiled/oriflan.png ./src/Assets/Animations/Words/raw/*/*.png 1 30 -l1",
     "postinstall": "node Utils/patch-react-native-babelrc.js"
   },
   "dependencies": {
@@ -17,7 +17,6 @@
     "react": "^16.3.0-alpha.1",
     "react-native": "0.55.0-rc.0",
     "react-native-motion-manager": "0.0.7",
-    "react-native-video": "^2.0.0",
     "react-native-voice": "^0.2.6"
   },
   "devDependencies": {
