@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, {Component} from 'react';
 import {Text, View, TouchableHighlight, SegmentedControlIOS} from 'react-native';
 
@@ -16,13 +10,9 @@ import {PageDetector} from "../../Plugins/PageDetector";
 
 import HomeStyle from "./Home.style";
 import voiceAnimation from "../../Assets/Animations/Voice.json";
-<<<<<<< HEAD:src/Components/Home/Home.component.js
-import clerc1 from "../../Assets/Animations/Mot_Clerc/anim1/Anim01_Clerc.json";
-import clerc2 from "../../Assets/Animations/Mot_Clerc/anim2/Anim01_ClercOnClick.json";
-=======
 import Video from "react-native-video";
 import ClercAnimation from "../../Assets/Animations/word/lotis/lotis.png";
->>>>>>> Animation:src/Components/Home/Home.js
+
 
 @observer
 export default class Home extends Component {
@@ -43,11 +33,7 @@ export default class Home extends Component {
             clercProgress: new Animated.Value(0)
         };
         this.wordDetector.setWordList([
-<<<<<<< HEAD:src/Components/Home/Home.component.js
-            "Clerc"
-=======
             "Lotis"
->>>>>>> Animation:src/Components/Home/Home.js
         ]);
     }
 
@@ -57,20 +43,14 @@ export default class Home extends Component {
                 toValue: 1,
                 duration: 2000,
                 easing: Easing.linear,
-<<<<<<< HEAD:src/Components/Home/Home.component.js
-=======
                 useNativeDriver: true
->>>>>>> Animation:src/Components/Home/Home.js
             })
         );
         this.clercTiming = Animated.timing(this.state.clercProgress, {
             toValue: 1,
             duration: 5000,
             easing: Easing.linear,
-<<<<<<< HEAD:src/Components/Home/Home.component.js
-=======
             useNativeDriver: true
->>>>>>> Animation:src/Components/Home/Home.js
         });
     }
 
@@ -102,20 +82,14 @@ export default class Home extends Component {
             })
             .finally(() => {
                 this.clercTiming.start();
-<<<<<<< HEAD:src/Components/Home/Home.component.js
-=======
+
                 this.state.progress.setValue(0);
->>>>>>> Animation:src/Components/Home/Home.js
                 this.animatedButton.stop();
             });
     }
 
-<<<<<<< HEAD:src/Components/Home/Home.component.js
-
-=======
     onEnd(e) {
     }
->>>>>>> Animation:src/Components/Home/Home.js
 
 
     render() {

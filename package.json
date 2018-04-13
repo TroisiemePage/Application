@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "compileAnimation": "./Utils/apngasm-2.91-bin-macos/apngasm ./src/Assets/Animations/word/compiled/*.png ./src/Assets/Animations/word/raw/*/*.png 1 30 -l1"
+    "compileAnimation": "./Utils/apngasm-2.91-bin-macos/apngasm ./src/Assets/Animations/Words/compiled/*.png ./src/Assets/Animations/Words/raw/*/*.png 1 30 -l1"
   },
   "dependencies": {
     "double-metaphone": "latest",
-    "doublemetaphone": "^0.1.2",
     "iotdb-matcher": "^1.0.1",
     "jaro-winkler": "latest",
     "lottie-react-native": "^2.3.2",
@@ -26,8 +25,5 @@
     "babel-preset-react-native": "4.0.0",
     "jest": "22.4.2",
     "react-test-renderer": "^16.3.0-alpha.1"
-  },
-  "jest": {
-    "preset": "react-native"
   }
 }
