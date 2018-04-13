@@ -1,6 +1,5 @@
 import {StyleSheet} from "react-native";
 
-<<<<<<< HEAD
 const style = StyleSheet.create({
     body: {
         backgroundColor: "FEFBEB"
@@ -8,5 +7,3 @@ const style = StyleSheet.create({
 });
 
 export default style;
-=======
->>>>>>> Animation
