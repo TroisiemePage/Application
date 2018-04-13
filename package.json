@@ -1,0 +1,33 @@
+{
+  "name": "TroisiemePagePrototype1",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "compileAnimation": "./Utils/apngasm-2.91-bin-macos/apngasm ./src/Assets/Animations/word/compiled/*.png ./src/Assets/Animations/word/raw/*/*.png 1 30 -l1"
+  },
+  "dependencies": {
+    "double-metaphone": "latest",
+    "doublemetaphone": "^0.1.2",
+    "iotdb-matcher": "^1.0.1",
+    "jaro-winkler": "latest",
+    "lottie-react-native": "^2.3.2",
+    "mobx": "^4.1.0",
+    "mobx-react": "^5.0.0",
+    "react": "^16.3.0-alpha.1",
+    "react-native": "0.55.0-rc.0",
+    "react-native-motion-manager": "0.0.7",
+    "react-native-video": "^2.0.0",
+    "react-native-voice": "^0.2.6"
+  },
+  "devDependencies": {
+    "babel-jest": "23.0.0-alpha.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.4.2",
+    "react-test-renderer": "^16.3.0-alpha.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
