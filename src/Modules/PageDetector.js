@@ -12,7 +12,7 @@ export class PageDetector {
     @observable currentPage = 0;
     prevMFValue = 0;
     prevStableMFValue = 0;
-    @observable currentMFValue;
+    currentMFValue;
     flatLength;
 
 

@@ -42,7 +42,6 @@
 		6E953D64EF3E47EA9B5FBE72 /* libVoice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 576EB58FA2274D3F8D88A850 /* libVoice.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		BF6BF05E6CDE42B6A8F846F1 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A095FEE1138E4FCF8596B29D /* libRCTVideo.a */; };
 		D4F61DE8855C4877A7205018 /* libRNMotionManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3316CB7C76E45FE801EF5F9 /* libRNMotionManager.a */; };
 		E690EFDF9DFB4DE783094CE5 /* RNMotionManagerTests.xctest in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BECADD2F6A4D63A895ED5F /* RNMotionManagerTests.xctest */; };
 /* End PBXBuildFile section */
@@ -488,7 +487,6 @@
 				298D70344D344CCC884CBA65 /* libLottie.a in Frameworks */,
 				D4F61DE8855C4877A7205018 /* libRNMotionManager.a in Frameworks */,
 				E690EFDF9DFB4DE783094CE5 /* RNMotionManagerTests.xctest in Frameworks */,
-				BF6BF05E6CDE42B6A8F846F1 /* libRCTVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

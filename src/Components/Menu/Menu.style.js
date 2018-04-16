@@ -1,6 +1,6 @@
 import {StyleSheet} from "react-native";
 
-const HomeStyle = StyleSheet.create({
+const MenuStyle = StyleSheet.create({
     button: {
         width: 150,
         height: 150,
@@ -58,4 +58,4 @@ const HomeStyle = StyleSheet.create({
     },
 });
 
-export default HomeStyle;
+export default MenuStyle;

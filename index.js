@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import Home from './src/Components/Home/Home';
+import Menu from './src/Components/Menu/Menu';
 
-AppRegistry.registerComponent('TroisiemePagePrototype1', () => Home);
+AppRegistry.registerComponent('TroisiemePagePrototype1', () => Menu);
