@@ -6,7 +6,7 @@ export default class Matcher{
     wordlist = [];
 
     config = {
-        threshold: 0.7
+        threshold: 0.65
     };
 
     add(word) {

@@ -3,10 +3,6 @@ package com.troisiemepageprototype1;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.brentvatne.react.ReactVideoPackage;
-import com.sensors.RNSensorsPackage;
-import com.sensormanager.SensorManagerPackage;
-import com.airbnb.android.react.lottie.LottiePackage;
 import com.wenkesj.voice.VoicePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -28,10 +24,6 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new ReactVideoPackage(),
-            new RNSensorsPackage(),
-            new SensorManagerPackage(),
-            new LottiePackage(),
             new VoicePackage()
       );
     }

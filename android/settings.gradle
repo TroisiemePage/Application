@@ -1,12 +1,4 @@
 rootProject.name = 'TroisiemePagePrototype1'
-include ':react-native-video'
-project(':react-native-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video/android')
-include ':react-native-sensors'
-project(':react-native-sensors').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sensors/android')
-include ':react-native-sensor-manager'
-project(':react-native-sensor-manager').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sensor-manager/android')
-include ':lottie-react-native'
-project(':lottie-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/lottie-react-native/src/android')
 include ':react-native-voice'
 project(':react-native-voice').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-voice/android')
 

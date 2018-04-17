@@ -8,28 +8,27 @@
     "postinstall": "node Utils/patch-react-native-babelrc.js"
   },
   "dependencies": {
-    "double-metaphone": "latest",
+    "double-metaphone": "^1.0.2",
     "iotdb-matcher": "^1.0.1",
     "jaro-winkler": "latest",
-    "lottie-react-native": "^2.3.2",
     "mobx": "^4.1.0",
     "mobx-react": "^5.0.0",
-    "react": "^16.3.0-alpha.1",
-    "react-native": "0.55.0-rc.0",
+    "react": "16.3.1",
+    "react-native": "0.55.2",
     "react-native-motion-manager": "0.0.7",
     "react-native-voice": "^0.2.6"
   },
   "devDependencies": {
     "any-observable": "^0.2.0",
     "apng-assembler": "^1.0.2",
-    "babel-jest": "23.0.0-alpha.0",
+    "babel-jest": "^22.4.3",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-react-native": "4.0.0",
     "command-line-args": "^5.0.2",
     "jest": "22.4.2",
     "listr": "^0.14.0",
-    "react-test-renderer": "^16.3.0-alpha.1",
+    "react-test-renderer": "^16.3.2",
     "regenerator-transform": "^0.12.3"
   }
 }
