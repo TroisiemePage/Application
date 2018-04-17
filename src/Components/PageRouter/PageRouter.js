@@ -4,7 +4,6 @@ import {Page1} from "../Pages/Page1";
 import {Page2} from "../Pages/Page2";
 import {observer} from "mobx-react";
 import {Button, Dimensions, Text, View} from "react-native";
-import {observable} from "mobx";
 
 const {height, width} = Dimensions.get('window');
 //private
@@ -102,16 +101,9 @@ export class PageRouter extends React.Component {
             }}>
 
                 {
-                    //React.createElement(this.pages[this.intervalize(this.pageDetector.currentPage)])
+                    React.createElement(this.pages[this.intervalize(this.pageDetector.currentPage)])
                 }
 
-                <Text>Page: {this.intervalize(this.pageDetector.currentPage)} ({this.pageDetector.currentPage})</Text>
-                <Text>MF Strength: {this.pageDetector.currentMFValue}</Text>
-                <Text>Stable: {this.pageDetector.flatLength}</Text>
-                <Button
-                    onPress={() => this.pageDetector.reset()}
-                    title="Reset"
-                />
             </View>
         );
     }

@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "compileAnimation": "node Utils/APNGCompiler.js -i ./src/Assets/Animations/Words/raw/ -o ./src/Assets/Animations/Words/compiled/",
-    "postinstall": "node Utils/patch-react-native-babelrc.js"
+    "postinstall": "node Utils/patch-react-native-babelrc.js",
+    "ios:build": "react-native bundle --entry-file ./index.js  --bundle-output ./ios/main.jsbundle --assets-dest ./ios/ --platform ios"
   },
   "dependencies": {
     "double-metaphone": "^1.0.2",
