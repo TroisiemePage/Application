@@ -1,4 +1,4 @@
-import {observable} from "mobx";
+import {computed, observable} from "mobx";
 import {NativeModules} from "react-native"
 const Magnetometer = NativeModules.Magnetometer;
 import {DeviceEventEmitter} from "react-native";
@@ -6,14 +6,14 @@ import {DeviceEventEmitter} from "react-native";
 
 export class PageDetector {
     samples = [];
-    resolution = 1;
+    resolution = 10;
     multiple = 10;
     step = 15;
     @observable currentPage = 0;
     prevMFValue = 0;
     prevStableMFValue = 0;
-    currentMFValue;
-    flatLength;
+    @observable currentMFValue;
+    @observable flatLength = 0;
 
 
     constructor() {
@@ -27,6 +27,18 @@ export class PageDetector {
             this.update();
         });
         Magnetometer.startMagnetometerUpdates();
+    }
+
+    reset() {
+        this.samples = [];
+        this.resolution = 10;
+        this.multiple = 10;
+        this.step = 15;
+        this.currentPage = 0;
+        this.flatLength = 0;
+
+        this.prevMFValue = this.currentMFValue;
+        this.prevStableMFValue = this.currentMFValue;
     }
 
     update() {
