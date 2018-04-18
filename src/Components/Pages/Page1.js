@@ -1,9 +1,12 @@
 import * as React from "react";
 import {WordDetector} from "../../Modules/WordDetector";
 import {Image, Text, Dimensions, View} from "react-native";
+
 const wordDetector = new WordDetector();
 import Decor from "../../../src/Assets/Images/Pages/Page1/Decor/Page01_DecorJeuMoine.png";
+
 const {height, width} = Dimensions.get('window');
+
 export class Page1 extends React.Component {
 
     constructor() {
@@ -22,7 +25,7 @@ export class Page1 extends React.Component {
                 width: width,
                 height: height
             }}>
-               <Image
+                <Image
                     source={Decor}
                     style={{
                         width: width,
@@ -32,6 +35,8 @@ export class Page1 extends React.Component {
                     resizeMode={"contain"}
                     resizeMethod={"scale"}
                 />
+
+                
 
             </View>
         )

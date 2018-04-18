@@ -6,10 +6,10 @@ import {observer} from "mobx-react";
 import {Button, Dimensions, Text, View} from "react-native";
 
 const {height, width} = Dimensions.get('window');
+
 //private
 
 class Navigator extends React.Component {
-    currentPage = 0;
 
     render() {
         return (
@@ -35,18 +35,6 @@ class Navigator extends React.Component {
                     width: 20,
                     textAlign: "center"
                 }}>{this.props.pageNumber}</Text>
-                <Button
-                    onPress={() => {
-                        this.props.onPrev();
-                    }}
-                    title="Précédent"
-                />
-                <Button
-                    onPress={() => {
-                        this.props.onNext();
-                    }}
-                    title="Suivant"
-                />
 
             </View>
         )
@@ -81,10 +69,11 @@ export class PageRouter extends React.Component {
         Page1,
         Page2
     ];
-    pageDetector = new PageDetector();
 
     constructor() {
         super();
+        this.pageDetector = new PageDetector();
+        console.log(this.pageDetector);
     }
 
     intervalize(num) {
@@ -92,7 +81,6 @@ export class PageRouter extends React.Component {
     }
 
     render() {
-        console.log(this.pageDetector.currentPage);
         return (
             <View style={{
                 width: width,
@@ -103,7 +91,8 @@ export class PageRouter extends React.Component {
                 {
                     React.createElement(this.pages[this.intervalize(this.pageDetector.currentPage)])
                 }
-
+                <MenuBar/>
+                <Navigator pageNumber={this.pageDetector.currentPage}/>
             </View>
         );
     }

@@ -13,7 +13,6 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* TroisiemePagePrototype1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TroisiemePagePrototype1Tests.m */; };
-		0C944F5FFCA44310A4960FEA /* libVoice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C6A26518B447349A7F20D2 /* libVoice.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -23,7 +22,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		255E7ECA32E94DEF83C42602 /* RNMotionManagerTests.xctest in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBB868EA42A44249FC71A7B /* RNMotionManagerTests.xctest */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -35,12 +33,14 @@
 		2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E941DF850E9000B6D8A /* libRCTText-tvOS.a */; };
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
+		2D6253E0655F4BF1B77986E0 /* RNMotionManagerTests.xctest in Frameworks */ = {isa = PBXBuildFile; fileRef = 34287F2D7C12499582010BD7 /* RNMotionManagerTests.xctest */; };
 		2DCD954D1E0B4F2C00145EB5 /* TroisiemePagePrototype1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TroisiemePagePrototype1Tests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		548904B60F7E4DA0978A5FA5 /* libRNMotionManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8005E1918D4D4E4D8713D22C /* libRNMotionManager.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		9FF3726D196F4B2589C66B1E /* libVoice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CB7038785F45A08ED85D4F /* libVoice.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		DEC87F17FFA843A687803B40 /* libRNMotionManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0A00FCE5314CCE87F8ABB8 /* libRNMotionManager.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -282,9 +282,9 @@
 			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
 			remoteInfo = "jschelpers-tvOS";
 		};
-		595987CD208627990010C394 /* PBXContainerItemProxy */ = {
+		59CB206A20874B1500BC8E84 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A9B129EB892844CEB85E5011 /* Voice.xcodeproj */;
+			containerPortal = 00765B4D46824E2E9A4F9357 /* Voice.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = DC0729B51EF78E41004EBC83;
 			remoteInfo = Voice;
@@ -327,6 +327,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00765B4D46824E2E9A4F9357 /* Voice.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = Voice.xcodeproj; path = "../node_modules/react-native-voice/ios/Voice.xcodeproj"; sourceTree = "<group>"; };
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
@@ -349,15 +350,14 @@
 		2D02E47B1E0B4A5D006451C7 /* TroisiemePagePrototype1-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TroisiemePagePrototype1-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* TroisiemePagePrototype1-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TroisiemePagePrototype1-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		54C6A26518B447349A7F20D2 /* libVoice.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libVoice.a; sourceTree = "<group>"; };
+		34287F2D7C12499582010BD7 /* RNMotionManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = RNMotionManagerTests.xctest; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		8005E1918D4D4E4D8713D22C /* libRNMotionManager.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNMotionManager.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		9BBB868EA42A44249FC71A7B /* RNMotionManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = RNMotionManagerTests.xctest; sourceTree = "<group>"; };
-		A9B129EB892844CEB85E5011 /* Voice.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = Voice.xcodeproj; path = "../node_modules/react-native-voice/ios/Voice.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
-		B6C91CFAB0FF4F359E244550 /* RNMotionManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNMotionManager.xcodeproj; path = "../node_modules/react-native-motion-manager/RNMotionManager.xcodeproj"; sourceTree = "<group>"; };
-		CA0A00FCE5314CCE87F8ABB8 /* libRNMotionManager.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNMotionManager.a; sourceTree = "<group>"; };
+		C6CB7038785F45A08ED85D4F /* libVoice.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libVoice.a; sourceTree = "<group>"; };
+		D9CCF6DD046A4585A8CD9AA9 /* RNMotionManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNMotionManager.xcodeproj; path = "../node_modules/react-native-motion-manager/RNMotionManager.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,9 +386,9 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				0C944F5FFCA44310A4960FEA /* libVoice.a in Frameworks */,
-				DEC87F17FFA843A687803B40 /* libRNMotionManager.a in Frameworks */,
-				255E7ECA32E94DEF83C42602 /* RNMotionManagerTests.xctest in Frameworks */,
+				548904B60F7E4DA0978A5FA5 /* libRNMotionManager.a in Frameworks */,
+				2D6253E0655F4BF1B77986E0 /* RNMotionManagerTests.xctest in Frameworks */,
+				9FF3726D196F4B2589C66B1E /* libVoice.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,20 +542,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		595987A4208627950010C394 /* Recovered References */ = {
+		59CB204120874B1300BC8E84 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				54C6A26518B447349A7F20D2 /* libVoice.a */,
-				CA0A00FCE5314CCE87F8ABB8 /* libRNMotionManager.a */,
-				9BBB868EA42A44249FC71A7B /* RNMotionManagerTests.xctest */,
+				8005E1918D4D4E4D8713D22C /* libRNMotionManager.a */,
+				34287F2D7C12499582010BD7 /* RNMotionManagerTests.xctest */,
+				C6CB7038785F45A08ED85D4F /* libVoice.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		595987CA208627970010C394 /* Products */ = {
+		59CB206720874B1400BC8E84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				595987CE208627990010C394 /* libVoice.a */,
+				59CB206B20874B1500BC8E84 /* libVoice.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -593,8 +593,8 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				A9B129EB892844CEB85E5011 /* Voice.xcodeproj */,
-				B6C91CFAB0FF4F359E244550 /* RNMotionManager.xcodeproj */,
+				D9CCF6DD046A4585A8CD9AA9 /* RNMotionManager.xcodeproj */,
+				00765B4D46824E2E9A4F9357 /* Voice.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -616,7 +616,7 @@
 				00E356EF1AD99517003FC87E /* TroisiemePagePrototype1Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				595987A4208627950010C394 /* Recovered References */,
+				59CB204120874B1300BC8E84 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -806,8 +806,8 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 595987CA208627970010C394 /* Products */;
-					ProjectRef = A9B129EB892844CEB85E5011 /* Voice.xcodeproj */;
+					ProductGroup = 59CB206720874B1400BC8E84 /* Products */;
+					ProjectRef = 00765B4D46824E2E9A4F9357 /* Voice.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1045,11 +1045,11 @@
 			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		595987CE208627990010C394 /* libVoice.a */ = {
+		59CB206B20874B1500BC8E84 /* libVoice.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libVoice.a;
-			remoteRef = 595987CD208627990010C394 /* PBXContainerItemProxy */;
+			remoteRef = 59CB206A20874B1500BC8E84 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
@@ -1227,8 +1227,8 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 					"$(SRCROOT)/../node_modules/react-native-motion-manager/RNMotionManager/**",
+					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 				INFOPLIST_FILE = TroisiemePagePrototype1Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1255,8 +1255,8 @@
 				COPY_PHASE_STRIP = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 					"$(SRCROOT)/../node_modules/react-native-motion-manager/RNMotionManager/**",
+					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 				INFOPLIST_FILE = TroisiemePagePrototype1Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1285,8 +1285,8 @@
 				DEVELOPMENT_TEAM = B6YW2DLXP5;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 					"$(SRCROOT)/../node_modules/react-native-motion-manager/RNMotionManager/**",
+					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 				INFOPLIST_FILE = TroisiemePagePrototype1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1295,6 +1295,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.gobelins.troisiemepage;
 				PRODUCT_NAME = TroisiemePagePrototype1;
 				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1309,8 +1310,8 @@
 				DEVELOPMENT_TEAM = B6YW2DLXP5;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 					"$(SRCROOT)/../node_modules/react-native-motion-manager/RNMotionManager/**",
+					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 				INFOPLIST_FILE = TroisiemePagePrototype1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1319,6 +1320,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.gobelins.troisiemepage;
 				PRODUCT_NAME = TroisiemePagePrototype1;
 				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1339,8 +1341,8 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 					"$(SRCROOT)/../node_modules/react-native-motion-manager/RNMotionManager/**",
+					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 				INFOPLIST_FILE = "TroisiemePagePrototype1-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1376,8 +1378,8 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 					"$(SRCROOT)/../node_modules/react-native-motion-manager/RNMotionManager/**",
+					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 				INFOPLIST_FILE = "TroisiemePagePrototype1-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1412,8 +1414,8 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 					"$(SRCROOT)/../node_modules/react-native-motion-manager/RNMotionManager/**",
+					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 				INFOPLIST_FILE = "TroisiemePagePrototype1-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1448,8 +1450,8 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 					"$(SRCROOT)/../node_modules/react-native-motion-manager/RNMotionManager/**",
+					"$(SRCROOT)/../node_modules/react-native-voice/ios/Voice",
 				);
 				INFOPLIST_FILE = "TroisiemePagePrototype1-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

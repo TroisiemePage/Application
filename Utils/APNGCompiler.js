@@ -14,7 +14,6 @@ const options = commandLineArgs(optionDefinitions, {stopAtFirstUnknown: true});
 
 let assembler = new Assembler.Assembler(1, 33, Assembler.COMPRESS_7ZIP);
 
-
 animationToCompile = fs
     .readdirSync(options.input, {encoding: "utf8"})
     .filter((dirEl) => {

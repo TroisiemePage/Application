@@ -1,8 +1,7 @@
-import {computed, observable} from "mobx";
+import {decorate, observable} from "mobx";
 import {NativeModules} from "react-native"
 const Magnetometer = NativeModules.Magnetometer;
 import {DeviceEventEmitter} from "react-native";
-
 
 export class PageDetector {
     step = 20;
@@ -10,21 +9,18 @@ export class PageDetector {
     liftingWindow = new Array(this.liftingRes).fill(0);
     lastStableValue = 0;
     stableSampleCounter = 0;
-    @observable currentPage = 0;
-
-
+    currentPage = 0;
+    
     constructor() {
         Magnetometer.setMagnetometerUpdateInterval(0.1);
         DeviceEventEmitter.addListener('MagnetometerData', (data) => {
             this.liftingWindow.push(Math.abs(Math.round(data.magneticField.z)));
             if(this.liftingWindow.length >= 5) {
-                const cleanSample = this.round(this.liftingWindow.reduce((a, c) => a + c) / this.liftingRes)
-                let spikeDiretion = this.spikeDetector(cleanSample);
-                if(spikeDiretion === 0){
-                    this.stableSampleCounter++;
-                }
-                if(this.stableSampleCounter > 25 && this.currentPage >= 0) {
-                    this.currentPage += spikeDiretion;
+                const cleanSample = this.round(this.liftingWindow.reduce((a, c) => a + c) / this.liftingRes);
+                let spikeDirection = this.spikeDetector(cleanSample);
+                if((this.currentPage + spikeDirection) >= 0 && spikeDirection !== 0) {
+                    this.currentPage += spikeDirection;
+                    console.log(`${this.currentPage} (${spikeDirection})`);
                 }
                 this.liftingWindow.shift();
             }
@@ -37,18 +33,21 @@ export class PageDetector {
     }
 
     spikeDetector(sample) {
+        let returnValue;
         if(this.lastStableValue !== sample) {
             if(this.lastStableValue - sample === this.step) {
-                this.lastStableValue = sample;
-                return 1;
+                returnValue = 1;
             } else {
-                this.lastStableValue = sample;
-                return -1;
+                returnValue = -1;
             }
+            this.lastStableValue = sample;
         } else {
-            return 0;
+            returnValue =  0;
         }
+        return returnValue;
     }
-
 }
 
+decorate(PageDetector, {
+    currentPage: observable
+});

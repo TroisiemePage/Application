@@ -1,7 +1,5 @@
 import React from 'react';
-
-import MenuStyle from "./Menu.style";
-import {PageRouter} from "../PageRouter/PageRouter";
+import {GlobalRouter} from "../GlobalRouter/GlobalRouter";
 
 export default class Menu extends React.Component {
 
@@ -12,7 +10,7 @@ export default class Menu extends React.Component {
 
     render() {
         return (
-            <PageRouter/>
+            <GlobalRouter/>
         );
     }
 }
