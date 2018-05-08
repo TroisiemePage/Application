@@ -9,13 +9,16 @@
     "ios:build": "react-native bundle --entry-file ./index.js  --bundle-output ./ios/main.jsbundle --assets-dest ./ios/ --platform ios"
   },
   "dependencies": {
+    "Buffer": "0.0.0",
     "double-metaphone": "^1.0.2",
     "iotdb-matcher": "^1.0.1",
     "jaro-winkler": "latest",
     "mobx": "^4.2.0",
     "mobx-react": "^5.0.0",
+    "path": "^0.12.7",
     "react": "16.3.1",
     "react-native": "0.55.2",
+    "react-native-fs": "^2.9.12",
     "react-native-motion-manager": "0.0.7",
     "react-native-voice": "^0.2.6",
     "upng-js": "^2.1.0"

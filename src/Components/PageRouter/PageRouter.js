@@ -73,7 +73,6 @@ export class PageRouter extends React.Component {
     constructor() {
         super();
         this.pageDetector = new PageDetector();
-        console.log(this.pageDetector);
     }
 
     intervalize(num) {
