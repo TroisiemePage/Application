@@ -1,10 +1,11 @@
 import * as React from "react";
 import {WordDetector} from "../../Modules/WordDetector";
 import {Image, Text, Dimensions, View} from "react-native";
-
 const wordDetector = new WordDetector();
-import Decor from "../../../src/Assets/Images/Pages/Page1/Decor/Page01_DecorJeuMoine.png";
-import lotisAnimation from "../../Assets/Animations/Words/compiled/lotis.png";
+import decor from "../../../src/Assets/Images/Pages/Page1/Decor/Page01_DecorJeuMoine.png";
+import moines from "../../../src/Assets/Animations/Pages/compiled/PAGE-05-MOINES.png";
+import precepteur from "../../../src/Assets/Animations/Pages/compiled/PAGE-05-PRECEPTEUR.png";
+import ApngPlayer from "../ApngPlayer/ApngPlayer";
 
 const {height, width} = Dimensions.get('window');
 
@@ -16,6 +17,11 @@ export class Page1 extends React.Component {
             "Lotis",
             "Oriflant"
         ]);
+        this.state = {
+            duration: 0,
+            imageNumber: 0,
+            animated: true
+        }
     }
 
     render() {
@@ -26,8 +32,8 @@ export class Page1 extends React.Component {
                 width: width,
                 height: height
             }}>
-               <Image
-                    source={Decor}
+                <Image
+                    source={decor}
                     style={{
                         width: width,
                         height: height,
@@ -36,7 +42,24 @@ export class Page1 extends React.Component {
                     resizeMode={"contain"}
                     resizeMethod={"scale"}
                 />
-
+                <ApngPlayer ref={"moines"}
+                            style={{
+                                position: "absolute",
+                                bottom: 30,
+                                right: 15
+                            }}
+                            scale={0.5}
+                            source={moines}
+                />
+                <ApngPlayer ref={"moines"}
+                            style={{
+                                position: "absolute",
+                                bottom: 140,
+                                left: 190
+                            }}
+                            scale={0.5}
+                            source={precepteur}
+                />
             </View>
         )
     }
