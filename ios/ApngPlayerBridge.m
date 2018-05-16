@@ -5,5 +5,6 @@
 @interface RCT_EXTERN_MODULE(ApngPlayerManager, RCTViewManager)
 
 RCT_EXPORT_VIEW_PROPERTY(source, NSString)
+RCT_EXPORT_VIEW_PROPERTY(onFinish, RCTDirectEventBlock)
 
 @end

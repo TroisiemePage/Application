@@ -1,13 +1,15 @@
 import * as React from "react";
-import {WordDetector} from "../../Modules/WordDetector";
+import {WordDetector} from "../../../Modules/WordDetector";
 import {Image, Text, Dimensions, View} from "react-native";
 const wordDetector = new WordDetector();
-import decor from "../../../src/Assets/Images/Pages/Page1/Decor/Page01_DecorJeuMoine.png";
-import moines from "../../../src/Assets/Animations/Pages/compiled/PAGE-05-MOINES.png";
-import precepteur from "../../../src/Assets/Animations/Pages/compiled/PAGE-05-PRECEPTEUR.png";
-import ApngPlayer from "../ApngPlayer/ApngPlayer";
+import decor from "../../../Assets/Images/Pages/Page1/Decor/Decor_pageMoines.png";
+import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
+import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
+import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 
-const {height, width} = Dimensions.get('window');
+const {
+    height,
+    width} = Dimensions.get('window');
 
 export class Page1 extends React.Component {
 
@@ -46,19 +48,29 @@ export class Page1 extends React.Component {
                             style={{
                                 position: "absolute",
                                 bottom: 30,
-                                right: 15
+                                right: 50
                             }}
-                            scale={0.5}
-                            source={moines}
+                            scale={0.45}
+                            playlist={[moines]}
                 />
-                <ApngPlayer ref={"moines"}
+                <Text style={{
+                    fontFamily: "ClairvauxLTStd",
+                    position: "absolute",
+                    top: 20,
+                    bottom: 20,
+                    right: 20,
+                    left: 20,
+                    margin: "auto",
+                    fontSize: 500
+                }}>b</Text>
+                <ApngPlayer ref={"precepteur"}
                             style={{
                                 position: "absolute",
                                 bottom: 140,
-                                left: 190
+                                left: 110
                             }}
                             scale={0.5}
-                            source={precepteur}
+                            playlist={[precepteur]}
                 />
             </View>
         )

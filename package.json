@@ -9,6 +9,11 @@
     "postinstall": "node Utils/patch-react-native-babelrc.js",
     "ios:build": "react-native bundle --entry-file ./index.js  --bundle-output ./ios/main.jsbundle --assets-dest ./ios/ --platform ios"
   },
+  "rnpm": {
+    "assets": [
+      "./src/assets/Fonts/"
+    ]
+  },
   "dependencies": {
     "Buffer": "0.0.0",
     "double-metaphone": "^1.0.2",

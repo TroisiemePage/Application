@@ -1,6 +1,6 @@
 import * as React from "react";
 import {PageDetector} from "../../Modules/PageDetector";
-import {Page1} from "../Pages/Page1";
+import {Page1} from "../Pages/Page1/Page1";
 import {Page2} from "../Pages/Page2";
 import {observer} from "mobx-react";
 import {Button, Dimensions, Text, View} from "react-native";

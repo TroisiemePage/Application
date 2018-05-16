@@ -12,7 +12,8 @@ const optionDefinitions = [
 
 const options = commandLineArgs(optionDefinitions, {stopAtFirstUnknown: true});
 
-let assembler = new Assembler.Assembler(1, 33, Assembler.COMPRESS_7ZIP);
+let assemblerLoopPlay = new Assembler.Assembler(0, 33, Assembler.COMPRESS_7ZIP);
+let assemblerOnePlay = new Assembler.Assembler(1, 33, Assembler.COMPRESS_7ZIP);
 
 animationToCompile = fs
     .readdirSync(options.input, {encoding: "utf8"})
@@ -24,8 +25,12 @@ animationToCompile = fs
         return {
             title: `${animDir}`,
             task: () => {
-                    return assembler
-                        .assemble(path.join(options.input, animDir, "./*"), path.join(options.output, animDir + ".png"));
+                let assembler = assemblerOnePlay;
+                if (animDir.includes("loop")) {
+                    assembler = assemblerLoopPlay;
+                }
+                return assembler
+                    .assemble(path.join(options.input, animDir, "./*"), path.join(options.output, animDir + ".png"));
             }
         }
     });

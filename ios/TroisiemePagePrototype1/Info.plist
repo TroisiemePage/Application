@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -54,5 +54,29 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AGaramondPro-Bold.otf</string>
+		<string>AGaramondPro-BoldItalic.otf</string>
+		<string>AGaramondPro-Italic.otf</string>
+		<string>AGaramondPro-Regular.otf</string>
+		<string>AGaramondPro-Semibold.otf</string>
+		<string>AGaramondPro-SemiboldItalic.otf</string>
+		<string>GothamRounded-Bold.otf</string>
+		<string>GothamRounded-BoldItalic.otf</string>
+		<string>GothamRounded-Book.otf</string>
+		<string>GothamRounded-BookItalic.otf</string>
+		<string>GothamRounded-Light.otf</string>
+		<string>GothamRounded-LightItalic.otf</string>
+		<string>GothamRounded-Medium.otf</string>
+		<string>GothamRounded-MediumItalic.otf</string>
+		<string>GothamRoundedBold_21016.ttf</string>
+		<string>GothamRoundedBook_21018.ttf</string>
+		<string>GothamRoundedLight_21020.ttf</string>
+		<string>GothamRoundedMedium_21022.ttf</string>
+		<string>WittenbergerFrakturMTStd-Bd.otf</string>
+		<string>WittenbergerFrakturMTStd.otf</string>
+		<string>ClairvauxLTStd.otf</string>
+	</array>
 </dict>
 </plist>
