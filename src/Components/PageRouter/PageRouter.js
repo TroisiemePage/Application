@@ -80,6 +80,7 @@ export class PageRouter extends React.Component {
     }
 
     render() {
+        let pageNumber = 0;//this.pageDetector.currentPage;
         return (
             <View style={{
                 width: width,
@@ -88,10 +89,10 @@ export class PageRouter extends React.Component {
             }}>
 
                 {
-                    React.createElement(this.pages[this.intervalize(this.pageDetector.currentPage)])
+                    React.createElement(this.pages[this.intervalize(pageNumber)])
                 }
                 <MenuBar/>
-                <Navigator pageNumber={this.pageDetector.currentPage}/>
+                <Navigator pageNumber={pageNumber}/>
             </View>
         );
     }

@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -50,6 +49,7 @@
 		CA85A7931DF347AB97AFFF41 /* GothamRounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE5E59AEDB0144EC8B74CF42 /* GothamRounded-Light.otf */; };
 		D01E60442670452091E470D2 /* GothamRoundedBold_21016.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4077C3A468384D52A4740C7F /* GothamRoundedBold_21016.ttf */; };
 		E577C854D9884FAAAB730BC8 /* GothamRounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E81C6844C94B4970940E53F9 /* GothamRounded-Bold.otf */; };
+		FBBF6C7F0BC042579359DCB8 /* Respira-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0278249D79F4B93896BF44D /* Respira-Black.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,13 +277,6 @@
 			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
 			remoteInfo = "jschelpers-tvOS";
 		};
-		5941B93220A466350025F044 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D9CCF6DD046A4585A8CD9AA9 /* RNMotionManager.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BB9CC7F81AE0A2EB008A1D08;
-			remoteInfo = RNMotionManagerTests;
-		};
 		5974683B2088B72D00608E07 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D9CCF6DD046A4585A8CD9AA9 /* RNMotionManager.xcodeproj */;
@@ -390,6 +383,7 @@
 		E81C6844C94B4970940E53F9 /* GothamRounded-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamRounded-Bold.otf"; path = "../src/assets/Fonts/gotham-rounded/GothamRounded-Bold.otf"; sourceTree = "<group>"; };
 		F2DE3032711644AFA00EBB03 /* GothamRounded-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamRounded-Book.otf"; path = "../src/assets/Fonts/gotham-rounded/GothamRounded-Book.otf"; sourceTree = "<group>"; };
 		F88B7B6A99F848F581815EEB /* ClairvauxLTStd.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ClairvauxLTStd.otf; path = ../src/assets/Fonts/ClairvauxLTStd.otf; sourceTree = "<group>"; };
+		E0278249D79F4B93896BF44D /* Respira-Black.otf */ = {isa = PBXFileReference; name = "Respira-Black.otf"; path = "../src/assets/Fonts/Respira-Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -499,7 +493,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* TroisiemePagePrototype1 */ = {
+		13B07FAE1A68108700A75B9A /* TroisiemePage */ = {
 			isa = PBXGroup;
 			children = (
 				592391CE20A5E45400BA39C8 /* TroisiemePagePrototype1-Bridging-Header.h */,
@@ -513,7 +507,7 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				592391CF20A5E47100BA39C8 /* Cartfile */,
 			);
-			name = TroisiemePagePrototype1;
+			name = TroisiemePage;
 			sourceTree = "<group>";
 		};
 		146834001AC3E56700842450 /* Products */ = {
@@ -563,7 +557,6 @@
 			isa = PBXGroup;
 			children = (
 				5974683C2088B72D00608E07 /* libRNMotionManager.a */,
-				5941B93320A466350025F044 /* RNMotionManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -637,7 +630,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* TroisiemePagePrototype1 */,
+				13B07FAE1A68108700A75B9A /* TroisiemePage */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* TroisiemePagePrototype1Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -689,6 +682,7 @@
 				7DC543865137420CBFC397C5 /* GothamRoundedLight_21020.ttf */,
 				063F262FBBFD4178B1D0A958 /* GothamRoundedMedium_21022.ttf */,
 				F88B7B6A99F848F581815EEB /* ClairvauxLTStd.otf */,
+				E0278249D79F4B93896BF44D /* Respira-Black.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -696,9 +690,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* TroisiemePagePrototype1 */ = {
+		13B07F861A680F5B00A75B9A /* TroisiemePage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TroisiemePagePrototype1" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TroisiemePage" */;
 			buildPhases = (
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -710,7 +704,7 @@
 			);
 			dependencies = (
 			);
-			name = TroisiemePagePrototype1;
+			name = TroisiemePage;
 			productName = "Hello World";
 			productReference = 13B07F961A680F5B00A75B9A /* TroisiemePagePrototype1.app */;
 			productType = "com.apple.product-type.application";
@@ -802,7 +796,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* TroisiemePagePrototype1 */,
+				13B07F861A680F5B00A75B9A /* TroisiemePage */,
 			);
 		};
 /* End PBXProject section */
@@ -1032,13 +1026,6 @@
 			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5941B93320A466350025F044 /* RNMotionManagerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RNMotionManagerTests.xctest;
-			remoteRef = 5941B93220A466350025F044 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		5974683C2088B72D00608E07 /* libRNMotionManager.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1117,6 +1104,7 @@
 				4669FB552D4241D890D190EF /* GothamRoundedLight_21020.ttf in Resources */,
 				C4A91139133E4D5EAF97EB88 /* GothamRoundedMedium_21022.ttf in Resources */,
 				3429D9591E1A4749B98CD947 /* ClairvauxLTStd.otf in Resources */,
+				FBBF6C7F0BC042579359DCB8 /* Respira-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1220,7 +1208,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.remicaillot.application;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.remicaillot.troisiemepage;
 				PRODUCT_NAME = TroisiemePagePrototype1;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TroisiemePagePrototype1-Bridging-Header.h";
@@ -1269,7 +1257,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.remicaillot.application;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.remicaillot.troisiemepage;
 				PRODUCT_NAME = TroisiemePagePrototype1;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TroisiemePagePrototype1-Bridging-Header.h";
@@ -1362,7 +1350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TroisiemePagePrototype1" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TroisiemePage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,

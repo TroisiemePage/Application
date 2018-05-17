@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
                BuildableName = "TroisiemePagePrototype1.app"
-               BlueprintName = "TroisiemePagePrototype1"
+               BlueprintName = "TroisiemePage"
                ReferencedContainer = "container:TroisiemePagePrototype1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,7 +48,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "TroisiemePagePrototype1.app"
-            BlueprintName = "TroisiemePagePrototype1"
+            BlueprintName = "TroisiemePage"
             ReferencedContainer = "container:TroisiemePagePrototype1.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -71,7 +71,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "TroisiemePagePrototype1.app"
-            BlueprintName = "TroisiemePagePrototype1"
+            BlueprintName = "TroisiemePage"
             ReferencedContainer = "container:TroisiemePagePrototype1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -90,7 +90,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "TroisiemePagePrototype1.app"
-            BlueprintName = "TroisiemePagePrototype1"
+            BlueprintName = "TroisiemePage"
             ReferencedContainer = "container:TroisiemePagePrototype1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
