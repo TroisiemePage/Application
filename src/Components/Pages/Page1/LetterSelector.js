@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Text, View, Animated} from 'react-native';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
-const LETTER_SIZE = 500;
+const LETTER_SIZE = 400;
 
 export class LetterSelector extends Component {
 

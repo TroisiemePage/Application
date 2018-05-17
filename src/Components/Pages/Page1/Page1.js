@@ -65,8 +65,8 @@ export class Page1 extends React.Component {
                 />
                 <LetterSelector
                     style={{
-                        marginLeft: 235,
-                        marginTop: 165
+                        marginLeft: 280,
+                        marginTop: 200
                     }}
                 />
 
