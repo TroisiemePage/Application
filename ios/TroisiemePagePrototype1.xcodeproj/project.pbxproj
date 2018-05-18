@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -379,11 +380,11 @@
 		CE5E59AEDB0144EC8B74CF42 /* GothamRounded-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamRounded-Light.otf"; path = "../src/assets/Fonts/gotham-rounded/GothamRounded-Light.otf"; sourceTree = "<group>"; };
 		D8863E104C134AA1B1786785 /* GothamRounded-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamRounded-LightItalic.otf"; path = "../src/assets/Fonts/gotham-rounded/GothamRounded-LightItalic.otf"; sourceTree = "<group>"; };
 		D9CCF6DD046A4585A8CD9AA9 /* RNMotionManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNMotionManager.xcodeproj; path = "../node_modules/react-native-motion-manager/RNMotionManager.xcodeproj"; sourceTree = "<group>"; };
+		E0278249D79F4B93896BF44D /* Respira-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Respira-Black.otf"; path = "../src/assets/Fonts/Respira-Black.otf"; sourceTree = "<group>"; };
 		E31C3787A76F45E2A3C578E8 /* AGaramondPro-SemiboldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AGaramondPro-SemiboldItalic.otf"; path = "../src/assets/Fonts/Adobe Garamond Pro/AGaramondPro-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		E81C6844C94B4970940E53F9 /* GothamRounded-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamRounded-Bold.otf"; path = "../src/assets/Fonts/gotham-rounded/GothamRounded-Bold.otf"; sourceTree = "<group>"; };
 		F2DE3032711644AFA00EBB03 /* GothamRounded-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamRounded-Book.otf"; path = "../src/assets/Fonts/gotham-rounded/GothamRounded-Book.otf"; sourceTree = "<group>"; };
 		F88B7B6A99F848F581815EEB /* ClairvauxLTStd.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ClairvauxLTStd.otf; path = ../src/assets/Fonts/ClairvauxLTStd.otf; sourceTree = "<group>"; };
-		E0278249D79F4B93896BF44D /* Respira-Black.otf */ = {isa = PBXFileReference; name = "Respira-Black.otf"; path = "../src/assets/Fonts/Respira-Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,7 +494,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* TroisiemePage */ = {
+		13B07FAE1A68108700A75B9A /* TroisiemePagePrototype1 */ = {
 			isa = PBXGroup;
 			children = (
 				592391CE20A5E45400BA39C8 /* TroisiemePagePrototype1-Bridging-Header.h */,
@@ -507,7 +508,7 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				592391CF20A5E47100BA39C8 /* Cartfile */,
 			);
-			name = TroisiemePage;
+			name = TroisiemePagePrototype1;
 			sourceTree = "<group>";
 		};
 		146834001AC3E56700842450 /* Products */ = {
@@ -630,7 +631,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* TroisiemePage */,
+				13B07FAE1A68108700A75B9A /* TroisiemePagePrototype1 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* TroisiemePagePrototype1Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -690,9 +691,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* TroisiemePage */ = {
+		13B07F861A680F5B00A75B9A /* TroisiemePagePrototype1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TroisiemePage" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TroisiemePagePrototype1" */;
 			buildPhases = (
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -704,7 +705,7 @@
 			);
 			dependencies = (
 			);
-			name = TroisiemePage;
+			name = TroisiemePagePrototype1;
 			productName = "Hello World";
 			productReference = 13B07F961A680F5B00A75B9A /* TroisiemePagePrototype1.app */;
 			productType = "com.apple.product-type.application";
@@ -796,7 +797,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* TroisiemePage */,
+				13B07F861A680F5B00A75B9A /* TroisiemePagePrototype1 */,
 			);
 		};
 /* End PBXProject section */
@@ -1350,7 +1351,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TroisiemePage" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TroisiemePagePrototype1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
