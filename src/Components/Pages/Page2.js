@@ -1,27 +1,32 @@
 import * as React from "react";
-import {Dimensions, Image, Text, View} from "react-native";
+import {Dimensions, Image, Text, View, StyleSheet} from "react-native";
 import Decor from "../../Assets/Images/Pages/Page2/illuTemp.png";
+
 const {height, width} = Dimensions.get('window');
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: "row",
+        width: width,
+        height: height
+    },
+    image: {
+        width: width,
+        height: height,
+        alignSelf: "flex-end"
+    }
+})
+
 export class Page2 extends React.Component {
     render() {
         return (
-            <View style={{
-                flex: 1,
-                flexDirection: "row",
-                width: width,
-                height: height
-            }}>
+            <View style={styles.container}>
                 <Image
                     source={Decor}
-                    style={{
-                        width: width,
-                        height: height,
-                        alignSelf: "flex-end",
-                    }}
+                    style={styles.image}
                     resizeMode={"contain"}
                     resizeMethod={"scale"}
                 />
-
             </View>
         )
     }

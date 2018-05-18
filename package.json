@@ -11,7 +11,7 @@
   },
   "rnpm": {
     "assets": [
-      "./src/assets/Fonts/"
+      "./src/assets/fonts/"
     ]
   },
   "dependencies": {
