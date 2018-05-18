@@ -41,27 +41,7 @@ class Navigator extends React.Component {
     }
 }
 
-class MenuBar extends React.Component {
-    render() {
-        return (
-            <View style={{
-                position: "absolute",
-                top: 20,
-                left: 20,
-                flex: 1,
-                flexDirection: "row",
-                alignItems: 'center',
-            }}>
-                <Button
-                    onPress={() => {
-                    }}
-                    title="Menu"
-                />
-            </View>
-        );
 
-    }
-}
 
 @observer
 export class PageRouter extends React.Component {
@@ -84,14 +64,11 @@ export class PageRouter extends React.Component {
         return (
             <View style={{
                 width: width,
-                height: height,
-                backgroundColor: '#FEFBEB'
+                height: height
             }}>
-
                 {
                     React.createElement(this.pages[this.intervalize(pageNumber)])
                 }
-                <MenuBar/>
                 <Navigator pageNumber={pageNumber}/>
             </View>
         );
