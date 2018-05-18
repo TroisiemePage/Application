@@ -99,8 +99,9 @@ export const Page1 = createDrawerNavigator({
     }
 }, {
     drawerPosition: 'right',
-    drawerBackgroundColor: 'white',
+    drawerBackgroundColor: '#FDFBEF',
     initialRouteName: 'Home',
-    drawerWidth: 1000,
+    drawerWidth: 900,
+    drawerLockMode: "locked-open",
     contentComponent: GameChapterOneLetterA,
 });
