@@ -34,7 +34,7 @@ const styles = {
 };
 const DrawerNav = createDrawerNavigator({
     Home: {
-        screen: Page1,
+        screen: GameChapterOneLetterA,
     },
     Game: {
         screen: GameChapterOneLetterA
