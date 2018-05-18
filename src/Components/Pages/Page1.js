@@ -37,39 +37,32 @@ export class Page1 extends React.Component {
     }
     render() {
         return (
-            <View style={{
-                flex: 1,
-                flexDirection: "row",
-                width: width,
-                height: height
-            }}>
+            <View style={styles.container}>
                 <Image
                     source={decor}
-                    style={{
-                        width: width,
-                        height: height,
-                        alignSelf: "flex-end",
-                    }}
+                    style={styles.image}
                     resizeMode={"contain"}
                     resizeMethod={"scale"}
                 />
-                <ApngPlayer ref={"moines"}
-                            style={{
-                                position: "absolute",
-                                bottom: 30,
-                                right: 15
-                            }}
-                            scale={0.5}
-                            source={moines}
+                <ApngPlayer
+                    ref={"moines"}
+                    style={{
+                        position: "absolute",
+                        bottom: 30,
+                        right: 15
+                    }}
+                    scale={0.5}
+                    source={moines}
                 />
-                <ApngPlayer ref={"moines"}
-                            style={{
-                                position: "absolute",
-                                bottom: 140,
-                                left: 190
-                            }}
-                            scale={0.5}
-                            source={precepteur}
+                <ApngPlayer
+                    ref={"moines"}
+                    style={{
+                        position: "absolute",
+                        bottom: 140,
+                        left: 190
+                    }}
+                    scale={0.5}
+                    source={precepteur}
                 />
             </View>
         )

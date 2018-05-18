@@ -27,8 +27,10 @@
     "react": "16.3.1",
     "react-native": "0.55.2",
     "react-native-motion-manager": "0.0.7",
+    "react-native-svg": "^6.3.1",
     "react-native-swipe-gestures": "^1.0.2",
-    "react-native-voice": "^0.2.6"
+    "react-native-voice": "^0.2.6",
+    "react-navigation": "^2.0.1"
   },
   "devDependencies": {
     "any-observable": "^0.2.0",

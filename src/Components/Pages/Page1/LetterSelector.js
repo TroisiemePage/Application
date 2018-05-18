@@ -62,7 +62,7 @@ export class LetterSelector extends Component {
                 }
                 break;
             default:
-                break;
+            break;
         }
     }
 
@@ -90,7 +90,6 @@ export class LetterSelector extends Component {
                             <Text style={this.styles.text}>d</Text>
                         </View>
                     </Animated.View>
-
                 </View>
             </GestureRecognizer>
         );
