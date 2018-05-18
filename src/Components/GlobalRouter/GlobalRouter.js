@@ -17,7 +17,20 @@ export class GlobalRouter extends React.Component {
     }
 
     render() {
-        let view = (<View/>);
+        return (
+            <View style={{
+                width: width,
+                height: height,
+                backgroundColor: '#FEFBEB'
+            }}>
+                <PageRouter/>
+            </View>
+        );
+    }
+}
+
+/*
+* let view = (<View/>);
         switch (this.state.page) {
             case "BOOK":
                 view = (<PageRouter/>);
@@ -77,12 +90,4 @@ export class GlobalRouter extends React.Component {
                 )];
                 break;
         }
-        return (<View style={{
-            width: width,
-            height: height,
-            backgroundColor: '#FEFBEB'
-        }}>
-            {view}
-        </View>);
-    }
-}
+        */
