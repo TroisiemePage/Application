@@ -2,7 +2,7 @@ import * as React from "react";
 import {WordDetector} from "../../../Modules/WordDetector";
 import {Image, Text, Dimensions, View} from "react-native";
 const wordDetector = new WordDetector();
-import decor from "../../../Assets/Images/Pages/Page1/Decor/Decor_pageMoines.png";
+import decor from "../../../Assets/Images/Pages/Page1/Decor_pageMoines.png";
 import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
 import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
