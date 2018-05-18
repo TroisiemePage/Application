@@ -32,22 +32,9 @@ const styles = {
         marginTop: 200
     }
 };
-const DrawerNav = createDrawerNavigator({
-    Home: {
-        screen: GameChapterOneLetterA,
-    },
-    Game: {
-        screen: GameChapterOneLetterA
-    },
-}, {
-    drawerPosition: 'right',
-    drawerBackgroundColor: 'white',
-    initialRouteName: 'Home',
-    drawerWidth: 300,
-    contentComponent: sideMenuContent,
-});
 
-export class Page1 extends React.Component {
+
+class Page1Content extends React.Component {
     static navigationOptions = {
         drawerLabel: 'Home'
     };
@@ -99,10 +86,21 @@ export class Page1 extends React.Component {
                 />
                 <Button
                     onPress={() => this.props.navigation.openDrawer()}
-                    title="open the drawer nav"
+                    title="open drawer"
                 />
-                <DrawerNav/>
             </View>
         );
     }
 }
+
+export const Page1 = createDrawerNavigator({
+    Home: {
+        screen: Page1Content,
+    }
+}, {
+    drawerPosition: 'right',
+    drawerBackgroundColor: 'white',
+    initialRouteName: 'Home',
+    drawerWidth: 1000,
+    contentComponent: GameChapterOneLetterA,
+});
