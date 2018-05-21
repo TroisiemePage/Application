@@ -3,7 +3,7 @@ import {StyleSheet, PanResponder, Animated, View, Text} from 'react-native';
 import Svg, {G, Path} from 'react-native-svg';
 
 const MAGFIELD = 80;
-const scale = 0.7;
+const scale = 0.6;
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const styles = StyleSheet.create({
     container: {
@@ -105,8 +105,8 @@ export default class GameChapterOneLetterA extends Component {
             },
             onPanResponderMove: (evt, gesture) => {
                 this.state.puzzlePiece[i].movingPos = {
-                    x: this.previousPos[i].x + gesture.dx, //-scale
-                    y: this.previousPos[i].y + gesture.dy //-scale
+                    x: this.previousPos[i].x + gesture.dx *  (1 + scale),
+                    y: this.previousPos[i].y + gesture.dy * (1 + scale)
                 };
                 this.setState(this.state);
             },
@@ -155,7 +155,7 @@ export default class GameChapterOneLetterA extends Component {
                     </Text>
                 </View>
                 <Svg style={styles.svg}>
-                    <G transform="matrix(1,0,0,1,-298.962,-379.365)" scale="0.7">
+                    <G transform="matrix(1,0,0,1,-298.962,-379.365)" scale={scale}>
                         <G transform="matrix(1,0,0,1,0.961868,0.364709)">
                             {
                                 (() => {
