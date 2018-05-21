@@ -1,6 +1,6 @@
 import * as React from "react";
 import {WordDetector} from "../../../Modules/WordDetector";
-import {Image, Text, Dimensions, View, Button, ScrollView} from "react-native";
+import {Image, Dimensions, View, TouchableOpacity} from "react-native";
 const wordDetector = new WordDetector();
 import decor from "../../../Assets/Images/Pages/Page1/Decor_pageMoines.png";
 import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
@@ -9,7 +9,6 @@ import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 import {LetterSelector} from "./LetterSelector";
 
 import GameChapterOneLetterA from "./GameChapterOne";
-import sideMenuContent from './SideMenuContent';
 import {createDrawerNavigator} from 'react-navigation';
 
 const {height, width} = Dimensions.get('window');
@@ -29,9 +28,14 @@ const styles = {
     },
     letter: {
         marginLeft: 280,
-        marginTop: 200,
-        borderWidth: 2,
-        borderColor: "black"
+        marginTop: 200
+    },
+    button: {
+        opacity: 0,
+        width: 200,
+        height: 200,
+        marginTop: 550,
+        marginLeft: 50,
     }
 };
 
