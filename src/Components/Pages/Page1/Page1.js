@@ -81,7 +81,7 @@ class Page1Content extends React.Component {
                     scale={0.45}
                     playlist={[moines]}
                     onPress={() => {
-                        console.log("Moines");
+                        this.props.navigation.openDrawer();
                     }}
                 />
                 <ApngPlayer
