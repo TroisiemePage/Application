@@ -69,7 +69,7 @@ export class PageRouter extends React.Component {
                 {
                     React.createElement(this.pages[this.intervalize(pageNumber)])
                 }
-                <Navigator pageNumber={pageNumber}/>
+
             </View>
         );
     }
