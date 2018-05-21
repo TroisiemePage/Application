@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Dimensions, Image, TouchableOpacity, View} from "react-native";
 import {PageRouter} from "../PageRouter/PageRouter";
-import menuPicto from "../../Assets/Images/Elements/menu.png";
+import menuPicto from "../../Assets/Images/elements/menu.png";
 
 const {height, width} = Dimensions.get('window');
 
