@@ -29,7 +29,9 @@ const styles = {
     },
     letter: {
         marginLeft: 280,
-        marginTop: 200
+        marginTop: 200,
+        borderWidth: 2,
+        borderColor: "black"
     }
 };
 
@@ -80,13 +82,10 @@ class Page1Content extends React.Component {
                     }}
                     scale={0.5}
                     playlist={[precepteur]}
+                    onPress={() => this.props.navigation.openDrawer()}
                 />
                 <LetterSelector
                     style={styles.letter}
-                />
-                <Button
-                    onPress={() => this.props.navigation.openDrawer()}
-                    title="open drawer"
                 />
             </View>
         );
@@ -102,6 +101,6 @@ export const Page1 = createDrawerNavigator({
     drawerBackgroundColor: '#FDFBEF',
     initialRouteName: 'Home',
     drawerWidth: 900,
-    drawerLockMode: "locked-open",
+    drawerLockMode: "locked-closed",
     contentComponent: GameChapterOneLetterA,
 });

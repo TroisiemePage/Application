@@ -23,10 +23,8 @@ public class ApngPlayer: UIView, APNGImageViewDelegate {
     self.frame = frame
     self.addSubview(animationView)
     print("player created")
-    
   
   }
-  
   
   public func apngImageView(_ imageView: APNGImageView, didFinishPlaybackForRepeatedCount count: Int) {
     _onFinish!(nil)
