@@ -23,11 +23,11 @@ export default class ApngPlayer extends Component {
                         ...this.props.style,
                         width: playlist[this.state.playlistIndex].width * this.props.scale,
                         height: playlist[this.state.playlistIndex].height * this.props.scale}}
-                    onPress={() => console.log("touch1")}
-                    onStartShouldSetResponder={() => true}
                 >
-                    <TouchableWithoutFeedback onPress={() => {
-                        if(this.props.onPress !== void 0) this.props.onPress();
+                    <TouchableWithoutFeedback  onPress={() => {
+                        if(this.props.onPress !== void 0) {
+                            this.props.onPress();
+                        }
                     }}>
                         <ApngPlayerNative
                             style={{width: playlist[this.state.playlistIndex].width * this.props.scale, height: playlist[this.state.playlistIndex].height * this.props.scale}}

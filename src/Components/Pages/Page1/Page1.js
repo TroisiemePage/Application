@@ -67,6 +67,10 @@ class Page1Content extends React.Component {
                     resizeMode={"contain"}
                     resizeMethod={"scale"}
                 />
+
+                <LetterSelector
+                    style={styles.letter}
+                />
                 <ApngPlayer
                     ref={"moines"}
                     style={{
@@ -76,6 +80,9 @@ class Page1Content extends React.Component {
                     }}
                     scale={0.45}
                     playlist={[moines]}
+                    onPress={() => {
+                        console.log("Moines");
+                    }}
                 />
                 <ApngPlayer
                     ref={"precepteur"}
@@ -86,10 +93,9 @@ class Page1Content extends React.Component {
                     }}
                     scale={0.5}
                     playlist={[precepteur]}
-                    onPress={() => this.props.navigation.openDrawer()}
-                />
-                <LetterSelector
-                    style={styles.letter}
+                    onPress={() => {
+                        console.log("Precepteur");
+                    }}
                 />
             </View>
         );
