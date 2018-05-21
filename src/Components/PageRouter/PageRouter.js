@@ -60,7 +60,7 @@ export class PageRouter extends React.Component {
     }
 
     render() {
-        let pageNumber = 0;//this.pageDetector.currentPage;
+        let pageNumber = 0;
         return (
             <View style={{
                 width: width,
