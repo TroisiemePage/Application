@@ -39,7 +39,7 @@ const styles = {
     }
 };
 
-
+const letterSelector = "";
 class Page1Content extends React.Component {
 
     constructor() {
@@ -52,10 +52,12 @@ class Page1Content extends React.Component {
             duration: 0,
             imageNumber: 0,
             animated: true
-        }
+        };
+
     }
 
     render() {
+        console.log("CONTENT", this.props.navigation);
         return (
             <Overlay {...this.props}>
             <View style={styles.container}>
@@ -68,6 +70,9 @@ class Page1Content extends React.Component {
 
                 <LetterSelector
                     style={styles.letter}
+                    ref={(letterSelectorRef) => {
+                        letterSelector = letterSelectorRef;
+                    }}
                 />
                 <ApngPlayer
                     ref={"moines"}
@@ -113,7 +118,9 @@ export const Page1 = createDrawerNavigator(
         initialRouteName: 'Game',
         drawerWidth: 900,
         drawerLockMode: "locked-closed",
-        contentComponent: GameChapterOneLetterA,
+        contentComponent: (props) => {
+            return (<GameChapterOneLetterA {...props} letterSelector={letterSelector}/>)
+        }
     }
 );
 Page1.navigationOptions = {

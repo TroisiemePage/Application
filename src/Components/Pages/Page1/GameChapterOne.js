@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, PanResponder, Animated, View, Text} from 'react-native';
 import Svg, {G, Path} from 'react-native-svg';
 import {computed} from "mobx";
+import DrawerActions from "react-navigation/src/routers/DrawerActions";
 
 const MAGFIELD = 80;
 const scale = 0.6;
@@ -149,6 +150,9 @@ export default class GameChapterOneLetterA extends Component {
     }
 
     render() {
+
+        //how to get which letter is selected
+        console.log(this.props.letterSelector);
         let greetings;
         if (this.didSucceed) {
             greetings = (
@@ -160,7 +164,7 @@ export default class GameChapterOneLetterA extends Component {
 
                 </View>
             );
-            setTimeout(() => this.props.didSucceed(), 1000);
+            setTimeout(() => this.props.navigation.dispatch({ type: DrawerActions.CLOSE_DRAWER }), 1000);
         } else {
             greetings = (
 

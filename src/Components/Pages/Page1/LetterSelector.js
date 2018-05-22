@@ -3,7 +3,7 @@ import {Text, View, Animated} from 'react-native';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
 const LETTER_SIZE = 400;
-
+const Letters = ["a", "b", "c", "d"];
 export class LetterSelector extends Component {
 
     styles = {
@@ -34,36 +34,51 @@ export class LetterSelector extends Component {
         directionalOffsetThreshold: 80
     };
 
+    sliding = false;
     state = {
-        leftOffset: new Animated.Value(0)
+        leftOffset: new Animated.Value(0),
+        selectedLetter: Letters[0]
     };
 
     onSwipe(gestureName, gestureState) {
         const {SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
-        const oldLeftOffset = this.state.leftOffset._value;
-
-        switch (gestureName) {
-            case SWIPE_LEFT:
-                console.log("SWIPE LEFT", oldLeftOffset);
-                if(oldLeftOffset > -(LETTER_SIZE * 3)) {
-                    Animated.timing(this.state.leftOffset, {
-                        toValue: oldLeftOffset - LETTER_SIZE,
-                        duration: 200
-                    }).start();
-                }
-                break;
-            case SWIPE_RIGHT:
-                console.log("SWIPE RIGHT", oldLeftOffset);
-                if(oldLeftOffset < 0) {
-                    Animated.timing(this.state.leftOffset, {
-                        toValue: oldLeftOffset + LETTER_SIZE,
-                        duration: 200
-                    }).start();
-                }
-                break;
-            default:
-            break;
+        let oldLeftOffset = this.state.leftOffset._value;
+        console.log("IS SLIDING", this.sliding);
+        if(!this.sliding) {
+            switch (gestureName) {
+                case SWIPE_LEFT:
+                    console.log("SWIPE LEFT", oldLeftOffset);
+                    if(oldLeftOffset > -(LETTER_SIZE * (Letters.length - 1))) {
+                        this.sliding = true;
+                        Animated.timing(this.state.leftOffset, {
+                            toValue: oldLeftOffset - LETTER_SIZE,
+                            duration: 200
+                        }).start();
+                        oldLeftOffset = this.state.leftOffset._value;
+                        this.setState({
+                            selectedLetter: Letters[Letters.indexOf(this.state.selectedLetter) + 1]
+                        })
+                    }
+                    break;
+                case SWIPE_RIGHT:
+                    console.log("SWIPE RIGHT", oldLeftOffset);
+                    if(oldLeftOffset < 0) {
+                        this.sliding = true;
+                        Animated.timing(this.state.leftOffset, {
+                            toValue: oldLeftOffset + LETTER_SIZE,
+                            duration: 200
+                        }).start();
+                        oldLeftOffset = this.state.leftOffset._value;
+                        this.setState({
+                            selectedLetter: Letters[Letters.indexOf(this.state.selectedLetter) - 1]
+                        })
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
+
     }
 
     componentDidMount() {
