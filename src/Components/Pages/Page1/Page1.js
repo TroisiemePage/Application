@@ -1,15 +1,15 @@
 import * as React from "react";
 import {WordDetector} from "../../../Modules/WordDetector";
-import {Image, Dimensions, View, TouchableOpacity} from "react-native";
+import {Image, Dimensions, View} from "react-native";
 const wordDetector = new WordDetector();
 import decor from "../../../Assets/Images/Pages/Page1/Decor_pageMoines.png";
 import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
 import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 import {LetterSelector} from "./LetterSelector";
-
 import GameChapterOneLetterA from "./GameChapterOne";
-import {createDrawerNavigator} from 'react-navigation';
+import {createDrawerNavigator} from "react-navigation";
+import {Overlay, PageRouter} from "../../PageRouter/PageRouter";
 
 const {height, width} = Dimensions.get('window');
 const styles = {
@@ -41,9 +41,6 @@ const styles = {
 
 
 class Page1Content extends React.Component {
-    static navigationOptions = {
-        drawerLabel: 'Home'
-    };
 
     constructor() {
         super();
@@ -60,6 +57,7 @@ class Page1Content extends React.Component {
 
     render() {
         return (
+            <Overlay {...this.props}>
             <View style={styles.container}>
                 <Image
                     source={decor}
@@ -98,19 +96,26 @@ class Page1Content extends React.Component {
                     }}
                 />
             </View>
+            </Overlay>
         );
     }
 }
 
-export const Page1 = createDrawerNavigator({
-    Home: {
-        screen: Page1Content,
+export const Page1 = createDrawerNavigator(
+    {
+        Game: {
+            screen: Page1Content
+        }
+    },
+    {
+        drawerPosition: 'right',
+        drawerBackgroundColor: '#FDFBEF',
+        initialRouteName: 'Game',
+        drawerWidth: 900,
+        drawerLockMode: "locked-closed",
+        contentComponent: GameChapterOneLetterA,
     }
-}, {
-    drawerPosition: 'right',
-    drawerBackgroundColor: '#FDFBEF',
-    initialRouteName: 'Home',
-    drawerWidth: 900,
-    drawerLockMode: "locked-closed",
-    contentComponent: GameChapterOneLetterA,
-});
+);
+Page1.navigationOptions = {
+    header: null
+};

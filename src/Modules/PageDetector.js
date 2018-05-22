@@ -1,4 +1,3 @@
-import {decorate, observable} from "mobx";
 import {NativeModules} from "react-native"
 const Magnetometer = NativeModules.Magnetometer;
 import {DeviceEventEmitter} from "react-native";
@@ -10,6 +9,7 @@ export class PageDetector {
     lastStableValue = 0;
     stableSampleCounter = 0;
     currentPage = 0;
+    listeners = [];
     
     constructor() {
         Magnetometer.setMagnetometerUpdateInterval(0.1);
@@ -20,7 +20,7 @@ export class PageDetector {
                 let spikeDirection = this.spikeDetector(cleanSample);
                 if((this.currentPage + spikeDirection) >= 0 && spikeDirection !== 0) {
                     this.currentPage += spikeDirection;
-                    console.log(`${this.currentPage} (${spikeDirection})`);
+                    this.listeners.forEach((listener) => listener(this.currentPage));
                 }
                 this.liftingWindow.shift();
             }
@@ -46,8 +46,8 @@ export class PageDetector {
         }
         return returnValue;
     }
-}
 
-decorate(PageDetector, {
-    currentPage: observable
-});
+    onPageChange(func) {
+        this.listeners.push(func);
+    }
+}
