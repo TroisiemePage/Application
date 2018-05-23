@@ -4,6 +4,7 @@ import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
 const LETTER_SIZE = 400;
 const Letters = ["a", "b", "c", "d"];
+
 export class LetterSelector extends Component {
 
     styles = {
@@ -42,47 +43,32 @@ export class LetterSelector extends Component {
 
     onSwipe(gestureName, gestureState) {
         const {SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
-        let oldLeftOffset = this.state.leftOffset._value;
-        console.log("IS SLIDING", this.sliding);
-        if(!this.sliding) {
-            switch (gestureName) {
-                case SWIPE_LEFT:
-                    console.log("SWIPE LEFT", oldLeftOffset);
-                    if(oldLeftOffset > -(LETTER_SIZE * (Letters.length - 1))) {
-                        this.sliding = true;
-                        Animated.timing(this.state.leftOffset, {
-                            toValue: oldLeftOffset - LETTER_SIZE,
-                            duration: 200
-                        }).start();
-                        oldLeftOffset = this.state.leftOffset._value;
-                        this.setState({
-                            selectedLetter: Letters[Letters.indexOf(this.state.selectedLetter) + 1]
-                        })
-                    }
-                    break;
-                case SWIPE_RIGHT:
-                    console.log("SWIPE RIGHT", oldLeftOffset);
-                    if(oldLeftOffset < 0) {
-                        this.sliding = true;
-                        Animated.timing(this.state.leftOffset, {
-                            toValue: oldLeftOffset + LETTER_SIZE,
-                            duration: 200
-                        }).start();
-                        oldLeftOffset = this.state.leftOffset._value;
-                        this.setState({
-                            selectedLetter: Letters[Letters.indexOf(this.state.selectedLetter) - 1]
-                        })
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-
+        new Promise(
+            (resolve) => {
+                switch (gestureName) {
+                    case SWIPE_LEFT:
+                        resolve(Letters[this.intervalize(Letters.indexOf(this.state.selectedLetter) + 1, Letters.length)])
+                        break;
+                    case SWIPE_RIGHT:
+                        resolve(Letters[this.intervalize(Letters.indexOf(this.state.selectedLetter) - 1, Letters.length)]);
+                        break;
+                    default:
+                        break;
+                }
+            })
+            .then((selectedLetter) => {
+                Animated.timing(this.state.leftOffset, {
+                    toValue: -(LETTER_SIZE * Letters.indexOf(selectedLetter)),
+                    duration: 200
+                }).start();
+                this.setState({
+                    selectedLetter: selectedLetter
+                })
+            });
     }
 
-    componentDidMount() {
-
+    intervalize(number, max, min = 0) {
+        return (number >= min ? (number < max ? number : (max - 1)) : min);
     }
 
     render() {
@@ -92,18 +78,15 @@ export class LetterSelector extends Component {
                 config={this.swipe_config}>
                 <View style={{...this.styles.container, ...this.props.style}}>
                     <Animated.View style={{...this.styles.wrapper, marginLeft: this.state.leftOffset}}>
-                        <View style={this.styles.slide}>
-                            <Text style={this.styles.text}>a</Text>
-                        </View>
-                        <View style={this.styles.slide}>
-                            <Text style={this.styles.text}>b</Text>
-                        </View>
-                        <View style={this.styles.slide}>
-                            <Text style={this.styles.text}>c</Text>
-                        </View>
-                        <View style={this.styles.slide}>
-                            <Text style={this.styles.text}>d</Text>
-                        </View>
+                        {Letters.map((letter) => {
+                            return (
+                                <View style={this.styles.slide}>
+                                    <Text style={this.styles.text}>
+                                        {letter}
+                                    </Text>
+                                </View>
+                            );
+                        })}
                     </Animated.View>
                 </View>
             </GestureRecognizer>

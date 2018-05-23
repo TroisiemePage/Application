@@ -81,5 +81,6 @@ PageRouter.navigationOptions = {
 pageDetector.onPageChange((currentPage) => {
     let pageNumber = 2;
     let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pageNumber ? currentPage : (pageNumber - 1)) : 0);
-    PageRouter.navigation.navigate("Page" + currentPageIntervalized);
+   // PageRouter.navigation.navigate("Page" + currentPageIntervalized);
+    console.log("PAGE ROUTER", PageRouter);
 });
