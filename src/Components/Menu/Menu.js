@@ -1,22 +1,21 @@
 import React from 'react';
-import {View} from 'react-native';
-
-import {GlobalRouter} from "../GlobalRouter/GlobalRouter";
 import CarteMenu from "./CarteMenu";
+import {createStackNavigator} from 'react-navigation';
+import {PageRouter} from "../PageRouter/PageRouter";
 
-export default class Menu extends React.Component {
-
-    constructor(props) {
-        super(props);
+const Navigator = createStackNavigator({
+    Home: {
+        screen: PageRouter
+    },
+    Menu: {
+        screen: CarteMenu
     }
+}, {
+    initialRouteName: 'Home'
+});
 
+export default class App extends React.Component {
     render() {
-        return (
-            <View>
-                <GlobalRouter/>
-                <CarteMenu />
-            </View>
-        );
+        return <Navigator/>;
     }
 }
-

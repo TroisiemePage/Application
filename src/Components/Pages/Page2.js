@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Dimensions, Image, Text, View, StyleSheet} from "react-native";
 import Decor from "../../Assets/Images/Pages/Page2/illuTemp.png";
+import {Page1} from "./Page1/Page1";
 
 const {height, width} = Dimensions.get('window');
 const styles = StyleSheet.create({
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
         height: height,
         alignSelf: "flex-end"
     }
-})
+});
 
 export class Page2 extends React.Component {
     render() {
@@ -31,3 +32,6 @@ export class Page2 extends React.Component {
         )
     }
 }
+Page2.navigationOptions = {
+    header: null
+};

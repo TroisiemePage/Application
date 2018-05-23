@@ -1,12 +1,29 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Button, StyleSheet, View} from 'react-native';
 
 import Svg, {G, Path, Text, Ellipse} from 'react-native-svg'
 
 export default class CarteMenu extends Component {
+
     render() {
         return (
             <View style={styles.container}>
+                <View
+                    style={{
+                        position: "absolute",
+                        top: 20,
+                        left: 20,
+                        flex: 1,
+                        flexDirection: "row",
+                        alignItems: 'center',
+                    }}>
+                    <Button
+
+                        onPress={() => this.props.navigation.navigate('Home')}
+                        title={"Retour"}
+                    />
+                </View>
+
                 <Svg style={styles.svg} viewBox="0 0 2224 1668">
                     <G>
                         <G transform="matrix(0.275378,0,0,0.275378,101.853,266.758)">
@@ -438,15 +455,19 @@ export default class CarteMenu extends Component {
     }
 }
 
+CarteMenu.navigationOptions = {
+    header: null
+};
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: '#FDFAEA',
     },
     svg: {
         width: "100%",
         height: "100%",
-        backgroundColor: '#FDFAEA',
     },
 });

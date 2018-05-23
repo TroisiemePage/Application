@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, PanResponder, Animated, View, Text} from 'react-native';
 import Svg, {G, Path} from 'react-native-svg';
+import {computed} from "mobx";
+import DrawerActions from "react-navigation/src/routers/DrawerActions";
 
 const MAGFIELD = 80;
 const scale = 0.6;
@@ -49,7 +51,7 @@ export default class GameChapterOneLetterA extends Component {
         super();
         const pieces = [
             {
-                scale: { x: 1, y: 0},
+                scale: {x: 1, y: 0},
                 rotation: {x: 0, y: 1},
                 initPos: {x: 298, y: 379},
                 initDelta: {
@@ -57,7 +59,7 @@ export default class GameChapterOneLetterA extends Component {
                     dy: 463.687 - 379
                 },
                 path: "M198.262,3.447L199.259,2.542C199.94,75.375 199.259,141.4 199.259,201.981C199.41,201.83 199.57,201.673 199.723,201.521L199.259,203.342C199.259,302.041 199.94,377.596 203.343,395.974L102.603,487.186L81.502,504.883L81.502,109.409L81.615,109.307C77.853,26.193 68.704,16.785 3.028,13.65C88.192,13.325 161.923,7.003 198.262,3.447Z"
-            },{
+            }, {
                 scale: {x: 0.93308, y: 0.35967},
                 rotation: {x: -0.35967, y: 0.93308},
                 initPos: {x: 496.189, y: 865.76},
@@ -66,7 +68,7 @@ export default class GameChapterOneLetterA extends Component {
                     dy: 808.684 - 865.76
                 },
                 path: "M0,-402.27C-26.017,-392.173 -40.688,-379.178 -55.471,-355.187C-74.769,-322.147 -92.939,-288.086 -102.648,-266.064L-101.907,-265.247L-101.905,-265.245C-93.896,-279.818 -86.915,-289.683 -80.009,-292.363C-24.168,-314.035 45.854,-301.053 100.527,-160.179C132.922,-76.708 134.27,-9.882 132.456,20.241L132.262,23.183L135.406,23.889C138.373,17.501 141.271,11.1 144.081,4.723C185.203,-84.981 218.851,-173.244 180.432,-272.236C137.826,-382.016 61.553,-426.159 0,-402.27"
-            },{
+            }, {
                 scale: {x: 1, y: 0},
                 rotation: {x: 0, y: 1},
                 initPos: {x: 298, y: 379},
@@ -87,7 +89,7 @@ export default class GameChapterOneLetterA extends Component {
                         y: pieces[i].initPos.y + pieces[i].initDelta.dy
                     },
                     opacity: new Animated.Value(0.9)
-                },pieces[i])
+                }, pieces[i])
             })
         };
     }
@@ -105,7 +107,7 @@ export default class GameChapterOneLetterA extends Component {
             },
             onPanResponderMove: (evt, gesture) => {
                 this.state.puzzlePiece[i].movingPos = {
-                    x: this.previousPos[i].x + gesture.dx *  (1 + scale),
+                    x: this.previousPos[i].x + gesture.dx * (1 + scale),
                     y: this.previousPos[i].y + gesture.dy * (1 + scale)
                 };
                 this.setState(this.state);
@@ -143,9 +145,29 @@ export default class GameChapterOneLetterA extends Component {
         });
     });
 
+    @computed get didSucceed() {
+        return this.state.puzzlePiece.filter((piece) => piece.placed).length === this.state.puzzlePiece.length;
+    }
+
     render() {
-        return (
-            <View style={styles.container}>
+
+        //how to get which letter is selected
+        console.log(this.props.letterSelector);
+        let greetings;
+        if (this.didSucceed) {
+            greetings = (
+
+                <View style={styles.title}>
+                    <Text style={styles.text}>
+                        Tu a réussi
+                    </Text>
+
+                </View>
+            );
+            setTimeout(() => this.props.navigation.dispatch({ type: DrawerActions.CLOSE_DRAWER }), 1000);
+        } else {
+            greetings = (
+
                 <View style={styles.title}>
                     <Text style={styles.text}>
                         Frère Augustin a perdu patience et a fini par déchirer son manuscrit !
@@ -153,7 +175,13 @@ export default class GameChapterOneLetterA extends Component {
                     <Text style={styles.text}>
                         Peux-tu l'aider à reconstituer la lettre?
                     </Text>
+
                 </View>
+            );
+        }
+        return (
+            <View style={styles.container}>
+                {greetings}
                 <Svg style={styles.svg}>
                     <G transform="matrix(1,0,0,1,-298.962,-379.365)" scale={scale}>
                         <G transform="matrix(1,0,0,1,0.961868,0.364709)">
@@ -161,7 +189,8 @@ export default class GameChapterOneLetterA extends Component {
                                 (() => {
                                     return this.state.puzzlePiece.map((piece, i) => {
                                         return (
-                                            <G key={i} transform={`matrix(${piece.scale.x},${piece.scale.y},${piece.rotation.x},${piece.rotation.y},${piece.initPos.x},${piece.initPos.y})`}>
+                                            <G key={i}
+                                               transform={`matrix(${piece.scale.x},${piece.scale.y},${piece.rotation.x},${piece.rotation.y},${piece.initPos.x},${piece.initPos.y})`}>
                                                 <AnimatedPath
                                                     d={piece.path}
                                                     fill={"#E76F54"}
@@ -176,7 +205,8 @@ export default class GameChapterOneLetterA extends Component {
                                 (() => {
                                     return this.state.puzzlePiece.map((piece, i) => {
                                         return (
-                                            <G key={i} transform={`matrix(${piece.scale.x},${piece.scale.y},${piece.rotation.x},${piece.rotation.y},${piece.movingPos.x},${piece.movingPos.y})`}>
+                                            <G key={i}
+                                               transform={`matrix(${piece.scale.x},${piece.scale.y},${piece.rotation.x},${piece.rotation.y},${piece.movingPos.x},${piece.movingPos.y})`}>
                                                 <AnimatedPath
                                                     d={piece.path}
                                                     fill={"#4258C8"}
