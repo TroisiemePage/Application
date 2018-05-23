@@ -78,9 +78,9 @@ export class LetterSelector extends Component {
                 config={this.swipe_config}>
                 <View style={{...this.styles.container, ...this.props.style}}>
                     <Animated.View style={{...this.styles.wrapper, marginLeft: this.state.leftOffset}}>
-                        {Letters.map((letter) => {
+                        {Letters.map((letter, i) => {
                             return (
-                                <View style={this.styles.slide}>
+                                <View style={this.styles.slide} key={i}>
                                     <Text style={this.styles.text}>
                                         {letter}
                                     </Text>
