@@ -67,7 +67,6 @@ class Page1Content extends React.Component {
                     resizeMode={"contain"}
                     resizeMethod={"scale"}
                 />
-
                 <LetterSelector
                     style={styles.letter}
                 />
@@ -110,7 +109,7 @@ export const Page1 = createDrawerNavigator({
     drawerPosition: 'right',
     drawerBackgroundColor: '#FDFBEF',
     initialRouteName: 'Home',
-    drawerWidth: 900,
+    drawerWidth: 3.5*width/4,
     drawerLockMode: "locked-closed",
     contentComponent: GameChapterOneLetterA,
 });

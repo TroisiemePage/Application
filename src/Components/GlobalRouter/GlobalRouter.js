@@ -7,7 +7,6 @@ const {height, width} = Dimensions.get('window');
 
 export class GlobalRouter extends React.Component {
 
-
     state = {
         page: "MENU"
     };
