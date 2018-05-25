@@ -38,9 +38,6 @@ const styles = {
         marginTop: 550,
         marginLeft: 50,
     },
-    modalViewAbbaye: {
-        position: 'absolute',
-    }
 };
 
 const letterSelector = "";
@@ -57,7 +54,6 @@ class Page1Content extends React.Component {
             imageNumber: 0,
             animated: true
         };
-
     }
 
     render() {
