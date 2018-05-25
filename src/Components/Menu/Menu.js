@@ -1,5 +1,5 @@
 import React from 'react';
-import CarteMenu from "./CarteMenu";
+import {CarteMenu} from "./CarteMenu";
 import {createStackNavigator} from 'react-navigation';
 import {PageRouter} from "../PageRouter/PageRouter";
 
@@ -11,7 +11,8 @@ const Navigator = createStackNavigator({
         screen: CarteMenu
     }
 }, {
-    initialRouteName: 'Home'
+    initialRouteName: 'Home',
+    mode: "modal"
 });
 
 export default class App extends React.Component {

@@ -1,9 +1,13 @@
-import React, {Component} from 'react';
-import {Button, StyleSheet, View} from 'react-native';
+import React from 'react';
+import {Button, StyleSheet, View, Text, TouchableWithoutFeedback} from 'react-native';
 
-import Svg, {G, Path, Text, Ellipse} from 'react-native-svg'
+import Svg, {G, Path, Text as SVGText, Ellipse} from 'react-native-svg'
+import {WordList} from "../Dictionnary/WordList";
+import {createDrawerNavigator} from "react-navigation";
 
-export default class CarteMenu extends Component {
+
+
+class CarteMenuContent extends React.Component {
 
     render() {
         return (
@@ -18,7 +22,6 @@ export default class CarteMenu extends Component {
                         alignItems: 'center',
                     }}>
                     <Button
-
                         onPress={() => this.props.navigation.navigate('Home')}
                         title={"Retour"}
                     />
@@ -27,7 +30,8 @@ export default class CarteMenu extends Component {
                 <Svg style={styles.svg} viewBox="0 0 2224 1668">
                     <G>
                         <G transform="matrix(0.275378,0,0,0.275378,101.853,266.758)">
-                            <G id="chemin" transform="matrix(0.691754,0,0,0.691754,-210.641,-1920.55)" fill="none" strokeWidth="7">
+                            <G id="chemin" transform="matrix(0.691754,0,0,0.691754,-210.641,-1920.55)" fill="none"
+                               strokeWidth="7">
                                 <G class="PathLevel2" stroke="rgb(235,71,57)">
                                     <G transform="matrix(-3.66765,-0.00131737,-0.00199548,5.55556,2607.31,5347.84)">
                                         <Path
@@ -47,7 +51,7 @@ export default class CarteMenu extends Component {
                                         />
                                     </G>
                                 </G>
-                                <G class="PathLevel4"  stroke="rgb(235,71,57)">
+                                <G class="PathLevel4" stroke="rgb(235,71,57)">
                                     <G transform="matrix(5.50102,2.81783e-19,0,5.55556,4360.51,4050.74)">
                                         <Path
                                             d="M0,96.5C-26.326,96.5 -47.667,74.993 -47.667,48.667C-47.667,22.341 -26.326,1 0,1L499.667,0"
@@ -59,7 +63,7 @@ export default class CarteMenu extends Component {
                                         />
                                     </G>
                                 </G>
-                                <G class="PathLevel5"  stroke="rgb(235,71,57)">
+                                <G class="PathLevel5" stroke="rgb(235,71,57)">
                                     <G transform="matrix(5.55556,0,0,5.55556,7730.57,3226.26)">
                                         <Path
                                             d="M0,40.001C0,17.908 17.909,0 40.001,0L95.668,0.236"
@@ -92,7 +96,7 @@ export default class CarteMenu extends Component {
                                         />
                                     </G>
                                 </G>
-                                <G class="PathLevel9"  stroke="rgb(128,128,128)">
+                                <G class="PathLevel9" stroke="rgb(128,128,128)">
                                     <G transform="matrix(-5.55555,0.00486055,0.00486055,5.55555,3943.56,6244.46)">
                                         <Path
                                             d="M-377.186,-0.165L0,-0.165"
@@ -114,7 +118,7 @@ export default class CarteMenu extends Component {
                                         />
                                     </G>
                                 </G>
-                                <G class="PathLevel10"  stroke="rgb(128,128,128)">
+                                <G class="PathLevel10" stroke="rgb(128,128,128)">
                                     <G transform="matrix(-3.92641,3.93033,3.93033,3.92641,1274.35,7506.7)">
                                         <Path
                                             d="M-227.542,-94.318C-153.985,-167.948 -34.535,-167.874 39.095,-94.318"
@@ -131,14 +135,14 @@ export default class CarteMenu extends Component {
                                         />
                                     </G>
                                 </G>
-                                <G class="PathLevel11"  stroke="rgb(128,128,128)">
+                                <G class="PathLevel11" stroke="rgb(128,128,128)">
                                     <G transform="matrix(-5.55556,0.000890311,0.000890311,5.55556,2760.97,8337.69)">
                                         <Path
                                             d="M-349.441,-0.028L0,-0.028"
                                         />
                                     </G>
                                 </G>
-                                <G class="PathLevel12"  stroke="rgb(128,128,128)">
+                                <G class="PathLevel12" stroke="rgb(128,128,128)">
                                     <G transform="matrix(-5.55556,0.000890311,0.000890311,5.55556,6777.46,8342.42)">
                                         <Path
                                             d="M-349.441,-0.028L0,-0.028"
@@ -174,7 +178,8 @@ export default class CarteMenu extends Component {
                                     />
                                 </G>
                             </G>
-                            <G id="cercles" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)" strokeWidth="7" fill="rgb(253,250,234)">
+                            <G id="cercles" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)" strokeWidth="7"
+                               fill="rgb(253,250,234)">
                                 <G class="PathLevel1" stroke="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,494.453,962.739)">
@@ -193,7 +198,7 @@ export default class CarteMenu extends Component {
                                         </G>
                                     </G>
                                 </G>
-                                <G class="PathLevel3"  stroke="rgb(235,71,57)">
+                                <G class="PathLevel3" stroke="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,895.577,831.331)">
                                             <Path
@@ -289,120 +294,121 @@ export default class CarteMenu extends Component {
                             <G id="textes" transform="matrix(0.691754,0,0,0.691754,-210.641,-1920.55)">
                                 <G transform="matrix(5.55556,0,0,5.55556,0.145203,0.737222)">
                                     <G transform="matrix(1,0,0,1,974.098,695.118)">
-                                        <Text fontSize="35" fill="#000">La Beauce</Text>
+                                        <SVGText fontSize="35" fill="#000">La Beauce</SVGText>
                                     </G>
                                 </G>
                                 <G transform="matrix(5.55556,0,0,5.55556,0.145203,0.737222)">
                                     <G>
                                         <G transform="matrix(1,0,0,1,1453.18,1449.16)">
-                                            <Text  fontSize="35" fill="#000">Abbaye de Thélème</Text>
+                                            <SVGText fontSize="35" fill="#000">Abbaye de Thélème</SVGText>
                                         </G>
                                     </G>
                                 </G>
                                 <G transform="matrix(5.55556,0,0,5.55556,0.145203,0.737222)">
                                     <G transform="matrix(1,0,0,1,1574.91,523.198)">
-                                        <Text  fontSize="35" fill="#000">Paris</Text>
+                                        <SVGText fontSize="35" fill="#000">Paris</SVGText>
                                     </G>
                                 </G>
                                 <G transform="matrix(5.55556,0,0,5.55556,0.145203,0.737222)">
                                     <G transform="matrix(1.01753,0,0,1,299,904.304)">
-                                        <Text  fontSize="35" fill="#000">Château de Grandgousier</Text>
+                                        <SVGText fontSize="35" fill="#000">Château de Grandgousier</SVGText>
                                     </G>
                                 </G>
                                 <G transform="matrix(5.55556,0,0,5.55556,0.145203,0.737222)">
                                     <G transform="matrix(1,0,0,1,330.083,1450)">
-                                        <Text  fontSize="35" fill="#000">Château de Picrochole</Text>
+                                        <SVGText fontSize="35" fill="#000">Château de Picrochole</SVGText>
                                     </G>
                                 </G>
                             </G>
-                            <G id="nombres" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)" fontSize="25" fontWeight="500">
-                                <G class="PathLevel1" fill="rgb(235,71,57)" >
+                            <G id="nombres" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)" fontSize="25"
+                               fontWeight="500">
+                                <G class="PathLevel1" fill="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,456.715,1023.46)">
-                                            <Text>0</Text>
+                                            <SVGText>0</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,475.973,1023.46)">
-                                            <Text>1</Text>
+                                            <SVGText>1</SVGText>
                                         </G>
                                     </G>
                                 </G>
-                                <G class="PathLevel2" fill="rgb(235,71,57)" >
+                                <G class="PathLevel2" fill="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,767.865,1023.46)">
-                                            <Text>0</Text>
+                                            <SVGText>0</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,786.973,1023.46)">
-                                            <Text>2</Text>
+                                            <SVGText>2</SVGText>
                                         </G>
                                     </G>
                                 </G>
-                                <G class="PathLevel3" fill="rgb(235,71,57)" >
+                                <G class="PathLevel3" fill="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,856.79,887.907)">
-                                            <Text>0</Text>
+                                            <SVGText>0</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,875.898,887.907)">
-                                            <Text>3</Text>
+                                            <SVGText>3</SVGText>
                                         </G>
                                     </G>
                                 </G>
-                                <G class="PathLevel4" fill="rgb(235,71,57)" >
+                                <G class="PathLevel4" fill="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,1239.89,787.457)">
-                                            <Text>0</Text>
+                                            <SVGText>0</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,1259.25,787.457)">
-                                            <Text>4</Text>
+                                            <SVGText>4</SVGText>
                                         </G>
                                     </G>
                                 </G>
-                                <G class="PathLevel5" fill="rgb(235,71,57)" >
+                                <G class="PathLevel5" fill="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,1492.09,644.957)">
-                                            <Text>0</Text>
+                                            <SVGText>0</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,1511.45,644.957)">
-                                            <Text>5</Text>
+                                            <SVGText>5</SVGText>
                                         </G>
                                     </G>
                                 </G>
-                                <G class="PathLevel6" fill="rgb(235,71,57)" >
+                                <G class="PathLevel6" fill="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,1600.72,645.957)">
-                                            <Text>0</Text>
+                                            <SVGText>0</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,1620.07,645.957)">
-                                            <Text>6</Text>
+                                            <SVGText>6</SVGText>
                                         </G>
                                     </G>
                                 </G>
-                                <G class="PathLevel7" fill="rgb(235,71,57)" >
+                                <G class="PathLevel7" fill="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,1710.77,644.957)">
-                                            <Text>0</Text>
+                                            <SVGText>0</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,1729.42,644.957)">
-                                            <Text>7</Text>
+                                            <SVGText>7</SVGText>
                                         </G>
                                     </G>
                                 </G>
                                 <G class="PathLevel8" fill="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,1811.87,900.907)">
-                                            <Text>0</Text>
+                                            <SVGText>0</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,1831.47,900.907)">
-                                            <Text>8</Text>
+                                            <SVGText>8</SVGText>
                                         </G>
                                     </G>
                                 </G>
                                 <G class="PathLevel9" fill="rgb(102,102,102)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                         <G transform="matrix(1,0,0,1,670.765,1184.38)">
-                                            <Text>0</Text>
+                                            <SVGText>0</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,690.123,1184.38)">
-                                            <Text>9</Text>
+                                            <SVGText>9</SVGText>
                                         </G>
                                     </G>
                                 </G>
@@ -412,37 +418,37 @@ export default class CarteMenu extends Component {
                                             <Text>1</Text>
                                         </G>
                                         <G transform="matrix(1,0,0,1,472.298,1562.36)">
-                                            <Text>0</Text>
+                                            <SVGText>0</SVGText>
                                         </G>
                                     </G>
                                 </G>
                                 <G class="PathLevel11" fill="rgb(102,102,102)">
                                     <G transform="matrix(1,0,0,1,-78.3831,-97.6382)">
                                         <G transform="matrix(1,0,0,1,843.04,1563.33)">
-                                            <Text>1</Text>
+                                            <SVGText>1</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,853.498,1563.33)">
-                                            <Text>1</Text>
+                                            <SVGText>1</SVGText>
                                         </G>
                                     </G>
                                 </G>
                                 <G class="PathLevel12" fill="rgb(102,102,102)">
                                     <G transform="matrix(1,0,0,1,-108.22,-97.23)">
                                         <G transform="matrix(1,0,0,1,1189.84,1562.33)">
-                                            <Text>1</Text>
+                                            <SVGText>1</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,1200.3,1562.33)">
-                                            <Text>2</Text>
+                                            <SVGText>2</SVGText>
                                         </G>
                                     </G>
                                 </G>
                                 <G class="PathLevel13" fill="rgb(102,102,102)">
                                     <G transform="matrix(1,0,0,1,-144.004,-91.6984)">
                                         <G transform="matrix(1,0,0,1,1580.14,1562.33)">
-                                            <Text>1</Text>
+                                            <SVGText>1</SVGText>
                                         </G>
                                         <G transform="matrix(1,0,0,1,1590.6,1562.33)">
-                                            <Text>3</Text>
+                                            <SVGText>3</SVGText>
                                         </G>
                                     </G>
                                 </G>
@@ -450,14 +456,42 @@ export default class CarteMenu extends Component {
                         </G>
                     </G>
                 </Svg>
+                <TouchableWithoutFeedback onPress={() => this.props.navigation.openDrawer()}>
+                    <View style={styles.dicoMenu}>
+                        <Text style={styles.letters}>A</Text>
+                        <Text style={styles.letters}>B</Text>
+                        <Text style={styles.letters}>C</Text>
+                        <Text style={styles.letters}>D</Text>
+                        <Text style={styles.letters}>E</Text>
+                        <Text style={styles.letters}>F</Text>
+                        <Text style={styles.letters}>G</Text>
+                        <Text style={styles.letters}>H</Text>
+                        <Text style={styles.letters}>I</Text>
+                        <Text style={styles.letters}>J</Text>
+                        <Text style={styles.letters}>K</Text>
+                        <Text style={styles.letters}>L</Text>
+                        <Text style={styles.letters}>M</Text>
+                        <Text style={styles.letters}>N</Text>
+                        <Text style={styles.letters}>O</Text>
+                        <Text style={styles.letters}>P</Text>
+                        <Text style={styles.letters}>Q</Text>
+                        <Text style={styles.letters}>R</Text>
+                        <Text style={styles.letters}>S</Text>
+                        <Text style={styles.letters}>T</Text>
+                        <Text style={styles.letters}>U</Text>
+                        <Text style={styles.letters}>V</Text>
+                        <Text style={styles.letters}>W</Text>
+                        <Text style={styles.letters}>X</Text>
+                        <Text style={styles.letters}>Y</Text>
+                        <Text style={styles.letters}>Z</Text>
+                    </View>
+                </TouchableWithoutFeedback>
             </View>
         );
     }
 }
 
-CarteMenu.navigationOptions = {
-    header: null
-};
+
 
 const styles = StyleSheet.create({
     container: {
@@ -467,7 +501,37 @@ const styles = StyleSheet.create({
         backgroundColor: '#FDFAEA',
     },
     svg: {
-        width: "100%",
+        width: "90%",
         height: "100%",
     },
+    letters: {
+        color: "#fd5641",
+        fontSize: 34,
+        fontFamily: "AGaramondPro-Bold"
+    },
+    dicoMenu: {
+        position: "absolute",
+        right: 0,
+        top: 0,
+        bottom: 0,
+        width: 70,
+        flex: 1,
+        flexDirection: "column",
+        padding: 20
+    }
 });
+
+export const CarteMenu = createDrawerNavigator({
+    CarteMenu: {
+        screen: CarteMenuContent
+    }
+}, {
+    drawerPosition: 'right',
+    drawerBackgroundColor: '#FDFBEF',
+    initialRouteName: 'CarteMenu',
+    drawerWidth: 300,
+    contentComponent: WordList
+});
+CarteMenu.navigationOptions = {
+    header: null
+};
