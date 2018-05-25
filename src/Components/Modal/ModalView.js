@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, TouchableWithoutFeedback, ScrollView, Animated, Easing,} from 'react-native';
+import {View, TouchableWithoutFeedback, ScrollView, Animated, Easing} from 'react-native';
 import Svg, {Rect, LinearGradient, Defs, Stop} from 'react-native-svg';
 import ModalContent from "./ModalContent";
 
@@ -25,26 +25,26 @@ export default class ModalView extends Component {
     isOpen = false;
 
     toggleModal() {
-            if (this.isOpen) {
-                Animated.timing(this.state.animatedValue, {
-                    toValue: 0,
-                    duration: 200,
-                    delay: 0,
-                    easing: Easing.inOut(Easing.ease)
-                }).start(() => {
-                    this.isOpen = !this.isOpen;
-                    this.forceUpdate();
-                });
-            } else {
-                Animated.timing(this.state.animatedValue, {
-                    toValue: 1,
-                    duration: 200,
-                    delay: 0,
-                    easing: Easing.inOut(Easing.ease)
-                }).start();
+        if (this.isOpen) {
+            Animated.timing(this.state.animatedValue, {
+                toValue: 0,
+                duration: 200,
+                delay: 0,
+                easing: Easing.inOut(Easing.ease)
+            }).start(() => {
                 this.isOpen = !this.isOpen;
                 this.forceUpdate();
-            }
+            });
+        } else {
+            Animated.timing(this.state.animatedValue, {
+                toValue: 1,
+                duration: 200,
+                delay: 0,
+                easing: Easing.inOut(Easing.ease)
+            }).start();
+            this.isOpen = !this.isOpen;
+            this.forceUpdate();
+        }
     };
 
     handleOnScroll = (e) => {
@@ -61,47 +61,44 @@ export default class ModalView extends Component {
                 position: 'absolute',
                 overflow: this.isOpen ? "visible" : "hidden",
             }}>
-                            <Animated.View
-                                style={{
-                                    position: "absolute",
-                                    bottom: 20,
-                                    right: 20,
-                                    backgroundColor: "transparent",
-                                    width: 300,
-                                    height: 300,
-                                    shadowOffset: {width: 0, height: 0},
-                                    shadowColor: 'black',
-                                    shadowOpacity: 0.15,
-                                    shadowRadius: 20,
-                                    elevation: 3,
-                                    opacity: this.state.animatedValue
-                                }}
-                            >
-                                <View style={{height: 300, position: 'relative', overflow: 'hidden'}}>
-                                    <ScrollView
-                                        ref={ref => (this.scrollViewRef = ref)}
-                                        onScroll={this.handleOnScroll}
-                                        scrollEventThrottle={16}
-                                        style={styles.scrollView}
-                                    >
-                                        <ModalContent title={this.props.title}>
-                                            {this.props.children}
-                                        </ModalContent>
-                                    </ScrollView>
-                                    <Svg style={styles.gradientHide}>
-                                        <Defs>
-                                            <LinearGradient id="grad" x1="0" y1="0" x2="0" y2="40">
-                                                <Stop offset="0" stopColor="#FEFBED" stopOpacity="0"/>
-                                                <Stop offset="1" stopColor="#FEFBED" stopOpacity="1"/>
-                                            </LinearGradient>
-                                        </Defs>
-                                        <Rect x="0" y="0" rx="20" ry="20" height="50" width="300" fill="url(#grad)"/>
-                                    </Svg>
-                                </View>
-                            </Animated.View>
-                        )
-                    }
-
+                <Animated.View
+                    style={{
+                        position: "absolute",
+                        bottom: 20,
+                        right: 20,
+                        backgroundColor: "transparent",
+                        width: 300,
+                        height: 300,
+                        shadowOffset: {width: 0, height: 0},
+                        shadowColor: 'black',
+                        shadowOpacity: 0.15,
+                        shadowRadius: 20,
+                        elevation: 3,
+                        opacity: this.state.animatedValue
+                    }}
+                >
+                    <View style={{height: 300, position: 'relative', overflow: 'hidden'}}>
+                        <ScrollView
+                            ref={ref => (this.scrollViewRef = ref)}
+                            onScroll={this.handleOnScroll}
+                            scrollEventThrottle={16}
+                            style={styles.scrollView}
+                        >
+                            <ModalContent title={this.props.title}>
+                                {this.props.children}
+                            </ModalContent>
+                        </ScrollView>
+                        <Svg style={styles.gradientHide}>
+                            <Defs>
+                                <LinearGradient id="grad" x1="0" y1="0" x2="0" y2="40">
+                                    <Stop offset="0" stopColor="#FEFBED" stopOpacity="0"/>
+                                    <Stop offset="1" stopColor="#FEFBED" stopOpacity="1"/>
+                                </LinearGradient>
+                            </Defs>
+                            <Rect x="0" y="0" rx="20" ry="20" height="50" width="300" fill="url(#grad)"/>
+                        </Svg>
+                    </View>
+                </Animated.View>
                 <TouchableWithoutFeedback onPress={() => this.toggleModal()}>
                     <Animated.Image
                         style={{
@@ -124,4 +121,3 @@ export default class ModalView extends Component {
         );
     }
 }
-
