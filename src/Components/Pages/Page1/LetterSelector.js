@@ -3,7 +3,7 @@ import {Text, View, Animated} from 'react-native';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
 const LETTER_SIZE = 400;
-const Letters = ["a", "b", "c", "d"];
+const Letters = ["b", "c", "d"];
 
 export class LetterSelector extends Component {
 
@@ -30,12 +30,14 @@ export class LetterSelector extends Component {
             color: "#fd5641"
         }
     };
+
     swipe_config = {
         velocityThreshold: 0.3,
         directionalOffsetThreshold: 80
     };
 
     sliding = false;
+
     state = {
         leftOffset: new Animated.Value(0),
         selectedLetter: Letters[0]
