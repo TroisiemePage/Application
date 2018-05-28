@@ -1,11 +1,9 @@
 import React from 'react';
 import {Button, StyleSheet, View, Text, TouchableWithoutFeedback} from 'react-native';
 
-import Svg, {G, Path, Text as SVGText, Ellipse} from 'react-native-svg'
+import Svg, {G, Path, Text as SVGText, Ellipse, Image} from 'react-native-svg'
 import {WordList} from "../Dictionnary/WordList";
 import {createDrawerNavigator} from "react-navigation";
-
-
 
 class CarteMenuContent extends React.Component {
 
@@ -29,9 +27,9 @@ class CarteMenuContent extends React.Component {
 
                 <Svg style={styles.svg} viewBox="0 0 2224 1668">
                     <G>
-                        <G transform="matrix(0.275378,0,0,0.275378,101.853,266.758)">
+                        <G transform="matrix(0.275378,0,0,0.275378,101.853,456.758)">
                             <G id="chemin" transform="matrix(0.691754,0,0,0.691754,-210.641,-1920.55)" fill="none"
-                               strokeWidth="7">
+                               strokeWidth="4">
                                 <G class="PathLevel2" stroke="rgb(235,71,57)">
                                     <G transform="matrix(-3.66765,-0.00131737,-0.00199548,5.55556,2607.31,5347.84)">
                                         <Path
@@ -172,13 +170,13 @@ class CarteMenuContent extends React.Component {
                                         rx="48.548"
                                         ry="48.549"
                                         stroke="rgb(235,71,57)"
-                                        strokeWidth="7"
+                                        strokeWidth="4"
                                         strokeDasharray="11.56,8.67"
                                         fill="none"
                                     />
                                 </G>
                             </G>
-                            <G id="cercles" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)" strokeWidth="7"
+                            <G id="cercles" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)" strokeWidth="4"
                                fill="rgb(253,250,234)">
                                 <G class="PathLevel1" stroke="rgb(235,71,57)">
                                     <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
@@ -453,6 +451,50 @@ class CarteMenuContent extends React.Component {
                                     </G>
                                 </G>
                             </G>
+                            <G id="chateaux">
+                                <Image
+                                    id="grandGousier"
+                                    x="5%"
+                                    y="10%"
+                                    width="30%"
+                                    height="30%"
+                                    href={require('../../Assets/Images/Menu/chateauNB.png')}
+                                />
+                                <Image
+                                    id="beauce"
+                                    x="37.5%"
+                                    y="12%"
+                                    width="20%"
+                                    height="20%"
+                                    href={require('../../Assets/Images/Menu/chateauNB.png')}
+                                />
+                                <Image
+                                    id="paris"
+                                    x="64%"
+                                    y="22%"
+                                    width="20%"
+                                    height="20%"
+                                    href={require('../../Assets/Images/Menu/chateauNB.png')}
+                                />
+                                <Image
+                                    id="picrochole"
+                                    x="11%"
+                                    y="-31%"
+                                    width="20%"
+                                    height="20%"
+                                    href={require('../../Assets/Images/Menu/chateauNB.png')}
+                                    opacity="0.5"
+                                />
+                                <Image
+                                    id="theleme"
+                                    x="55%"
+                                    y="-14%"
+                                    width="37%"
+                                    height="37%"
+                                    href={require('../../Assets/Images/Menu/chateauNB.png')}
+                                    opacity="0.5"
+                                />
+                            </G>
                         </G>
                     </G>
                 </Svg>
@@ -491,8 +533,6 @@ class CarteMenuContent extends React.Component {
     }
 }
 
-
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -506,7 +546,7 @@ const styles = StyleSheet.create({
     },
     letters: {
         color: "#fd5641",
-        fontSize: 34,
+        fontSize: 22,
         fontFamily: "AGaramondPro-Bold"
     },
     dicoMenu: {
