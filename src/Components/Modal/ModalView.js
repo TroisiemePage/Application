@@ -64,8 +64,8 @@ export default class ModalView extends Component {
                 <Animated.View
                     style={{
                         position: "absolute",
-                        bottom: 25,
-                        right: 25,
+                        bottom: 20,
+                        right: 20,
                         backgroundColor: "transparent",
                         width: this.state.animatedValue.interpolate({
                             inputRange: [0, 1],
@@ -108,22 +108,21 @@ export default class ModalView extends Component {
                 <TouchableWithoutFeedback onPress={() => this.toggleModal()}>
                     <Animated.Image
                         style={{
-                            height: this.state.animatedValue.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [40, 50]
-                            }),
-                            width: this.state.animatedValue.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [40, 50]
-                            }),
+                            height: 40,
+                            width: 40,
                             position: "absolute",
                             bottom: 0,
                             right: 0,
                             transform: [{
                                 rotate: this.state.animatedValue.interpolate({
                                     inputRange: [0, 1],
-                                    outputRange: ['0deg', '45deg']
-                                })
+                                    outputRange: ['0deg', '45deg'],
+                                    extrapolate: 'clamp'
+                                }),
+                                /*scale: this.state.animatedValue.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: [1, 1.2]
+                                })*/
                             }]
                         }}
                         source={require('../../Assets/Images/Elements/INFO.png')}
