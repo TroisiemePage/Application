@@ -8,30 +8,28 @@ const styles = {
     container: {
         flex: 1,
         backgroundColor: '#FDFAEA',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     buttonBack: {
         position: "absolute",
         top: 20,
         left: 20,
         flex: 1,
-        flexDirection: "row",
-        alignItems: 'center',
+    },
+    listDico: {
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: 'flex-end',
+        width: 70,
+        padding: 20,
     },
     letters: {
         color: "#fd5641",
         fontSize: 22,
-        fontFamily: "AGaramondPro-Bold"
+        fontFamily: "AGaramondPro-Bold",
     },
-    listDico: {
-        position: "absolute",
-        right: 0,
-        top: 0,
-        bottom: 0,
-        width: 70,
-        flex: 1,
-        flexDirection: "column",
-        padding: 20
-    }
 };
 
 class CarteMenuContent extends React.Component {
@@ -45,39 +43,37 @@ class CarteMenuContent extends React.Component {
                     />
                 </View>
                 <CarteSVG/>
-                <View>
-                    {/*charcode from 65 to 90 ?*/}
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.openDrawer()}>
-                        <View style={styles.listDico}>
-                            <Text style={styles.letters}>A</Text>
-                            <Text style={styles.letters}>B</Text>
-                            <Text style={styles.letters}>C</Text>
-                            <Text style={styles.letters}>D</Text>
-                            <Text style={styles.letters}>E</Text>
-                            <Text style={styles.letters}>F</Text>
-                            <Text style={styles.letters}>G</Text>
-                            <Text style={styles.letters}>H</Text>
-                            <Text style={styles.letters}>I</Text>
-                            <Text style={styles.letters}>J</Text>
-                            <Text style={styles.letters}>K</Text>
-                            <Text style={styles.letters}>L</Text>
-                            <Text style={styles.letters}>M</Text>
-                            <Text style={styles.letters}>N</Text>
-                            <Text style={styles.letters}>O</Text>
-                            <Text style={styles.letters}>P</Text>
-                            <Text style={styles.letters}>Q</Text>
-                            <Text style={styles.letters}>R</Text>
-                            <Text style={styles.letters}>S</Text>
-                            <Text style={styles.letters}>T</Text>
-                            <Text style={styles.letters}>U</Text>
-                            <Text style={styles.letters}>V</Text>
-                            <Text style={styles.letters}>W</Text>
-                            <Text style={styles.letters}>X</Text>
-                            <Text style={styles.letters}>Y</Text>
-                            <Text style={styles.letters}>Z</Text>
-                        </View>
-                    </TouchableWithoutFeedback>
-                </View>
+                {/*charcode from 65 to 90 ?*/}
+                <TouchableWithoutFeedback onPress={() => this.props.navigation.openDrawer()}>
+                    <View style={styles.listDico}>
+                        <Text style={styles.letters}>A</Text>
+                        <Text style={styles.letters}>B</Text>
+                        <Text style={styles.letters}>C</Text>
+                        <Text style={styles.letters}>D</Text>
+                        <Text style={styles.letters}>E</Text>
+                        <Text style={styles.letters}>F</Text>
+                        <Text style={styles.letters}>G</Text>
+                        <Text style={styles.letters}>H</Text>
+                        <Text style={styles.letters}>I</Text>
+                        <Text style={styles.letters}>J</Text>
+                        <Text style={styles.letters}>K</Text>
+                        <Text style={styles.letters}>L</Text>
+                        <Text style={styles.letters}>M</Text>
+                        <Text style={styles.letters}>N</Text>
+                        <Text style={styles.letters}>O</Text>
+                        <Text style={styles.letters}>P</Text>
+                        <Text style={styles.letters}>Q</Text>
+                        <Text style={styles.letters}>R</Text>
+                        <Text style={styles.letters}>S</Text>
+                        <Text style={styles.letters}>T</Text>
+                        <Text style={styles.letters}>U</Text>
+                        <Text style={styles.letters}>V</Text>
+                        <Text style={styles.letters}>W</Text>
+                        <Text style={styles.letters}>X</Text>
+                        <Text style={styles.letters}>Y</Text>
+                        <Text style={styles.letters}>Z</Text>
+                    </View>
+                </TouchableWithoutFeedback>
             </View>
         );
     }
