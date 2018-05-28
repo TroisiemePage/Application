@@ -159,9 +159,8 @@ export default class GameChapterOneLetterA extends Component {
 
                 <View style={styles.title}>
                     <Text style={styles.text}>
-                        Tu a réussi
+                        Tu as réussi
                     </Text>
-
                 </View>
             );
             setTimeout(() => this.props.navigation.dispatch({ type: DrawerActions.CLOSE_DRAWER }), 1000);
