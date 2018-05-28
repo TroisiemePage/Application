@@ -11,6 +11,7 @@ import GameChapterOneLetterA from "./GameChapterOne";
 import {createDrawerNavigator} from "react-navigation";
 import {Overlay, PageRouter} from "../../PageRouter/PageRouter";
 import ModalView from '../../Modal/ModalView';
+import Manicule from '../../Manicule/Manicule';
 
 const {height, width} = Dimensions.get('window');
 const styles = {
@@ -130,6 +131,10 @@ class Page1Content extends React.Component {
                     lumière et en couleur les textes copiés. Encrer à la plume, habiller d’or une
                     lettrine : un vrai travail d’orfèvre !
                 </ModalView>
+                <Manicule
+                    x={840}
+                    y={620}
+                />
             </View>
             </Overlay>
         );
