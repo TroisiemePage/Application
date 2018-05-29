@@ -88,7 +88,7 @@ export const CarteMenu = createDrawerNavigator({
     drawerBackgroundColor: '#FDFBEF',
     initialRouteName: 'CarteMenu',
     drawerWidth: 300,
-    contentComponent: WordList
+    contentComponent: View
 });
 
 CarteMenu.navigationOptions = {

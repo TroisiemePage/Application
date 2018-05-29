@@ -2,14 +2,13 @@ import * as React from "react";
 import {PageDetector} from "../../Modules/PageDetector";
 import {Page1} from "../Pages/Page1/Page1";
 import {Page2} from "../Pages/Page2";
-import {observer} from "mobx-react";
 import {Dimensions, Image, TouchableOpacity, View} from "react-native";
 import menuPicto from "../../Assets/Images/Elements/menu.png";
-import {createNavigator, createStackNavigator} from "react-navigation";
-import CarteMenu from "../Menu/CarteMenu";
+import {createStackNavigator} from "react-navigation";
 const {height, width} = Dimensions.get('window');
 
 export class Overlay extends React.Component {
+
     render() {
         return (
             <View style={{
@@ -73,14 +72,14 @@ export const PageRouter = createStackNavigator({
         screen: Page2
     },
 }, {
-    initialRouteName: 'Page1',
+    initialRouteName: 'Page2',
 });
 PageRouter.navigationOptions = {
     header: null
 };
-pageDetector.onPageChange((currentPage) => {
+/*pageDetector.onPageChange((currentPage) => {
     let pageNumber = 2;
     let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pageNumber ? currentPage : (pageNumber - 1)) : 0);
-   // PageRouter.navigation.navigate("Page" + currentPageIntervalized);
+    PageRouter.navigation.navigate("Page" + currentPageIntervalized);
     console.log("PAGE ROUTER", PageRouter);
-});
+});*/
