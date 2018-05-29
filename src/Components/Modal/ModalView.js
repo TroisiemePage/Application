@@ -30,7 +30,7 @@ export default class ModalView extends Component {
                 toValue: 0,
                 duration: 200,
                 delay: 0,
-                easing: Easing.inOut(Easing.ease)
+                easing: Easing.bezier(0,.53,.47,1),
             }).start(() => {
                 this.isOpen = !this.isOpen;
                 this.forceUpdate();
@@ -40,7 +40,7 @@ export default class ModalView extends Component {
                 toValue: 1,
                 duration: 200,
                 delay: 0,
-                easing: Easing.inOut(Easing.ease)
+                easing: Easing.bezier(0,.53,.47,1),
             }).start();
             this.isOpen = !this.isOpen;
             this.forceUpdate();
@@ -54,10 +54,10 @@ export default class ModalView extends Component {
     render() {
         return (
             <View style={{
-                width: this.isOpen ? 300 : 40,
-                height: this.isOpen ? 270 : 40,
-                left: this.props.x + (this.isOpen ? 0 : 260),
-                top: this.props.y + (this.isOpen ? 0 : 230),
+                width: this.isOpen ? 270 : 40,
+                height: this.isOpen ? 240 : 40,
+                left: this.props.x + (this.isOpen ? 0 : 230),
+                top: this.props.y + (this.isOpen ? 0 : 200),
                 position: 'absolute',
                 overflow: this.isOpen ? "visible" : "hidden",
             }}>
@@ -67,8 +67,14 @@ export default class ModalView extends Component {
                         bottom: 20,
                         right: 20,
                         backgroundColor: "transparent",
-                        width: 280,
-                        height: 250,
+                        width: this.state.animatedValue.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [220, 250]
+                        }),
+                        height: this.state.animatedValue.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [200, 220]
+                        }),
                         shadowOffset: {width: 0, height: 0},
                         shadowColor: 'black',
                         shadowOpacity: 0.15,
@@ -77,7 +83,7 @@ export default class ModalView extends Component {
                         opacity: this.state.animatedValue
                     }}
                 >
-                    <View style={{height: 250, position: 'relative', overflow: 'hidden'}}>
+                    <View style={{height: 220, position: 'relative', overflow: 'hidden'}}>
                         <ScrollView
                             ref={ref => (this.scrollViewRef = ref)}
                             onScroll={this.handleOnScroll}
@@ -110,13 +116,13 @@ export default class ModalView extends Component {
                             transform: [{
                                 rotate: this.state.animatedValue.interpolate({
                                     inputRange: [0, 1],
-                                    outputRange: ['0deg', '45deg']
-                                })
-                            }, {
-                                scale: this.state.animatedValue.interpolate({
+                                    outputRange: ['0deg', '45deg'],
+                                    extrapolate: 'clamp'
+                                }),
+                                /*scale: this.state.animatedValue.interpolate({
                                     inputRange: [0, 1],
-                                    outputRange: [0.7, 1]
-                                })
+                                    outputRange: [1, 1.2]
+                                })*/
                             }]
                         }}
                         source={require('../../Assets/Images/Elements/INFO.png')}

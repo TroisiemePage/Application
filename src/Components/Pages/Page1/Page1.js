@@ -11,6 +11,7 @@ import GameChapterOneLetterA from "./GameChapterOne";
 import {createDrawerNavigator} from "react-navigation";
 import {Overlay} from "../../PageRouter/PageRouter";
 import ModalView from '../../Modal/ModalView';
+import Manicule from '../../Manicule/Manicule';
 
 const {height, width} = Dimensions.get('window');
 const styles = {
@@ -100,8 +101,8 @@ class Page1Content extends React.Component {
                     }}
                 />
                 <ModalView
-                    x={420}
-                    y={20}
+                    x={530}
+                    y={60}
                     title="ABBAYE ROYALE DE FONTEVRAUD"
                 >
                     Sacrée Abbaye ! Dès sa création en 1101, son fondateur, Robert d’Abrissel,
@@ -117,8 +118,8 @@ class Page1Content extends React.Component {
                     soit fermée et 1975 pour que tu puisses enfin la visiter !
                 </ModalView>
                 <ModalView
-                    x={320}
-                    y={310}
+                    x={420}
+                    y={350}
                     title="MOINES COPISTES"
                 >
                     Au 12e siècle, l’Église a encore {"\n"}le monopole de la connaissance et du savoir.
@@ -130,6 +131,10 @@ class Page1Content extends React.Component {
                     lumière et en couleur les textes copiés. Encrer à la plume, habiller d’or une
                     lettrine : un vrai travail d’orfèvre !
                 </ModalView>
+                <Manicule
+                    x={840}
+                    y={620}
+                />
             </View>
             </Overlay>
         );

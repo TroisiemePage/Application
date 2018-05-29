@@ -14,20 +14,20 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
     },
     title: {
-        fontSize: 19,
-        marginVertical: 5,
+        fontSize: 18,
+        marginVertical: 0,
         marginHorizontal: 10,
         textAlign: "center",
-        fontWeight: "bold",
-        fontFamily: "GothamRounded-Book",
-        color: "#050A3A"
+        fontWeight: "600",
+        color: "#0E0637",
+        fontFamily: "Gotham Rounded",
     },
     text: {
-        fontSize: 15,
-        marginVertical: 10,
+        fontSize: 16,
+        marginVertical: 15,
         marginHorizontal: 10,
-        lineHeight: 17,
-        fontFamily: "GothamRounded-Light",
+        lineHeight: 18,
+        fontFamily: "Gotham Rounded",
         color: "#050A3A"
     },
 });
