@@ -54,10 +54,10 @@ export default class ModalView extends Component {
     render() {
         return (
             <View style={{
-                width: this.isOpen ? 320 : 40,
-                height: this.isOpen ? 320 : 40,
-                left: this.props.x + (this.isOpen ? 0 : 280),
-                top: this.props.y + (this.isOpen ? 0 : 280),
+                width: this.isOpen ? 300 : 40,
+                height: this.isOpen ? 270 : 40,
+                left: this.props.x + (this.isOpen ? 0 : 260),
+                top: this.props.y + (this.isOpen ? 0 : 230),
                 position: 'absolute',
                 overflow: this.isOpen ? "visible" : "hidden",
             }}>
@@ -67,8 +67,8 @@ export default class ModalView extends Component {
                         bottom: 20,
                         right: 20,
                         backgroundColor: "transparent",
-                        width: 300,
-                        height: 300,
+                        width: 280,
+                        height: 250,
                         shadowOffset: {width: 0, height: 0},
                         shadowColor: 'black',
                         shadowOpacity: 0.15,
@@ -77,7 +77,7 @@ export default class ModalView extends Component {
                         opacity: this.state.animatedValue
                     }}
                 >
-                    <View style={{height: 300, position: 'relative', overflow: 'hidden'}}>
+                    <View style={{height: 250, position: 'relative', overflow: 'hidden'}}>
                         <ScrollView
                             ref={ref => (this.scrollViewRef = ref)}
                             onScroll={this.handleOnScroll}
@@ -90,7 +90,7 @@ export default class ModalView extends Component {
                         </ScrollView>
                         <Svg style={styles.gradientHide}>
                             <Defs>
-                                <LinearGradient id="grad" x1="0" y1="0" x2="0" y2="40">
+                                <LinearGradient id="grad" x1="0" y1="0" x2="0" y2="50">
                                     <Stop offset="0" stopColor="#FEFBED" stopOpacity="0"/>
                                     <Stop offset="1" stopColor="#FEFBED" stopOpacity="1"/>
                                 </LinearGradient>
@@ -111,6 +111,11 @@ export default class ModalView extends Component {
                                 rotate: this.state.animatedValue.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ['0deg', '45deg']
+                                })
+                            }, {
+                                scale: this.state.animatedValue.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: [0.7, 1]
                                 })
                             }]
                         }}
