@@ -12,12 +12,22 @@ export default class Manicule extends Component {
     }
 
     animateManicule() {
-        Animated.timing(this.state.moveManicule, {
-            toValue: 1,
-            duration: 1000,
-            delay: 0,
-            easing: Easing.bezier(0,.53,.47,1),
-        }).start();
+        Animated.loop(
+            Animated.sequence([
+                Animated.timing(this.state.moveManicule, {
+                    toValue: 1,
+                    duration: 1000,
+                    delay: 0,
+                    easing: Easing.bezier(0,.53,.47,1),
+                }),
+                Animated.timing(this.state.moveManicule, {
+                    toValue: 0,
+                    duration: 1000,
+                    delay: 0,
+                    easing: Easing.bezier(0,.53,.47,1),
+                })
+            ])
+        ).start();
     }
 
     render() {
