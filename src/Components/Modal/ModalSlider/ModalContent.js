@@ -42,7 +42,7 @@ const styles = {
 export default props => (
     <View>
         <View style={styles.close}>
-            <TouchableOpacity onPress={this.setModalVisibility}>
+            <TouchableOpacity onPress={props.closeEvent}>
                 <Image
                     style={styles.closeButton}
                     source={require('../../../Assets/Images/Elements/close_button.png')}

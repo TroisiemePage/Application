@@ -66,8 +66,11 @@ export default class ModalView extends Component {
                     backdropColor={"black"}
                 >
                     <View style={styles.modalContent}>
-                        <ModalContent title={this.props.title}
-                                      image={require('../../../Assets/Images/Menu/chateauNB.png')}>
+                        <ModalContent
+                            closeEvent={this.setModalVisibility}
+                            title={this.props.title}
+                            image={require('../../../Assets/Images/Menu/chateauNB.png')}
+                        >
                             {this.props.children}
                         </ModalContent>
                     </View>
