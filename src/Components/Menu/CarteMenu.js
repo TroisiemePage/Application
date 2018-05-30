@@ -2,6 +2,7 @@ import React from 'react';
 import {Button, View, Text, TouchableWithoutFeedback} from 'react-native';
 import {WordList} from "../Dictionnary/WordList";
 import CarteSVG from "./CarteSVG";
+import ModalView from '../Modal/ModalSlider/ModalView';
 import {createDrawerNavigator} from "react-navigation";
 
 const styles = {
@@ -16,13 +17,11 @@ const styles = {
         position: "absolute",
         top: 20,
         left: 20,
-        flex: 1,
     },
     listDico: {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: 'flex-end',
-        width: 70,
         padding: 20,
     },
     letters: {
@@ -42,6 +41,9 @@ class CarteMenuContent extends React.Component {
                         title={"Retour"}
                     />
                 </View>
+                <ModalView title="Paris">
+                    Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500.
+                </ModalView>
                 <CarteSVG/>
                 {/*charcode from 65 to 90 ?*/}
                 <TouchableWithoutFeedback onPress={() => this.props.navigation.openDrawer()}>

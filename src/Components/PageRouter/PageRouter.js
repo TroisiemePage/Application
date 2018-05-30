@@ -63,7 +63,6 @@ export class Overlay extends React.Component {
 
 const pageDetector = new PageDetector();
 
-
 export const PageRouter = createStackNavigator({
     Page1: {
         screen: Page1
@@ -72,7 +71,7 @@ export const PageRouter = createStackNavigator({
         screen: Page2
     },
 }, {
-    initialRouteName: 'Page2',
+    initialRouteName: 'Page1',
 });
 PageRouter.navigationOptions = {
     header: null

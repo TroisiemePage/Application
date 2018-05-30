@@ -125,7 +125,7 @@ export default class ModalView extends Component {
                                 })*/
                             }]
                         }}
-                        source={require('../../Assets/Images/Elements/INFO.png')}
+                        source={require('../../../Assets/Images/Elements/INFO.png')}
                     />
                 </TouchableWithoutFeedback>
             </View>
