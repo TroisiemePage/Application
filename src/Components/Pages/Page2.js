@@ -5,7 +5,7 @@ import {Page1} from "./Page1/Page1";
 import {Overlay} from "../PageRouter/PageRouter";
 
 const {height, width} = Dimensions.get('window');
-const styles = StyleSheet.create({
+const styles ={
     container: {
         flex: 1,
         flexDirection: "row",
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         height: height,
         alignSelf: "flex-end"
     }
-});
+};
 
 export class Page2 extends React.Component {
     render() {

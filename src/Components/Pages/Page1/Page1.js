@@ -10,7 +10,7 @@ import {LetterSelector} from "./LetterSelector";
 import GameChapterOneLetterA from "./GameChapterOne";
 import {createDrawerNavigator} from "react-navigation";
 import {Overlay} from "../../PageRouter/PageRouter";
-import ModalView from '../../Modal/ModalView';
+import ModalView from '../../Modal/ModalPopup/ModalView';
 import Manicule from '../../Manicule/Manicule';
 
 const {height, width} = Dimensions.get('window');

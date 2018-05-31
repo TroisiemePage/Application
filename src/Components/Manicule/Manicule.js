@@ -7,7 +7,7 @@ export default class Manicule extends Component {
         moveManicule: new Animated.Value(0),
     };
 
-    componentDidMount () {
+    componentDidMount() {
         this.animateManicule();
     }
 
@@ -37,7 +37,7 @@ export default class Manicule extends Component {
                     left: this.props.x,
                     top: this.state.moveManicule.interpolate({
                         inputRange: [0, 1],
-                        outputRange: [this.props.y , this.props.y - 50]
+                        outputRange: [this.props.y , this.props.y - 10]
                     }),
                     flex: 1,
                     position: 'absolute',

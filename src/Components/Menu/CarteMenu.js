@@ -2,6 +2,8 @@ import React from 'react';
 import {Button, View, Text, TouchableWithoutFeedback} from 'react-native';
 import {WordList} from "../Dictionnary/WordList";
 import CarteSVG from "./CarteSVG";
+import ModalView from '../Modal/ModalSlider/ModalView';
+import villes from "./villes.js";
 import {createDrawerNavigator} from "react-navigation";
 
 const styles = {
@@ -16,13 +18,11 @@ const styles = {
         position: "absolute",
         top: 20,
         left: 20,
-        flex: 1,
     },
     listDico: {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: 'flex-end',
-        width: 70,
         padding: 20,
     },
     letters: {
@@ -31,6 +31,7 @@ const styles = {
         fontFamily: "AGaramondPro-Bold",
     },
 };
+
 
 class CarteMenuContent extends React.Component {
     render() {
@@ -42,9 +43,11 @@ class CarteMenuContent extends React.Component {
                         title={"Retour"}
                     />
                 </View>
+                <ModalView title={villes.paris.title}>
+                    {villes.paris.description}
+                </ModalView>
                 <CarteSVG/>
-                {/*charcode from 65 to 90 ?*/}
-                <TouchableWithoutFeedback onPress={() => this.props.navigation.openDrawer()}>
+                <TouchableWithoutFeedback >
                     <View style={styles.listDico}>
                         <Text style={styles.letters}>A</Text>
                         <Text style={styles.letters}>B</Text>
@@ -78,6 +81,7 @@ class CarteMenuContent extends React.Component {
         );
     }
 }
+
 
 export const CarteMenu = createDrawerNavigator({
     CarteMenu: {

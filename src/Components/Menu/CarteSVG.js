@@ -446,6 +446,7 @@ export default class CarteSVG extends React.Component {
                                 width="30%"
                                 height="30%"
                                 href={require('../../Assets/Images/Menu/chateauNB.png')}
+                                onPress={() => console.log("pressed on grandGousier ! ")}
                             />
                             <Image
                                 id="beauce"

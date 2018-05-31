@@ -74,7 +74,6 @@ export class Overlay extends React.Component {
 }
 
 
-
 export const PageRouter = createStackNavigator({
     Page1: {
         screen: Page1
