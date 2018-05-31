@@ -150,9 +150,6 @@ export default class GameChapterOneLetterA extends Component {
     }
 
     render() {
-
-        //how to get which letter is selected
-        console.log(this.props.letterSelector);
         let greetings;
         if (this.didSucceed) {
             greetings = (

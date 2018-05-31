@@ -101,8 +101,8 @@ class Page1Content extends React.Component {
                     }}
                 />
                 <ModalView
-                    x={530}
-                    y={60}
+                    x={480}
+                    y={30}
                     title="ABBAYE ROYALE DE FONTEVRAUD"
                 >
                     Sacrée Abbaye ! Dès sa création en 1101, son fondateur, Robert d’Abrissel,
@@ -118,8 +118,8 @@ class Page1Content extends React.Component {
                     soit fermée et 1975 pour que tu puisses enfin la visiter !
                 </ModalView>
                 <ModalView
-                    x={420}
-                    y={350}
+                    x={390}
+                    y={250}
                     title="MOINES COPISTES"
                 >
                     Au 12e siècle, l’Église a encore {"\n"}le monopole de la connaissance et du savoir.

@@ -1,5 +1,6 @@
 import React from "react";
-import {ListView, Text} from "react-native";
+import {ListView, Text, View} from "react-native";
+import words from "../../Stores/words.json";
 
 export class WordList extends React.Component {
 
@@ -18,23 +19,23 @@ export class WordList extends React.Component {
             const currentChar = alphabet[sectionId];
 
             // Get users whose first name starts with the current letter
-            const users = data.filter((user) => user.name.first.toUpperCase().indexOf(currentChar) === 0);
+            const words = data.filter((word) => word.toUpperCase().indexOf(currentChar) === 0);
 
             // If there are any users who have a first name starting with the current letter then we'll
             // add a new section otherwise we just skip over it
-            if (users.length > 0) {
+            if (words.length > 0) {
                 // Add a section id to our array so the listview knows that we've got a new section
                 sectionIds.push(sectionId);
 
                 // Store any data we would want to display in the section header. In our case we want to show
                 // the current character
-                dataBlob[sectionId] = { character: currentChar };
+                dataBlob[sectionId] = currentChar;
 
                 // Setup a new array that we can store the row ids for this section
                 rowIds.push([]);
 
                 // Loop over the valid users for this section
-                for (let i = 0; i < users.length; i++) {
+                for (let i = 0; i < words.length; i++) {
                     // Create a unique row id for the data blob that the listview can use for reference
                     const rowId = `${sectionId}:${i}`;
 
@@ -43,12 +44,12 @@ export class WordList extends React.Component {
                     rowIds[rowIds.length - 1].push(rowId);
 
                     // Store the data we care about for this row
-                    dataBlob[rowId] = users[i];
+                    dataBlob[rowId] = words[i];
                 }
             }
         }
 
-        return { dataBlob, sectionIds, rowIds };
+        return {dataBlob, sectionIds, rowIds};
     }
 
     constructor(props) {
@@ -63,8 +64,8 @@ export class WordList extends React.Component {
             getSectionData,
             getRowData,
         });
-
-        const {dataBlob, sectionIds, rowIds} = this.formatData(demoData);
+        console.log(words);
+        const {dataBlob, sectionIds, rowIds} = this.formatData(words.map((word) => word.word));
         this.state = {
             dataSource: ds.cloneWithRowsAndSections(dataBlob, sectionIds, rowIds),
         };
@@ -73,21 +74,33 @@ export class WordList extends React.Component {
     render() {
         return (
             <ListView
+                style={{
+                    padding: 20,
+                    backgroundColor: "#fdfaea"
+                }}
                 dataSource={this.state.dataSource}
                 renderRow={(data) => {
                     return (
-                        <Text style={{
-                            fontSize: 25,
-                            paddingLeft: 40
+                        <Text
+                            onPress={() => console.log(data)}
+                            style={{
+                            fontSize: 20,
+                            fontFamily: "Gotham Rounded",
+                            paddingTop: 5,
+                            paddingBottom: 5
                         }}>{data}</Text>
                     );
                 }}
-                renderSectionHeader={(sectionData) => <Text style={{
-                    fontSize: 35,
-                    fontFamily: "Respira-Black",
-                    color: "#fd5641",
-                    width: 40
-                }}>Header</Text>}
+                renderSectionHeader={(sectionData) => (
+                    <View style={{backgroundColor: "#fdfaea"}}>
+                        <Text style={{
+                            fontSize: 35,
+                            fontFamily: "AGaramondPro-Bold",
+                            color: "#fd5641",
+                            marginTop: 20
+                        }}>{sectionData}</Text>
+                    </View>)
+                }
             />
         )
     }
