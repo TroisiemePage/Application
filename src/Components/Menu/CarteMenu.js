@@ -47,8 +47,7 @@ class CarteMenuContent extends React.Component {
                     {villes.paris.description}
                 </ModalView>
                 <CarteSVG/>
-                {/*charcode from 65 to 90 ?*/}
-                <TouchableWithoutFeedback onPress={() => this.props.navigation.openDrawer()}>
+                <TouchableWithoutFeedback >
                     <View style={styles.listDico}>
                         <Text style={styles.letters}>A</Text>
                         <Text style={styles.letters}>B</Text>
@@ -83,16 +82,11 @@ class CarteMenuContent extends React.Component {
     }
 }
 
+
 export const CarteMenu = createDrawerNavigator({
     CarteMenu: {
         screen: CarteMenuContent
     }
-}, {
-    drawerPosition: 'right',
-    drawerBackgroundColor: '#FDFBEF',
-    initialRouteName: 'CarteMenu',
-    drawerWidth: 300,
-    contentComponent: View
 });
 
 CarteMenu.navigationOptions = {
