@@ -39,14 +39,14 @@ export default class ModalView extends Component {
         modalVisible: false,
     };
 
-    setModalVisibility = () => {
+    toggleModalVisibility() {
         this.setState({modalVisible: !this.state.modalVisible});
-    };
+    }
 
     render() {
         return (
             <View style={styles.container}>
-                <TouchableOpacity onPress={this.setModalVisibility}>
+                <TouchableOpacity onPress={() => this.toggleModalVisibility()}>
                     <View>
                         <Text>hello click here to show modal</Text>
                     </View>

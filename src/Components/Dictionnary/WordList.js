@@ -82,7 +82,7 @@ export class WordList extends React.Component {
                 renderRow={(data) => {
                     return (
                         <Text
-                            onPress={() => console.log(data)}
+                            onPress={() => this.navigation.navigate("dictionnary", {word: data})}
                             style={{
                             fontSize: 20,
                             fontFamily: "Gotham Rounded",

@@ -12,13 +12,18 @@ export class Overlay extends React.Component {
 
     pageDetector = new PageDetector();
 
-    componentDidMount() {
+    componentWillFocus() {
         this.pageDetector.onPageChange((currentPage) => {
             let pageNumber = 2;
             let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pageNumber ? currentPage : (pageNumber - 1)) : 0);
             this.props.navigation.navigate("Page" + (currentPageIntervalized + 1));
             console.log("PAGE ROUTER", currentPageIntervalized);
         });
+    }
+
+    componentDidBlur() {
+        console.log("unmout");
+        this.pageDetector.onPageChange(() => {});
     }
 
     render() {
@@ -51,9 +56,7 @@ export class Overlay extends React.Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     activeOpacity={0.5}
-                    onPress={() => {
-                        this.props.navigation.navigate('Dictionnary')
-                    }}
+                    onPress={() => {}}
                     style={{
                         position: "absolute",
                         top: 20,
