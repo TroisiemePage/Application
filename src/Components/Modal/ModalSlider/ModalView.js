@@ -43,10 +43,17 @@ export default class ModalView extends Component {
         this.setState({modalVisible: !this.state.modalVisible});
     }
 
+    hideModal() {
+        this.setState({modalVisible: false});
+    }
+    showModal() {
+        this.setState({modalVisible: true});
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => this.toggleModalVisibility()}>
+                <TouchableOpacity onPress={() => this.showModal()}>
                     <View>
                         <Text>hello click here to show modal</Text>
                     </View>
@@ -62,12 +69,12 @@ export default class ModalView extends Component {
                     animationOutTiming={600}
                     backdropTransitionInTiming={600}
                     backdropTransitionOutTiming={600}
-                    onBackdropPress={() => this.toggleModalVisibility()}
+                    onBackdropPress={() => this.hideModal()}
                     backdropColor={"black"}
                 >
                     <View style={styles.modalContent}>
                         <ModalContent
-                            closeEvent={() => this.toggleModalVisibility()}
+                            closeEvent={() => this.hideModal()}
                             title={this.props.title}
                             image={require('../../../Assets/Images/Menu/chateauNB.png')}
                         >
