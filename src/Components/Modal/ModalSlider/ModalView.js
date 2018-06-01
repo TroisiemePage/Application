@@ -62,12 +62,12 @@ export default class ModalView extends Component {
                     animationOutTiming={600}
                     backdropTransitionInTiming={600}
                     backdropTransitionOutTiming={600}
-                    onBackdropPress={this.setModalVisibility}
+                    onBackdropPress={() => this.toggleModalVisibility()}
                     backdropColor={"black"}
                 >
                     <View style={styles.modalContent}>
                         <ModalContent
-                            closeEvent={this.setModalVisibility}
+                            closeEvent={() => this.toggleModalVisibility()}
                             title={this.props.title}
                             image={require('../../../Assets/Images/Menu/chateauNB.png')}
                         >
