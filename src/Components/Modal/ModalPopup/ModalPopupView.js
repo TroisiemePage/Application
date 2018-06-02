@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, TouchableWithoutFeedback, ScrollView, Animated, Easing} from 'react-native';
 import Svg, {Rect, LinearGradient, Defs, Stop} from 'react-native-svg';
-import ModalContent from "./ModalContent";
+import ModalContent from "./ModalPopupContent";
 
 const styles = {
     scrollView: {
