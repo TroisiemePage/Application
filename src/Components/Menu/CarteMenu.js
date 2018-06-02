@@ -47,7 +47,7 @@ class CarteMenuContent extends React.Component {
                     {villes.paris.description}
                 </ModalView>
                 <CarteSVG/>
-                <TouchableWithoutFeedback >
+                <TouchableWithoutFeedback  >
                     <View style={styles.listDico}>
                         <Text style={styles.letters}>A</Text>
                         <Text style={styles.letters}>B</Text>
@@ -92,7 +92,9 @@ export const CarteMenu = createDrawerNavigator({
     drawerBackgroundColor: '#FDFBEF',
     initialRouteName: 'CarteMenu',
     drawerWidth: 300,
-    contentComponent: WordList
+    contentComponent: ({ navigation }) => (
+        <WordList navigation={navigation} />
+    )
 });
 
 CarteMenu.navigationOptions = {

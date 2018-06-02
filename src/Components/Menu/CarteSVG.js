@@ -400,7 +400,7 @@ export default class CarteSVG extends React.Component {
                             <G class="PathLevel10" fill="rgb(102,102,102)">
                                 <G transform="matrix(1,0,0,1,-37.0962,-92.6021)">
                                     <G transform="matrix(1,0,0,1,461.84,1562.36)">
-                                        <Text>1</Text>
+                                        <SVGText>1</SVGText>
                                     </G>
                                     <G transform="matrix(1,0,0,1,472.298,1562.36)">
                                         <SVGText>0</SVGText>
