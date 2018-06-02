@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, TouchableOpacity, Dimensions} from 'react-native';
-import ModalContent from "./ModalContent";
+import ModalContent from "./ModalSliderContent";
 
 import Modal from "react-native-modal";
 
@@ -46,6 +46,7 @@ export default class ModalView extends Component {
     hideModal() {
         this.setState({modalVisible: false});
     }
+
     showModal() {
         this.setState({modalVisible: true});
     }
