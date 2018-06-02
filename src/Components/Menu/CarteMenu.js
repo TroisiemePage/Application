@@ -1,10 +1,9 @@
 import React from 'react';
-import {Button, View, Text, TouchableWithoutFeedback} from 'react-native';
-import {WordList} from "../Dictionnary/WordList";
+import {Button, View, Text, TouchableWithoutFeedback, Image} from 'react-native';
+import WordList from "../Dictionnary/WordList";
 import CarteSVG from "./CarteSVG";
-import ModalView from '../Modal/ModalSlider/ModalView';
-import villes from "./villes.js";
-import {createDrawerNavigator} from "react-navigation";
+import {ModalSliderView} from '../Modal/ModalSlider/ModalSliderView';
+import {villes} from "./villes.js";
 
 const styles = {
     container: {
@@ -30,10 +29,35 @@ const styles = {
         fontSize: 22,
         fontFamily: "AGaramondPro-Bold",
     },
+    image: {
+        width: 151.9,
+        height: 238.14,
+        //resizeMode: "center",
+    },
+    title: {
+        fontSize: 20,
+        fontFamily: "Adobe Garamond Pro",
+        textAlign: "left",
+        fontWeight: "100",
+        color: "#0E0637",
+        marginTop: 40,
+    },
+    text: {
+        fontSize: 12,
+        fontFamily: "Gotham Rounded",
+        color: "#050A3A",
+        marginVertical: 20,
+    }
 };
 
 
-class CarteMenuContent extends React.Component {
+export class CarteMenu extends React.Component {
+
+    state = {
+        modalVisibleLeft: false,
+        modalVisibleRight: false,
+    };
+
     render() {
         return (
             <View style={styles.container}>
@@ -43,11 +67,30 @@ class CarteMenuContent extends React.Component {
                         title={"Retour"}
                     />
                 </View>
-                <ModalView title={villes.paris.title}>
-                    {villes.paris.description}
-                </ModalView>
-                <CarteSVG/>
-                <TouchableWithoutFeedback >
+
+                <ModalSliderView
+                    open={this.state.modalVisibleLeft}
+                    side="left"
+                >
+                    <View>
+                        <Image style={styles.image} source={require("../../Assets/Images/Menu/chateauNB.png")}/>
+                        <Text style={styles.title}>{villes.paris.title}</Text>
+                        <Text style={styles.text}>{villes.paris.description}</Text>
+                    </View>
+                </ModalSliderView>
+
+                <CarteSVG
+                    openModal={() => this.setState({modalVisibleLeft: true})}
+                />
+
+                <ModalSliderView
+                    open={this.state.modalVisibleRight}
+                    side="right"
+                >
+                    <WordList navigation={this.props.navigation} />
+                </ModalSliderView>
+
+                <TouchableWithoutFeedback onPress={() => this.setState({modalVisibleRight: true})} >
                     <View style={styles.listDico}>
                         <Text style={styles.letters}>A</Text>
                         <Text style={styles.letters}>B</Text>
@@ -81,19 +124,6 @@ class CarteMenuContent extends React.Component {
         );
     }
 }
-
-
-export const CarteMenu = createDrawerNavigator({
-    CarteMenu: {
-        screen: CarteMenuContent
-    }
-}, {
-    drawerPosition: 'right',
-    drawerBackgroundColor: '#FDFBEF',
-    initialRouteName: 'CarteMenu',
-    drawerWidth: 300,
-    contentComponent: WordList
-});
 
 CarteMenu.navigationOptions = {
     header: null

@@ -5,43 +5,38 @@ import ModalContent from "./ModalSliderContent";
 import Modal from "react-native-modal";
 
 const {height} = Dimensions.get('window');
-const styles = {
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    modal: {
-        flex: 1,
-        justifyContent: "center",
-        margin: 0,
-        shadowOffset: {width: 0, height: 0},
-        shadowColor: 'black',
-        shadowOpacity: 0.35,
-        shadowRadius: 20,
-        elevation: 3,
-    },
-    modalContent: {
-        backgroundColor: "#FDFBEF",
-        padding: 22,
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: 4,
-        borderColor: "rgba(0, 0, 0, 0.1)",
-        width: 270,
-        height: height,
-    },
-};
 
-export default class ModalView extends Component {
+export class ModalSliderView extends Component {
+
+    styles = {
+        container: {
+            flex: 1,
+            alignItems: this.props.side === "left" ? "flex-start" : "flex-end",
+            justifyContent: this.props.side === "left" ? "flex-start" : "flex-end",
+        },
+        modal: {
+            flex: 1,
+            alignItems: this.props.side === "left" ? "flex-start" : "flex-end",
+            margin: 0,
+            shadowOffset: {width: 0, height: 0},
+            shadowColor: 'black',
+            shadowOpacity: 0.35,
+            shadowRadius: 20,
+            elevation: 3,
+        },
+        modalContent: {
+            backgroundColor: "#FDFBEF",
+            padding: 20,
+            justifyContent: "center",
+            alignItems: "flex-start",
+            width: 270,
+            height: height,
+        },
+    };
 
     state = {
         modalVisible: false,
     };
-
-    toggleModalVisibility() {
-        this.setState({modalVisible: !this.state.modalVisible});
-    }
 
     hideModal() {
         this.setState({modalVisible: false});
@@ -51,20 +46,26 @@ export default class ModalView extends Component {
         this.setState({modalVisible: true});
     }
 
+    static getDerivedStateFromProps(props, state) {
+        return Object.assign(state, {
+            modalVisible: props.open
+        });
+    }
+
     render() {
         return (
-            <View style={styles.container}>
+            <View style={this.styles.container}>
                 <TouchableOpacity onPress={() => this.showModal()}>
                     <View>
-                        <Text>hello click here to show modal</Text>
+                        <Text>show modal</Text>
                     </View>
                 </TouchableOpacity>
 
                 <Modal
                     isVisible={this.state.modalVisible}
-                    style={styles.modal}
-                    animationIn="slideInLeft"
-                    animationOut="slideOutLeft"
+                    style={this.styles.modal}
+                    animationIn={this.props.side === "left" ? "slideInLeft" : "slideInRight"}
+                    animationOut={this.props.side === "left" ? "slideOutLeft" : "slideOutRight"}
                     backdropOpacity={0}
                     animationInTiming={600}
                     animationOutTiming={600}
@@ -73,11 +74,9 @@ export default class ModalView extends Component {
                     onBackdropPress={() => this.hideModal()}
                     backdropColor={"black"}
                 >
-                    <View style={styles.modalContent}>
+                    <View style={this.styles.modalContent}>
                         <ModalContent
                             closeEvent={() => this.hideModal()}
-                            title={this.props.title}
-                            image={require('../../../Assets/Images/Menu/chateauNB.png')}
                         >
                             {this.props.children}
                         </ModalContent>

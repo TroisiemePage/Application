@@ -10,9 +10,10 @@ const styles = {
 };
 
 export default class CarteSVG extends React.Component {
+
     render() {
         return(
-            <Svg style={styles.svg} viewBox="0 0 2224 1668">
+            <Svg style={styles.svg} viewBox="0 0 2224 1668" >
                 <G>
                     <G transform="matrix(0.275378,0,0,0.275378,101.853,456.758)">
                         <G id="chemin" transform="matrix(0.691754,0,0,0.691754,-210.641,-1920.55)" fill="none"
@@ -446,7 +447,7 @@ export default class CarteSVG extends React.Component {
                                 width="30%"
                                 height="30%"
                                 href={require('../../Assets/Images/Menu/chateauNB.png')}
-                                onPress={() => console.log("pressed on grandGousier ! ")}
+                                onPress={() => this.props.openModal}
                             />
                             <Image
                                 id="beauce"
@@ -455,6 +456,7 @@ export default class CarteSVG extends React.Component {
                                 width="20%"
                                 height="20%"
                                 href={require('../../Assets/Images/Menu/chateauNB.png')}
+                                onPress={() => console.log("pressed on Beauce ! ")}
                             />
                             <Image
                                 id="paris"
@@ -463,6 +465,7 @@ export default class CarteSVG extends React.Component {
                                 width="20%"
                                 height="20%"
                                 href={require('../../Assets/Images/Menu/chateauNB.png')}
+                                onPress={() => console.log("pressed on paris ! ")}
                             />
                             <Image
                                 id="picrochole"

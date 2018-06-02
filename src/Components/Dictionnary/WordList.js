@@ -2,7 +2,7 @@ import React from "react";
 import {ListView, Text, View} from "react-native";
 import words from "../../Stores/words.json";
 
-export class WordList extends React.Component {
+export default class WordList extends React.Component {
 
     formatData(data) {
         // We're sorting by alphabetically so we need the alphabet
@@ -75,7 +75,7 @@ export class WordList extends React.Component {
         return (
             <ListView
                 style={{
-                    padding: 20,
+                    width: "100%",
                     backgroundColor: "#fdfaea"
                 }}
                 dataSource={this.state.dataSource}
