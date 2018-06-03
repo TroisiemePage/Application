@@ -29,7 +29,6 @@ export default class Chateaux extends Component {
                 >
                     <Image
                         style={this.styles.image}
-                        id="theleme"
                         source={require('../../Assets/Images/Menu/chateauNB.png')}
                     />
                 </TouchableOpacity>
