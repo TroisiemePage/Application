@@ -28,7 +28,7 @@ export default class CarteSVG extends React.Component {
 
     achieved = "rgb(235,71,57)";
     toExplore = "rgb(128,128,128)";
-    toExploreLighter= "rgb(128,128,128)";
+    toExploreLighter= "rgb(102,102,102)";
 
     render() {
         return(
