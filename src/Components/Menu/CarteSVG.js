@@ -10,21 +10,7 @@ const styles = {
 
 export default class CarteSVG extends React.Component {
 
-    state = {
-        level1: true,
-        level2: true,
-        level3: true,
-        level4: false,
-        level5: false,
-        level6: false,
-        level7: false,
-        level8: false,
-        level9: false,
-        level10: false,
-        level11: false,
-        level12: false,
-        level13: false,
-    };
+    currentLevel = 8;
 
     achieved = "rgb(235,71,57)";
     toExplore = "rgb(128,128,128)";
@@ -37,14 +23,14 @@ export default class CarteSVG extends React.Component {
                     <G transform="matrix(0.275378,0,0,0.275378,70.853,496.758)">
                         <G id="chemin" transform="matrix(0.691754,0,0,0.691754,-210.641,-1920.55)" fill="none"
                            strokeWidth="4">
-                            <G class="PathLevel2" stroke={this.state.level2 ? this.achieved : this.toExplore}>
+                            <G currentLevel="2" stroke={this.currentLevel >= 2 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(-3.66765,-0.00131737,-0.00199548,5.55556,2607.31,5347.84)">
                                     <Path
                                         d="M-484.429,0.087L0,0.087"
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel3" stroke={this.state.level3 ? this.achieved : this.toExplore}>
+                            <G currentLevel="3" stroke={this.currentLevel >= 3 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(5.5082,0,-2.78839e-19,5.44354,5293.73,4600.3)">
                                     <Path
                                         d="M0,137.654C38.012,137.654 68.827,106.839 68.827,68.827C68.827,30.815 38.012,0 0,0L-102.509,0.416"
@@ -56,7 +42,7 @@ export default class CarteSVG extends React.Component {
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel4" stroke={this.state.level4 ? this.achieved : this.toExplore}>
+                            <G currentLevel="4" stroke={this.currentLevel >= 4 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(5.50102,2.81783e-19,0,5.55556,4360.51,4050.74)">
                                     <Path
                                         d="M0,96.5C-26.326,96.5 -47.667,74.993 -47.667,48.667C-47.667,22.341 -26.326,1 0,1L499.667,0"
@@ -68,7 +54,7 @@ export default class CarteSVG extends React.Component {
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel5" stroke={this.state.level5 ? this.achieved : this.toExplore}>
+                            <G currentLevel="5" stroke={this.currentLevel >= 5  ? this.achieved : this.toExplore}>
                                 <G transform="matrix(5.55556,0,0,5.55556,7730.57,3226.26)">
                                     <Path
                                         d="M0,40.001C0,17.908 17.909,0 40.001,0L95.668,0.236"
@@ -80,28 +66,28 @@ export default class CarteSVG extends React.Component {
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel6" stroke={this.state.level6 ? this.achieved : this.toExplore}>
+                            <G currentLevel="6" stroke={this.currentLevel >= 6  ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.767708,0.00027575,-0.00199548,5.55556,8883.39,3235.56)">
                                     <Path
                                         d="M-484.429,0.087L0,0.087"
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel7" stroke={this.state.level7 ? this.achieved : this.toExplore}>
+                            <G currentLevel="7" stroke={this.currentLevel >= 7  ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.767708,0.00027575,-0.00199548,5.55556,9486.79,3237.3)">
                                     <Path
                                         d="M-484.429,0.087L0,0.087"
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel8" stroke={this.state.level8 ? this.achieved : this.toExplore}>
+                            <G currentLevel="8" stroke={this.currentLevel >= 8 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(5.55556,0,0,5.55556,9780.7,4621.55)">
                                     <Path
                                         d="M-9.308,-248.856C63.692,-252.84 135.051,-204.169 135.051,-122.371C135.051,-51.471 82.5,3.984 4,3.984"
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel9" stroke={this.state.level9 ? this.achieved : this.toExplore}>
+                            <G currentLevel="9" stroke={this.currentLevel >= 9  ? this.achieved : this.toExplore}>
                                 <G transform="matrix(-5.55555,0.00486055,0.00486055,5.55555,3943.56,6244.46)">
                                     <Path
                                         d="M-377.186,-0.165L0,-0.165"
@@ -123,7 +109,7 @@ export default class CarteSVG extends React.Component {
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel10" stroke={this.state.level10 ? this.achieved : this.toExplore}>
+                            <G currentLevel="10" stroke={this.currentLevel >= 10 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(-3.92641,3.93033,3.93033,3.92641,1274.35,7506.7)">
                                     <Path
                                         d="M-227.542,-94.318C-153.985,-167.948 -34.535,-167.874 39.095,-94.318"
@@ -140,21 +126,21 @@ export default class CarteSVG extends React.Component {
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel11" stroke={this.state.level11 ? this.achieved : this.toExplore}>
+                            <G currentLevel="11" stroke={this.currentLevel >= 11 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(-5.55556,0.000890311,0.000890311,5.55556,2760.97,8337.69)">
                                     <Path
                                         d="M-349.441,-0.028L0,-0.028"
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel12" stroke={this.state.level12 ? this.achieved : this.toExplore}>
+                            <G currentLevel="12" stroke={this.currentLevel >= 12 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(-5.55556,0.000890311,0.000890311,5.55556,6777.46,8342.42)">
                                     <Path
                                         d="M-349.441,-0.028L0,-0.028"
                                     />
                                 </G>
                             </G>
-                            <G class="PathLevel13" stroke={this.state.level13 ? this.achieved : this.toExplore}>
+                            <G currentLevel="13" stroke={this.currentLevel >= 13 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(-5.55556,0.000890311,0.000890311,5.55556,4719.87,8335)">
                                     <Path
                                         d="M-349.441,-0.028L0,-0.028"
@@ -185,7 +171,7 @@ export default class CarteSVG extends React.Component {
                         </G>
                         <G id="cercles" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)" strokeWidth="4"
                            fill="rgb(253,250,234)">
-                            <G class="PathLevel1" stroke={this.state.level1 ? this.achieved : this.toExplore}>
+                            <G currentLevel="1" stroke={this.currentLevel >= 1 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,494.453,962.739)">
                                         <Path
@@ -194,7 +180,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel2" stroke={this.state.level2 ? this.achieved : this.toExplore}>
+                            <G currentLevel="2" stroke={this.currentLevel >= 2 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,807.358,962.739)">
                                         <Path
@@ -203,7 +189,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel3" stroke={this.state.level3 ? this.achieved : this.toExplore}>
+                            <G currentLevel="3" stroke={this.currentLevel >= 3 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,895.577,831.331)">
                                         <Path
@@ -212,7 +198,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel4" stroke={this.state.level4 ? this.achieved : this.toExplore}>
+                            <G currentLevel="4" stroke={this.currentLevel >= 4 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1280.41,729.999)">
                                         <Path
@@ -221,7 +207,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel5" stroke={this.state.level5 ? this.achieved : this.toExplore}>
+                            <G currentLevel="5" stroke={this.currentLevel >= 5 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1531.88,583.879)">
                                         <Path
@@ -230,7 +216,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel6" stroke={this.state.level6 ? this.achieved : this.toExplore}>
+                            <G currentLevel="6" stroke={this.currentLevel >= 6 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1640.94,583.879)">
                                         <Path
@@ -239,7 +225,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel7" stroke={this.state.level7 ? this.achieved : this.toExplore}>
+                            <G currentLevel="7" stroke={this.currentLevel >= 7 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1750,583.879)">
                                         <Path
@@ -248,9 +234,9 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel8">
+                            <G currentLevel="8" stroke={this.currentLevel >= 9 ? this.achieved : this.toExploreLighter}>
                             </G>
-                            <G class="PathLevel9" stroke={this.toExploreLighter}>
+                            <G currentLevel="9" stroke={this.currentLevel >= 9 ? this.achieved : this.toExploreLighter}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,710.999,1123.88)">
                                         <Path
@@ -259,7 +245,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel10" stroke={this.toExploreLighter}>
+                            <G currentLevel="10" stroke={this.currentLevel >= 10 ? this.achieved : this.toExploreLighter}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,497.878,1501.29)">
                                         <Path
@@ -268,7 +254,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel11" stroke={this.state.level11 ? this.achieved : this.toExploreLighter}>
+                            <G currentLevel="11" stroke={this.currentLevel >= 11 ? this.achieved : this.toExploreLighter} >
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,873.999,1501.38)">
                                         <Path
@@ -277,7 +263,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel12" stroke={this.state.level12 ? this.achieved : this.toExploreLighter}>
+                            <G currentLevel="12" stroke={this.currentLevel >= 12 ? this.achieved : this.toExploreLighter}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1225,1501.38)">
                                         <Path
@@ -286,7 +272,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel13" stroke={this.state.level13 ? this.achieved : this.toExploreLighter}>
+                            <G currentLevel="13" stroke={this.currentLevel >= 13 ? this.achieved : this.toExploreLighter}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1613.94,1505.12)">
                                         <Path
@@ -298,7 +284,7 @@ export default class CarteSVG extends React.Component {
                         </G>
                         <G id="nombres" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)" fontSize="25"
                            fontWeight="500">
-                            <G class="PathLevel1" fill={this.state.level1 ? this.achieved : this.toExplore}>
+                            <G currentLevel="1" stroke={this.currentLevel >= 1 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,456.715,1023.46)">
                                         <SVGText>0</SVGText>
@@ -308,7 +294,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel2" fill={this.state.level2 ? this.achieved : this.toExplore}>
+                            <G currentLevel="2" stroke={this.currentLevel >= 2 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,767.865,1023.46)">
                                         <SVGText>0</SVGText>
@@ -318,7 +304,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel3" fill={this.state.level3 ? this.achieved : this.toExplore}>
+                            <G currentLevel="3" stroke={this.currentLevel >= 3 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,856.79,887.907)">
                                         <SVGText>0</SVGText>
@@ -328,7 +314,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel4" fill={this.state.level4 ? this.achieved : this.toExplore}>
+                            <G currentLevel="4" stroke={this.currentLevel >= 4 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1239.89,787.457)">
                                         <SVGText>0</SVGText>
@@ -338,7 +324,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel5" fill={this.state.level5 ? this.achieved : this.toExplore}>
+                            <G currentLevel="5" stroke={this.currentLevel >= 5 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1492.09,644.957)">
                                         <SVGText>0</SVGText>
@@ -348,7 +334,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel6" fill={this.state.level6 ? this.achieved : this.toExplore}>
+                            <G currentLevel="6" stroke={this.currentLevel >= 6 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1600.72,645.957)">
                                         <SVGText>0</SVGText>
@@ -358,7 +344,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel7" fill={this.state.level7 ? this.achieved : this.toExplore}>
+                            <G currentLevel="7" stroke={this.currentLevel >= 7  ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1710.77,644.957)">
                                         <SVGText>0</SVGText>
@@ -368,7 +354,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel8" fill={this.state.level8 ? this.achieved : this.toExplore}>
+                            <G currentLevel="8" stroke={this.currentLevel >= 8 ? this.achieved : this.toExplore}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,1811.87,900.907)">
                                         <SVGText>0</SVGText>
@@ -378,7 +364,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel9" fill={this.state.level9 ? this.achieved : this.toExploreLighter}>
+                            <G currentLevel="9" stroke={this.currentLevel >= 9 ? this.achieved : this.toExploreLighter}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,670.765,1184.38)">
                                         <SVGText>0</SVGText>
@@ -388,7 +374,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel10" fill={this.state.level10 ? this.achieved : this.toExploreLighter}>
+                            <G currentLevel="10" stroke={this.currentLevel >= 10 ? this.achieved : this.toExploreLighter}>
                                 <G transform="matrix(1,0,0,1,-37.0962,-92.6021)">
                                     <G transform="matrix(1,0,0,1,461.84,1562.36)">
                                         <SVGText>1</SVGText>
@@ -398,7 +384,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel11" fill={this.state.level11 ? this.achieved : this.toExploreLighter}>
+                            <G currentLevel="11" stroke={this.currentLevel >= 11 ? this.achieved : this.toExploreLighter}>
                                 <G transform="matrix(1,0,0,1,-78.3831,-97.6382)">
                                     <G transform="matrix(1,0,0,1,843.04,1563.33)">
                                         <SVGText>1</SVGText>
@@ -408,7 +394,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel12" fill={this.state.level12 ? this.achieved : this.toExploreLighter}>
+                            <G currentLevel="12" stroke={this.currentLevel >= 12 ? this.achieved : this.toExploreLighter}>
                                 <G transform="matrix(1,0,0,1,-108.22,-97.23)">
                                     <G transform="matrix(1,0,0,1,1189.84,1562.33)">
                                         <SVGText>1</SVGText>
@@ -418,7 +404,7 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                            <G class="PathLevel13" fill={this.state.level13 ? this.achieved : this.toExploreLighter}>
+                            <G currentLevel="13" stroke={this.currentLevel >= 13 ? this.achieved : this.toExploreLighter}>
                                 <G transform="matrix(1,0,0,1,-144.004,-91.6984)">
                                     <G transform="matrix(1,0,0,1,1580.14,1562.33)">
                                         <SVGText>1</SVGText>
