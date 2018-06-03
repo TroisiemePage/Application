@@ -55,12 +55,6 @@ export class ModalSliderView extends Component {
     render() {
         return (
             <View style={this.styles.container}>
-                <TouchableOpacity onPress={() => this.showModal()}>
-                    <View>
-                        <Text>show modal</Text>
-                    </View>
-                </TouchableOpacity>
-
                 <Modal
                     isVisible={this.state.modalVisible}
                     style={this.styles.modal}

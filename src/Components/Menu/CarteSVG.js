@@ -1,6 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
-import Svg, {G, Path, Text as SVGText, Ellipse, Image} from 'react-native-svg';
+import Svg, {G, Path, Text as SVGText, Ellipse} from 'react-native-svg';
 
 const styles = {
     svg: {
@@ -15,7 +14,7 @@ export default class CarteSVG extends React.Component {
         return(
             <Svg style={styles.svg} viewBox="0 0 2224 1668" >
                 <G>
-                    <G transform="matrix(0.275378,0,0,0.275378,101.853,456.758)">
+                    <G transform="matrix(0.275378,0,0,0.275378,70.853,496.758)">
                         <G id="chemin" transform="matrix(0.691754,0,0,0.691754,-210.641,-1920.55)" fill="none"
                            strokeWidth="4">
                             <G class="PathLevel2" stroke="rgb(235,71,57)">
@@ -277,35 +276,6 @@ export default class CarteSVG extends React.Component {
                                 </G>
                             </G>
                         </G>
-                        <G id="textes" transform="matrix(0.691754,0,0,0.691754,-210.641,-1920.55)">
-                            <G transform="matrix(5.55556,0,0,5.55556,0.145203,0.737222)">
-                                <G transform="matrix(1,0,0,1,974.098,695.118)">
-                                    <SVGText fontSize="35" fill="#000">La Beauce</SVGText>
-                                </G>
-                            </G>
-                            <G transform="matrix(5.55556,0,0,5.55556,0.145203,0.737222)">
-                                <G>
-                                    <G transform="matrix(1,0,0,1,1453.18,1449.16)">
-                                        <SVGText fontSize="35" fill="#000">Abbaye de Thélème</SVGText>
-                                    </G>
-                                </G>
-                            </G>
-                            <G transform="matrix(5.55556,0,0,5.55556,0.145203,0.737222)">
-                                <G transform="matrix(1,0,0,1,1574.91,523.198)">
-                                    <SVGText fontSize="35" fill="#000">Paris</SVGText>
-                                </G>
-                            </G>
-                            <G transform="matrix(5.55556,0,0,5.55556,0.145203,0.737222)">
-                                <G transform="matrix(1.01753,0,0,1,299,904.304)">
-                                    <SVGText fontSize="35" fill="#000">Château de Grandgousier</SVGText>
-                                </G>
-                            </G>
-                            <G transform="matrix(5.55556,0,0,5.55556,0.145203,0.737222)">
-                                <G transform="matrix(1,0,0,1,330.083,1450)">
-                                    <SVGText fontSize="35" fill="#000">Château de Picrochole</SVGText>
-                                </G>
-                            </G>
-                        </G>
                         <G id="nombres" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)" fontSize="25"
                            fontWeight="500">
                             <G class="PathLevel1" fill="rgb(235,71,57)">
@@ -401,7 +371,7 @@ export default class CarteSVG extends React.Component {
                             <G class="PathLevel10" fill="rgb(102,102,102)">
                                 <G transform="matrix(1,0,0,1,-37.0962,-92.6021)">
                                     <G transform="matrix(1,0,0,1,461.84,1562.36)">
-                                        <Text>1</Text>
+                                        <SVGText>1</SVGText>
                                     </G>
                                     <G transform="matrix(1,0,0,1,472.298,1562.36)">
                                         <SVGText>0</SVGText>
@@ -438,53 +408,6 @@ export default class CarteSVG extends React.Component {
                                     </G>
                                 </G>
                             </G>
-                        </G>
-                        <G id="chateaux">
-                            <Image
-                                id="grandGousier"
-                                x="5%"
-                                y="10%"
-                                width="30%"
-                                height="30%"
-                                href={require('../../Assets/Images/Menu/chateauNB.png')}
-                                onPress={() => this.props.openModal}
-                            />
-                            <Image
-                                id="beauce"
-                                x="37.5%"
-                                y="12%"
-                                width="20%"
-                                height="20%"
-                                href={require('../../Assets/Images/Menu/chateauNB.png')}
-                                onPress={() => console.log("pressed on Beauce ! ")}
-                            />
-                            <Image
-                                id="paris"
-                                x="64%"
-                                y="22%"
-                                width="20%"
-                                height="20%"
-                                href={require('../../Assets/Images/Menu/chateauNB.png')}
-                                onPress={() => console.log("pressed on paris ! ")}
-                            />
-                            <Image
-                                id="picrochole"
-                                x="11%"
-                                y="-31%"
-                                width="20%"
-                                height="20%"
-                                href={require('../../Assets/Images/Menu/chateauNB.png')}
-                                opacity="0.5"
-                            />
-                            <Image
-                                id="theleme"
-                                x="55%"
-                                y="-14%"
-                                width="37%"
-                                height="37%"
-                                href={require('../../Assets/Images/Menu/chateauNB.png')}
-                                opacity="0.5"
-                            />
                         </G>
                     </G>
                 </G>

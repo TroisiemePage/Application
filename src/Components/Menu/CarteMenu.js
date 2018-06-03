@@ -4,6 +4,7 @@ import WordList from "../Dictionnary/WordList";
 import CarteSVG from "./CarteSVG";
 import {ModalSliderView} from '../Modal/ModalSlider/ModalSliderView';
 import {villes} from "./villes.js";
+import Chateaux from "./Chateaux";
 
 const styles = {
     container: {
@@ -79,9 +80,59 @@ export class CarteMenu extends React.Component {
                     </View>
                 </ModalSliderView>
 
-                <CarteSVG
+                <CarteSVG/>
+
+                <Chateaux
+                    x={145}
+                    y={144}
+                    width={178}
+                    height={280}
                     openModal={() => this.setState({modalVisibleLeft: true})}
-                />
+                >
+                    {villes.grandgousier.title}
+                </Chateaux>
+
+                <Chateaux
+                    x={461}
+                    y={137}
+                    width={122}
+                    height={190}
+                    openModal={() => this.setState({modalVisibleLeft: true})}
+                >
+                    {villes.beauce.title}
+                </Chateaux>
+
+                <Chateaux
+                    x={713}
+                    y={70}
+                    width={186}
+                    height={177}
+                    openModal={() => this.setState({modalVisibleLeft: true})}
+                >
+                    {villes.paris.title}
+                </Chateaux>
+
+                <Chateaux
+                    x={185}
+                    y={535}
+                    width={104}
+                    height={165}
+                    opacity={0.5}
+                    openModal={() => this.setState({modalVisibleLeft: true})}
+                >
+                    {villes.picrochole.title}
+                </Chateaux>
+
+                <Chateaux
+                    x={692}
+                    y={373}
+                    width={205}
+                    height={323}
+                    opacity={0.5}
+                    openModal={() => this.setState({modalVisibleLeft: true})}
+                >
+                    {villes.theleme.title}
+                </Chateaux>
 
                 <ModalSliderView
                     open={this.state.modalVisibleRight}
