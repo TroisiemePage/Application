@@ -7,6 +7,10 @@ export default class Chateaux extends Component {
             position: 'absolute',
             left: this.props.x,
             top: this.props.y,
+            flex: 1,
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
         },
         image: {
             width: this.props.width,
@@ -14,10 +18,11 @@ export default class Chateaux extends Component {
             opacity: this.props.opacity,
         },
         title: {
-            fontSize: 16,
-            color: '#000',
+            fontSize: 18,
             padding: 10,
             textAlign: 'center',
+            fontFamily: 'Adobe Garamond Pro',
+            color: '#0E0637',
         }
     };
 

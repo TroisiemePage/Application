@@ -127,8 +127,8 @@ export class Menu extends React.Component {
                 </Chateaux>
 
                 <Chateaux
-                    x={185}
-                    y={535}
+                    x={165}
+                    y={525}
                     width={104}
                     height={165}
                     opacity={0.5}
@@ -143,7 +143,7 @@ export class Menu extends React.Component {
 
                 <Chateaux
                     x={692}
-                    y={373}
+                    y={363}
                     width={205}
                     height={323}
                     opacity={0.5}
