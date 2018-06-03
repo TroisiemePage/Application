@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, TouchableOpacity, Dimensions} from 'react-native';
-import ModalContent from "./ModalSliderContent";
+import {Text, View, TouchableOpacity, Dimensions, Image} from 'react-native';
 
 import Modal from "react-native-modal";
 
@@ -32,31 +31,34 @@ export class ModalSliderView extends Component {
             width: 270,
             height: height,
         },
+        content: {
+            flex: 30,
+            margin: 20,
+            justifyContent: "flex-start",
+            alignItems: "flex-start"
+        },
+        close: {
+            flex: 1,
+            justifyContent: "flex-end",
+            alignItems: "flex-end"
+        },
+        closeButton: {
+            width: 15,
+            height: 15,
+        },
+        image: {
+            width: 151.9,
+            height: 238.14,
+            //resizeMode: "center",
+        },
     };
 
-    state = {
-        modalVisible: false,
-    };
-
-    hideModal() {
-        this.setState({modalVisible: false});
-    }
-
-    showModal() {
-        this.setState({modalVisible: true});
-    }
-
-    static getDerivedStateFromProps(props, state) {
-        return Object.assign(state, {
-            modalVisible: props.open
-        });
-    }
 
     render() {
         return (
             <View style={this.styles.container}>
                 <Modal
-                    isVisible={this.state.modalVisible}
+                    isVisible={this.props.open}
                     style={this.styles.modal}
                     animationIn={this.props.side === "left" ? "slideInLeft" : "slideInRight"}
                     animationOut={this.props.side === "left" ? "slideOutLeft" : "slideOutRight"}
@@ -65,15 +67,23 @@ export class ModalSliderView extends Component {
                     animationOutTiming={600}
                     backdropTransitionInTiming={600}
                     backdropTransitionOutTiming={600}
-                    onBackdropPress={() => this.hideModal()}
+                    onBackdropPress={() => this.props.onClose()}
                     backdropColor={"black"}
                 >
                     <View style={this.styles.modalContent}>
-                        <ModalContent
-                            closeEvent={() => this.hideModal()}
-                        >
-                            {this.props.children}
-                        </ModalContent>
+                            <View>
+                                <View style={this.styles.close}>
+                                    <TouchableOpacity onPress={() => this.props.onClose()}>
+                                        <Image
+                                            style={this.styles.closeButton}
+                                            source={require('../../../Assets/Images/Elements/close_button.png')}
+                                        />
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={this.styles.content}>
+                                    {this.props.children}
+                                </View>
+                            </View>
                     </View>
                 </Modal>
             </View>

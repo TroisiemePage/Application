@@ -72,6 +72,7 @@ export class CarteMenu extends React.Component {
                 <ModalSliderView
                     open={this.state.modalVisibleLeft}
                     side="left"
+                    onClose={() => this.setState({modalVisibleLeft: false})}
                 >
                     <View>
                         <Image style={styles.image} source={require("../../Assets/Images/Menu/chateauNB.png")}/>
@@ -137,6 +138,7 @@ export class CarteMenu extends React.Component {
                 <ModalSliderView
                     open={this.state.modalVisibleRight}
                     side="right"
+                    onClose={() => this.setState({modalVisibleRight: false})}
                 >
                     <WordList navigation={this.props.navigation} />
                 </ModalSliderView>
