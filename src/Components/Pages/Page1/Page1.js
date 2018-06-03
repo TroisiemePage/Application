@@ -58,7 +58,7 @@ class Page1Content extends React.Component {
     }
 
     render() {
-        console.log("CONTENT", this.props.navigation);
+        //console.log("CONTENT", this.props.navigation);
         return (
             <Overlay {...this.props}>
             <View style={styles.container}>

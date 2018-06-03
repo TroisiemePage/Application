@@ -1,5 +1,5 @@
 import React from 'react';
-import {CarteMenu} from "./Menu/CarteMenu";
+import {Menu} from "./Menu/Menu";
 import {createStackNavigator} from 'react-navigation';
 import {PageRouter} from "./PageRouter/PageRouter";
 import {Dictionnary} from "./Dictionnary/Dictionnary";
@@ -9,7 +9,7 @@ const Navigator = createStackNavigator({
         screen: PageRouter
     },
     Menu: {
-        screen: CarteMenu
+        screen: Menu
     },
     Dictionnary: {
         screen: Dictionnary

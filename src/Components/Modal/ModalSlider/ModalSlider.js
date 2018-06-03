@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {Text, View, TouchableOpacity, Dimensions, Image} from 'react-native';
+import {View, TouchableOpacity, Dimensions, Image} from 'react-native';
 
 import Modal from "react-native-modal";
 
 const {height} = Dimensions.get('window');
 
-export class ModalSliderView extends Component {
+export class ModalSlider extends Component {
 
     styles = {
         container: {

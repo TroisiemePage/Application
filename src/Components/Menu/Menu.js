@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, View, Text, TouchableWithoutFeedback, Image} from 'react-native';
 import WordList from "../Dictionnary/WordList";
 import CarteSVG from "./CarteSVG";
-import {ModalSliderView} from '../Modal/ModalSlider/ModalSliderView';
+import {ModalSlider} from '../Modal/ModalSlider/ModalSlider';
 import {villes} from "./villes.js";
 import Chateaux from "./Chateaux";
 
@@ -51,12 +51,13 @@ const styles = {
     }
 };
 
-
-export class CarteMenu extends React.Component {
+export class Menu extends React.Component {
 
     state = {
         modalVisibleLeft: false,
         modalVisibleRight: false,
+        ville: null,
+        description: null,
     };
 
     render() {
@@ -69,17 +70,17 @@ export class CarteMenu extends React.Component {
                     />
                 </View>
 
-                <ModalSliderView
+                <ModalSlider
                     open={this.state.modalVisibleLeft}
                     side="left"
                     onClose={() => this.setState({modalVisibleLeft: false})}
                 >
                     <View>
                         <Image style={styles.image} source={require("../../Assets/Images/Menu/chateauNB.png")}/>
-                        <Text style={styles.title}>{villes.paris.title}</Text>
-                        <Text style={styles.text}>{villes.paris.description}</Text>
+                        <Text style={styles.title}>{this.state.ville}</Text>
+                        <Text style={styles.text}>{this.state.description}</Text>
                     </View>
-                </ModalSliderView>
+                </ModalSlider>
 
                 <CarteSVG/>
 
@@ -88,7 +89,11 @@ export class CarteMenu extends React.Component {
                     y={144}
                     width={178}
                     height={280}
-                    openModal={() => this.setState({modalVisibleLeft: true})}
+                    openModal={() => this.setState({
+                        modalVisibleLeft: true,
+                        ville: villes.grandgousier.title,
+                        description: villes.grandgousier.description
+                    })}
                 >
                     {villes.grandgousier.title}
                 </Chateaux>
@@ -98,7 +103,11 @@ export class CarteMenu extends React.Component {
                     y={137}
                     width={122}
                     height={190}
-                    openModal={() => this.setState({modalVisibleLeft: true})}
+                    openModal={() => this.setState({
+                        modalVisibleLeft: true,
+                        ville: villes.beauce.title,
+                        description: villes.beauce.description
+                    })}
                 >
                     {villes.beauce.title}
                 </Chateaux>
@@ -108,7 +117,11 @@ export class CarteMenu extends React.Component {
                     y={70}
                     width={186}
                     height={177}
-                    openModal={() => this.setState({modalVisibleLeft: true})}
+                    openModal={() => this.setState({
+                        modalVisibleLeft: true,
+                        ville: villes.paris.title,
+                        description: villes.paris.description
+                    })}
                 >
                     {villes.paris.title}
                 </Chateaux>
@@ -119,7 +132,11 @@ export class CarteMenu extends React.Component {
                     width={104}
                     height={165}
                     opacity={0.5}
-                    openModal={() => this.setState({modalVisibleLeft: true})}
+                    openModal={() => this.setState({
+                        modalVisibleLeft: true,
+                        ville: villes.picrochole.title,
+                        description: villes.picrochole.description
+                    })}
                 >
                     {villes.picrochole.title}
                 </Chateaux>
@@ -130,18 +147,22 @@ export class CarteMenu extends React.Component {
                     width={205}
                     height={323}
                     opacity={0.5}
-                    openModal={() => this.setState({modalVisibleLeft: true})}
+                    openModal={() => this.setState({
+                        modalVisibleLeft: true,
+                        ville: villes.theleme.title,
+                        description: villes.theleme.description
+                    })}
                 >
                     {villes.theleme.title}
                 </Chateaux>
 
-                <ModalSliderView
+                <ModalSlider
                     open={this.state.modalVisibleRight}
                     side="right"
                     onClose={() => this.setState({modalVisibleRight: false})}
                 >
                     <WordList navigation={this.props.navigation} />
-                </ModalSliderView>
+                </ModalSlider>
 
                 <TouchableWithoutFeedback onPress={() => this.setState({modalVisibleRight: true})} >
                     <View style={styles.listDico}>
@@ -178,6 +199,6 @@ export class CarteMenu extends React.Component {
     }
 }
 
-CarteMenu.navigationOptions = {
+Menu.navigationOptions = {
     header: null
 };

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, TouchableOpacity, Image} from 'react-native';
 
-
 export default class Chateaux extends Component {
     styles = {
         container: {
