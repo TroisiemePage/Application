@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
-import {StyleSheet, PanResponder, Animated, View, Text} from 'react-native';
-import Svg, {G, Path} from 'react-native-svg';
+import {StyleSheet, PanResponder, Animated, View, Text, Dimensions} from 'react-native';
+import Svg, {G, Path, Circle, Rect, Text as SVGText} from 'react-native-svg';
 import {computed} from "mobx";
 import DrawerActions from "react-navigation/src/routers/DrawerActions";
 
+
 const MAGFIELD = 80;
-const scale = 0.6;
+const scale = 1;
 const AnimatedPath = Animated.createAnimatedComponent(Path);
-const styles = StyleSheet.create({
+const {height} = Dimensions.get('window');
+const styles = {
     container: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -17,28 +19,62 @@ const styles = StyleSheet.create({
         margin: 10,
         backgroundColor: '#FDFBEF',
     },
-    title: {
-        flex: 1,
+    titleView: {
+        position: "absolute",
+        left: 0,
+        top: 0,
         width: "100%",
         alignItems: 'center',
-        marginTop: 70
+        marginTop: 70,
     },
-    text: {
+    titleViewAchieved: {
+        position: "absolute",
+        right: 80,
+        top: height / 2 - 70,
+        alignItems: 'flex-start',
+    },
+    title: {
         color: '#282D45',
-        fontSize: 26,
+        fontSize: 22,
         padding: 2,
         textAlign: 'center',
-        //fontFamily
+        fontFamily: 'GothamRounded-Book',
+    },
+    titleAchieved: {
+        color: '#282D45',
+        fontSize: 30,
+        padding: 2,
+        textAlign: 'left',
+        letterSpacing: 5,
+        fontFamily: 'GothamRounded-Book',
+        fontWeight: '500',
+    },
+    description: {
+        paddingVertical: 10,
+        fontSize: 18,
+        color: '#14173D',
+        width: 250,
+        textAlign: 'left',
+        fontFamily: 'GothamRounded-Book',
+        lineHeight: 24,
     },
     svg: {
-        flex: 14,
+        flex: 1,
         width: "100%",
         height: "100%",
-        marginLeft: 200,
-        marginTop: 100,
-
+    },
+    textSvg: {
+        fontFamily:'GothamRounded-Medium',
+        fontSize: 23,
+        width: 150,
+        color: 'black',
+    },
+    titleSvg: {
+        fontFamily:'GothamRounded-Medium',
+        fontSize: 49,
+        color: "rgb(255,92,69)",
     }
-});
+};
 
 export default class GameChapterOneLetterA extends Component {
     previousPos = [];
@@ -150,37 +186,283 @@ export default class GameChapterOneLetterA extends Component {
     }
 
     render() {
-        let greetings;
+        let greetings, typography;
         if (this.didSucceed) {
             greetings = (
 
-                <View style={styles.title}>
-                    <Text style={styles.text}>
-                        Tu as réussi
+                <View style={styles.titleViewAchieved}>
+                    <Text style={styles.titleAchieved}>
+                        Bien joué !
+                    </Text>
+                    <Text style={styles.description}>
+                        Frère Augustin te remercie.
+                        Il sera plus patient
+                        la prochaine fois..
                     </Text>
                 </View>
+
             );
-            setTimeout(() => this.props.navigation.dispatch({ type: DrawerActions.CLOSE_DRAWER }), 1000);
+
+            typography = (
+
+                <G>
+                    <G id="delie" transform="matrix(1,0,0,1,172.653,466.421)">
+                        <G transform="matrix(-0.52968,0.148123,-0.148123,-0.52968,1805.38,299.018)">
+                            <G transform="matrix(0.79311,-0.191132,0.341725,1.418,-31.8794,-70.0615)">
+                                <Rect
+                                    x="640.793"
+                                    y="369.647"
+                                    width="4.566"
+                                    height="109.292"
+                                    fill="rgb(255,92,69)"
+                                />
+                            </G>
+                            <G transform="matrix(1,0,0,1,1,-2)">
+                                <Circle cx="642.143" cy="484.71" r="17.842" fill="rgb(255,92,69)"/>
+                            </G>
+                        </G>
+                        <G transform="matrix(0.565498,0,0,0.565498,1050.75,147.876)">
+                            <G>
+                                <G transform="matrix(1,0,0,1,645.568,211.925)"  >
+                                    <SVGText
+                                        fontSize={styles.textSvg.fontSize}
+                                        fontFamily={styles.textSvg.fontFamily}
+                                        fill={styles.textSvg.color}
+                                    >
+                                        Partie la plus ﬁne d'une lettre
+                                    </SVGText>
+                                </G>
+                            </G>
+                        </G>
+                        <G transform="matrix(0.58543,0,0,0.58543,1038.65,147.459)">
+                            <G transform="matrix(1,0,0,1,641.473,173.901)">
+                                <SVGText
+                                    fontSize={styles.titleSvg.fontSize}
+                                    fontFamily={styles.titleSvg.fontFamily}
+                                    fill={styles.titleSvg.color}
+                                >
+                                    Délié
+                                </SVGText>
+                            </G>
+                        </G>
+                    </G>
+                    <G id="plein" transform="matrix(1,0,0,1,316.567,346.674)">
+                        <G transform="matrix(-0.52968,0.148123,-0.148123,-0.52968,1805.38,299.018)">
+                            <G transform="matrix(0.815816,-6.45625e-19,0,1.4586,118.024,-219.64)">
+                                <Rect
+                                    x="640.793"
+                                    y="369.647"
+                                    width="4.566"
+                                    height="109.292"
+                                    fill="rgb(255,92,69)"
+                                />
+                            </G>
+                            <G transform="matrix(1,0,0,1,1,-2)">
+                                <Circle
+                                    cx="642.143"
+                                    cy="484.71"
+                                    r="17.842"
+                                    fill="rgb(255,92,69)"
+                                />
+                            </G>
+                        </G>
+                        <G transform="matrix(0.565498,0,0,0.565498,1050.75,149.876)">
+                            <G>
+                                <G transform="matrix(1,0,0,1,645.568,211.925)" >
+                                    <SVGText
+                                        fontSize={styles.textSvg.fontSize}
+                                        fontFamily={styles.textSvg.fontFamily}
+                                        fill={styles.textSvg.color}
+                                    >
+                                        Partie la plus large d'une lettre
+                                    </SVGText>
+                                </G>
+                            </G>
+                        </G>
+                        <G transform="matrix(0.58543,0,0,0.58543,1038.65,149.459)">
+                            <G transform="matrix(1,0,0,1,641.473,173.901)">
+                                <SVGText
+                                    fontSize={styles.titleSvg.fontSize}
+                                    fontFamily={styles.titleSvg.fontFamily}
+                                    fill={styles.titleSvg.color}
+                                >
+                                    Plein
+                                </SVGText>
+                            </G>
+                        </G>
+                    </G>
+                    <G id="fut" transform="matrix(1,0,0,1,178.11,179.473)">
+                        <G transform="matrix(0.00179016,0.549998,-0.549998,0.00179016,1656.67,-215.948)">
+                            <G transform="matrix(0.815816,-6.45625e-19,0,1.4586,118.024,-219.64)">
+                                <Rect
+                                    x="640.793"
+                                    y="369.647"
+                                    width="4.566"
+                                    height="109.292"
+                                    fill="rgb(255,92,69)"
+                                />
+                            </G>
+                            <G transform="matrix(1,0,0,1,1,-2)">
+                                <Circle
+                                    cx="642.143"
+                                    cy="484.71"
+                                    r="17.842"
+                                    fill="rgb(255,92,69)"
+                                />
+                            </G>
+                        </G>
+                        <G transform="matrix(0.565498,0,0,0.565498,1124,5.51554)">
+                            <G>
+                                <G transform="matrix(1,0,0,1,645.568,211.925)">
+                                    <SVGText
+                                        fontSize={styles.textSvg.fontSize}
+                                        fontFamily={styles.textSvg.fontFamily}
+                                        fill={styles.textSvg.color}
+                                    >
+                                        Trait principal, vertical
+                                    </SVGText>
+                                </G>
+                            </G>
+                            <G>
+                                <G transform="matrix(1,0,0,1,645.568,239.925)">
+                                    <SVGText
+                                        fontSize={styles.textSvg.fontSize}
+                                        fontFamily={styles.textSvg.fontFamily}
+                                        fill={styles.textSvg.color}
+                                    >
+                                        ou oblique.
+                                    </SVGText>
+                                </G>
+                            </G>
+                        </G>
+                        <G transform="matrix(0.58543,0,0,0.58543,1111.91,5.09903)">
+                            <G transform="matrix(1,0,0,1,641.473,173.901)">
+                                <SVGText
+                                    fontSize={styles.titleSvg.fontSize}
+                                    fontFamily={styles.titleSvg.fontFamily}
+                                    fill={styles.titleSvg.color}
+                                >
+                                    Fût
+                                </SVGText>
+                            </G>
+                        </G>
+                    </G>
+                    <G id="empattement" transform="matrix(1,0,0,1,17.1687,20.5025)">
+                        <G transform="matrix(0.550001,0,0,0.550001,1139.31,12.4713)">
+                            <Rect x="640.793" y="369.647" width="4.566" height="109.292" fill="rgb(255,92,69)"/>
+                            <G transform="matrix(1,0,0,1,1,-2)">
+                                <Circle
+                                    cx="642.143"
+                                    cy="484.71"
+                                    r="17.842"
+                                    fill="rgb(255,92,69)"
+                                />
+                            </G>
+                        </G>
+                        <G transform="matrix(0.565498,0,0,0.565498,1128,4.51554)">
+                            <G>
+                                <G transform="matrix(1,0,0,1,645.568,211.925)">
+                                    <SVGText
+                                        fontSize={styles.textSvg.fontSize}
+                                        fontFamily={styles.textSvg.fontFamily}
+                                        fill={styles.textSvg.color}
+                                    >
+                                        Embout qui vient terminer
+                                    </SVGText>
+                                </G>
+                            </G>
+                            <G>
+                                <G transform="matrix(1,0,0,1,645.568,239.925)">
+                                    <SVGText
+                                        fontSize={styles.textSvg.fontSize}
+                                        fontFamily={styles.textSvg.fontFamily}
+                                        fill={styles.textSvg.color}
+                                    >
+                                        l'extrémité d'un fût.
+                                    </SVGText>
+                                </G>
+                            </G>
+                            <G>
+                                <G transform="matrix(1,0,0,1,645.568,267.925)">
+                                    <SVGText
+                                        fontSize={styles.textSvg.fontSize}
+                                        fontFamily={styles.textSvg.fontFamily}
+                                        fill={styles.textSvg.color}
+                                    >
+                                        Son rôle est de faciliter la
+                                    </SVGText>
+                                </G>
+                            </G>
+                            <G>
+                                <G transform="matrix(1,0,0,1,645.568,295.925)">
+                                    <SVGText
+                                        fontSize={styles.textSvg.fontSize}
+                                        fontFamily={styles.textSvg.fontFamily}
+                                        fill={styles.textSvg.color}
+                                    >
+                                        lecture en guidant l'oeil du
+                                    </SVGText>
+                                </G>
+                            </G>
+                            <G>
+                                <G transform="matrix(1,0,0,1,645.568,323.925)">
+                                    <SVGText
+                                        fontSize={styles.textSvg.fontSize}
+                                        fontFamily={styles.textSvg.fontFamily}
+                                        fill={styles.textSvg.color}
+                                    >
+                                        lecteur d'une lettre à
+                                    </SVGText>
+                                </G>
+                            </G>
+                            <G>
+                                <G transform="matrix(1,0,0,1,645.568,351.925)">
+                                    <SVGText
+                                        fontSize={styles.textSvg.fontSize}
+                                        fontFamily={styles.textSvg.fontFamily}
+                                        fill={styles.textSvg.color}
+                                    >
+                                        l'autre.
+                                    </SVGText>
+                                </G>
+                            </G>
+                        </G>
+                        <G transform="matrix(0.58543,0,0,0.58543,1113.91,4.09903)">
+                            <G transform="matrix(1,0,0,1,641.473,173.901)">
+                                <SVGText
+                                    fontSize={styles.titleSvg.fontSize}
+                                    fontFamily={styles.titleSvg.fontFamily}
+                                    fill={styles.titleSvg.color}
+                                >
+                                    Empattement
+                                </SVGText>
+                            </G>
+                        </G>
+                    </G>
+                </G>
+            );
+
+            setTimeout(() => this.props.navigation.dispatch({ type: DrawerActions.CLOSE_DRAWER }), 2000);
+
         } else {
             greetings = (
 
-                <View style={styles.title}>
-                    <Text style={styles.text}>
+                <View style={styles.titleView}>
+                    <Text style={styles.title}>
                         Frère Augustin a perdu patience et a fini par déchirer son manuscrit !
                     </Text>
-                    <Text style={styles.text}>
+                    <Text style={styles.title}>
                         Peux-tu l'aider à reconstituer la lettre?
                     </Text>
-
                 </View>
             );
         }
         return (
             <View style={styles.container}>
                 {greetings}
-                <Svg style={styles.svg}>
-                    <G transform="matrix(1,0,0,1,-298.962,-379.365)" scale={scale}>
-                        <G transform="matrix(1,0,0,1,0.961868,0.364709)">
+                <Svg style={styles.svg} >
+                    <G transform="matrix(1,0,0,1,-1401.51,0)" scale={scale}>
+                        <G transform="matrix(0.570564,0,0,0.570564,1313.99,70.7588)">
                             {
                                 (() => {
                                     return this.state.puzzlePiece.map((piece, i) => {
@@ -214,6 +496,9 @@ export default class GameChapterOneLetterA extends Component {
                                     })
                                 })()
                             }
+                        </G>
+                        <G>
+                            {typography}
                         </G>
                     </G>
                 </Svg>
