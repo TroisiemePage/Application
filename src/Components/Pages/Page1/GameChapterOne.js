@@ -45,9 +45,7 @@ const styles = {
         fontSize: 30,
         padding: 2,
         textAlign: 'left',
-        letterSpacing: 5,
         fontFamily: 'GothamRounded-Book',
-        fontWeight: '500',
     },
     description: {
         paddingVertical: 10,
