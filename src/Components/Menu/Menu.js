@@ -82,7 +82,9 @@ export class Menu extends React.Component {
                     </View>
                 </ModalSlider>
 
-                <CarteSVG/>
+                <CarteSVG
+                    currentLevel="2"
+                />
 
                 <Chateaux
                     x={145}

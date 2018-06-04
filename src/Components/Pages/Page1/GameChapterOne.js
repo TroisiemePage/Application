@@ -4,7 +4,6 @@ import Svg, {G, Path, Circle, Rect, Text as SVGText} from 'react-native-svg';
 import {computed} from "mobx";
 import DrawerActions from "react-navigation/src/routers/DrawerActions";
 
-
 const MAGFIELD = 80;
 const scale = 1;
 const AnimatedPath = Animated.createAnimatedComponent(Path);
