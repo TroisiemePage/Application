@@ -161,7 +161,7 @@ export class Menu extends React.Component {
                     side="right"
                     onClose={() => this.setState({modalVisibleRight: false})}
                 >
-                    <WordList navigation={this.props.navigation} />
+                    <WordList navigation={this.props.navigation} onElementClicked={() => this.setState({modalVisibleRight: false})}/>
                 </ModalSlider>
 
                 <TouchableWithoutFeedback onPress={() => this.setState({modalVisibleRight: true})} >

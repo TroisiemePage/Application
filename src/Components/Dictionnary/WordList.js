@@ -1,6 +1,6 @@
 import React from "react";
 import {ListView, Text, View} from "react-native";
-import words from "../../Stores/words.json";
+import {words} from "../../Stores/words.js";
 
 export default class WordList extends React.Component {
 
@@ -82,7 +82,10 @@ export default class WordList extends React.Component {
                 renderRow={(data) => {
                     return (
                         <Text
-                            onPress={() => this.props.navigation.navigate("Dictionnary", {word: data})}
+                            onPress={() =>{
+                                this.props.onElementClicked();
+                                this.props.navigation.navigate("Dictionnary", {word: data});
+                            }}
                             style={{
                             fontSize: 20,
                             fontFamily: "Gotham Rounded",

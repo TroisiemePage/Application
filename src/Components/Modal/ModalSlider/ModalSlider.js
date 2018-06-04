@@ -39,10 +39,12 @@ export class ModalSlider extends Component {
         },
         close: {
             flex: 1,
-            justifyContent: "flex-end",
-            alignItems: "flex-end"
+            justifyContent: this.props.side === "left" ? "flex-end" : "flex-start",
+            alignItems: this.props.side === "left" ? "flex-end" : "flex-start",
+            width: "100%",
+            height: 15,
         },
-        closeButton: {
+        closeImage: {
             width: 15,
             height: 15,
         },
@@ -71,18 +73,17 @@ export class ModalSlider extends Component {
                     backdropColor={"black"}
                 >
                     <View style={this.styles.modalContent}>
-                            <View>
-                                <View style={this.styles.close}>
-                                    <TouchableOpacity onPress={() => this.props.onClose()}>
-                                        <Image
-                                            style={this.styles.closeButton}
-                                            source={require('../../../Assets/Images/Elements/close_button.png')}
-                                        />
-                                    </TouchableOpacity>
-                                </View>
-                                <View style={this.styles.content}>
-                                    {this.props.children}
-                                </View>
+                        <View style={this.styles.close}>
+                            <TouchableOpacity onPress={() => this.props.onClose()}>
+                                <Image
+                                    style={this.styles.closeImage}
+                                    source={require('../../../Assets/Images/Elements/close_button.png')}
+                                />
+                            </TouchableOpacity>
+                        </View>
+
+                            <View style={this.styles.content}>
+                                {this.props.children}
                             </View>
                     </View>
                 </Modal>
