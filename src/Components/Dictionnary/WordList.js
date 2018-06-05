@@ -1,6 +1,7 @@
 import React from "react";
 import {ListView, Text, View} from "react-native";
 import {words} from "../../Stores/words.js";
+import {Defs, LinearGradient, Rect, Stop, Svg} from "react-native-svg";
 
 export default class WordList extends React.Component {
 
@@ -73,38 +74,55 @@ export default class WordList extends React.Component {
 
     render() {
         return (
-            <ListView
-                style={{
-                    width: "100%",
-                    backgroundColor: "#fdfaea"
-                }}
-                dataSource={this.state.dataSource}
-                renderRow={(data) => {
-                    return (
-                        <Text
-                            onPress={() =>{
-                                this.props.onElementClicked();
-                                this.props.navigation.navigate("Dictionnary", {word: data});
-                            }}
-                            style={{
-                            fontSize: 20,
-                            fontFamily: "Gotham Rounded",
-                            paddingTop: 5,
-                            paddingBottom: 5
-                        }}>{data}</Text>
-                    );
-                }}
-                renderSectionHeader={(sectionData) => (
-                    <View style={{backgroundColor: "#fdfaea"}}>
-                        <Text style={{
-                            fontSize: 35,
-                            fontFamily: "AGaramondPro-Bold",
-                            color: "#fd5641",
-                            marginTop: 20
-                        }}>{sectionData}</Text>
-                    </View>)
-                }
-            />
+            <View>
+                <ListView
+                    style={{
+                        width: "100%",
+                        padding: 20
+                    }}
+                    dataSource={this.state.dataSource}
+                    renderRow={(data) => {
+                        return (
+                            <Text
+                                onPress={() =>{
+                                    this.props.onElementClicked();
+                                    this.props.navigation.navigate("Dictionnary", {word: data});
+                                }}
+                                style={{
+                                    fontSize: 20,
+                                    fontFamily: "Gotham Rounded",
+                                    paddingTop: 5,
+                                    paddingBottom: 5
+                                }}>{data}</Text>
+                        );
+                    }}
+                    renderSectionHeader={(sectionData) => (
+                        <View style={{backgroundColor: "#fdfaea"}}>
+                            <Text style={{
+                                fontSize: 35,
+                                fontFamily: "AGaramondPro-Bold",
+                                color: "#fd5641",
+                                marginTop: 20
+                            }}>{sectionData}</Text>
+                        </View>)
+                    }
+                />
+                <Svg style={{
+                    height: 50,
+                    position: 'absolute',
+                    bottom: 0,
+                    width: '100%'
+                }}>
+                    <Defs>
+                        <LinearGradient id="grad" x1={0} x2={0} y1={0} y2={"100%"}>
+                            <Stop offset="0%" stopColor="#FEFBED" stopOpacity="0"/>
+                            <Stop offset="100%" stopColor="#FEFBED" stopOpacity="1"/>
+                        </LinearGradient>
+                    </Defs>
+                    <Rect x="0" y="0" height="100" width="100%" fill="url(#grad)"/>
+                </Svg>
+            </View>
+
         )
     }
 }

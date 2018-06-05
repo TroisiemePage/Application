@@ -75,10 +75,17 @@ export class Menu extends React.Component {
                     side="left"
                     onClose={() => this.setState({modalVisibleLeft: false})}
                 >
-                    <View>
+                    <View style={{
+                        padding: 20,
+                        flex: 1,
+                        alignItems: "center",
+                        flexDirection: "column"
+                    }}>
                         <Image style={styles.image} source={require("../../Assets/Images/Menu/chateauNB.png")}/>
-                        <Text style={styles.title}>{this.state.ville}</Text>
-                        <Text style={styles.text}>{this.state.description}</Text>
+                        <View>
+                            <Text style={styles.title}>{this.state.ville}</Text>
+                            <Text style={styles.text}>{this.state.description}</Text>
+                        </View>
                     </View>
                 </ModalSlider>
 

@@ -24,35 +24,34 @@ export class ModalSlider extends Component {
             elevation: 3,
         },
         modalContent: {
-            backgroundColor: "#FDFBEF",
-            padding: 20,
+            backgroundColor: "#fdfaea",
             justifyContent: "center",
             alignItems: "flex-start",
             width: 270,
             height: height,
         },
         content: {
-            flex: 30,
-            margin: 20,
-            justifyContent: "flex-start",
-            alignItems: "flex-start"
+            width: "100%",
+            height: "100%",
+            paddingTop: 15
         },
         close: {
+            backgroundColor: "#fdfaea",
+            position: "absolute",
+            left: 10,
+            top: 10,
+            right: 10,
             flex: 1,
             justifyContent: this.props.side === "left" ? "flex-end" : "flex-start",
             alignItems: this.props.side === "left" ? "flex-end" : "flex-start",
-            width: "100%",
             height: 15,
+            zIndex: 10,
+            padding: 10
         },
         closeImage: {
             width: 15,
             height: 15,
-        },
-        image: {
-            width: 151.9,
-            height: 238.14,
-            //resizeMode: "center",
-        },
+        }
     };
 
 

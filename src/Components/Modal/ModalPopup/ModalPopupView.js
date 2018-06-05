@@ -96,10 +96,12 @@ export default class ModalView extends Component {
                         </ScrollView>
                         <Svg style={styles.gradientHide}>
                             <Defs>
-                                <LinearGradient id="grad" x1="0" y1="0" x2="0" y2="50">
-                                    <Stop offset="0" stopColor="#FEFBED" stopOpacity="0"/>
-                                    <Stop offset="1" stopColor="#FEFBED" stopOpacity="1"/>
-                                </LinearGradient>
+                                <Defs>
+                                    <LinearGradient id="grad" x1={0} x2={0} y1={0} y2={"100%"}>
+                                        <Stop offset="0%" stopColor="#FEFBED" stopOpacity="0"/>
+                                        <Stop offset="100%" stopColor="#FEFBED" stopOpacity="1"/>
+                                    </LinearGradient>
+                                </Defs>
                             </Defs>
                             <Rect x="0" y="0" rx="20" ry="20" height="50" width="300" fill="url(#grad)"/>
                         </Svg>
