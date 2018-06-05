@@ -17,7 +17,11 @@ export const villes = {
         "id": 2,
         "title": "Paris",
         "description": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500.",
-        "source": null
+        "source": null,
+        "x": 760,
+        "y": 54,
+        "width": 92,
+        "height": 180,
     },
     "picrochole": {
         "id": 3,
