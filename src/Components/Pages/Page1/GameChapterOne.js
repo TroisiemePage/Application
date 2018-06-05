@@ -87,6 +87,7 @@ export default class GameChapterOneLetterA extends Component {
 
     constructor() {
         super();
+
         const pieces = [
             {
                 scale: {x: 1, y: 0},
@@ -130,10 +131,30 @@ export default class GameChapterOneLetterA extends Component {
                 }, pieces[i])
             }),
             animated: {
-                lines: new Animated.Value(0),
-                text: new Animated.Value(0)
+                lines: new Array(4).fill("").map(() => new Animated.Value(0)),
+                text: new Array(8).fill("").map(() => new Animated.Value(0))
             },
         };
+
+        this.animatedArrayLines = [];
+        this.animatedArrayLines = this.state.animated.lines.map((animationValue) => {
+            return Animated.timing(animationValue, {
+                toValue: 1,
+                duration: 1000,
+                delay: 0,
+                easing: Easing.inOut(Easing.cubic)
+            })
+        });
+
+        this.animatedArrayText = [];
+        this.animatedArrayText = this.state.animated.text.map((animationValue) => {
+            return Animated.timing(animationValue, {
+                toValue: 1,
+                duration: 600,
+                delay: 0,
+                easing: Easing.inOut(Easing.cubic)
+            })
+        });
     }
 
     _panResponders = new Array(3).fill('').map((pr, i) => {
@@ -192,21 +213,11 @@ export default class GameChapterOneLetterA extends Component {
     }
 
     animateLines() {
-        Animated.timing(this.state.animated.lines, {
-            toValue: 1,
-            duration: 1000,
-            delay: 0,
-            easing: Easing.inOut(Easing.cubic)
-        }).start();
+        Animated.sequence(this.animatedArrayLines).start();
     }
 
     animateTextFadeIn() {
-        Animated.timing(this.state.animated.text, {
-            toValue: 1,
-            duration: 300,
-            delay: 0,
-            easing: Easing.inOut(Easing.cubic)
-        }).start();
+        Animated.sequence(this.animatedArrayText).start();
     }
 
     render() {
@@ -241,11 +252,11 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedRect
                                     x="640.793"
                                     y="369.647"
-                                    width={this.state.animated.lines.interpolate({
+                                    width={this.state.animated.lines[3].interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "4.566"]
                                     })}
-                                    height={this.state.animated.lines.interpolate({
+                                    height={this.state.animated.lines[3].interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "109.292"]
                                     })}
@@ -256,7 +267,7 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r={this.state.animated.lines.interpolate({
+                                    r={this.state.animated.lines[3].interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "17.842"]
                                     })}
@@ -265,7 +276,7 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </G>
                         <AnimatedG
-                            opacity={this.state.animated.text.interpolate({
+                            opacity={this.state.animated.text[7].interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, 1]
                             })}
@@ -284,7 +295,7 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </AnimatedG>
                         <AnimatedG
-                            opacity={this.state.animated.text.interpolate({
+                            opacity={this.state.animated.text[6].interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, 1]
                             })}
@@ -307,11 +318,11 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedRect
                                     x="640.793"
                                     y="369.647"
-                                    width={this.state.animated.lines.interpolate({
+                                    width={this.state.animated.lines[2].interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "4.566"]
                                     })}
-                                    height={this.state.animated.lines.interpolate({
+                                    height={this.state.animated.lines[2].interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "109.292"]
                                     })}
@@ -322,7 +333,7 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r={this.state.animated.lines.interpolate({
+                                    r={this.state.animated.lines[2].interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "17.842"]
                                     })}
@@ -331,7 +342,7 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </G>
                         <AnimatedG
-                            opacity={this.state.animated.text.interpolate({
+                            opacity={this.state.animated.text[5].interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, 1]
                             })}
@@ -350,7 +361,7 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </AnimatedG>
                         <AnimatedG
-                            opacity={this.state.animated.text.interpolate({
+                            opacity={this.state.animated.text[4].interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, 1]
                             })}
@@ -373,11 +384,11 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedRect
                                     x="640.793"
                                     y="369.647"
-                                    width={this.state.animated.lines.interpolate({
+                                    width={this.state.animated.lines[1].interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "4.566"]
                                     })}
-                                    height={this.state.animated.lines.interpolate({
+                                    height={this.state.animated.lines[1].interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "109.292"]
                                     })}
@@ -388,7 +399,7 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r={this.state.animated.lines.interpolate({
+                                    r={this.state.animated.lines[1].interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "17.842"]
                                     })}
@@ -397,7 +408,7 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </G>
                         <AnimatedG
-                            opacity={this.state.animated.text.interpolate({
+                            opacity={this.state.animated.text[3].interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, 1]
                             })}
@@ -427,7 +438,7 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </AnimatedG>
                         <AnimatedG
-                            opacity={this.state.animated.text.interpolate({
+                            opacity={this.state.animated.text[2].interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, 1]
                             })}
@@ -449,11 +460,11 @@ export default class GameChapterOneLetterA extends Component {
                             <AnimatedRect
                                 x="640.793"
                                 y="369.647"
-                                width={this.state.animated.lines.interpolate({
+                                width={this.state.animated.lines[0].interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0", "4.566"]
                                 })}
-                                height={this.state.animated.lines.interpolate({
+                                height={this.state.animated.lines[0].interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0", "109.292"]
                                 })}
@@ -463,7 +474,7 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r={this.state.animated.lines.interpolate({
+                                    r={this.state.animated.lines[0].interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "17.842"]
                                     })}
@@ -472,7 +483,7 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </G>
                         <AnimatedG
-                            opacity={this.state.animated.text.interpolate({
+                            opacity={this.state.animated.text[1].interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, 1]
                             })}
@@ -546,7 +557,7 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </AnimatedG>
                         <AnimatedG
-                            opacity={this.state.animated.text.interpolate({
+                            opacity={this.state.animated.text[0].interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, 1]
                             })}
