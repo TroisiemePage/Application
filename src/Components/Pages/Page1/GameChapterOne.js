@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet, PanResponder, Animated, View, Text, Dimensions, Easing} from 'react-native';
-import Svg, {G, Path, Circle, Rect, Text as SVGText, Ellipse} from 'react-native-svg';
+import {PanResponder, Animated, View, Text, Dimensions, Easing} from 'react-native';
+import Svg, {G, Path, Circle, Rect, Text as SVGText} from 'react-native-svg';
 import {computed} from "mobx";
 import DrawerActions from "react-navigation/src/routers/DrawerActions";
 
@@ -131,6 +131,8 @@ export default class GameChapterOneLetterA extends Component {
                 }, pieces[i])
             }),
             animated: {
+                title: new Animated.Value(0),
+                description: new Animated.Value(0),
                 lines: new Array(4).fill("").map(() => new Animated.Value(0)),
                 text: new Array(8).fill("").map(() => new Animated.Value(0))
             },
@@ -212,6 +214,15 @@ export default class GameChapterOneLetterA extends Component {
         return this.state.puzzlePiece.filter((piece) => piece.placed).length === this.state.puzzlePiece.length;
     }
 
+    animateTitle() {
+        Animated.timing(this.state.animated.title, {
+            toValue: 1,
+            duration: 1000,
+            delay: 0,
+            easing: Easing.inOut(Easing.cubic)
+        }).start();
+    }
+
     animateLines() {
         Animated.sequence(this.animatedArrayLines).start();
     }
@@ -222,23 +233,27 @@ export default class GameChapterOneLetterA extends Component {
 
     render() {
         let greetings, typography;
+        const opacity = this.state.animated.title.interpolate({inputRange: [0,1], outputRange: [0,1]});
+        const translateY = this.state.animated.title.interpolate({inputRange: [0,1], outputRange: [-15,0]});
+        const transform = [{translateY}];
 
         if (this.didSucceed) {
 
             this.animateLines();
             this.animateTextFadeIn();
+            this.animateTitle();
 
             greetings = (
 
                 <View style={styles.titleViewAchieved}>
-                    <Text style={styles.titleAchieved}>
+                    <Animated.Text style={[styles.titleAchieved, {opacity, transform}]}>
                         Bien joué !
-                    </Text>
-                    <Text style={styles.description}>
+                    </Animated.Text>
+                    <Animated.Text style={[styles.description, {opacity, transform}]}>
                         Frère Augustin te remercie.
                         Il sera plus patient
                         la prochaine fois..
-                    </Text>
+                    </Animated.Text>
                 </View>
 
             );
