@@ -6,18 +6,13 @@ import DrawerActions from "react-navigation/src/routers/DrawerActions";
 
 const MAGFIELD = 80;
 const scale = 1;
-const {height} = Dimensions.get('window');
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const AnimatedG= Animated.createAnimatedComponent(G);
 const AnimatedRect= Animated.createAnimatedComponent(Rect);
 const AnimatedCircle= Animated.createAnimatedComponent(Circle);
 
-const animations = {
-    lines: new Animated.Value(0),
-    text: new Animated.Value(0)
-};
-
+const {height} = Dimensions.get('window');
 const styles = {
     container: {
         justifyContent: 'center',
@@ -80,15 +75,8 @@ const styles = {
         fontFamily:'GothamRounded-Medium',
         fontSize: 49,
         color: "rgba(255,92,69,1)",
-    },
-    GOpacity: {
-        opacity : animations.text.interpolate({
-            inputRange: [0, 1],
-            outputRange: [0, 1]
-        }),
     }
 };
-
 
 export default class GameChapterOneLetterA extends Component {
     previousPos = [];
@@ -141,6 +129,10 @@ export default class GameChapterOneLetterA extends Component {
                     opacity: new Animated.Value(0.9)
                 }, pieces[i])
             }),
+            animated: {
+                lines: new Animated.Value(0),
+                text: new Animated.Value(0)
+            },
         };
     }
 
@@ -200,7 +192,7 @@ export default class GameChapterOneLetterA extends Component {
     }
 
     animateLines() {
-        Animated.timing(animations.lines, {
+        Animated.timing(this.state.animated.lines, {
             toValue: 1,
             duration: 1000,
             delay: 0,
@@ -209,9 +201,9 @@ export default class GameChapterOneLetterA extends Component {
     }
 
     animateTextFadeIn() {
-        Animated.timing(animations.text, {
+        Animated.timing(this.state.animated.text, {
             toValue: 1,
-            duration: 1000,
+            duration: 300,
             delay: 0,
             easing: Easing.inOut(Easing.cubic)
         }).start();
@@ -222,8 +214,8 @@ export default class GameChapterOneLetterA extends Component {
 
         if (this.didSucceed) {
 
-            this.animateTextFadeIn();
             this.animateLines();
+            this.animateTextFadeIn();
 
             greetings = (
 
@@ -249,11 +241,11 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedRect
                                     x="640.793"
                                     y="369.647"
-                                    width={animations.lines.interpolate({
+                                    width={this.state.animated.lines.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "4.566"]
                                     })}
-                                    height={animations.lines.interpolate({
+                                    height={this.state.animated.lines.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "109.292"]
                                     })}
@@ -264,7 +256,7 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r={animations.lines.interpolate({
+                                    r={this.state.animated.lines.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "17.842"]
                                     })}
@@ -273,7 +265,10 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </G>
                         <AnimatedG
-                            style={styles.GOpacity}
+                            opacity={this.state.animated.text.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0, 1]
+                            })}
                             transform="matrix(0.565498,0,0,0.565498,1050.75,147.876)"
                         >
                             <G>
@@ -289,7 +284,10 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </AnimatedG>
                         <AnimatedG
-                            style={styles.GOpacity}
+                            opacity={this.state.animated.text.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0, 1]
+                            })}
                             transform="matrix(0.58543,0,0,0.58543,1038.65,147.459)"
                         >
                             <G transform="matrix(1,0,0,1,641.473,173.901)">
@@ -309,11 +307,11 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedRect
                                     x="640.793"
                                     y="369.647"
-                                    width={animations.lines.interpolate({
+                                    width={this.state.animated.lines.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "4.566"]
                                     })}
-                                    height={animations.lines.interpolate({
+                                    height={this.state.animated.lines.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "109.292"]
                                     })}
@@ -324,7 +322,7 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r={animations.lines.interpolate({
+                                    r={this.state.animated.lines.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "17.842"]
                                     })}
@@ -333,7 +331,10 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </G>
                         <AnimatedG
-                            style={styles.GOpacity}
+                            opacity={this.state.animated.text.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0, 1]
+                            })}
                             transform="matrix(0.565498,0,0,0.565498,1050.75,149.876)"
                         >
                             <G>
@@ -349,7 +350,10 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </AnimatedG>
                         <AnimatedG
-                            style={styles.GOpacity}
+                            opacity={this.state.animated.text.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0, 1]
+                            })}
                             transform="matrix(0.58543,0,0,0.58543,1038.65,149.459)"
                         >
                             <G transform="matrix(1,0,0,1,641.473,173.901)">
@@ -369,11 +373,11 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedRect
                                     x="640.793"
                                     y="369.647"
-                                    width={animations.lines.interpolate({
+                                    width={this.state.animated.lines.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "4.566"]
                                     })}
-                                    height={animations.lines.interpolate({
+                                    height={this.state.animated.lines.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "109.292"]
                                     })}
@@ -384,7 +388,7 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r={animations.lines.interpolate({
+                                    r={this.state.animated.lines.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "17.842"]
                                     })}
@@ -393,7 +397,10 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </G>
                         <AnimatedG
-                            style={styles.GOpacity}
+                            opacity={this.state.animated.text.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0, 1]
+                            })}
                             transform="matrix(0.565498,0,0,0.565498,1124,5.51554)"
                         >
                             <G>
@@ -420,7 +427,10 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </AnimatedG>
                         <AnimatedG
-                            style={styles.GOpacity}
+                            opacity={this.state.animated.text.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0, 1]
+                            })}
                             transform="matrix(0.58543,0,0,0.58543,1111.91,5.09903)"
                         >
                             <G transform="matrix(1,0,0,1,641.473,173.901)">
@@ -439,11 +449,11 @@ export default class GameChapterOneLetterA extends Component {
                             <AnimatedRect
                                 x="640.793"
                                 y="369.647"
-                                width={animations.lines.interpolate({
+                                width={this.state.animated.lines.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0", "4.566"]
                                 })}
-                                height={animations.lines.interpolate({
+                                height={this.state.animated.lines.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0", "109.292"]
                                 })}
@@ -453,7 +463,7 @@ export default class GameChapterOneLetterA extends Component {
                                 <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r={animations.lines.interpolate({
+                                    r={this.state.animated.lines.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0", "17.842"]
                                     })}
@@ -462,7 +472,10 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </G>
                         <AnimatedG
-                            style={styles.GOpacity}
+                            opacity={this.state.animated.text.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0, 1]
+                            })}
                             transform="matrix(0.565498,0,0,0.565498,1128,4.51554)"
                         >
                             <G>
@@ -533,7 +546,10 @@ export default class GameChapterOneLetterA extends Component {
                             </G>
                         </AnimatedG>
                         <AnimatedG
-                            style={styles.GOpacity}
+                            opacity={this.state.animated.text.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0, 1]
+                            })}
                             transform="matrix(0.58543,0,0,0.58543,1113.91,4.09903)">
                             <G transform="matrix(1,0,0,1,641.473,173.901)">
                                 <SVGText
