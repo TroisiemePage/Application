@@ -106,6 +106,14 @@ export default class WordList extends React.Component {
                             }}>{sectionData}</Text>
                         </View>)
                     }
+                    renderFooter={() => (
+                        <View style={{
+                            width: "100%",
+                            height: 100
+                        }}>
+
+                        </View>
+                    )}
                 />
                 <Svg style={{
                     height: 50,

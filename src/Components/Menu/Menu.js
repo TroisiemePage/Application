@@ -53,6 +53,8 @@ const styles = {
 
 export class Menu extends React.Component {
 
+    currentLevel = 2;
+
     state = {
         modalVisibleLeft: false,
         modalVisibleRight: false,
@@ -89,13 +91,16 @@ export class Menu extends React.Component {
                     </View>
                 </ModalSlider>
 
-                <CarteSVG/>
+                <CarteSVG
+                    currentLevel={this.currentLevel}
+                />
 
                 <Chateaux
                     x={145}
                     y={144}
                     width={178}
                     height={280}
+                    opacity={this.currentLevel >= 1 ? 1 : 0.5}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.grandgousier.title,
@@ -110,6 +115,7 @@ export class Menu extends React.Component {
                     y={137}
                     width={122}
                     height={190}
+                    opacity={this.currentLevel >= 4 ? 1 : 0.5}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.beauce.title,
@@ -124,6 +130,7 @@ export class Menu extends React.Component {
                     y={70}
                     width={186}
                     height={177}
+                    opacity={this.currentLevel >= 8 ? 1 : 0.5}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.paris.title,
@@ -138,7 +145,7 @@ export class Menu extends React.Component {
                     y={525}
                     width={104}
                     height={165}
-                    opacity={0.5}
+                    opacity={this.currentLevel >= 10 ? 1 : 0.5}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.picrochole.title,
@@ -153,7 +160,7 @@ export class Menu extends React.Component {
                     y={363}
                     width={205}
                     height={323}
-                    opacity={0.5}
+                    opacity={this.currentLevel >= 13 ? 1 : 0.5}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.theleme.title,
