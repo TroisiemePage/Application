@@ -16,27 +16,12 @@ export default class CarteSVG extends React.Component {
     toExplore = "rgb(128,128,128)";
     toExploreLighter= "rgb(102,102,102)";
     backgroundColor = '#FDFAEA';
-    strokeAnimationArray = [];
     state = {
         circleRadius : new Animated.Value(0),
-        strokeOffsets: new Array(13).fill("").map(() => new Animated.Value(0))
     };
 
     componentDidMount() {
         this.animateCircle();
-        this.strokeAnimationArray = this.state.strokeOffsets.map((animatedValue) => {
-            return Animated.timing(animatedValue, {
-                toValue: 1,
-                duration: 2000,
-                delay: 0
-            });
-        });
-
-        Animated.sequence(
-            this.strokeAnimationArray
-                .slice(0, this.props.currentLevel)
-        ).start();
-
     }
 
     animateCircle() {
@@ -83,17 +68,13 @@ export default class CarteSVG extends React.Component {
                                 <G transform="matrix(5.5082,0,-2.78839e-19,5.44354,5293.73,4600.3)">
                                     <Path
                                         stroke={this.props.currentLevel >= 3 ? this.achieved : this.toExplore}
-                                        strokeDasharray="1000"
-                                        strokeDashoffset={this.state.strokeOffsets[0].interpolate({
-                                            inputRange: [0, 1],
-                                            outputRange: ["1", "0"]
-                                        })}
                                         d="M0,137.654C38.012,137.654 68.827,106.839 68.827,68.827C68.827,30.815 38.012,0 0,0L-102.509,0.416"
                                     />
                                 </G>
                                 <G transform="matrix(1.90917,0.000685747,-0.00199548,5.55556,5308.88,5348.81)">
                                     <Path
                                         d="M-484.429,0.087L0,0.087"
+                                        stroke={this.props.currentLevel >= 3 ? this.achieved : this.toExplore}
                                     />
                                 </G>
                             </G>
