@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, PanResponder, Animated, View, Text, Dimensions} from 'react-native';
+import {Easing, PanResponder, Animated, View, Text, Dimensions} from 'react-native';
 import Svg, {G, Path, Circle, Rect, Text as SVGText} from 'react-native-svg';
 import {computed} from "mobx";
 import DrawerActions from "react-navigation/src/routers/DrawerActions";
@@ -76,7 +76,7 @@ export default class GameChapterOneLetterA extends Component {
                 delay: 0,
                 easing: Easing.inOut(Easing.cubic)
             })
-        };
+        });
     }
 
     styles = {
@@ -215,16 +215,16 @@ export default class GameChapterOneLetterA extends Component {
                     <Animated.Text style={this.styles.description}>
                         Frère Augustin te remercie.
                         Il sera plus patient
-                        la prochaine fois..
-                    </Text>
+                        la prochaine fois...
+                    </Animated.Text>
                 </View>
 
             );
 
             typography = (
 
-                <G>
-                    <G id="delie" transform="matrix(1,0,0,1,172.653,466.421)">
+                <AnimatedG>
+                    <AnimatedG id="delie" transform="matrix(1,0,0,1,172.653,466.421)">
                         <G transform="matrix(-0.52968,0.148123,-0.148123,-0.52968,1805.38,299.018)">
                             <G transform="matrix(0.79311,-0.191132,0.341725,1.418,-31.8794,-70.0615)">
                                 <Rect
@@ -274,9 +274,9 @@ export default class GameChapterOneLetterA extends Component {
                                     Délié
                                 </SVGText>
                             </G>
-                        </G>
-                    </G>
-                    <G id="plein" transform="matrix(1,0,0,1,316.567,346.674)">
+                        </AnimatedG>
+                    </AnimatedG>
+                    <AnimatedG id="plein" transform="matrix(1,0,0,1,316.567,346.674)">
                         <G transform="matrix(-0.52968,0.148123,-0.148123,-0.52968,1805.38,299.018)">
                             <G transform="matrix(0.815816,-6.45625e-19,0,1.4586,118.024,-219.64)">
                                 <Rect
@@ -326,14 +326,13 @@ export default class GameChapterOneLetterA extends Component {
                                 <SVGText
                                     fontSize={this.styles.titleSvg.fontSize}
                                     fontFamily={this.styles.titleSvg.fontFamily}
-                                    fill={this.styles.titleSvg.color}
-                                >
+                                    fill={this.styles.titleSvg.color}>
                                     Plein
                                 </SVGText>
                             </G>
-                        </G>
-                    </G>
-                    <G id="fut" transform="matrix(1,0,0,1,178.11,179.473)">
+                        </AnimatedG>
+                    </AnimatedG>
+                    <AnimatedG id="fut" transform="matrix(1,0,0,1,178.11,179.473)">
                         <G transform="matrix(0.00179016,0.549998,-0.549998,0.00179016,1656.67,-215.948)">
                             <G transform="matrix(0.815816,-6.45625e-19,0,1.4586,118.024,-219.64)">
                                 <Rect
@@ -399,9 +398,9 @@ export default class GameChapterOneLetterA extends Component {
                                     Fût
                                 </SVGText>
                             </G>
-                        </G>
-                    </G>
-                    <G id="empattement" transform="matrix(1,0,0,1,17.1687,20.5025)">
+                        </AnimatedG>
+                    </AnimatedG>
+                    <AnimatedG id="empattement" transform="matrix(1,0,0,1,17.1687,20.5025)">
                         <G transform="matrix(0.550001,0,0,0.550001,1139.31,12.4713)">
                             <Rect x="640.793" y="369.647" width="4.566" height="109.292" fill="rgb(255,92,69)"/>
                             <G transform="matrix(1,0,0,1,1,-2)">
@@ -502,9 +501,9 @@ export default class GameChapterOneLetterA extends Component {
                                     Empattement
                                 </SVGText>
                             </G>
-                        </G>
-                    </G>
-                </G>
+                        </AnimatedG>
+                    </AnimatedG>
+                </AnimatedG>
             );
 
             setTimeout(() => this.props.navigation.dispatch({ type: DrawerActions.CLOSE_DRAWER }), 2000);

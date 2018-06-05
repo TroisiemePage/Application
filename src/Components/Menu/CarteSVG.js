@@ -1,4 +1,5 @@
 import React from 'react';
+import {Animated, Easing} from 'react-native';
 import Svg, {G, Path, Text as SVGText, Ellipse} from 'react-native-svg';
 
 const styles = {
