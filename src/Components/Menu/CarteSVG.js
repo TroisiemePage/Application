@@ -35,10 +35,6 @@ export default class CarteSVG extends React.Component {
                                     <Path
                                         stroke={this.props.currentLevel >= 3 ? this.achieved : this.toExplore}
                                         strokeDasharray="1000"
-                                        strokeDashoffset={"" + this.state.strokeOffsets[0].interpolate({
-                                            inputRange: [0, 1],
-                                            outputRange: ["1000", "0"]
-                                        })}
                                         d="M0,137.654C38.012,137.654 68.827,106.839 68.827,68.827C68.827,30.815 38.012,0 0,0L-102.509,0.416"
                                     />
                                 </G>
