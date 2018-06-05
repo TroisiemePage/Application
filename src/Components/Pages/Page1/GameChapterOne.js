@@ -591,7 +591,7 @@ export default class GameChapterOneLetterA extends Component {
                 </G>
             );
 
-            //setTimeout(() => this.props.navigation.dispatch({ type: DrawerActions.CLOSE_DRAWER }), 2000);
+            setTimeout(() => this.props.navigation.dispatch({ type: DrawerActions.CLOSE_DRAWER }), 10000);
 
         } else {
             greetings = (
