@@ -142,7 +142,7 @@ export default class GameChapterOneLetterA extends Component {
         this.animatedArrayLines = this.state.animated.lines.map((animationValue) => {
             return Animated.timing(animationValue, {
                 toValue: 1,
-                duration: 490,
+                duration: 990,
                 delay: 0,
                 easing: Easing.inOut(Easing.cubic)
             })
@@ -152,7 +152,7 @@ export default class GameChapterOneLetterA extends Component {
         this.animatedArrayText = this.state.animated.text.map((animationValue) => {
             return Animated.timing(animationValue, {
                 toValue: 1,
-                duration: 500,
+                duration: 400,
                 delay: 0,
                 easing: Easing.inOut(Easing.cubic)
             })
