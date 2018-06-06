@@ -7,7 +7,12 @@ import DrawerActions from "react-navigation/src/routers/DrawerActions";
 
 const MAGFIELD = 80;
 const scale = 1;
+
 const AnimatedPath = Animated.createAnimatedComponent(Path);
+const AnimatedG= Animated.createAnimatedComponent(G);
+const AnimatedRect= Animated.createAnimatedComponent(Rect);
+const AnimatedCircle= Animated.createAnimatedComponent(Circle);
+
 const {height} = Dimensions.get('window');
 
 export default class GameChapterOneLetterA extends Component {
