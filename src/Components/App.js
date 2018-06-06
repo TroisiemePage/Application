@@ -26,3 +26,7 @@ export default class App extends React.Component {
     }
 
 }
+/*
+//If Production
+console.disableYellowBox = true;
+*/

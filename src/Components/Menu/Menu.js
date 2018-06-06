@@ -5,6 +5,7 @@ import CarteSVG from "./CarteSVG";
 import {ModalSlider} from '../Modal/ModalSlider/ModalSlider';
 import {villes} from "./villes.js";
 import Chateaux from "./Chateaux";
+import {PageDetector} from "../../Modules/PageDetector";
 
 const styles = {
     container: {
@@ -53,14 +54,19 @@ const styles = {
 
 export class Menu extends React.Component {
 
-    currentLevel = 2;
 
     state = {
         modalVisibleLeft: false,
         modalVisibleRight: false,
         ville: null,
         description: null,
+        currentPage: 0
     };
+
+    constructor() {
+        super();
+        PageDetector.onPageChange((cp) => this.setState({currentPage: cp}));
+    }
 
     render() {
         return (
@@ -92,7 +98,7 @@ export class Menu extends React.Component {
                 </ModalSlider>
 
                 <CarteSVG
-                    currentLevel={this.currentLevel}
+                    currentLevel={this.state.currentPage}
                 />
 
                 <Chateaux
@@ -100,7 +106,7 @@ export class Menu extends React.Component {
                     y={144}
                     width={178}
                     height={280}
-                    opacity={this.currentLevel >= 1 ? 1 : 0.5}
+                    opacity={this.state.currentPage >= 1 ? 1 : 0.5}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.grandgousier.title,
@@ -115,7 +121,7 @@ export class Menu extends React.Component {
                     y={137}
                     width={122}
                     height={190}
-                    opacity={this.currentLevel >= 4 ? 1 : 0.5}
+                    opacity={this.state.currentPage >= 4 ? 1 : 0.5}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.beauce.title,
@@ -130,7 +136,7 @@ export class Menu extends React.Component {
                     y={70}
                     width={186}
                     height={177}
-                    opacity={this.currentLevel >= 8 ? 1 : 0.5}
+                    opacity={this.state.currentPage >= 8 ? 1 : 0.5}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.paris.title,
@@ -145,7 +151,7 @@ export class Menu extends React.Component {
                     y={525}
                     width={104}
                     height={165}
-                    opacity={this.currentLevel >= 10 ? 1 : 0.5}
+                    opacity={this.state.currentPage >= 10 ? 1 : 0.5}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.picrochole.title,
@@ -160,7 +166,7 @@ export class Menu extends React.Component {
                     y={363}
                     width={205}
                     height={323}
-                    opacity={this.currentLevel >= 13 ? 1 : 0.5}
+                    opacity={this.state.currentPage >= 13 ? 1 : 0.5}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.theleme.title,

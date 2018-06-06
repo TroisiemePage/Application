@@ -39,7 +39,7 @@ const tasks = new Listr([{
     title: 'Compile animations',
     task: () => {
         return new Listr(animationToCompile, {
-            concurrent: true
+            concurrent: 5
         });
     }
 }]);

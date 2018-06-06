@@ -2,7 +2,7 @@ import {NativeModules} from "react-native"
 const Magnetometer = NativeModules.Magnetometer;
 import {DeviceEventEmitter} from "react-native";
 
-export class PageDetector {
+export const PageDetector = new class PageDetector {
     step = 20;
     liftingRes = 10;
     liftingWindow = new Array(this.liftingRes).fill(0);

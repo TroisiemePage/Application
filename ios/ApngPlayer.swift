@@ -26,6 +26,11 @@ public class ApngPlayer: UIView, APNGImageViewDelegate {
   
   }
   
+  deinit {
+    // perform the deinitialization
+    print("player is being deallocated")
+  }
+  
   public func apngImageView(_ imageView: APNGImageView, didFinishPlaybackForRepeatedCount count: Int) {
     _onFinish!(nil)
   }

@@ -4,16 +4,14 @@ import {Page2} from "../Pages/Page2";
 import {Dimensions, Image, TouchableOpacity, View} from "react-native";
 import menuPicto from "../../Assets/Images/Elements/menu.png";
 import {createStackNavigator} from "react-navigation";
-import {PageDetector} from "../../Modules/PageDetector";
+import PageDetector from "../../Modules/PageDetector";
 
 const {height, width} = Dimensions.get('window');
 
 export class Overlay extends React.Component {
 
-    pageDetector = new PageDetector();
-
     componentWillFocus() {
-        this.pageDetector.onPageChange((currentPage) => {
+        PageDetector.onPageChange((currentPage) => {
             let pageNumber = 2;
             let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pageNumber ? currentPage : (pageNumber - 1)) : 0);
             this.props.navigation.navigate("Page" + (currentPageIntervalized + 1));
@@ -23,7 +21,7 @@ export class Overlay extends React.Component {
 
     componentDidBlur() {
         console.log("unmout");
-        this.pageDetector.onPageChange(() => {});
+        PageDetector.onPageChange(() => {});
     }
 
     render() {
