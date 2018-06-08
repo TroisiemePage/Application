@@ -85,7 +85,7 @@ export const PageRouter = createStackNavigator({
         screen: Page2
     },
 }, {
-    initialRouteName: 'Page1'
+    initialRouteName: 'Page2'
 });
 PageRouter.navigationOptions = {
     header: null
