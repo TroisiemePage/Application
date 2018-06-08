@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Dimensions, Image, Text, View, TouchableOpacity} from "react-native";
+import {Dimensions, Image, Text, View, TouchableOpacity, Animated, Easing} from "react-native";
 import Decor from "../../Assets/Images/Pages/Page2/decor.png";
 import Roue1 from "../../Assets/Images/Pages/Page2/roue1.png";
 import Roue2 from "../../Assets/Images/Pages/Page2/roue2.png";
@@ -10,8 +10,6 @@ import Levier from "../../Assets/Images/Pages/Page2/levier.png";
 import Pots from "../../Assets/Images/Pages/Page2/pots.png";
 import Vache1 from "../../Assets/Images/Pages/Page2/vache1.png";
 import Vache2 from "../../Assets/Images/Pages/Page2/vache2.png";
-import Bouteille1 from "../../Assets/Images/Pages/Page2/bouteille1.png";
-import Bouteille2 from "../../Assets/Images/Pages/Page2/bouteille2.png";
 import Bouteille3 from "../../Assets/Images/Pages/Page2/bouteille3.png";
 import Bouteilles4 from "../../Assets/Images/Pages/Page2/bouteilles4.png";
 import Bouteille5 from "../../Assets/Images/Pages/Page2/bouteille5.png";
@@ -22,7 +20,6 @@ import Bouteilles9 from "../../Assets/Images/Pages/Page2/bouteilles9.png";
 import Bouteille10 from "../../Assets/Images/Pages/Page2/bouteille10.png";
 import Passerelle from "../../Assets/Images/Pages/Page2/passerelle.png";
 import Meuble from "../../Assets/Images/Pages/Page2/meuble.png";
-
 
 import {Page1} from "./Page1/Page1";
 import {Overlay} from "../PageRouter/PageRouter";
@@ -39,11 +36,51 @@ const styles = {
         width: width,
         height: height,
         alignSelf: "flex-end",
-        position: 'absolute'
+        position: 'absolute',
     }
 };
 
 export class Page2 extends React.Component {
+
+    state = {
+        moveLevier: new Animated.Value(0),
+        moveVAches: new Animated.Value(0)
+    };
+
+    levierAnimation() {
+        Animated.sequence([
+            Animated.timing(this.state.moveLevier, {
+                toValue: 1,
+                duration: 1000,
+                delay: 0,
+                easing: Easing.bezier(0,.53,.47,1),
+            }),
+            Animated.timing(this.state.moveLevier, {
+                toValue: 0,
+                duration: 1000,
+                delay: 0,
+                easing: Easing.bezier(0,.53,.47,1),
+            })
+        ]).start();
+    }
+
+    vachesAnimation() {
+        Animated.sequence([
+            Animated.timing(this.state.moveVAches, {
+                toValue: 1,
+                duration: 3000,
+                delay: 0,
+                easing: Easing.bezier(.57,.31,.29,.93),
+            }),
+            Animated.timing(this.state.moveVAches, {
+                toValue: 0,
+                duration: 3000,
+                delay: 0,
+                easing: Easing.bezier(.57,.31,.29,.93),
+            })
+        ]).start();
+    }
+
     render() {
         return (
             <Overlay {...this.props}>
@@ -56,63 +93,187 @@ export class Page2 extends React.Component {
                     />
 
                     <TouchableOpacity
-                        onPress={() => console.log("pressed on roue1")}
+                        onPress={() => this.vachesAnimation()}
                     >
-                        <Image
+                        <Animated.Image
                             source={Roue1}
-                            style={{width: 170, height: 154, position: 'absolute', left: 934, top: 275}}
+                            style={{
+                                width: 170,
+                                height: 154,
+                                position: 'absolute',
+                                left: 934,
+                                top: 275,
+                                transform: [{
+                                    rotate: this.state.moveVAches.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0deg" , "360deg"],
+                                    }),
+                                }],
+                            }}
                         />
                     </TouchableOpacity>
 
-                    <Image
+                    <Animated.Image
                         source={Roue2}
-                        style={{width: 114, height: 115, position: 'absolute', left: 1000, top: 180}}
+                        style={{
+                            width: 114,
+                            height: 115,
+                            position: 'absolute',
+                            left: 1000,
+                            top: 180,
+                            transform: [{
+                                rotate: this.state.moveVAches.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: ["0deg" , "360deg"],
+                                }),
+                            }],
+                        }}
                     />
 
-                    <Image
+                    <Animated.Image
                         source={Roue3}
-                        style={{width: 143, height: 140, position: 'absolute', left: 887, top: 97}}
+                        style={{
+                            width: 143,
+                            height: 140,
+                            position: 'absolute',
+                            left: 887,
+                            top: 97,
+                            transform: [{
+                                rotate: this.state.moveVAches.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: ["0deg" , "360deg"],
+                                }),
+                            }],
+                        }}
                     />
 
-                    <Image
+                    <Animated.Image
                         source={Roue4}
-                        style={{width: 87, height: 93, position: 'absolute', left: 1025, top: 91}}
+                        style={{
+                            width: 87,
+                            height: 93,
+                            position: 'absolute',
+                            left: 1025,
+                            top: 91,
+                            transform: [{
+                                rotate: this.state.moveVAches.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: ["0deg" , "360deg"],
+                                }),
+                            }],
+                        }}
                     />
 
-                    <Image
+                    <Animated.Image
                         source={Roue5}
-                        style={{width: 858, height: 60, position: 'absolute', left: 223, top: 36.5}}
+                        style={{
+                            width: 858,
+                            height: 60,
+                            position: 'absolute',
+                            left: 223,
+                            top: 36.5,/*
+                            transform: [{
+                                rotate: this.state.moveVAches.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: ["0deg" , "360deg"],
+                                }),
+                            }],*/
+                        }}
                     />
+
 
                     <TouchableOpacity
-                        onPress={() => console.log("pressed on levier")}
+                        onPress={() => this.levierAnimation()}
                     >
-                        <Image
-                            source={Levier}
-                            style={{width: 65, height: 100, position: 'absolute', left: 644, top: 510}}
-                        />
+                        <Animated.View style={{
+                            width: 130,
+                            height: 200,
+                            left: 565,
+                            top: 515,
+                            alignItems: "flex-end",
+                            transform: [{
+                                rotate: this.state.moveLevier.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: ["0deg" , "-50deg"],
+                                }),
+                            }],
+                        }}>
+                            <Image
+                                source={Levier}
+                                style={{
+                                    width: 65,
+                                    height: 100,
+                                    position: 'absolute',
+                                }}
+                            />
+                        </Animated.View>
                     </TouchableOpacity>
 
-                    <Image
+                    <Animated.Image
                         source={Pots}
-                        style={{width: 1074, height: 347, position: 'absolute', left: -508, top: 329}}
+                        style={{
+                            width: 1074,
+                            height: 347,
+                            position: 'absolute',
+                            left: this.state.moveLevier.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [-508 , -600],
+                            }),
+                            top: 329,
+                        }}
                     />
 
                     <TouchableOpacity
                         onPress={() => console.log("pressed on vache 1")}
                     >
-                        <Image
+                        <Animated.Image
                             source={Vache1}
-                            style={{width: 178, height: 178, position: 'absolute', left: 460, top: 88}}
+                            style={{
+                                width: 178,
+                                height: 178,
+                                position: 'absolute',
+                                left: this.state.moveVAches.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: [460, 0],
+                                }),
+                                top: this.state.moveVAches.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: [92 , 88],
+                                }),
+                                transform: [{
+                                    rotate: this.state.moveVAches.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["5deg" , "-5deg"],
+                                    }),
+                                }],
+                            }}
                         />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => console.log("pressed on vache 2")}
                     >
-                        <Image
+                        <Animated.Image
                             source={Vache2}
-                            style={{width: 177, height: 173, position: 'absolute', left: 249, top: 94}}
+                            style={{
+                                width: 177,
+                                height: 173,
+                                position: 'absolute',
+                                left: this.state.moveVAches.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: [246, -200],
+                                }),
+                                top: this.state.moveVAches.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: [92 , 94],
+                                }),
+                                transform: [{
+                                    rotate: this.state.moveVAches.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["3deg" , "-3deg"],
+                                    }),
+                                }],
+                            }}
                         />
                     </TouchableOpacity>
 
@@ -183,26 +344,6 @@ export class Page2 extends React.Component {
                         <Image
                             source={Bouteille3}
                             style={{width: 73, height: 105, position: 'absolute', left: 922, top: 682}}
-                        />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                        onPress={() => console.log("pressed on bouteille2")}
-                        style={{zIndex: 2}}
-                    >
-                        <Image
-                            source={Bouteille2}
-                            style={{width: 47, height: 108, position: 'absolute', left: 1014, top: 555}}
-                        />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                        onPress={() => console.log("pressed on bouteille1")}
-                        style={{zIndex: 2}}
-                    >
-                        <Image
-                            source={Bouteille1}
-                            style={{width: 36, height: 113, position: 'absolute', left: 897, top: 551}}
                         />
                     </TouchableOpacity>
 
