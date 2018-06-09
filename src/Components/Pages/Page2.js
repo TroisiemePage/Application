@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Dimensions, Image, View, TouchableOpacity, Animated, Easing} from "react-native";
+import {Dimensions, Image, View, TouchableOpacity, TouchableWithoutFeedback, Animated, Easing} from "react-native";
 
 import Decor from "../../Assets/Images/Pages/Page2/decor.png";
 import Lait from "../../Assets/Animations/Pages/compiled/LAIT.png";
@@ -207,7 +207,7 @@ export class Page2 extends React.Component {
                             }),
                         }}
                     >
-                        <TouchableOpacity
+                        <TouchableWithoutFeedback
                             onPress={() => {
                                     this.setState({ vache1Cliqued: true });
                                     this.vachesAnimation();
@@ -236,7 +236,7 @@ export class Page2 extends React.Component {
                                     }],
                                 }}
                             />
-                        </TouchableOpacity>
+                        </TouchableWithoutFeedback>
                     </Animated.View>
 
                     <Animated.View
@@ -250,7 +250,7 @@ export class Page2 extends React.Component {
                             }),
                         }}
                     >
-                        <TouchableOpacity
+                        <TouchableWithoutFeedback
                             onPress={() => {
                                 this.setState({ vache2Cliqued: true });
                                 this.vachesAnimation();
@@ -278,7 +278,7 @@ export class Page2 extends React.Component {
                                     }],
                                 }}
                             />
-                        </TouchableOpacity>
+                        </TouchableWithoutFeedback>
                     </Animated.View>
 
                     {laitVache1}
@@ -328,7 +328,7 @@ export class Page2 extends React.Component {
                         }}
                     />
 
-                    <TouchableOpacity
+                    <TouchableWithoutFeedback
                         onPress={() => this.rouesAnimation()}
                     >
                         <Animated.Image
@@ -347,7 +347,7 @@ export class Page2 extends React.Component {
                                 }],
                             }}
                         />
-                    </TouchableOpacity>
+                    </TouchableWithoutFeedback>
 
                     <Animated.Image
                         source={Roue2}
@@ -659,7 +659,7 @@ export class Page2 extends React.Component {
                         style={{width: 476, height: 279, position: 'absolute', left: 601, top: 538}}
                     />
 
-                    <TouchableOpacity
+                    <TouchableWithoutFeedback
                         onPress={() => this.levierAnimation()}
                     >
                         <Animated.View style={{
@@ -684,7 +684,7 @@ export class Page2 extends React.Component {
                                 }}
                             />
                         </Animated.View>
-                    </TouchableOpacity>
+                    </TouchableWithoutFeedback>
                 </View>
             </Overlay>
         )
