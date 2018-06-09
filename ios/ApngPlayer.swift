@@ -64,7 +64,5 @@ public class ApngPlayer: UIView, APNGImageViewDelegate {
         
       }
     }
-    
   }
-  
 }

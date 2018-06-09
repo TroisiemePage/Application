@@ -28,61 +28,43 @@ export class Definition extends React.Component {
             }}>
             <View style={{
                 flex: 1,
+                flexDirection: "column",
                 alignItems: "center",
             }}>
-                <View
+                <ApngPlayer
+                    playlist={this.props.word.animation}
+                    maxFrameSize={height / 2}
+                    onPlaylistItemFinish={(playlistIndex) => {
+                        this.showDefinition();
+                        this.props.introFinished();
+                    }}
+
+                />
+                <Animated.View
                 style={{
-                    height: height / 2,
-                    width: "100%",
-                    flex: 1,
-                    flexDirection: "row",
-                    alignItems: "center"
+                    opacity: this.state.definitionOpacity,
+                    marginTop: 50
                 }}>
-                    <ApngPlayer
-                        playlist={this.props.word.animation}
-                        maxFrameSize={500}
-                        onPlaylistItemFinish={(playlistIndex) => {
-                            this.showDefinition();
-                            this.props.introFinished();
-                        }}
-
-                    />
-                </View>
-
-                <View style={{
-                    height: height / 2,
-                    width: "100%",
-                    flex: 1,
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center"
-                }}>
-                    <Animated.View
-                    style={{
-                        opacity: this.state.definitionOpacity
+                    <Text style={{
+                        fontSize: 60,
+                        fontFamily: "AGaramondPro-Bold",
+                        color: "#0E0637",
+                        textAlign: "left",
                     }}>
-                        <Text style={{
-                            fontSize: 60,
-                            fontFamily: "AGaramondPro-Bold",
-                            color: "#0E0637",
-                            textAlign: "left",
-                        }}>
-                            {this.props.word.word},<Text style={{
-                            fontSize: 35,
-                            fontFamily: "AGaramondPro-Semibold",
-                            color: "#0E0637",
-                            marginTop: 20
-                        }}> {this.props.word.gender}</Text>
-                        </Text>
-                        <Text style={{
-                            textAlign: "left",
-                            fontSize: 23,
-                            fontFamily: "AGaramondPro-Regular",
-                            color: "#0E0637",
-                        }}>{this.props.word.definition}</Text>
-                    </Animated.View>
-
-                </View>
+                        {this.props.word.word},<Text style={{
+                        fontSize: 35,
+                        fontFamily: "AGaramondPro-Semibold",
+                        color: "#0E0637",
+                        marginTop: 20
+                    }}> {this.props.word.gender}</Text>
+                    </Text>
+                    <Text style={{
+                        textAlign: "left",
+                        fontSize: 20,
+                        fontFamily: "AGaramondPro-Regular",
+                        color: "#0E0637",
+                    }}>{this.props.word.definition}</Text>
+                </Animated.View>
             </View>
         </View>
         );

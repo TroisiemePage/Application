@@ -8,10 +8,16 @@ const styles = {
         borderRadius: 20,
         backgroundColor: "#FEFBED",
     },
-    gradientHide: {
+    gradientHideBottom: {
         height: 50,
         position: 'absolute',
         bottom: 0,
+        width: '100%',
+    },
+    gradientHideTop: {
+        height: 25,
+        position: 'absolute',
+        top: 0,
         width: '100%',
     }
 };
@@ -84,6 +90,7 @@ export default class ModalView extends Component {
                     }}
                 >
                     <View style={{height: 220, position: 'relative', overflow: 'hidden'}}>
+
                         <ScrollView
                             ref={ref => (this.scrollViewRef = ref)}
                             onScroll={this.handleOnScroll}
@@ -94,7 +101,18 @@ export default class ModalView extends Component {
                                 {this.props.children}
                             </ModalContent>
                         </ScrollView>
-                        <Svg style={styles.gradientHide}>
+                        <Svg style={styles.gradientHideTop}>
+                            <Defs>
+                                <Defs>
+                                    <LinearGradient id="grad" x1={0} x2={0} y1={0} y2={"100%"}>
+                                        <Stop offset="0%" stopColor="#FEFBED" stopOpacity="1"/>
+                                        <Stop offset="100%" stopColor="#FEFBED" stopOpacity="0"/>
+                                    </LinearGradient>
+                                </Defs>
+                            </Defs>
+                            <Rect x="0" y="0" rx="20" ry="20" height="50" width="300" fill="url(#grad)"/>
+                        </Svg>
+                        <Svg style={styles.gradientHideBottom}>
                             <Defs>
                                 <Defs>
                                     <LinearGradient id="grad" x1={0} x2={0} y1={0} y2={"100%"}>

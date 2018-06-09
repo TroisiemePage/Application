@@ -15,11 +15,6 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
     },
-    buttonBack: {
-        position: "absolute",
-        top: 20,
-        left: 20,
-    },
     listDico: {
         flexDirection: "column",
         alignItems: "center",
@@ -63,26 +58,33 @@ export class Menu extends React.Component {
         currentPage: 0
     };
 
-    constructor() {
-        super();
-        PageDetector.onPageChange((cp) => this.setState({currentPage: cp}));
+    componentWillMount() {
+        this.setState({currentPage: PageDetector.currentPage})
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.buttonBack}>
-                    <Button
-                        onPress={() => this.props.navigation.navigate('Home')}
-                        title={"Retour"}
-                    />
-                </View>
-
+                {(() => {
+                    if(this.props.back) {
+                        return (
+                            <View style={{
+                                position: "absolute",
+                                top: 20,
+                                left: 20,
+                                zIndex: 10
+                            }}>
+                                <Button
+                                    onPress={() => this.props.navigation.navigate('Home')}
+                                    title={"Retour"}/>
+                            </View>
+                        );
+                    }
+                })()}
                 <ModalSlider
                     open={this.state.modalVisibleLeft}
                     side="left"
-                    onClose={() => this.setState({modalVisibleLeft: false})}
-                >
+                    onClose={() => this.setState({modalVisibleLeft: false})}>
                     <View style={{
                         padding: 20,
                         flex: 1,
@@ -218,7 +220,3 @@ export class Menu extends React.Component {
         );
     }
 }
-
-Menu.navigationOptions = {
-    header: null
-};

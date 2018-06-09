@@ -2,6 +2,7 @@ import React from 'react';
 import {Animated, Easing} from 'react-native';
 import Svg, {G, Path, Text as SVGText, Ellipse} from 'react-native-svg';
 
+const AnimatedEllipse = Animated.createAnimatedComponent(Ellipse);
 const styles = {
     svg: {
         width: "90%",
@@ -20,34 +21,10 @@ export default class CarteSVG extends React.Component {
         circleRadius : new Animated.Value(0),
     };
 
-    componentDidMount() {
-        this.animateCircle();
-    }
-
-    animateCircle() {
-        Animated.loop(
-            Animated.sequence([
-                Animated.timing(this.state.circleRadius, {
-                    toValue: 1,
-                    duration: 800,
-                    delay: 0,
-                    friction: 2,
-                    easing: Easing.inOut(Easing.cubic)
-                }),
-                Animated.timing(this.state.circleRadius, {
-                    toValue: 0,
-                    duration: 800,
-                    delay: 0,
-                    friction: 2,
-                    easing: Easing.inOut(Easing.cubic)
-                })
-            ])
-        ).start();
-    }
 
 
     render() {
-        const currentPage = this.props.currentLevel + 1;
+        const currentPage = (this.props.currentLevel + 1);
         return(
             <Svg style={styles.svg} viewBox="0 0 2224 1668" >
                 <G>
@@ -181,27 +158,25 @@ export default class CarteSVG extends React.Component {
                                 </G>
                             </G>
                         </G>
-                        <G id="bouton" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)">
-                            <G transform="matrix(0.905408,0,0,0.905408,1693.17,794.502)">
-                                <Path
-                                    d="M0,0.003C0,16.83 -13.642,30.469 -30.467,30.469C-47.295,30.469 -60.937,16.83 -60.937,0.003C-60.937,-16.825 -47.295,-30.466 -30.467,-30.466C-13.642,-30.466 0,-16.825 0,0.003"
-                                    fill={this.achieved}
-                                />
-                            </G>
-                            <G transform="matrix(0,-0.905408,-0.905408,-0,1664.76,750.551)">
-                                <Ellipse
-                                    id="current"
-                                    cx="-48.549"
-                                    cy="0.002"
-                                    rx="48.548"
-                                    ry="48.549"
-                                    stroke={this.achieved}
-                                    strokeWidth="4"
-                                    strokeDasharray="11.56,8.67"
-                                    fill="none"
-                                />
+                        {/*
+                          <G id="bouton" transform="matrix(4.24458,0,0,4.24458,-155.065,-2120.79)">
+                            <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
+                                <G transform="matrix(1,0,0,1,807.358,962.739)">
+                                    <AnimatedEllipse
+                                        cx="-48.549"
+                                        cy="0.002"
+                                        rx={"48"}//"48.548"
+                                        ry={"48"} //"48.549"
+                                        stroke={this.achieved}
+                                        strokeWidth="4"
+                                        strokeDasharray="11.56,8.67"
+                                        fill="none"
+                                    />
+                                </G>
                             </G>
                         </G>
+                        */}
+
                         <G id="cercles" transform="matrix(4.24458,0,0,4.24458,-249.065,-2120.79)" strokeWidth="4"
                            fill="rgb(253,250,234)">
                             <G currentLevel="1" stroke={currentPage >= 1 ? this.achieved : this.toExplore}>
@@ -209,6 +184,7 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,494.453,962.739)">
                                         <Path
                                             d="M0,0.002C0,12.401 -10.053,22.454 -22.453,22.454C-34.854,22.454 -44.906,12.401 -44.906,0.002C-44.906,-12.399 -34.854,-22.452 -22.453,-22.452C-10.053,-22.452 0,-12.399 0,0.002"
+                                            fill={currentPage == 1 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>
@@ -218,6 +194,7 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,807.358,962.739)">
                                         <Path
                                             d="M0,0.002C0,12.401 -10.052,22.454 -22.453,22.454C-34.854,22.454 -44.906,12.401 -44.906,0.002C-44.906,-12.399 -34.854,-22.452 -22.453,-22.452C-10.052,-22.452 0,-12.399 0,0.002"
+                                            fill={currentPage == 2 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>
@@ -227,6 +204,7 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,895.577,831.331)">
                                         <Path
                                             d="M0,0.002C0,12.402 -10.052,22.454 -22.453,22.454C-34.854,22.454 -44.906,12.402 -44.906,0.002C-44.906,-12.399 -34.854,-22.452 -22.453,-22.452C-10.052,-22.452 0,-12.399 0,0.002"
+                                            fill={currentPage == 3 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>
@@ -236,6 +214,7 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,1280.41,729.999)">
                                         <Path
                                             d="M0,0.002C0,12.402 -10.053,22.454 -22.452,22.454C-34.854,22.454 -44.906,12.402 -44.906,0.002C-44.906,-12.399 -34.854,-22.452 -22.452,-22.452C-10.053,-22.452 0,-12.399 0,0.002"
+                                            fill={currentPage == 4 ? this.achieved : this.backgroundColor }
                                         />
                                     </G>
                                 </G>
@@ -245,6 +224,7 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,1531.88,583.879)">
                                         <Path
                                             d="M0,0.001C0,12.401 -10.053,22.454 -22.453,22.454C-34.854,22.454 -44.906,12.401 -44.906,0.001C-44.906,-12.4 -34.854,-22.453 -22.453,-22.453C-10.053,-22.453 0,-12.4 0,0.001"
+                                            fill={currentPage == 5 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>
@@ -254,6 +234,7 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,1640.94,583.879)">
                                         <Path
                                             d="M0,0.001C0,12.401 -10.053,22.454 -22.452,22.454C-34.854,22.454 -44.906,12.401 -44.906,0.001C-44.906,-12.4 -34.854,-22.453 -22.452,-22.453C-10.053,-22.453 0,-12.4 0,0.001"
+                                            fill={currentPage == 6 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>
@@ -263,17 +244,25 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,1750,583.879)">
                                         <Path
                                             d="M0,0.001C0,12.401 -10.053,22.454 -22.452,22.454C-34.854,22.454 -44.906,12.401 -44.906,0.001C-44.906,-12.4 -34.854,-22.453 -22.452,-22.453C-10.053,-22.453 0,-12.4 0,0.001"
+                                            fill={currentPage == 7 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>
                             </G>
-                            <G currentLevel="8" stroke={currentPage >= 9 ? this.achieved : this.toExploreLighter}>
+                            <G currentLevel="8" stroke={currentPage >= 8 ? this.achieved : this.toExploreLighter}>
+                                <G transform="matrix(0.905408,0,0,0.905408,1686.17,794.502)">
+                                    <Path
+                                        d="M0,0.001C0,12.401 -10.053,22.454 -22.452,22.454C-34.854,22.454 -44.906,12.401 -44.906,0.001C-44.906,-12.4 -34.854,-22.453 -22.452,-22.453C-10.053,-22.453 0,-12.4 0,0.001"
+                                        fill={currentPage == 8 ? this.achieved : this.backgroundColor}
+                                    />
+                                </G>
                             </G>
                             <G currentLevel="9" stroke={currentPage >= 9 ? this.achieved : this.toExploreLighter}>
                                 <G transform="matrix(0.905408,0,0,0.905408,9.07626,47.2954)">
                                     <G transform="matrix(1,0,0,1,710.999,1123.88)">
                                         <Path
                                             d="M0,0.002C0,12.402 -10.053,22.454 -22.452,22.454C-34.854,22.454 -44.906,12.402 -44.906,0.002C-44.906,-12.399 -34.854,-22.452 -22.452,-22.452C-10.053,-22.452 0,-12.399 0,0.002"
+                                            fill={currentPage == 9 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>
@@ -283,6 +272,7 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,497.878,1501.29)">
                                         <Path
                                             d="M0,0.002C0,12.402 -10.053,22.454 -22.452,22.454C-34.854,22.454 -44.906,12.402 -44.906,0.002C-44.906,-12.399 -34.854,-22.452 -22.452,-22.452C-10.053,-22.452 0,-12.399 0,0.002"
+                                            fill={currentPage == 10 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>
@@ -292,6 +282,7 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,873.999,1501.38)">
                                         <Path
                                             d="M0,0.002C0,12.402 -10.053,22.454 -22.452,22.454C-34.854,22.454 -44.906,12.402 -44.906,0.002C-44.906,-12.399 -34.854,-22.452 -22.452,-22.452C-10.053,-22.452 0,-12.399 0,0.002"
+                                            fill={currentPage == 11 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>
@@ -301,6 +292,7 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,1225,1501.38)">
                                         <Path
                                             d="M0,0.002C0,12.402 -10.053,22.454 -22.452,22.454C-34.854,22.454 -44.906,12.402 -44.906,0.002C-44.906,-12.399 -34.854,-22.452 -22.452,-22.452C-10.053,-22.452 0,-12.399 0,0.002"
+                                            fill={currentPage == 12 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>
@@ -310,6 +302,7 @@ export default class CarteSVG extends React.Component {
                                     <G transform="matrix(1,0,0,1,1613.94,1505.12)">
                                         <Path
                                             d="M0,0.002C0,12.402 -10.053,22.454 -22.452,22.454C-34.854,22.454 -44.906,12.402 -44.906,0.002C-44.906,-12.399 -34.854,-22.452 -22.452,-22.452C-10.053,-22.452 0,-12.399 0,0.002"
+                                            fill={currentPage == 13 ? this.achieved : this.backgroundColor}
                                         />
                                     </G>
                                 </G>

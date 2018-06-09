@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Dimensions, Image, View} from "react-native";
-import Decor from "../../Assets/Images/Pages/Page2/02_EcranIpad_DEVELOPPEUR.png";
+import Decor from "../../Assets/Images/Pages/Page1/01_EcranIpad_DEVELOPPEUR.png";
 import {Overlay} from "../PageRouter/PageRouter";
 import {words} from "../../Stores/words";
 
@@ -19,7 +19,7 @@ const styles ={
     }
 };
 
-export class Page2 extends React.Component {
+export class Page1 extends React.Component {
     render() {
         return (
             <Overlay {...this.props} wordList={words}>
@@ -35,6 +35,6 @@ export class Page2 extends React.Component {
         )
     }
 }
-Page2.navigationOptions = {
+Page1.navigationOptions = {
     header: null
 };

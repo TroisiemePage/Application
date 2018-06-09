@@ -77,6 +77,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Reconnaissance de mot pour un dictionnaire</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Reconnaissance de mot pour un dictionnaire</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

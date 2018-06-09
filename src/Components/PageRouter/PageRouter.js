@@ -1,27 +1,63 @@
 import * as React from "react";
-import {Page1} from "../Pages/Page1/Page1";
+import {Page4} from "../Pages/Page4/Page4";
 import {Page2} from "../Pages/Page2";
-import {Dimensions, Image, TouchableOpacity, View} from "react-native";
+import {Page1} from "../Pages/Page1";
+import {Button, Dimensions, Image, Text, TouchableOpacity, View} from "react-native";
 import menuPicto from "../../Assets/Images/Elements/menu.png";
+import trompette from "../../Assets/Images/Elements/PICTO_MICRO.png";
 import {createStackNavigator} from "react-navigation";
-import PageDetector from "../../Modules/PageDetector";
-
+import {PageDetector} from "../../Modules/PageDetector";
+import {words} from "../../Stores/words";
+import {WordDetector} from "../../Modules/WordDetector";
+import {Menu} from "../Menu/Menu";
 const {height, width} = Dimensions.get('window');
 
 export class Overlay extends React.Component {
 
-    componentWillFocus() {
+    state = {
+        recognizing: false,
+    };
+
+    constructor() {
+        super();
         PageDetector.onPageChange((currentPage) => {
-            let pageNumber = 2;
+            //let currentPage = this.state.currentPage;
+            console.log(currentPage);
+            let pageNumber = 5;
             let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pageNumber ? currentPage : (pageNumber - 1)) : 0);
             this.props.navigation.navigate("Page" + (currentPageIntervalized + 1));
             console.log("PAGE ROUTER", currentPageIntervalized);
         });
     }
 
-    componentDidBlur() {
-        console.log("unmout");
-        PageDetector.onPageChange(() => {});
+    componentDidMount() {
+        WordDetector.setWordList(this.props.wordList.map((word) => word.word));
+        console.log(WordDetector);
+    }
+
+    toggleRecognition() {
+        if(!this.state.recognizing) {
+            this.setState({
+                recognizing: true
+            });
+            WordDetector
+                .recognizeWord()
+                .then((recognizedWord) => {
+                    this.setState({
+                        recognizing: false
+                    });
+                    this.props.navigation.navigate("Dictionnary", {word: recognizedWord[0].word});
+                });
+        } else {
+            WordDetector
+                .reset()
+                .then(() => {
+                    this.setState({
+                        recognizing: false
+                    });
+                });
+        }
+
     }
 
     render() {
@@ -54,7 +90,7 @@ export class Overlay extends React.Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     activeOpacity={0.5}
-                    onPress={() => {}}
+                    onPress={() => this.toggleRecognition()}
                     style={{
                         position: "absolute",
                         top: 20,
@@ -62,9 +98,11 @@ export class Overlay extends React.Component {
                         flex: 1,
                         flexDirection: "row",
                         alignItems: 'center',
+                        backgroundColor: this.state.recognizing ? "red" : "transparent",
+                        borderRadius: 40
                     }}
                 >
-                    <Image source={menuPicto} style={{
+                    <Image source={trompette} style={{
                         width: 50,
                         height: 50
                     }}/>
@@ -74,14 +112,55 @@ export class Overlay extends React.Component {
     }
 }
 
+function Page0(props) {
+    return (
+        <Overlay {...props} wordList={words}>
+            <Text>Bonjour, je suis le Menu</Text>
+        </Overlay>
+    );
+};
+
+class Page3 extends React.Component {
+    render() {
+        return (
+            <Overlay {...this.props} wordList={words}>
+                <Text>Appuie sur la trompette quand tu ne comprend pas un mot</Text>
+            </Overlay>
+        );
+    }
+}
+Page3.navigationOptions = {
+    header: null
+};
+
+const MenuWrapper = (props) => {
+    return (
+        <Overlay {...props} wordList={words}>
+            <Menu {...props}/>
+        </Overlay>
+    );
+};
+
+MenuWrapper.navigationOptions = {
+    header: null
+};
 
 export const PageRouter = createStackNavigator({
-    Page1: {
-        screen: Page1
+    Page5: {
+        screen: Page4
     },
-    Page2: {
+    Page4: {
+        screen: Page3
+    },
+    Page3: {
         screen: Page2
     },
+    Page2: {
+        screen: Page1
+    },
+    Page1: {
+        screen: MenuWrapper
+    }
 }, {
     initialRouteName: 'Page1'
 });

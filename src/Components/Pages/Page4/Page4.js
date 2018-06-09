@@ -1,8 +1,6 @@
 import * as React from "react";
-import {WordDetector} from "../../../Modules/WordDetector";
 import {Image, Dimensions, View} from "react-native";
-const wordDetector = new WordDetector();
-import decor from "../../../Assets/Images/Pages/Page1/Decor_pageMoines.png";
+import decor from "../../../Assets/Images/Pages/Page4/Decor_pageMoines.png";
 import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
 import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
@@ -12,6 +10,7 @@ import {createDrawerNavigator} from "react-navigation";
 import {Overlay} from "../../PageRouter/PageRouter";
 import ModalView from '../../Modal/ModalPopup/ModalPopupView';
 import Manicule from '../../Manicule/Manicule';
+import {words} from "../../../Stores/words";
 
 const {height, width} = Dimensions.get('window');
 const styles = {
@@ -41,15 +40,11 @@ const styles = {
     },
 };
 
-const letterSelector = "";
-class Page1Content extends React.Component {
+let letterSelector = "";
+class Page4Content extends React.Component {
 
     constructor() {
         super();
-        wordDetector.setWordList([
-            "Lotis",
-            "Oriflant"
-        ]);
         this.state = {
             duration: 0,
             imageNumber: 0,
@@ -60,7 +55,7 @@ class Page1Content extends React.Component {
     render() {
         //console.log("CONTENT", this.props.navigation);
         return (
-            <Overlay {...this.props}>
+            <Overlay {...this.props} wordList={words}>
             <View style={styles.container}>
                 <Image
                     source={decor}
@@ -105,31 +100,31 @@ class Page1Content extends React.Component {
                     y={60}
                     title="ABBAYE ROYALE DE FONTEVRAUD"
                 >
-                    Sacrée Abbaye ! Dès sa création en 1101, son fondateur, Robert d’Abrissel,
-                    ouvre les portes de l’abbaye royale aux hommes mais aussi aux femmes
-                    ainsi qu’à des personnes de toutes origines sociales. {"\n"}De la mixité au Moyen-
-                    Âge ! Quel visionnaire ! À partir de 1189 l’abbaye devient nécropole royale,
-                    c’est-à-dire qu’elle abrite les tombeaux d’Henri II, d’Aliénor d’Aquitaine et
-                    de Richard Cœur de Lion. {"\n"}En 7 siècles, 36 abbesses se succèdent à la tête
-                    de l’abbaye mais tout dérape à la Révolution Française (1789) ! Napoléon
-                    Bonaparte aux commandes de la France, l’Abbaye est réquisitionnée
-                    comme prison ! {"\n"}2 000 hommes seront prisonniers et l’abbaye deviendra
-                    l’une des plus dures prisons de France. {"\n"}Il faudra attendre 1963 pour qu’elle
-                    soit fermée et 1975 pour que tu puisses enfin la visiter !
+                    {"Sacrée Abbaye ! Dès sa création en 1101, son fondateur, Robert d’Abrissel, "+
+                    "ouvre les portes de l’abbaye royale aux hommes mais aussi aux femmes "+
+                    "ainsi qu’à des personnes de toutes origines sociales. \nDe la mixité au Moyen-"+
+                    "Âge ! Quel visionnaire ! À partir de 1189 l’abbaye devient nécropole royale, "+
+                    "c’est-à-dire qu’elle abrite les tombeaux d’Henri II, d’Aliénor d’Aquitaine et "+
+                    "de Richard Cœur de Lion\nEn 7 siècles, 36 abbesses se succèdent à la tête "+
+                    "de l’abbaye mais tout dérape à la Révolution Française (1789) !\nNapoléon"+
+                    " Bonaparte aux commandes de la France, l’Abbaye est réquisi-\ntionnée "+
+                    "comme prison !\n2 000 hommes seront prisonniers et l’abbaye deviendra "+
+                    "l’une des plus dures prisons de France. \nIl faudra attendre 1963 pour qu’elle "+
+                    "soit fermée et 1975 pour que tu puisses enfin la visiter !"}
                 </ModalView>
                 <ModalView
                     x={420}
                     y={350}
                     title="MOINES COPISTES"
                 >
-                    Au 12e siècle, l’Église a encore {"\n"}le monopole de la connaissance et du savoir.
-                    Elle les diffuse par le biais d’ouvrages réalisés au sein des scriptoria
-                    monastiques. {"\n"}Et oui l’imprimerie n’existe pas encore ! Faces à leur pupitre,
-                    armés d’une plume et d’un calame, les moines recopient des ouvrages
-                    pendant de longues heures. Pas le droit à l’erreur ! Ils écrivent mais
-                    dessinent aussi ! On appelle ça des enluminures. Cela consiste à mettre{"\n"} en
-                    lumière et en couleur les textes copiés. Encrer à la plume, habiller d’or une
-                    lettrine : un vrai travail d’orfèvre !
+                    {"Au XIIème siècle, l’Église a encore le monopole de la connaissance et du savoir."+
+                    " Elle les diffuse par le biais d’ouvrages réalisés au sein des scriptoria "+
+                    "monastiques.\nEt oui l’imprimerie n’existe pas encore ! Faces à leur pupitre, "+
+                    "armés d’une plume et d’un calame, les moines recopient des ouvrages "+
+                    "pendant de longues heures. \nPas le droit à l’erreur ! Ils écrivent mais "+
+                    "dessinent aussi ! On appelle ça des enluminures. Cela consiste à mettre en "+
+                    "lumière et en couleur les textes copiés. Encrer à la plume, habiller d’or une "+
+                    "lettrine : un vrai travail d’orfèvre !"}
                 </ModalView>
                 <Manicule
                     x={840}
@@ -141,10 +136,10 @@ class Page1Content extends React.Component {
     }
 }
 
-export const Page1 = createDrawerNavigator(
+export const Page4 = createDrawerNavigator(
     {
         Game: {
-            screen: Page1Content
+            screen: Page4Content
         }
     },
     {
@@ -158,6 +153,6 @@ export const Page1 = createDrawerNavigator(
         }
     }
 );
-Page1.navigationOptions = {
+Page4.navigationOptions = {
     header: null
 };

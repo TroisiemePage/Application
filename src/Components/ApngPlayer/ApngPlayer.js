@@ -38,8 +38,7 @@ export default class ApngPlayer extends Component {
                     ...this.props.style,
                     width: playlist[this.state.playlistIndex].width * scale,
                     height: playlist[this.state.playlistIndex].height * scale
-                }}
-            >
+                }}>
                 <TouchableWithoutFeedback onPress={() => {
                     if (this.props.onPress !== void 0) {
                         this.props.onPress();
