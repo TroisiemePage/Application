@@ -180,7 +180,7 @@ export const PageRouter = createStackNavigator({
         screen: MenuWrapper
     }
 }, {
-    initialRouteName: 'Page1'
+    initialRouteName: 'Page2'
 });
 PageRouter.navigationOptions = {
     header: null
