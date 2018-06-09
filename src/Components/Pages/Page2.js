@@ -48,9 +48,10 @@ export class Page2 extends React.Component {
 
     state = {
         moveLevier: new Animated.Value(0),
-        moveVAches: new Animated.Value(0),
-        moveLait: new Animated.Value(0),
-        isLaitAnimated: false,
+        moveRoues: new Animated.Value(0),
+        moveVaches: new Animated.Value(0),
+        vache1Cliqued: false,
+        vache2Cliqued: false,
         moveBottles: new Array(6).fill("").map(() => new Animated.Value(0)),
     };
 
@@ -71,15 +72,15 @@ export class Page2 extends React.Component {
         ]).start();
     }
 
-    vachesAnimation() {
+    rouesAnimation() {
         Animated.sequence([
-            Animated.timing(this.state.moveVAches, {
+            Animated.timing(this.state.moveRoues, {
                 toValue: 1,
                 duration: 3000,
                 delay: 0,
                 easing: Easing.bezier(.57,.31,.29,.93),
             }),
-            Animated.timing(this.state.moveVAches, {
+            Animated.timing(this.state.moveRoues, {
                 toValue: 0,
                 duration: 3000,
                 delay: 0,
@@ -88,31 +89,39 @@ export class Page2 extends React.Component {
         ]).start();
     }
 
-    animationLait() {
+    vachesAnimation() {
         Animated.sequence([
-            Animated.timing(this.state.moveLait, {
+            Animated.timing(this.state.moveVaches, {
                 toValue: 1,
-                duration: 600,
+                duration: 3000,
                 delay: 0,
-                easing: Easing.bezier(0,.53,.47,1),
+                easing: Easing.bezier(.57,.31,.29,.93),
             }),
-            Animated.timing(this.state.moveLait, {
+            Animated.timing(this.state.moveVaches, {
                 toValue: 0,
-                duration: 600,
+                duration: 3000,
                 delay: 0,
-                easing: Easing.bezier(0,.53,.47,1),
+                easing: Easing.bezier(.57,.31,.29,.93),
             })
         ]).start();
     }
 
     animatedBottlesArray = [];
     animatedBottlesArray = this.state.moveBottles.map((animationValue) => {
-        return Animated.timing(animationValue, {
-            toValue: 1,
-            duration: 290,
-            delay: 0,
-            easing: Easing.inOut(Easing.cubic)
-        });
+        return (
+            Animated.timing(animationValue, {
+                toValue: 1,
+                duration: 290,
+                delay: 0,
+                easing: Easing.inOut(Easing.cubic)
+            }),
+            Animated.timing(animationValue, {
+                toValue: 0,
+                duration: 290,
+                delay: 0,
+                easing: Easing.inOut(Easing.cubic)
+            })
+        );
     });
 
     bottlesAnimation() {
@@ -120,6 +129,63 @@ export class Page2 extends React.Component {
     }
 
     render() {
+        let laitVache1, laitVache2;
+
+        if (this.state.vache1Cliqued) {
+            laitVache1 = (
+                <Animated.View
+                    style={{
+                        position: "absolute",
+                        width: 100,
+                        height: height / 1.7,
+                        top: 188,
+                        left: this.state.moveVaches.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [505 , 405],
+                        }),
+                    }}
+                >
+                    <ApngPlayer
+                        ref={"lait"}
+                        scale={0.45}
+                        maxFrameSize={ height / 1.7}
+                        playlist={[Lait]}
+                        onPress={() => console.log("pressed on lait")}
+                        onPlaylistItemFinish={(playlistIndex) => {
+                            this.setState({ vache1Cliqued : false})
+                        }}
+                    />
+                </Animated.View>
+            );
+        }
+
+        if (this.state.vache2Cliqued) {
+            laitVache2 = (
+                <Animated.View
+                    style={{
+                        position: "absolute",
+                        top: 170,
+                        width: 100,
+                        height: height / 1.7,
+                        left: this.state.moveVaches.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [285 , 185],
+                        }),
+                    }}
+                >
+                    <ApngPlayer
+                        ref={"lait"}
+                        scale={0.45}
+                        maxFrameSize={ height / 1.7}
+                        playlist={[Lait]}
+                        onPlaylistItemFinish={(playlistIndex) => {
+                            this.setState({ vache2Cliqued : false})
+                        }}
+                    />
+                </Animated.View>
+            );
+        }
+
         return (
             <Overlay {...this.props}>
                 <View style={styles.container}>
@@ -131,7 +197,11 @@ export class Page2 extends React.Component {
                     />
 
                     <TouchableOpacity
-                        onPress={() => console.log("pressed on vache 1")}
+                        onPress={() => {
+                                this.setState({ vache1Cliqued: true });
+                                this.vachesAnimation();
+                            }
+                        }
                     >
                         <Animated.Image
                             source={Vache1}
@@ -139,16 +209,16 @@ export class Page2 extends React.Component {
                                 width: 178,
                                 height: 178,
                                 position: 'absolute',
-                                left: this.state.moveVAches.interpolate({
+                                left: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: [460, 0],
                                 }),
-                                top: this.state.moveVAches.interpolate({
+                                top: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: [92 , 88],
                                 }),
                                 transform: [{
-                                    rotate: this.state.moveVAches.interpolate({
+                                    rotate: this.state.moveRoues.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["5deg" , "-5deg"],
                                     }),
@@ -158,7 +228,10 @@ export class Page2 extends React.Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        onPress={() => console.log("pressed on vache 2")}
+                        onPress={() => {
+                            this.setState({ vache2Cliqued: true });
+                            this.vachesAnimation();
+                        }}
                     >
                         <Animated.Image
                             source={Vache2}
@@ -166,16 +239,16 @@ export class Page2 extends React.Component {
                                 width: 177,
                                 height: 173,
                                 position: 'absolute',
-                                left: this.state.moveVAches.interpolate({
+                                left: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: [246, -200],
                                 }),
-                                top: this.state.moveVAches.interpolate({
+                                top: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: [92 , 94],
                                 }),
                                 transform: [{
-                                    rotate: this.state.moveVAches.interpolate({
+                                    rotate: this.state.moveRoues.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["3deg" , "-3deg"],
                                     }),
@@ -184,33 +257,9 @@ export class Page2 extends React.Component {
                         />
                     </TouchableOpacity>
 
-                    <ApngPlayer
-                        ref={"lait"}
-                        style={{
-                            position: "absolute",
-                            top: 188,
-                            left: 480
-                        }}
-                        scale={0.45}
-                        playlist={[Lait]}
-                        onPress={() => console.log("pressed on lait")}
-                    />
+                    {laitVache1}
 
-                    <ApngPlayer
-                        ref={"lait"}
-                        style={{
-                            position: "absolute",
-                            top: 188,
-                            left: 265
-                        }}
-                        scale={0.45}
-                        maxFrameSize={height / 2}
-                        playlist={[Lait]}
-                        onPress={() => console.log("pressed on lait")}
-                        onPlaylistItemFinish={(playlistIndex) => {
-                            //this.props.introFinished();
-                        }}
-                    />
+                    {laitVache2}
 
                     <Animated.Image
                         source={Pots}
@@ -247,7 +296,7 @@ export class Page2 extends React.Component {
                             left: 1023,
                             top: 96,
                             transform: [{
-                                rotate: this.state.moveVAches.interpolate({
+                                rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["60deg" , "300deg"],
                                 }),
@@ -256,7 +305,7 @@ export class Page2 extends React.Component {
                     />
 
                     <TouchableOpacity
-                        onPress={() => this.vachesAnimation()}
+                        onPress={() => this.rouesAnimation()}
                     >
                         <Animated.Image
                             source={Roue1}
@@ -267,7 +316,7 @@ export class Page2 extends React.Component {
                                 left: 960,
                                 top: 285,
                                 transform: [{
-                                    rotate: this.state.moveVAches.interpolate({
+                                    rotate: this.state.moveRoues.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ["0deg" , "360deg"],
                                     }),
@@ -285,7 +334,7 @@ export class Page2 extends React.Component {
                             left: 1000,
                             top: 180,
                             transform: [{
-                                rotate: this.state.moveVAches.interpolate({
+                                rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0deg" , "-360deg"],
                                 }),
@@ -302,7 +351,7 @@ export class Page2 extends React.Component {
                             left: 887,
                             top: 97,
                             transform: [{
-                                rotate: this.state.moveVAches.interpolate({
+                                rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["120deg" , "360deg"],
                                 }),
@@ -319,7 +368,7 @@ export class Page2 extends React.Component {
                             left: 220,
                             top: 36,
                             transform: [{
-                                rotate: this.state.moveVAches.interpolate({
+                                rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0deg" , "-360deg"],
                                 }),
@@ -336,7 +385,7 @@ export class Page2 extends React.Component {
                             left: 351,
                             top: 36,
                             transform: [{
-                                rotate: this.state.moveVAches.interpolate({
+                                rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0deg" , "-360deg"],
                                 }),
@@ -353,7 +402,7 @@ export class Page2 extends React.Component {
                             left: 491,
                             top: 36,
                             transform: [{
-                                rotate: this.state.moveVAches.interpolate({
+                                rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0deg" , "-360deg"],
                                 }),
@@ -370,7 +419,7 @@ export class Page2 extends React.Component {
                             left: 621,
                             top: 36,
                             transform: [{
-                                rotate: this.state.moveVAches.interpolate({
+                                rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0deg" , "-360deg"],
                                 }),
@@ -387,7 +436,7 @@ export class Page2 extends React.Component {
                             left: 756,
                             top: 36,
                             transform: [{
-                                rotate: this.state.moveVAches.interpolate({
+                                rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0deg" , "-360deg"],
                                 }),
@@ -404,7 +453,7 @@ export class Page2 extends React.Component {
                             left: 887,
                             top: 36,
                             transform: [{
-                                rotate: this.state.moveVAches.interpolate({
+                                rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0deg" , "-360deg"],
                                 }),
@@ -421,7 +470,7 @@ export class Page2 extends React.Component {
                             left: 1026,
                             top: 36,
                             transform: [{
-                                rotate: this.state.moveVAches.interpolate({
+                                rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: ["0deg" , "-360deg"],
                                 }),
