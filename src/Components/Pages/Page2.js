@@ -114,13 +114,13 @@ export class Page2 extends React.Component {
                 duration: 290,
                 delay: 0,
                 easing: Easing.inOut(Easing.cubic)
-            }),
+            })/*,
             Animated.timing(animationValue, {
                 toValue: 0,
                 duration: 290,
                 delay: 0,
                 easing: Easing.inOut(Easing.cubic)
-            })
+            })*/
         );
     });
 
@@ -141,7 +141,7 @@ export class Page2 extends React.Component {
                         top: 188,
                         left: this.state.moveVaches.interpolate({
                             inputRange: [0, 1],
-                            outputRange: [505 , 405],
+                            outputRange: [465 , 373],
                         }),
                     }}
                 >
@@ -169,7 +169,7 @@ export class Page2 extends React.Component {
                         height: height / 1.7,
                         left: this.state.moveVaches.interpolate({
                             inputRange: [0, 1],
-                            outputRange: [285 , 185],
+                            outputRange: [265 , 145],
                         }),
                     }}
                 >
@@ -196,66 +196,90 @@ export class Page2 extends React.Component {
                         resizeMethod={"scale"}
                     />
 
-                    <TouchableOpacity
-                        onPress={() => {
-                                this.setState({ vache1Cliqued: true });
-                                this.vachesAnimation();
-                            }
-                        }
-                    >
-                        <Animated.Image
-                            source={Vache1}
-                            style={{
-                                width: 178,
-                                height: 178,
-                                position: 'absolute',
-                                left: this.state.moveRoues.interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [460, 0],
-                                }),
-                                top: this.state.moveRoues.interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [92 , 88],
-                                }),
-                                transform: [{
-                                    rotate: this.state.moveRoues.interpolate({
-                                        inputRange: [0, 1],
-                                        outputRange: ["5deg" , "-5deg"],
-                                    }),
-                                }],
-                            }}
-                        />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                        onPress={() => {
-                            this.setState({ vache2Cliqued: true });
-                            this.vachesAnimation();
+                    <Animated.View
+                        style={{
+                            width: 178,
+                            height: 178,
+                            position: 'absolute',
+                            left: this.state.moveVaches.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [-34, -126],
+                            }),
                         }}
                     >
-                        <Animated.Image
-                            source={Vache2}
-                            style={{
-                                width: 177,
-                                height: 173,
-                                position: 'absolute',
-                                left: this.state.moveRoues.interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [246, -200],
-                                }),
-                                top: this.state.moveRoues.interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [92 , 94],
-                                }),
-                                transform: [{
-                                    rotate: this.state.moveRoues.interpolate({
+                        <TouchableOpacity
+                            onPress={() => {
+                                    this.setState({ vache1Cliqued: true });
+                                    this.vachesAnimation();
+                                }
+                            }
+                        >
+                            <Animated.Image
+                                source={Vache1}
+                                style={{
+                                    width: 178,
+                                    height: 178,
+                                    position: 'absolute',
+                                    left: this.state.moveRoues.interpolate({
                                         inputRange: [0, 1],
-                                        outputRange: ["3deg" , "-3deg"],
+                                        outputRange: [460, -100],
                                     }),
-                                }],
+                                    top: this.state.moveRoues.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: [92 , 88],
+                                    }),
+                                    transform: [{
+                                        rotate: this.state.moveRoues.interpolate({
+                                            inputRange: [0, 1],
+                                            outputRange: ["5deg" , "-5deg"],
+                                        }),
+                                    }],
+                                }}
+                            />
+                        </TouchableOpacity>
+                    </Animated.View>
+
+                    <Animated.View
+                        style={{
+                            width: 178,
+                            height: 178,
+                            position: 'absolute',
+                            left: this.state.moveVaches.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [-20, -140],
+                            }),
+                        }}
+                    >
+                        <TouchableOpacity
+                            onPress={() => {
+                                this.setState({ vache2Cliqued: true });
+                                this.vachesAnimation();
                             }}
-                        />
-                    </TouchableOpacity>
+                        >
+                            <Animated.Image
+                                source={Vache2}
+                                style={{
+                                    width: 177,
+                                    height: 173,
+                                    position: 'absolute',
+                                    left: this.state.moveRoues.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: [246, -400],
+                                    }),
+                                    top: this.state.moveRoues.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: [92 , 94],
+                                    }),
+                                    transform: [{
+                                        rotate: this.state.moveRoues.interpolate({
+                                            inputRange: [0, 1],
+                                            outputRange: ["3deg" , "-3deg"],
+                                        }),
+                                    }],
+                                }}
+                            />
+                        </TouchableOpacity>
+                    </Animated.View>
 
                     {laitVache1}
 
@@ -661,8 +685,6 @@ export class Page2 extends React.Component {
                             />
                         </Animated.View>
                     </TouchableOpacity>
-
-
                 </View>
             </Overlay>
         )
