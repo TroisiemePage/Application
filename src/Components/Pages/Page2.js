@@ -1,6 +1,8 @@
 import * as React from "react";
-import {Dimensions, Image, Text, View, TouchableOpacity, Animated, Easing} from "react-native";
+import {Dimensions, Image, View, TouchableOpacity, Animated, Easing} from "react-native";
+
 import Decor from "../../Assets/Images/Pages/Page2/decor.png";
+import Lait from "../../Assets/Animations/Pages/compiled/LAIT.png";
 import Roue1 from "../../Assets/Images/Pages/Page2/roue1.png";
 import Roue2 from "../../Assets/Images/Pages/Page2/roue2.png";
 import Roue3 from "../../Assets/Images/Pages/Page2/roue3.png";
@@ -24,6 +26,7 @@ import Tuyeaux from "../../Assets/Images/Pages/Page2/tuyeaux.png";
 
 import {Page1} from "./Page1/Page1";
 import {Overlay} from "../PageRouter/PageRouter";
+import ApngPlayer from "../ApngPlayer/ApngPlayer";
 
 const {height, width} = Dimensions.get('window');
 const styles = {
@@ -46,7 +49,9 @@ export class Page2 extends React.Component {
     state = {
         moveLevier: new Animated.Value(0),
         moveVAches: new Animated.Value(0),
-        moveBottles: new Animated.Value(0)
+        moveLait: new Animated.Value(0),
+        isLaitAnimated: false,
+        moveBottles: new Array(6).fill("").map(() => new Animated.Value(0)),
     };
 
     levierAnimation() {
@@ -83,21 +88,35 @@ export class Page2 extends React.Component {
         ]).start();
     }
 
-    bottlesAnimation() {
+    animationLait() {
         Animated.sequence([
-            Animated.timing(this.state.moveBottles, {
+            Animated.timing(this.state.moveLait, {
                 toValue: 1,
-                duration: 3000,
+                duration: 600,
                 delay: 0,
-                easing: Easing.bezier(.57,.31,.29,.93),
+                easing: Easing.bezier(0,.53,.47,1),
             }),
-            Animated.timing(this.state.moveBottles, {
+            Animated.timing(this.state.moveLait, {
                 toValue: 0,
-                duration: 3000,
+                duration: 600,
                 delay: 0,
-                easing: Easing.bezier(.57,.31,.29,.93),
+                easing: Easing.bezier(0,.53,.47,1),
             })
         ]).start();
+    }
+
+    animatedBottlesArray = [];
+    animatedBottlesArray = this.state.moveBottles.map((animationValue) => {
+        return Animated.timing(animationValue, {
+            toValue: 1,
+            duration: 290,
+            delay: 0,
+            easing: Easing.inOut(Easing.cubic)
+        });
+    });
+
+    bottlesAnimation() {
+        Animated.sequence(this.animatedBottlesArray).start();
     }
 
     render() {
@@ -109,20 +128,6 @@ export class Page2 extends React.Component {
                         style={styles.image}
                         resizeMode={"contain"}
                         resizeMethod={"scale"}
-                    />
-
-                    <Animated.Image
-                        source={Pots}
-                        style={{
-                            width: 1074,
-                            height: 347,
-                            position: 'absolute',
-                            left: this.state.moveLevier.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [-508 , -600],
-                            }),
-                            top: 329,
-                        }}
                     />
 
                     <TouchableOpacity
@@ -179,6 +184,48 @@ export class Page2 extends React.Component {
                         />
                     </TouchableOpacity>
 
+                    <ApngPlayer
+                        ref={"lait"}
+                        style={{
+                            position: "absolute",
+                            top: 188,
+                            left: 480
+                        }}
+                        scale={0.45}
+                        playlist={[Lait]}
+                        onPress={() => console.log("pressed on lait")}
+                    />
+
+                    <ApngPlayer
+                        ref={"lait"}
+                        style={{
+                            position: "absolute",
+                            top: 188,
+                            left: 265
+                        }}
+                        scale={0.45}
+                        maxFrameSize={height / 2}
+                        playlist={[Lait]}
+                        onPress={() => console.log("pressed on lait")}
+                        onPlaylistItemFinish={(playlistIndex) => {
+                            //this.props.introFinished();
+                        }}
+                    />
+
+                    <Animated.Image
+                        source={Pots}
+                        style={{
+                            width: 1074,
+                            height: 347,
+                            position: 'absolute',
+                            left: this.state.moveLevier.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [-508 , -600],
+                            }),
+                            top: 329,
+                        }}
+                    />
+
                     <Image
                         source={Tuyeaux}
                         style={{
@@ -195,10 +242,10 @@ export class Page2 extends React.Component {
                         source={Roue4}
                         style={{
                             width: 87,
-                            height: 93,
+                            height: 87,
                             position: 'absolute',
-                            left: 1025,
-                            top: 91,
+                            left: 1023,
+                            top: 96,
                             transform: [{
                                 rotate: this.state.moveVAches.interpolate({
                                     inputRange: [0, 1],
@@ -214,11 +261,11 @@ export class Page2 extends React.Component {
                         <Animated.Image
                             source={Roue1}
                             style={{
-                                width: 170,
-                                height: 154,
+                                width: 127,
+                                height: 127,
                                 position: 'absolute',
-                                left: 934,
-                                top: 275,
+                                left: 960,
+                                top: 285,
                                 transform: [{
                                     rotate: this.state.moveVAches.interpolate({
                                         inputRange: [0, 1],
@@ -240,7 +287,7 @@ export class Page2 extends React.Component {
                             transform: [{
                                 rotate: this.state.moveVAches.interpolate({
                                     inputRange: [0, 1],
-                                    outputRange: ["0deg" , "360deg"],
+                                    outputRange: ["0deg" , "-360deg"],
                                 }),
                             }],
                         }}
@@ -383,17 +430,23 @@ export class Page2 extends React.Component {
                     />
 
                     <TouchableOpacity
-                        onPress={() => console.log("pressed on bouteille10")}
+                        onPress={() => this.bottlesAnimation()}
                         style={{zIndex: 2}}
                     >
-                        <Image
+                        <Animated.Image
                             source={Bouteille10}
                             style={{
                                 width: 49,
                                 height: 89,
                                 position: 'absolute',
                                 left: 932,
-                                top: 451
+                                top: 451,
+                                transform: [{
+                                    rotate: this.state.moveBottles[0].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0deg" , "-10deg"],
+                                    }),
+                                }],
                             }}
                         />
                     </TouchableOpacity>
@@ -404,42 +457,94 @@ export class Page2 extends React.Component {
                     />
 
                     <TouchableOpacity
-                        onPress={() => console.log("pressed on bouteille8")}
+                        onPress={() => this.bottlesAnimation()}
                         style={{zIndex: 2}}
+                        setOpacityTo={0.5,100}
                     >
-                        <Image
+                        <Animated.Image
                             source={Bouteille8}
-                            style={{width: 41, height: 63, position: 'absolute', left: 918, top: 481}}
+                            style={{
+                                width: 41,
+                                height: 63,
+                                position: 'absolute',
+                                left: 918,
+                                top: 481,
+                                transform: [{
+                                    rotate: this.state.moveBottles[1].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0deg" , "-10deg"],
+                                    }),
+                                }],
+                            }}
                         />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => console.log("pressed on bouteille7")}
                         style={{zIndex: 2}}
+                        setOpacityTo={0.5,100}
                     >
-                        <Image
+                        <Animated.Image
                             source={Bouteille7}
-                            style={{width: 31, height: 112, position: 'absolute', left: 1000, top: 689}}
+                            style={{
+                                width: 31,
+                                height: 112,
+                                position: 'absolute',
+                                left: 1000,
+                                top: 689,
+                                transform: [{
+                                    rotate: this.state.moveBottles[2].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0deg" , "-10deg"],
+                                    }),
+                                }],
+                            }}
                         />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => console.log("pressed on bouteille6")}
                         style={{zIndex: 2}}
+                        setOpacityTo={0.5,100}
                     >
-                        <Image
+                        <Animated.Image
                             source={Bouteille6}
-                            style={{width: 69, height: 110, position: 'absolute', left: 738, top: 556}}
+                            style={{
+                                width: 69,
+                                height: 110,
+                                position: 'absolute',
+                                left: 738,
+                                top: 556,
+                                transform: [{
+                                    rotate: this.state.moveBottles[3].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0deg" , "-10deg"],
+                                    }),
+                                }],
+                            }}
                         />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => console.log("pressed on bouteille5")}
                         style={{zIndex: 2}}
+                        setOpacityTo={0.5,100}
                     >
-                        <Image
+                        <Animated.Image
                             source={Bouteille5}
-                            style={{width: 40, height: 117, position: 'absolute', left: 817, top: 678}}
+                            style={{
+                                width: 40,
+                                height: 117,
+                                position: 'absolute',
+                                left: 817,
+                                top: 678,
+                                transform: [{
+                                    rotate: this.state.moveBottles[4].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0deg" , "-10deg"],
+                                    }),
+                                }],
+                            }}
                         />
                     </TouchableOpacity>
 
@@ -451,6 +556,7 @@ export class Page2 extends React.Component {
                     <TouchableOpacity
                         onPress={() => this.bottlesAnimation()}
                         style={{zIndex: 2}}
+                        setOpacityTo={0.5,100}
                     >
                         <Animated.Image
                             source={Bouteille3}
@@ -461,9 +567,9 @@ export class Page2 extends React.Component {
                                 left: 922,
                                 top: 682,
                                 transform: [{
-                                    rotate: this.state.moveVAches.interpolate({
+                                    rotate: this.state.moveBottles[5].interpolate({
                                         inputRange: [0, 1],
-                                        outputRange: ["3deg" , "-3deg"],
+                                        outputRange: ["0deg" , "-10deg"],
                                     }),
                                 }],
                             }}
@@ -479,7 +585,6 @@ export class Page2 extends React.Component {
                         source={Meuble}
                         style={{width: 476, height: 279, position: 'absolute', left: 601, top: 538}}
                     />
-
 
                     <TouchableOpacity
                         onPress={() => this.levierAnimation()}
