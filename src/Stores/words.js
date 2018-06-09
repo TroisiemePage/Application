@@ -149,11 +149,14 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Onager",
-                gender: "n. masc.",
-                definition: "Dès 1284 ce terme latin est utilisé pour décrire\n" +
-                "une catapulte, une machine de guerre destinée à lancer des pierres.\n" +
-                "Dans son livre Bestiaire (1827), Philippe de Thaon utilise ce terme pour désigner un «âne sauvage»."
+                word: "Mula",
+                gender: "latin.",
+                definition: "Ce mot apparait vers 1100 et du latin «mulet femelle»."
+            },
+            {
+                word: "Mullus",
+                gender: "latin.",
+                definition: "Au XIIème siècle, «mullus» est le diminituf du latin «mulleus» qui signifie «surmulet», ou «rouget». Il s’agit d’un poisson de couleur rouge avec deux longues barbes sous la mâchoire inférieure."
             }
         ]
     },
@@ -183,7 +186,13 @@ export const words = [
                 ]
             }
         ],
-        etymology: []
+        etymology: [
+            {
+                word: "Pressorium",
+                gender: "latin.",
+                definition: "En 1190, pressorium vient du latin premere qui signifie «presser»."
+            }
+        ]
     },
     {
         word: "Logis",
@@ -203,7 +212,18 @@ export const words = [
                 ]
             }
         ],
-        etymology: []
+        etymology: [
+            {
+                word: "laubja",
+                gender: "vieux francique.",
+                definition: "Ce terme signifiait en vieux francique (ancienne langue allemande) un abri de feuillages."
+            },
+            {
+                word: "loge",
+                gender: "n. fém.",
+                definition: "La loge peut désigner à la fois une petite cabane, cabanon, hutte. Ainsi qu’un petit logement situé habituellement au rez-de-chaussée d’une habitation près de la porte d’entrée, et destiné au concierge."
+            }
+        ]
     },
     {
         word: "Fourrier",
@@ -223,7 +243,28 @@ export const words = [
                 ]
             }
         ],
-        etymology: []
+        etymology: [
+            {
+                word: "Fodar",
+                gender: "n. masc.",
+                definition: "Ce terme vieux-francique nous vient des Francs Saliens, un peuple qui vivait entre la France et l’Allemagne au Vème siècle. Il signifiait alors «fourrage pour les animaux»."
+            },
+            {
+                word: "Fuere",
+                gender: "n. masc.",
+                definition: "Ancien français de fourrage. Il désigne plusieurs espèces d’herbes comme la paille et le foin qu’on donne comme nourriture aux animaux lorsqu’on ne les fait pas brouter l’herbe."
+            },
+            {
+                word: "Feurre",
+                gender: "n. masc.",
+                definition: "Ancien français de fourrage. Il désigne plusieurs espèces d’herbes comme la paille et le foin qu’on donne comme nourriture aux animaux lorsqu’on ne les fait pas brouter l’herbe."
+            },
+            {
+                word: "Fourrage",
+                gender: "n. masc.",
+                definition: "La paille, le foin et toutes autres espèces d’herbes qu’on donne comme nourriture aux bestiaux, aux chevaux, etc..."
+            }
+        ]
     },
     {
         word: "Autour-tiercelet",
@@ -244,7 +285,18 @@ export const words = [
                 ]
             }
         ],
-        etymology: []
+        etymology: [
+            {
+                word: "Hostur",
+                gender: "",
+                definition: "En 1100, il design un oiseau de proies."
+            },
+            {
+                word: "Acceptor",
+                gender: "Latin",
+                definition: "Il signifie «autour, épervier». Ce sont généralement de petits oiseaux de proie."
+            }
+        ]
     },
     {
         word: "Épagneul",
@@ -272,7 +324,23 @@ export const words = [
                 ]
             }
         ],
-        etymology: []
+        etymology: [
+            {
+                word: "Espeigner",
+                gender: "verbe. Vieux Français",
+                definition: "Fait de se coucher devant le gibier afin de le bloquer et ainsi de permettre aux chasseurs de le recouvrir d’un filet qui piégeait le gibier du même coup."
+            },
+            {
+                word: "Espainholz",
+                gender: "espagnol",
+                definition: "Ce mot signifie «qui vient d’Espagne». Les épagneuls auraient été ramenés d’Espagne au XIVème siècle."
+            },
+            {
+                word: "Chiens d’Oysel",
+                gender: "",
+                definition: "chien d’oiseaux"
+            }
+        ]
     },
     {
         word: "Lévrier",
@@ -300,12 +368,23 @@ export const words = [
                 ]
             }
         ],
-        etymology: []
+        etymology: [
+            {
+                word: "Lĕpŏrem",
+                gender: "Latin",
+                definition: "En latin il signifie «lièvre». À la différence du lapin il est plus grand et fin avec de longues oreilles."
+            },
+            {
+                word: "lièvre",
+                gender: "n. masc.",
+                definition: "Mammifère sauvage aux pattes de derrière plus longues que celles de devant, ce qui le rend très rapide à la course."
+            }
+        ]
     },
     {
         word: "Perdrix",
         gender: "n. fém.",
-        definition: "Oiseau ressemblant à une poule. Il a la queue\ncourte et est souvent de couleur grise ou brune.",
+        definition: "Oiseau ressemblant à une poule. Il a la queue courte et est souvent de couleur grise ou brune.",
         animation: [
             require("../Assets/Animations/Words/compiled/perdrix_intro.png"),
             require("../Assets/Animations/Words/compiled/perdrix_loop.png")
@@ -328,10 +407,16 @@ export const words = [
                 ]
             }
         ],
-        etymology: []
+        etymology: [
+            {
+                word: "Perdīcem",
+                gender: "latin.",
+                definition: "Perdīcem est le mot latin pour perdrix."
+            }
+        ]
     },
     {
-        word: "Lotis",
+        word: "Loti",
         gender: "expression.",
         definition: "Toujours précedée de bien ou mal, cette expression souvent ironique employée pour se féliciter ou se plaindre de ce qu’il nous arrive.",
         animation: [
@@ -357,7 +442,11 @@ export const words = [
             }
         ],
         etymology: [
-
+            {
+                word: "Lot",
+                gender: "n. masc.",
+                definition: "«Loti» viens du mot français «lot» qui a lui même donnée «loterie» ou «loto»."
+            }
         ]
     }
 ];
