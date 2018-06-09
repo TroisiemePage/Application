@@ -24,7 +24,6 @@ import Passerelle from "../../Assets/Images/Pages/Page2/passerelle.png";
 import Meuble from "../../Assets/Images/Pages/Page2/meuble.png";
 import Tuyeaux from "../../Assets/Images/Pages/Page2/tuyeaux.png";
 
-import {Page1} from "./Page1/Page1";
 import {Overlay} from "../PageRouter/PageRouter";
 import ApngPlayer from "../ApngPlayer/ApngPlayer";
 import {words} from "../../Stores/words";
