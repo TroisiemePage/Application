@@ -3,7 +3,7 @@ import {Page4} from "../Pages/Page4/Page4";
 import {Page2} from "../Pages/Page2";
 import {Page1} from "../Pages/Page1";
 import {Button, Dimensions, Image, Text, TouchableOpacity, View} from "react-native";
-import menuPicto from "../../Assets/Images/Elements/MENU.png";
+import menuPicto from "../../Assets/Images/Elements/MENU2.png";
 import trompette from "../../Assets/Images/Elements/MICRO.png";
 import {createStackNavigator} from "react-navigation";
 import {PageDetector} from "../../Modules/PageDetector";
