@@ -3,8 +3,8 @@ import {Page4} from "../Pages/Page4/Page4";
 import {Page2} from "../Pages/Page2";
 import {Page1} from "../Pages/Page1";
 import {Button, Dimensions, Image, Text, TouchableOpacity, View} from "react-native";
-import menuPicto from "../../Assets/Images/Elements/menu.png";
-import trompette from "../../Assets/Images/Elements/PICTO_MICRO.png";
+import menuPicto from "../../Assets/Images/Elements/MENU.png";
+import trompette from "../../Assets/Images/Elements/MICRO.png";
 import {createStackNavigator} from "react-navigation";
 import {PageDetector} from "../../Modules/PageDetector";
 import {words} from "../../Stores/words";
@@ -81,30 +81,48 @@ export class Overlay extends React.Component {
                         flex: 1,
                         flexDirection: "row",
                         alignItems: 'center',
+                        width: 50,
+                        height: 50,
+                        borderRadius: 50,
+                        overflow: "hidden",
+                        borderWidth: 1,
+                        borderColor: "#050A3A",
+                        backgroundColor: "#fefbeb"
                     }}
                 >
-                    <Image source={menuPicto} style={{
-                        width: 50,
-                        height: 50
-                    }}/>
+                    <Image
+
+                        source={menuPicto}
+                        style={{
+                            width: 50,
+                            height: 50
+                        }}/>
                 </TouchableOpacity>
                 <TouchableOpacity
                     activeOpacity={0.5}
                     onPress={() => this.toggleRecognition()}
                     style={{
                         position: "absolute",
-                        top: 20,
-                        right: 20,
+                        bottom: 20,
+                        left: 20,
                         flex: 1,
                         flexDirection: "row",
                         alignItems: 'center',
-                        backgroundColor: this.state.recognizing ? "red" : "transparent",
-                        borderRadius: 40
+                        backgroundColor: this.state.recognizing ? "#ec4739" : "#fefbeb",
+                        width: 50,
+                        height: 50,
+                        borderRadius: 50,
+                        borderWidth: 1,
+                        borderColor: this.state.recognizing ? "#ec4739": "#050A3A"
                     }}
                 >
-                    <Image source={trompette} style={{
-                        width: 50,
-                        height: 50
+                    <Image
+                        resizeMode={"contain"}
+                        source={trompette} style={{
+                        width: 35,
+                        height: 35,
+                        margin: 7,
+                        tintColor: this.state.recognizing ? "white" : "#050A3A"
                     }}/>
                 </TouchableOpacity>
             </View>

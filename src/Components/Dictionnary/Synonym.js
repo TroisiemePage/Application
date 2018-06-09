@@ -95,7 +95,8 @@ class SynonymSelector extends React.Component {
                 </View>
 
                 <View style={{
-                    marginLeft: 50
+                    marginLeft: 50,
+                    width: "40%"
                 }}>
                     <Text style={{
                         fontSize: 60,
