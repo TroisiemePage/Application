@@ -51,7 +51,7 @@ export default class Manicule extends Component {
                         width: 34.1,
                         height: 54.99,
                     }}
-                    source={this.props.color == 'black' ? BlackManicule : WhiteManicule}
+                    source={this.props.color === 'black' ? BlackManicule : WhiteManicule}
                 />
             </Animated.View>
         )

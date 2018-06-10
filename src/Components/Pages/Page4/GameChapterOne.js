@@ -9,7 +9,7 @@ const MAGFIELD = 80;
 const scale = 1;
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
-const AnimatedG= Animated.createAnimatedComponent(G);
+const AnimatedSVGText= Animated.createAnimatedComponent(SVGText);
 const AnimatedRect= Animated.createAnimatedComponent(Rect);
 const AnimatedCircle= Animated.createAnimatedComponent(Circle);
 
@@ -151,7 +151,7 @@ export default class GameChapterOneLetterA extends Component {
             fontFamily:'GothamRounded-Medium',
             fontSize: 23,
             width: 150,
-            color: 'black',
+            color: 'rgba(25,25,25,1)',
         },
         titleSvg: {
             fontFamily:'GothamRounded-Medium',
@@ -291,42 +291,46 @@ export default class GameChapterOneLetterA extends Component {
                                 />
                             </G>
                         </G>
-                        <AnimatedG
-                            style={{opacity: this.state.animated.text[7].interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [0, 1]
-                                })}}
+                        <G
                             transform="matrix(0.565498,0,0,0.565498,1050.75,147.876)"
                         >
                             <G>
                                 <G transform="matrix(1,0,0,1,645.568,211.925)"  >
-                                    <SVGText
+                                    <AnimatedSVGText
                                         fontSize={this.styles.textSvg.fontSize}
                                         fontFamily={this.styles.textSvg.fontFamily}
                                         fill={this.styles.textSvg.color}
+                                        fillOpacity={
+                                            this.state.animated.text[7].interpolate({
+                                                inputRange: [0, 1],
+                                                outputRange: [0, 1]
+                                            })
+                                        }
                                     >
                                         Partie la plus ﬁne d'une lettre
-                                    </SVGText>
+                                    </AnimatedSVGText>
                                 </G>
                             </G>
-                        </AnimatedG>
-                        <AnimatedG
-                            style={{opacity: this.state.animated.text[6].interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [0, 1]
-                                })}}
+                        </G>
+                        <G
                             transform="matrix(0.58543,0,0,0.58543,1038.65,147.459)"
                         >
                             <G transform="matrix(1,0,0,1,641.473,173.901)">
-                                <SVGText
+                                <AnimatedSVGText
                                     fontSize={this.styles.titleSvg.fontSize}
                                     fontFamily={this.styles.titleSvg.fontFamily}
                                     fill={this.styles.titleSvg.color}
+                                    fillOpacity={
+                                        this.state.animated.text[6].interpolate({
+                                            inputRange: [0, 1],
+                                            outputRange: [0, 1]
+                                        })
+                                    }
                                 >
                                     Délié
-                                </SVGText>
+                                </AnimatedSVGText>
                             </G>
-                        </AnimatedG>
+                        </G>
                     </G>
                     <G id="plein" transform="matrix(1,0,0,1,316.567,346.674)">
                         <G transform="matrix(-0.52968,0.148123,-0.148123,-0.52968,1805.38,299.018)">
@@ -357,7 +361,7 @@ export default class GameChapterOneLetterA extends Component {
                                 />
                             </G>
                         </G>
-                        <AnimatedG
+                        <G
                             style={{opacity: this.state.animated.text[5].interpolate({
                                     inputRange: [0, 1],
                                     outputRange: [0, 1]
@@ -366,17 +370,23 @@ export default class GameChapterOneLetterA extends Component {
                         >
                             <G>
                                 <G transform="matrix(1,0,0,1,645.568,211.925)" >
-                                    <SVGText
+                                    <AnimatedSVGText
                                         fontSize={this.styles.textSvg.fontSize}
                                         fontFamily={this.styles.textSvg.fontFamily}
                                         fill={this.styles.textSvg.color}
+                                        fillOpacity={
+                                            this.state.animated.text[5].interpolate({
+                                                inputRange: [0, 1],
+                                                outputRange: [0, 1]
+                                            })
+                                        }
                                     >
                                         Partie la plus large d'une lettre
-                                    </SVGText>
+                                    </AnimatedSVGText>
                                 </G>
                             </G>
-                        </AnimatedG>
-                        <AnimatedG
+                        </G>
+                        <G
                             style={{opacity: this.state.animated.text[4].interpolate({
                                     inputRange: [0, 1],
                                     outputRange: [0, 1]
@@ -384,15 +394,21 @@ export default class GameChapterOneLetterA extends Component {
                             transform="matrix(0.58543,0,0,0.58543,1038.65,149.459)"
                         >
                             <G transform="matrix(1,0,0,1,641.473,173.901)">
-                                <SVGText
+                                <AnimatedSVGText
                                     fontSize={this.styles.titleSvg.fontSize}
                                     fontFamily={this.styles.titleSvg.fontFamily}
                                     fill={this.styles.titleSvg.color}
+                                    fillOpacity={
+                                        this.state.animated.text[4].interpolate({
+                                            inputRange: [0, 1],
+                                            outputRange: [0, 1]
+                                        })
+                                    }
                                 >
                                     Plein
-                                </SVGText>
+                                </AnimatedSVGText>
                             </G>
-                        </AnimatedG>
+                        </G>
                     </G>
                     <G id="fut" transform="matrix(1,0,0,1,178.11,179.473)">
                         <G transform="matrix(0.00179016,0.549998,-0.549998,0.00179016,1656.67,-215.948)">
@@ -423,53 +439,63 @@ export default class GameChapterOneLetterA extends Component {
                                 />
                             </G>
                         </G>
-                        <AnimatedG
-                            style={{opacity: this.state.animated.text[3].interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [0, 1]
-                                })}}
+                        <G
                             transform="matrix(0.565498,0,0,0.565498,1124,5.51554)"
                         >
                             <G>
                                 <G transform="matrix(1,0,0,1,645.568,211.925)">
-                                    <SVGText
+                                    <AnimatedSVGText
                                         fontSize={this.styles.textSvg.fontSize}
                                         fontFamily={this.styles.textSvg.fontFamily}
                                         fill={this.styles.textSvg.color}
+                                        fillOpacity={
+                                            this.state.animated.text[3].interpolate({
+                                                inputRange: [0, 1],
+                                                outputRange: [0, 1]
+                                            })
+                                        }
                                     >
                                         Trait principal, vertical
-                                    </SVGText>
+                                    </AnimatedSVGText>
                                 </G>
                             </G>
                             <G>
                                 <G transform="matrix(1,0,0,1,645.568,239.925)">
-                                    <SVGText
+                                    <AnimatedSVGText
                                         fontSize={this.styles.textSvg.fontSize}
                                         fontFamily={this.styles.textSvg.fontFamily}
                                         fill={this.styles.textSvg.color}
+                                        fillOpacity={
+                                            this.state.animated.text[3].interpolate({
+                                                inputRange: [0, 1],
+                                                outputRange: [0, 1]
+                                            })
+                                        }
                                     >
                                         ou oblique.
-                                    </SVGText>
+                                    </AnimatedSVGText>
                                 </G>
                             </G>
-                        </AnimatedG>
-                        <AnimatedG
-                            style={{opacity: this.state.animated.text[2].interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [0, 1]
-                                })}}
+                        </G>
+                        <G
                             transform="matrix(0.58543,0,0,0.58543,1111.91,5.09903)"
                         >
                             <G transform="matrix(1,0,0,1,641.473,173.901)">
-                                <SVGText
+                                <AnimatedSVGText
                                     fontSize={this.styles.titleSvg.fontSize}
                                     fontFamily={this.styles.titleSvg.fontFamily}
                                     fill={this.styles.titleSvg.color}
+                                    fillOpacity={
+                                        this.state.animated.text[2].interpolate({
+                                            inputRange: [0, 1],
+                                            outputRange: [0, 1]
+                                        })
+                                    }
                                 >
                                     Fût
-                                </SVGText>
+                                </AnimatedSVGText>
                             </G>
-                        </AnimatedG>
+                        </G>
                     </G>
                     <G id="empattement" transform="matrix(1,0,0,1,17.1687,20.5025)">
                         <G transform="matrix(0.550001,0,0,0.550001,1139.31,12.4713)">
@@ -498,96 +524,131 @@ export default class GameChapterOneLetterA extends Component {
                                 />
                             </G>
                         </G>
-                        <AnimatedG
-                            style={{opacity: this.state.animated.text[1].interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [0, 1]
-                                })}}
+                        <G
                             transform="matrix(0.565498,0,0,0.565498,1128,4.51554)"
                         >
                             <G>
                                 <G transform="matrix(1,0,0,1,645.568,211.925)">
-                                    <SVGText
+                                    <AnimatedSVGText
                                         fontSize={this.styles.textSvg.fontSize}
                                         fontFamily={this.styles.textSvg.fontFamily}
                                         fill={this.styles.textSvg.color}
+                                        fillOpacity={
+                                            this.state.animated.text[1].interpolate({
+                                                inputRange: [0, 1],
+                                                outputRange: [0, 1]
+                                            })
+                                        }
                                     >
                                         Embout qui vient terminer
-                                    </SVGText>
+                                    </AnimatedSVGText>
                                 </G>
                             </G>
                             <G>
                                 <G transform="matrix(1,0,0,1,645.568,239.925)">
-                                    <SVGText
+                                    <AnimatedSVGText
                                         fontSize={this.styles.textSvg.fontSize}
                                         fontFamily={this.styles.textSvg.fontFamily}
                                         fill={this.styles.textSvg.color}
+                                        fillOpacity={
+                                            this.state.animated.text[1].interpolate({
+                                                inputRange: [0, 1],
+                                                outputRange: [0, 1]
+                                            })
+                                        }
                                     >
                                         l'extrémité d'un fût.
-                                    </SVGText>
+                                    </AnimatedSVGText>
                                 </G>
                             </G>
                             <G>
                                 <G transform="matrix(1,0,0,1,645.568,267.925)">
-                                    <SVGText
+                                    <AnimatedSVGText
                                         fontSize={this.styles.textSvg.fontSize}
                                         fontFamily={this.styles.textSvg.fontFamily}
                                         fill={this.styles.textSvg.color}
+                                        fillOpacity={
+                                            this.state.animated.text[1].interpolate({
+                                                inputRange: [0, 1],
+                                                outputRange: [0, 1]
+                                            })
+                                        }
                                     >
                                         Son rôle est de faciliter la
-                                    </SVGText>
+                                    </AnimatedSVGText>
                                 </G>
                             </G>
                             <G>
                                 <G transform="matrix(1,0,0,1,645.568,295.925)">
-                                    <SVGText
+                                    <AnimatedSVGText
                                         fontSize={this.styles.textSvg.fontSize}
                                         fontFamily={this.styles.textSvg.fontFamily}
                                         fill={this.styles.textSvg.color}
+                                        fillOpacity={
+                                            this.state.animated.text[1].interpolate({
+                                                inputRange: [0, 1],
+                                                outputRange: [0, 1]
+                                            })
+                                        }
                                     >
                                         lecture en guidant l'oeil du
-                                    </SVGText>
+                                    </AnimatedSVGText>
                                 </G>
                             </G>
                             <G>
                                 <G transform="matrix(1,0,0,1,645.568,323.925)">
-                                    <SVGText
+                                    <AnimatedSVGText
                                         fontSize={this.styles.textSvg.fontSize}
                                         fontFamily={this.styles.textSvg.fontFamily}
                                         fill={this.styles.textSvg.color}
+                                        fillOpacity={
+                                            this.state.animated.text[1].interpolate({
+                                                inputRange: [0, 1],
+                                                outputRange: [0, 1]
+                                            })
+                                        }
                                     >
                                         lecteur d'une lettre à
-                                    </SVGText>
+                                    </AnimatedSVGText>
                                 </G>
                             </G>
                             <G>
                                 <G transform="matrix(1,0,0,1,645.568,351.925)">
-                                    <SVGText
+                                    <AnimatedSVGText
                                         fontSize={this.styles.textSvg.fontSize}
                                         fontFamily={this.styles.textSvg.fontFamily}
                                         fill={this.styles.textSvg.color}
+                                        fillOpacity={
+                                            this.state.animated.text[1].interpolate({
+                                                inputRange: [0, 1],
+                                                outputRange: [0, 1]
+                                            })
+                                        }
                                     >
                                         l'autre.
-                                    </SVGText>
+                                    </AnimatedSVGText>
                                 </G>
                             </G>
-                        </AnimatedG>
-                        <AnimatedG
-                            style={{opacity: this.state.animated.text[0].interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [0, 1]
-                                })}}
-                            transform="matrix(0.58543,0,0,0.58543,1113.91,4.09903)">
+                        </G>
+                        <G
+                            transform="matrix(0.58543,0,0,0.58543,1113.91,4.09903)"
+                        >
                             <G transform="matrix(1,0,0,1,641.473,173.901)">
-                                <SVGText
+                                <AnimatedSVGText
                                     fontSize={this.styles.titleSvg.fontSize}
                                     fontFamily={this.styles.titleSvg.fontFamily}
-                                    fill={this.styles.titleSvg.color}
+                                    fill= {this.styles.titleSvg.color}
+                                    fillOpacity={
+                                        this.state.animated.text[0].interpolate({
+                                            inputRange: [0, 1],
+                                            outputRange: [0, 1]
+                                        })
+                                    }
                                 >
                                     Empattement
-                                </SVGText>
+                                </AnimatedSVGText>
                             </G>
-                        </AnimatedG>
+                        </G>
                     </G>
                 </G>
             );
