@@ -3,6 +3,7 @@ package com.troisiemepageprototype1;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.zmxv.RNSound.RNSoundPackage;
 import com.horcrux.svg.SvgPackage;
 import net.mischneider.MSREventBridgePackage;
 import com.rnfs.RNFSPackage;
@@ -27,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSoundPackage(),
             new SvgPackage(),
             new MSREventBridgePackage(),
             new RNFSPackage(),
