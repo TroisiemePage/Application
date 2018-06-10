@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Dimensions, Image, View, TouchableOpacity, TouchableWithoutFeedback, Animated, Easing} from "react-native";
 import Sound from "react-native-sound/";
+
 const {height, width} = Dimensions.get('window');
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 
@@ -16,7 +17,12 @@ import Tuyeaux from "../../../Assets/Images/Pages/Page2/tuyeaux.png";
 
 export class Vaches extends React.Component {
 
+    vaches = [Vache1, Vache2, Vache1, Vache2, Vache2];
+
+    offsetValues = [230, 460, 690, 910, -200];
+    vacheAnimStep = new Array(this.offsetValues.length).fill("").map((v, i) => i);
     state = {
+        vacheAnimValues: new Array(this.offsetValues.length).fill("").map((v, i) => new Animated.Value(i)),
         moveRoues: new Animated.Value(0),
         vache1Cliqued: false,
         vache2Cliqued: false,
@@ -27,152 +33,54 @@ export class Vaches extends React.Component {
     laitVache1 = new Sound('Sound/LAIT_VACHE.mp3', Sound.MAIN_BUNDLE);
     laitVache2 = new Sound('Sound/LAIT_VACHE_2.mp3', Sound.MAIN_BUNDLE);
 
+
     rouesAnimation() {
         this.rouesQuiTournent.play();
-        Animated.sequence([
-            Animated.timing(this.state.moveRoues, {
-                toValue: 1,
-                duration: 3000,
-                delay: 0,
-                easing: Easing.bezier(.57,.31,.29,.93),
-            }),
-            Animated.timing(this.state.moveRoues, {
-                toValue: 0,
-                duration: 0,
-                delay: 0,
-                easing: Easing.bezier(.57,.31,.29,.93),
+        this.vacheAnimStep.map((step) => step + 1);
+        Animated.parallel(this.vacheAnimStep
+            .map((step) => step + 1)
+            .map((vacheStep, i) => {
+                return Animated.timing(this.state.vacheAnimValues[i], {
+                    toValue: vacheStep,
+                    duration: (vacheStep === (this.offsetValues.length - 1)) ? 0 : 1000
+                })
             })
-        ]).start();
+        ).start();
     }
 
     render() {
-        let laitVache1, laitVache2;
-
-        if (this.state.vache1Cliqued) {
-            laitVache1 = (
-                <Animated.View
-                    style={{
-                        position: "absolute",
-                        width: 100,
-                        height: height / 1.7,
-                        top: 188,
-                        left: 500,
-                    }}
-                >
-                    <ApngPlayer
-                        ref={"lait"}
-                        scale={0.45}
-                        maxFrameSize={ height / 1.7}
-                        playlist={[Lait]}
-                        onPress={() => console.log("pressed on lait")}
-                        onPlaylistItemFinish={(playlistIndex) => {
-                            this.setState({ vache1Cliqued : false})
-                        }}
-                    />
-                </Animated.View>
-            );
-        }
-
-        if (this.state.vache2Cliqued) {
-            laitVache2 = (
-                <Animated.View
-                    style={{
-                        position: "absolute",
-                        top: 170,
-                        width: 100,
-                        height: height / 1.7,
-                        left: 290,
-                    }}
-                >
-                    <ApngPlayer
-                        ref={"lait"}
-                        scale={0.45}
-                        maxFrameSize={ height / 1.7}
-                        playlist={[Lait]}
-                        onPlaylistItemFinish={(playlistIndex) => {
-                            this.setState({ vache2Cliqued : false})
-                        }}
-                    />
-                </Animated.View>
-            );
-        }
 
         return (
             <View>
-                <TouchableWithoutFeedback
-                    onPress={() => {
-                            this.setState({ vache1Cliqued: true });
-                            this.laitVache1.play();
-                        }
-                    }
-                >
-                    <Animated.Image
-                        source={Vache1}
-                        style={{
-                            width: 178,
-                            height: 178,
-                            position: 'absolute',
-                            left: this.state.moveRoues.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [460, -100],
-                            }),
-                            top: 92
-                        }}
-                    />
-                </TouchableWithoutFeedback>
-                {laitVache1}
 
+                {this.vaches.map((vacheImage, i) => {
+                        this.offsetValues.push(this.offsetValues.shift());
+                        return (
+                            <TouchableWithoutFeedback key={i}>
+                                <Animated.Image
+                                    source={vacheImage}
+                                    style={{
+                                        width: 178,
+                                        height: 178,
+                                        position: 'absolute',
+                                        right: this.state.vacheAnimValues[i].interpolate({
+                                            inputRange: [0, 1, 2, 3, 4],
+                                            outputRange: this.offsetValues,
+                                        }),
+                                        top: 92
+                                    }}
+                                />
+                            </TouchableWithoutFeedback>
+                        );
+                    })
+                }
 
-                <TouchableWithoutFeedback
-                    onPress={() => {
-                            this.setState({ vache2Cliqued: true });
-                            this.laitVache2.play()
-                    }}
-                >
-                    <Animated.Image
-                        source={Vache2}
-                        style={{
-                            width: 177,
-                            height: 173,
-                            position: 'absolute',
-                            left: this.state.moveRoues.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [246, -400],
-                            }),
-                            top: 92
-                        }}
-                    />
-                </TouchableWithoutFeedback>
-                {laitVache2}
-
-
-                <TouchableWithoutFeedback
-                    onPress={() => {
-                            this.setState({ vache3Cliqued: true });
-                            this.laitVache1.play();
-                        }
-                    }
-                >
-                    <Animated.Image
-                        source={Vache2}
-                        style={{
-                            width: 178,
-                            height: 178,
-                            position: 'absolute',
-                            left: this.state.moveRoues.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [560, -100],
-                            }),
-                            top: 92
-                        }}
-                    />
-                </TouchableWithoutFeedback>
 
                 <Image
                     source={Tuyeaux}
                     style={{
                         width: 782,
-                        height:  358,
+                        height: 358,
                         position: 'absolute',
                         left: -560,
                         top: -40,
@@ -191,7 +99,7 @@ export class Vaches extends React.Component {
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
-                                outputRange: ["60deg" , "300deg"],
+                                outputRange: ["60deg", "300deg"],
                             }),
                         }],
                     }}
@@ -210,8 +118,8 @@ export class Vaches extends React.Component {
                             top: 285,
                             transform: [{
                                 rotate: this.state.moveRoues.interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: ["0deg" , "360deg"],
+                                    inputRange: [0, 3],
+                                    outputRange: ["0deg", "360deg"],
                                 }),
                             }],
                         }}
@@ -229,7 +137,7 @@ export class Vaches extends React.Component {
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
-                                outputRange: ["0deg" , "-360deg"],
+                                outputRange: ["0deg", "-360deg"],
                             }),
                         }],
                     }}
@@ -246,7 +154,7 @@ export class Vaches extends React.Component {
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
-                                outputRange: ["0deg" , "360deg"],
+                                outputRange: ["0deg", "360deg"],
                             }),
                         }],
                     }}
@@ -263,7 +171,7 @@ export class Vaches extends React.Component {
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
-                                outputRange: ["0deg" , "-360deg"],
+                                outputRange: ["0deg", "-360deg"],
                             }),
                         }],
                     }}
@@ -280,7 +188,7 @@ export class Vaches extends React.Component {
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
-                                outputRange: ["0deg" , "-360deg"],
+                                outputRange: ["0deg", "-360deg"],
                             }),
                         }],
                     }}
@@ -297,7 +205,7 @@ export class Vaches extends React.Component {
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
-                                outputRange: ["0deg" , "-360deg"],
+                                outputRange: ["0deg", "-360deg"],
                             }),
                         }],
                     }}
@@ -314,7 +222,7 @@ export class Vaches extends React.Component {
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
-                                outputRange: ["0deg" , "-360deg"],
+                                outputRange: ["0deg", "-360deg"],
                             }),
                         }],
                     }}
@@ -331,7 +239,7 @@ export class Vaches extends React.Component {
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
-                                outputRange: ["0deg" , "-360deg"],
+                                outputRange: ["0deg", "-360deg"],
                             }),
                         }],
                     }}
@@ -348,7 +256,7 @@ export class Vaches extends React.Component {
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
-                                outputRange: ["0deg" , "-360deg"],
+                                outputRange: ["0deg", "-360deg"],
                             }),
                         }],
                     }}
@@ -365,14 +273,13 @@ export class Vaches extends React.Component {
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
-                                outputRange: ["0deg" , "-360deg"],
+                                outputRange: ["0deg", "-360deg"],
                             }),
                         }],
                     }}
                 />
 
             </View>
-
 
 
         )

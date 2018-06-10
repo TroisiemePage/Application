@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Page4} from "../Pages/Page4/Page4";
-import {Page2} from "../Pages/Page2";
+import {Page2} from "../Pages/Page2/Page2";
 import {Page1} from "../Pages/Page1";
 import {Button, Dimensions, Image, Text, TouchableOpacity, View} from "react-native";
 import menuPicto from "../../Assets/Images/Elements/MENU2.png";
