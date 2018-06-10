@@ -117,7 +117,28 @@ export const words = [
                 ]
             }
         ],
-        etymology: []
+        etymology: [
+            {
+                word: "Calx",
+                gender: "latin.",
+                definition: "Il désigne le talon ou le pied en latin"
+            },
+            {
+                word: "Calceus",
+                gender: "latin.",
+                definition: "En latin ce terme signifie «soulier»"
+            },
+            {
+                word: "Chausse",
+                gender: "n. fém.",
+                definition: "Sorte de bas constitué d’un tube de tissu ou de tricot qui monte jusqu’en haut des cuisses. Il était très répandu au Moyen Âge."
+            },
+            {
+                word: "Chaussure",
+                gender: "n. fém.",
+                definition: "Se porte aux pieds."
+            }
+        ]
     },
     {
         word: "Mule",
@@ -327,8 +348,8 @@ export const words = [
         etymology: [
             {
                 word: "Espeigner",
-                gender: "verbe. Vieux Français",
-                definition: "Fait de se coucher devant le gibier afin de le bloquer et ainsi de permettre aux chasseurs de le recouvrir d’un filet qui piégeait le gibier du même coup."
+                gender: "verbe.",
+                definition: "En vieux français, Espeigner est le fait de se coucher devant le gibier afin de le bloquer et ainsi de permettre aux chasseurs de le recouvrir d’un filet qui piégeait le gibier du même coup."
             },
             {
                 word: "Espainholz",
@@ -337,8 +358,8 @@ export const words = [
             },
             {
                 word: "Chiens d’Oysel",
-                gender: "",
-                definition: "chien d’oiseaux"
+                gender: "n. masc.",
+                definition: "Race de chien originaire d'Allemagne utilisée pour la chasse d'oiseaux."
             }
         ]
     },

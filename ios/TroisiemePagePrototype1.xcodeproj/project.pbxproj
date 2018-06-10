@@ -25,7 +25,6 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		21360FC8766B459CA1240DF8 /* AGaramondPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BE621FC0EF245D887704586 /* AGaramondPro-Bold.otf */; };
 		23A6B8253C8C45D1B88EEE5E /* AGaramondPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0238FC0ECB514AE0BDCC25A4 /* AGaramondPro-Semibold.otf */; };
-		2837EE8A20CD706300CC9B26 /* Sound in Resources */ = {isa = PBXBuildFile; fileRef = 2837EE8920CD706200CC9B26 /* Sound */; };
 		2D6253E0655F4BF1B77986E0 /* RNMotionManagerTests.xctest in Frameworks */ = {isa = PBXBuildFile; fileRef = 34287F2D7C12499582010BD7 /* RNMotionManagerTests.xctest */; };
 		31DC3F22BBE14F14B4A399A1 /* AGaramondPro-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45D26B6EDD084208A23CF5CE /* AGaramondPro-BoldItalic.otf */; };
 		3429D9591E1A4749B98CD947 /* ClairvauxLTStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = F88B7B6A99F848F581815EEB /* ClairvauxLTStd.otf */; };
@@ -146,13 +145,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 94DDAC5C1F3D024300EED511;
 			remoteInfo = "RNSVG-tvOS";
-		};
-		289B45E620CD6B9A002E7F7C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D9CCF6DD046A4585A8CD9AA9 /* RNMotionManager.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BB9CC7F81AE0A2EB008A1D08;
-			remoteInfo = RNMotionManagerTests;
 		};
 		289B45EE20CD6B9B002E7F7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -409,7 +401,6 @@
 		1A045138FD3640C0BF68E6B9 /* GothamRoundedBook_21018.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GothamRoundedBook_21018.ttf; path = "../src/assets/Fonts/gotham-rounded/GothamRoundedBook_21018.ttf"; sourceTree = "<group>"; };
 		21322D191D364A759BCC2529 /* RNSound.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		23DF7CA419DE436E93C89E38 /* GothamRounded-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamRounded-Book.otf"; path = "../src/assets/fonts/gotham-rounded/GothamRounded-Book.otf"; sourceTree = "<group>"; };
-		2837EE8920CD706200CC9B26 /* Sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sound; sourceTree = "<group>"; };
 		28E490D5B1D54DF593D851E4 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		29FEAA23C5D84781A2C9007A /* AGaramondPro-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AGaramondPro-Italic.otf"; path = "../src/assets/fonts/Adobe Garamond Pro/AGaramondPro-Italic.otf"; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -575,7 +566,6 @@
 		13B07FAE1A68108700A75B9A /* TroisiemePagePrototype1 */ = {
 			isa = PBXGroup;
 			children = (
-				2837EE8920CD706200CC9B26 /* Sound */,
 				592391CE20A5E45400BA39C8 /* TroisiemePagePrototype1-Bridging-Header.h */,
 				592391C620A5E43200BA39C8 /* APNGPlayer */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -654,7 +644,6 @@
 			isa = PBXGroup;
 			children = (
 				5974683C2088B72D00608E07 /* libRNMotionManager.a */,
-				289B45E720CD6B9A002E7F7C /* RNMotionManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -841,7 +830,7 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = Z49K8RG4Y9;
+						DevelopmentTeam = B6YW2DLXP5;
 						LastSwiftMigration = 930;
 						ProvisioningStyle = Automatic;
 					};
@@ -1000,13 +989,6 @@
 			fileType = archive.ar;
 			path = "libRNSVG-tvOS.a";
 			remoteRef = 2879ED7E20AEFBF600924F5A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		289B45E720CD6B9A002E7F7C /* RNMotionManagerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RNMotionManagerTests.xctest;
-			remoteRef = 289B45E620CD6B9A002E7F7C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		289B45EF20CD6B9B002E7F7C /* libRNSound.a */ = {
@@ -1262,7 +1244,6 @@
 				4669FB552D4241D890D190EF /* GothamRoundedLight_21020.ttf in Resources */,
 				C4A91139133E4D5EAF97EB88 /* GothamRoundedMedium_21022.ttf in Resources */,
 				3429D9591E1A4749B98CD947 /* ClairvauxLTStd.otf in Resources */,
-				2837EE8A20CD706300CC9B26 /* Sound in Resources */,
 				FBBF6C7F0BC042579359DCB8 /* Respira-Black.otf in Resources */,
 				FD9CFD084D394372BAC76FF8 /* AGaramondPro-Bold.otf in Resources */,
 				106E9A5CB0AC486282974C2B /* AGaramondPro-BoldItalic.otf in Resources */,
@@ -1357,7 +1338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = Z49K8RG4Y9;
+				DEVELOPMENT_TEAM = B6YW2DLXP5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1410,7 +1391,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z49K8RG4Y9;
+				DEVELOPMENT_TEAM = B6YW2DLXP5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

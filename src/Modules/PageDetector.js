@@ -17,7 +17,7 @@ export const PageDetector = new class PageDetector {
             this.liftingWindow.push(Math.abs(Math.round(data.magneticField.z)));
             if(this.liftingWindow.length >= this.liftingRes) {
                 const cleanSample = this.round(this.liftingWindow.reduce((a, c) => a + c) / this.liftingRes);
-                console.log(cleanSample);
+
                 let spikeDirection = this.spikeDetector(cleanSample);
                 if((this.currentPage + spikeDirection) >= 0 && spikeDirection !== 0) {
                     this.currentPage += spikeDirection;
