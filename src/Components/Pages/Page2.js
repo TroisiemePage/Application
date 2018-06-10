@@ -53,6 +53,7 @@ export class Page2 extends React.Component {
         moveVaches: new Animated.Value(0),
         vache1Cliqued: false,
         vache2Cliqued: false,
+        vache3Cliqued: false,
         moveBottles: new Array(6).fill("").map(() => new Animated.Value(0)),
     };
 
@@ -68,6 +69,10 @@ export class Page2 extends React.Component {
     fondSonoreVaches = new Sound('Sound/FOND_SONORE_MACHINE_VACHE.mp3', Sound.MAIN_BUNDLE);
     laitVache1 = new Sound('Sound/LAIT_VACHE.mp3', Sound.MAIN_BUNDLE);
     laitVache2 = new Sound('Sound/LAIT_VACHE_2.mp3', Sound.MAIN_BUNDLE);
+
+    componentDidMount() {
+        this.fondSonoreVaches.play();
+    }
 
     levierAnimation() {
         this.levier.play();
@@ -90,7 +95,6 @@ export class Page2 extends React.Component {
 
     rouesAnimation() {
         this.rouesQuiTournent.play();
-        this.fondSonoreVaches.play();
         Animated.sequence([
             Animated.timing(this.state.moveRoues, {
                 toValue: 1,
@@ -100,7 +104,7 @@ export class Page2 extends React.Component {
             }),
             Animated.timing(this.state.moveRoues, {
                 toValue: 0,
-                duration: 3000,
+                duration: 0,
                 delay: 0,
                 easing: Easing.bezier(.57,.31,.29,.93),
             })
@@ -157,10 +161,7 @@ export class Page2 extends React.Component {
                         width: 100,
                         height: height / 1.7,
                         top: 188,
-                        left: this.state.moveVaches.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: [465 , 373],
-                        }),
+                        left: 500,
                     }}
                 >
                     <ApngPlayer
@@ -185,10 +186,7 @@ export class Page2 extends React.Component {
                         top: 170,
                         width: 100,
                         height: height / 1.7,
-                        left: this.state.moveVaches.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: [265 , 145],
-                        }),
+                        left: 290,
                     }}
                 >
                     <ApngPlayer
@@ -220,8 +218,10 @@ export class Page2 extends React.Component {
                             height: 178,
                             position: 'absolute',
                             left: this.state.moveVaches.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [-34, -126],
+                                inputRange: [-300, -100, 0, 100, 101],
+                                outputRange: [300, 0, 1, 0, 0],
+                                /*inputRange: [0, 1],
+                                outputRange: [-34, -126],*/
                             }),
                         }}
                     >
@@ -256,6 +256,7 @@ export class Page2 extends React.Component {
                                 }}
                             />
                         </TouchableWithoutFeedback>
+                        {laitVache1}
                     </Animated.View>
 
                     <Animated.View
@@ -299,11 +300,52 @@ export class Page2 extends React.Component {
                                 }}
                             />
                         </TouchableWithoutFeedback>
+                        {laitVache2}
                     </Animated.View>
 
-                    {laitVache1}
-
-                    {laitVache2}
+                    <Animated.View
+                        style={{
+                            width: 178,
+                            height: 178,
+                            position: 'absolute',
+                            left: this.state.moveVaches.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [84, 6],
+                            }),
+                        }}
+                    >
+                        <TouchableWithoutFeedback
+                            onPress={() => {
+                                this.setState({ vache3Cliqued: true });
+                                this.vachesAnimation(),
+                                this.laitVache1.play();
+                                }
+                            }
+                        >
+                            <Animated.Image
+                                source={Vache2}
+                                style={{
+                                    width: 178,
+                                    height: 178,
+                                    position: 'absolute',
+                                    left: this.state.moveRoues.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: [560, -100],
+                                    }),
+                                    top: this.state.moveRoues.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: [92 , 88],
+                                    }),
+                                    transform: [{
+                                        rotate: this.state.moveRoues.interpolate({
+                                            inputRange: [0, 1],
+                                            outputRange: ["5deg" , "-5deg"],
+                                        }),
+                                    }],
+                                }}
+                            />
+                        </TouchableWithoutFeedback>
+                    </Animated.View>
 
                     <Animated.Image
                         source={Pots}
