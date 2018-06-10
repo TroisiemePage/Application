@@ -63,6 +63,27 @@ export default class ModalView extends Component {
                 position: 'absolute',
                 overflow: this.isOpen ? "visible" : "hidden",
             }}>
+                <Animated.Image
+                    source={this.props.popupImage}
+                    style={{
+                        width: this.isOpen ? 100 : 0,
+                        height: this.isOpen ? 100 : 0,
+                        zIndex: 2,
+                        position: "absolute",
+                        left: -60,
+                        top: -60,
+                        opacity: this.state.animatedValue.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [0, 1]
+                        }),
+                        transform: [{
+                            scale: this.state.animatedValue.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0.6, 1]
+                            })
+                        }],
+                    }}
+                />
                 <Animated.View
                     style={{
                         position: "absolute",
