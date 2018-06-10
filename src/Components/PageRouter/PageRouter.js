@@ -23,7 +23,6 @@ export class Overlay extends React.Component {
     constructor() {
         super();
         PageDetector.onPageChange((currentPage) => {
-            //let currentPage = this.state.currentPage;
             console.log(currentPage);
             let pageNumber = 5;
             let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pageNumber ? currentPage : (pageNumber - 1)) : 0);
@@ -150,7 +149,7 @@ export const PageRouter = createStackNavigator({
         screen: Page0
     }
 }, {
-    initialRouteName: 'Page1'
+    initialRouteName: 'Page3'
 });
 PageRouter.navigationOptions = {
     header: null

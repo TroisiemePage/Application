@@ -581,9 +581,11 @@ export class Page2 extends React.Component {
 
                     <TouchableOpacity
                         onPress={
-                            () => console.log("pressed on bouteille7"),
-                            () => this.bottlesAnimation(),
-                            () => this.glass3.play()
+                            () => {
+                                console.log("pressed on bouteille7");
+                                this.bottlesAnimation();
+                                this.glass3.play();
+                            }
                         }
                         style={{zIndex: 1}}
                         setOpacityTo={0.5,100}

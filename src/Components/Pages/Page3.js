@@ -7,10 +7,12 @@ import ModalView from "../Modal/ModalPopup/ModalPopupView";
 
 const {height, width} = Dimensions.get('window');
 export class Page3 extends React.Component {
+
     render() {
         return (
             <Overlay {...this.props} wordList={words}>
                 <ScrollView
+                    ref={(ref) => ref.scrollTo({x: 0, y: height * 2, animated: false})}
                     showsVerticalScrollIndicator={false}
                     pagingEnabled={true}
                     bounces={false}>
