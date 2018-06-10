@@ -128,7 +128,7 @@ class Page4Content extends React.Component {
                 </ModalView>
                 <Manicule
                     x={840}
-                    y={620}
+                    y={640}
                 />
             </View>
             </Overlay>

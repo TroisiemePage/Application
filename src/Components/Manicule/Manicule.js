@@ -48,8 +48,8 @@ export default class Manicule extends Component {
                 <Image
                     style={{
                         position: "absolute",
-                        width: 34.1,
-                        height: 54.99,
+                        width: 49.1,
+                        height: 80.99,
                     }}
                     source={this.props.color === 'black' ? BlackManicule : WhiteManicule}
                 />

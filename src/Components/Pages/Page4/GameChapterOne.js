@@ -663,7 +663,7 @@ export default class GameChapterOneLetterA extends Component {
                     </Text>
                     <Manicule
                         x={600}
-                        y={600}
+                        y={630}
                         color="black"
                     />
                 </View>
