@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {View, Image, Animated, Easing} from 'react-native';
+import WhiteManicule from "../../Assets/Images/Elements/WhiteManicule.png";
+import BlackManicule from "../../Assets/Images/Elements/BlackManicule.png";
 
 export default class Manicule extends Component {
 
@@ -49,7 +51,7 @@ export default class Manicule extends Component {
                         width: 34.1,
                         height: 54.99,
                     }}
-                    source={require('../../Assets/Images/Elements/manicule.png')}
+                    source={this.props.color == 'black' ? BlackManicule : WhiteManicule}
                 />
             </Animated.View>
         )

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {Easing, PanResponder, Animated, View, Text, Dimensions} from 'react-native';
+import {PanResponder, Animated, View, Text, Dimensions, Easing} from 'react-native';
 import Svg, {G, Path, Circle, Rect, Text as SVGText} from 'react-native-svg';
 import {computed} from "mobx";
+import Manicule from "../../Manicule/Manicule";
 import DrawerActions from "react-navigation/src/routers/DrawerActions";
-
 
 const MAGFIELD = 80;
 const scale = 1;
@@ -24,6 +24,7 @@ export default class GameChapterOneLetterA extends Component {
 
     constructor() {
         super();
+
         const pieces = [
             {
                 scale: {x: 1, y: 0},
@@ -78,6 +79,16 @@ export default class GameChapterOneLetterA extends Component {
             return Animated.timing(animationValue, {
                 toValue: 1,
                 duration: 990,
+                delay: 0,
+                easing: Easing.inOut(Easing.cubic)
+            })
+        });
+
+        this.animatedArrayText = [];
+        this.animatedArrayText = this.state.animated.text.map((animationValue) => {
+            return Animated.timing(animationValue, {
+                toValue: 1,
+                duration: 400,
                 delay: 0,
                 easing: Easing.inOut(Easing.cubic)
             })
@@ -204,6 +215,23 @@ export default class GameChapterOneLetterA extends Component {
         return this.state.puzzlePiece.filter((piece) => piece.placed).length === this.state.puzzlePiece.length;
     }
 
+    animateTitle() {
+        Animated.timing(this.state.animated.title, {
+            toValue: 1,
+            duration: 1000,
+            delay: 0,
+            easing: Easing.inOut(Easing.cubic)
+        }).start();
+    }
+
+    animateLines() {
+        Animated.sequence(this.animatedArrayLines).start();
+    }
+
+    animateTextFadeIn() {
+        Animated.sequence(this.animatedArrayText).start();
+    }
+
     render() {
         let greetings, typography;
         //const opacity = this.state.animated.title.interpolate({inputRange: [0,1], outputRange: [0,1]});
@@ -211,6 +239,11 @@ export default class GameChapterOneLetterA extends Component {
         //const transform = [{translateY}];
 
         if (this.didSucceed) {
+
+            this.animateLines();
+            this.animateTextFadeIn();
+            this.animateTitle();
+
             greetings = (
 
                 <View style={this.styles.titleViewAchieved}>
@@ -220,7 +253,7 @@ export default class GameChapterOneLetterA extends Component {
                     <Animated.Text style={this.styles.description}>
                         Frère Augustin te remercie.
                         Il sera plus patient
-                        la prochaine fois...
+                        la prochaine fois..
                     </Animated.Text>
                 </View>
 
@@ -228,27 +261,41 @@ export default class GameChapterOneLetterA extends Component {
 
             typography = (
 
-                <AnimatedG>
-                    <AnimatedG id="delie" transform="matrix(1,0,0,1,172.653,466.421)">
+                <G>
+                    <G id="delie" transform="matrix(1,0,0,1,172.653,466.421)">
                         <G transform="matrix(-0.52968,0.148123,-0.148123,-0.52968,1805.38,299.018)">
                             <G transform="matrix(0.79311,-0.191132,0.341725,1.418,-31.8794,-70.0615)">
-                                <Rect
+                                <AnimatedRect
                                     x="640.793"
                                     y="369.647"
-                                    width="4.566"
-                                    height="109.292"
+                                    width={this.state.animated.lines[3].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0", "4.566"]
+                                    })}
+                                    height={this.state.animated.lines[3].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0", "109.292"]
+                                    })}
                                     fill="rgb(255,92,69)"
                                 />
                             </G>
                             <G transform="matrix(1,0,0,1,1,-2)">
-                                <Circle cx="642.143" cy="484.71" r="17.842" fill="rgb(255,92,69)"/>
+                                <AnimatedCircle
+                                    cx="642.143"
+                                    cy="484.71"
+                                    r={this.state.animated.lines[3].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0", "17.842"]
+                                    })}
+                                    fill="rgb(255,92,69)"
+                                />
                             </G>
                         </G>
                         <AnimatedG
                             style={{opacity: this.state.animated.text[7].interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [0, 1]
-                            })}}
+                                    inputRange: [0, 1],
+                                    outputRange: [0, 1]
+                                })}}
                             transform="matrix(0.565498,0,0,0.565498,1050.75,147.876)"
                         >
                             <G>
@@ -280,23 +327,32 @@ export default class GameChapterOneLetterA extends Component {
                                 </SVGText>
                             </G>
                         </AnimatedG>
-                    </AnimatedG>
-                    <AnimatedG id="plein" transform="matrix(1,0,0,1,316.567,346.674)">
+                    </G>
+                    <G id="plein" transform="matrix(1,0,0,1,316.567,346.674)">
                         <G transform="matrix(-0.52968,0.148123,-0.148123,-0.52968,1805.38,299.018)">
                             <G transform="matrix(0.815816,-6.45625e-19,0,1.4586,118.024,-219.64)">
-                                <Rect
+                                <AnimatedRect
                                     x="640.793"
                                     y="369.647"
-                                    width="4.566"
-                                    height="109.292"
+                                    width={this.state.animated.lines[2].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0", "4.566"]
+                                    })}
+                                    height={this.state.animated.lines[2].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0", "109.292"]
+                                    })}
                                     fill="rgb(255,92,69)"
                                 />
                             </G>
                             <G transform="matrix(1,0,0,1,1,-2)">
-                                <Circle
+                                <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r="17.842"
+                                    r={this.state.animated.lines[2].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0", "17.842"]
+                                    })}
                                     fill="rgb(255,92,69)"
                                 />
                             </G>
@@ -331,28 +387,38 @@ export default class GameChapterOneLetterA extends Component {
                                 <SVGText
                                     fontSize={this.styles.titleSvg.fontSize}
                                     fontFamily={this.styles.titleSvg.fontFamily}
-                                    fill={this.styles.titleSvg.color}>
+                                    fill={this.styles.titleSvg.color}
+                                >
                                     Plein
                                 </SVGText>
                             </G>
                         </AnimatedG>
-                    </AnimatedG>
-                    <AnimatedG id="fut" transform="matrix(1,0,0,1,178.11,179.473)">
+                    </G>
+                    <G id="fut" transform="matrix(1,0,0,1,178.11,179.473)">
                         <G transform="matrix(0.00179016,0.549998,-0.549998,0.00179016,1656.67,-215.948)">
                             <G transform="matrix(0.815816,-6.45625e-19,0,1.4586,118.024,-219.64)">
-                                <Rect
+                                <AnimatedRect
                                     x="640.793"
                                     y="369.647"
-                                    width="4.566"
-                                    height="109.292"
+                                    width={this.state.animated.lines[1].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0", "4.566"]
+                                    })}
+                                    height={this.state.animated.lines[1].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0", "109.292"]
+                                    })}
                                     fill="rgb(255,92,69)"
                                 />
                             </G>
                             <G transform="matrix(1,0,0,1,1,-2)">
-                                <Circle
+                                <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r="17.842"
+                                    r={this.state.animated.lines[1].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0", "17.842"]
+                                    })}
                                     fill="rgb(255,92,69)"
                                 />
                             </G>
@@ -404,15 +470,30 @@ export default class GameChapterOneLetterA extends Component {
                                 </SVGText>
                             </G>
                         </AnimatedG>
-                    </AnimatedG>
-                    <AnimatedG id="empattement" transform="matrix(1,0,0,1,17.1687,20.5025)">
+                    </G>
+                    <G id="empattement" transform="matrix(1,0,0,1,17.1687,20.5025)">
                         <G transform="matrix(0.550001,0,0,0.550001,1139.31,12.4713)">
-                            <Rect x="640.793" y="369.647" width="4.566" height="109.292" fill="rgb(255,92,69)"/>
+                            <AnimatedRect
+                                x="640.793"
+                                y="369.647"
+                                width={this.state.animated.lines[0].interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: ["0", "4.566"]
+                                })}
+                                height={this.state.animated.lines[0].interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: ["0", "109.292"]
+                                })}
+                                fill="rgb(255,92,69)"
+                            />
                             <G transform="matrix(1,0,0,1,1,-2)">
-                                <Circle
+                                <AnimatedCircle
                                     cx="642.143"
                                     cy="484.71"
-                                    r="17.842"
+                                    r={this.state.animated.lines[0].interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0", "17.842"]
+                                    })}
                                     fill="rgb(255,92,69)"
                                 />
                             </G>
@@ -507,15 +588,12 @@ export default class GameChapterOneLetterA extends Component {
                                 </SVGText>
                             </G>
                         </AnimatedG>
-                    </AnimatedG>
-                </AnimatedG>
+                    </G>
+                </G>
             );
-
-            setTimeout(() => this.props.navigation.dispatch({ type: DrawerActions.CLOSE_DRAWER }), 2000);
-
+            setTimeout(() => this.props.navigation.dispatch({ type: DrawerActions.CLOSE_DRAWER }), 10000);
         } else {
             greetings = (
-
                 <View style={this.styles.titleView}>
                     <Text style={this.styles.title}>
                         Frère Augustin a perdu patience et a fini par déchirer son manuscrit !
@@ -523,6 +601,11 @@ export default class GameChapterOneLetterA extends Component {
                     <Text style={this.styles.title}>
                         Peux-tu l'aider à reconstituer la lettre?
                     </Text>
+                    <Manicule
+                        x={600}
+                        y={600}
+                        color="black"
+                    />
                 </View>
             );
         }

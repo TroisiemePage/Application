@@ -5,7 +5,7 @@ import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
 import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 import {LetterSelector} from "./LetterSelector";
-import GameChapterOneLetterA from "./GameChapterOne";
+import GameChapterOneLetterB from "./GameChapterOne";
 import {createDrawerNavigator} from "react-navigation";
 import {Overlay} from "../../PageRouter/PageRouter";
 import ModalView from '../../Modal/ModalPopup/ModalPopupView';
@@ -149,10 +149,11 @@ export const Page4 = createDrawerNavigator(
         drawerWidth: 900,
         drawerLockMode: "locked-closed",
         contentComponent: (props) => {
-            return (<GameChapterOneLetterA {...props} letterSelector={letterSelector}/>)
+            return (<GameChapterOneLetterB {...props} letterSelector={letterSelector}/>)
         }
     }
 );
+
 Page4.navigationOptions = {
     header: null
 };
