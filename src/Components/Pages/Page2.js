@@ -26,6 +26,7 @@ import Tuyeaux from "../../Assets/Images/Pages/Page2/tuyeaux.png";
 
 import {Overlay} from "../PageRouter/PageRouter";
 import ApngPlayer from "../ApngPlayer/ApngPlayer";
+import Sound from 'react-native-sound';
 import {words} from "../../Stores/words";
 
 const {height, width} = Dimensions.get('window');
@@ -55,7 +56,22 @@ export class Page2 extends React.Component {
         moveBottles: new Array(6).fill("").map(() => new Animated.Value(0)),
     };
 
+    glass1 = new Sound('Sound/GLASS_01.mp3', Sound.MAIN_BUNDLE);
+    glass2 = new Sound('Sound/GLASS_02.mp3', Sound.MAIN_BUNDLE);
+    glass3 = new Sound('Sound/GLASS_03.mp3', Sound.MAIN_BUNDLE);
+    glass4 = new Sound('Sound/GLASS_04.mp3', Sound.MAIN_BUNDLE);
+    glass5 = new Sound('Sound/GLASS_05.mp3', Sound.MAIN_BUNDLE);
+    glass6 = new Sound('Sound/GLASS_06.mp3', Sound.MAIN_BUNDLE);
+    levier = new Sound('Sound/LEVIER.mp3', Sound.MAIN_BUNDLE);
+    tapisRoulant = new Sound('Sound/TAPIS_ROULANT.mp3', Sound.MAIN_BUNDLE);
+    rouesQuiTournent = new Sound('Sound/ROUE_QUI_TOURNE.mp3', Sound.MAIN_BUNDLE);
+    fondSonoreVaches = new Sound('Sound/FOND_SONORE_MACHINE_VACHE.mp3', Sound.MAIN_BUNDLE);
+    laitVache1 = new Sound('Sound/LAIT_VACHE.mp3', Sound.MAIN_BUNDLE);
+    laitVache2 = new Sound('Sound/LAIT_VACHE_2.mp3', Sound.MAIN_BUNDLE);
+
     levierAnimation() {
+        this.levier.play();
+        this.tapisRoulant.play();
         Animated.sequence([
             Animated.timing(this.state.moveLevier, {
                 toValue: 1,
@@ -73,6 +89,8 @@ export class Page2 extends React.Component {
     }
 
     rouesAnimation() {
+        this.rouesQuiTournent.play();
+        this.fondSonoreVaches.play();
         Animated.sequence([
             Animated.timing(this.state.moveRoues, {
                 toValue: 1,
@@ -210,7 +228,8 @@ export class Page2 extends React.Component {
                         <TouchableWithoutFeedback
                             onPress={() => {
                                     this.setState({ vache1Cliqued: true });
-                                    this.vachesAnimation();
+                                    this.vachesAnimation(),
+                                    this.laitVache1.play();
                                 }
                             }
                         >
@@ -253,7 +272,8 @@ export class Page2 extends React.Component {
                         <TouchableWithoutFeedback
                             onPress={() => {
                                 this.setState({ vache2Cliqued: true });
-                                this.vachesAnimation();
+                                this.vachesAnimation(),
+                                this.laitVache2.play()
                             }}
                         >
                             <Animated.Image
@@ -503,8 +523,11 @@ export class Page2 extends React.Component {
                     />
 
                     <TouchableOpacity
-                        onPress={() => this.bottlesAnimation()}
-                        style={{zIndex: 2}}
+                        onPress={
+                            () => console.log("pressed on bouteille10"),
+                            () => this.glass1.play()
+                        }
+                        style={{zIndex: 1}}
                     >
                         <Animated.Image
                             source={Bouteille10}
@@ -530,8 +553,12 @@ export class Page2 extends React.Component {
                     />
 
                     <TouchableOpacity
-                        onPress={() => this.bottlesAnimation()}
-                        style={{zIndex: 2}}
+                        onPress={
+                            () => console.log("pressed on bouteille8"),
+                            () => this.bottlesAnimation(),
+                            () => this.glass2.play()
+                        }
+                        style={{zIndex: 1}}
                         setOpacityTo={0.5,100}
                     >
                         <Animated.Image
@@ -553,8 +580,12 @@ export class Page2 extends React.Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        onPress={() => console.log("pressed on bouteille7")}
-                        style={{zIndex: 2}}
+                        onPress={
+                            () => console.log("pressed on bouteille7"),
+                            () => this.bottlesAnimation(),
+                            () => this.glass3.play()
+                        }
+                        style={{zIndex: 1}}
                         setOpacityTo={0.5,100}
                     >
                         <Animated.Image
@@ -576,8 +607,12 @@ export class Page2 extends React.Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        onPress={() => console.log("pressed on bouteille6")}
-                        style={{zIndex: 2}}
+                        onPress={
+                            () => console.log("pressed on bouteille6"),
+                            () => this.bottlesAnimation(),
+                            () => this.glass4.play()
+                        }
+                        style={{zIndex: 1}}
                         setOpacityTo={0.5,100}
                     >
                         <Animated.Image
@@ -599,8 +634,12 @@ export class Page2 extends React.Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        onPress={() => console.log("pressed on bouteille5")}
-                        style={{zIndex: 2}}
+                        onPress={
+                            () => console.log("pressed on bouteille5"),
+                            () => this.bottlesAnimation(),
+                            () => this.glass5.play()
+                        }
+                        style={{zIndex: 1}}
                         setOpacityTo={0.5,100}
                     >
                         <Animated.Image
@@ -627,8 +666,11 @@ export class Page2 extends React.Component {
                     />
 
                     <TouchableOpacity
-                        onPress={() => this.bottlesAnimation()}
-                        style={{zIndex: 2}}
+                        onPress={
+                            () => this.bottlesAnimation(),
+                            () => this.glass6.play()
+                        }
+                        style={{zIndex: 1}}
                         setOpacityTo={0.5,100}
                     >
                         <Animated.Image
@@ -649,18 +691,10 @@ export class Page2 extends React.Component {
                         />
                     </TouchableOpacity>
 
-                    <Image
-                        source={Passerelle}
-                        style={{width: 67, height: 30, position: 'absolute', left: 910, top: 636}}
-                    />
-
-                    <Image
-                        source={Meuble}
-                        style={{width: 476, height: 279, position: 'absolute', left: 601, top: 538}}
-                    />
-
                     <TouchableWithoutFeedback
-                        onPress={() => this.levierAnimation()}
+                        onPress={
+                            () => this.levierAnimation()
+                        }
                     >
                         <Animated.View style={{
                             width: 130,
@@ -685,11 +719,22 @@ export class Page2 extends React.Component {
                             />
                         </Animated.View>
                     </TouchableWithoutFeedback>
+
+                    <Image
+                        source={Passerelle}
+                        style={{width: 67, height: 30, position: 'absolute', left: 910, top: 636}}
+                    />
+
+                    <Image
+                        source={Meuble}
+                        style={{width: 476, height: 279, position: 'absolute', left: 601, top: 538}}
+                    />
                 </View>
             </Overlay>
         )
     }
 }
+
 Page2.navigationOptions = {
     header: null
 };
