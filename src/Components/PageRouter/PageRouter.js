@@ -10,6 +10,8 @@ import {PageDetector} from "../../Modules/PageDetector";
 import {words} from "../../Stores/words";
 import {WordDetector} from "../../Modules/WordDetector";
 import {Menu} from "../Menu/Menu";
+import {Page3} from "../Pages/Page3";
+import {Page0} from "../Pages/Page0";
 const {height, width} = Dimensions.get('window');
 
 export class Overlay extends React.Component {
@@ -130,38 +132,6 @@ export class Overlay extends React.Component {
     }
 }
 
-function Page0(props) {
-    return (
-        <Overlay {...props} wordList={words}>
-            <Text>Bonjour, je suis le Menu</Text>
-        </Overlay>
-    );
-};
-
-class Page3 extends React.Component {
-    render() {
-        return (
-            <Overlay {...this.props} wordList={words}>
-                <Text>Appuie sur la trompette quand tu ne comprend pas un mot</Text>
-            </Overlay>
-        );
-    }
-}
-Page3.navigationOptions = {
-    header: null
-};
-
-const MenuWrapper = (props) => {
-    return (
-        <Overlay {...props} wordList={words}>
-            <Menu {...props}/>
-        </Overlay>
-    );
-};
-
-MenuWrapper.navigationOptions = {
-    header: null
-};
 
 export const PageRouter = createStackNavigator({
     Page5: {
@@ -177,7 +147,7 @@ export const PageRouter = createStackNavigator({
         screen: Page1
     },
     Page1: {
-        screen: MenuWrapper
+        screen: Page0
     }
 }, {
     initialRouteName: 'Page1'

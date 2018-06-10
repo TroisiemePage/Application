@@ -4,10 +4,6 @@ import Svg, {Rect, LinearGradient, Defs, Stop} from 'react-native-svg';
 import ModalContent from "./ModalPopupContent";
 
 const styles = {
-    scrollView: {
-        borderRadius: 20,
-        backgroundColor: "#FEFBED",
-    },
     gradientHideBottom: {
         height: 50,
         position: 'absolute',
@@ -18,7 +14,7 @@ const styles = {
         height: 25,
         position: 'absolute',
         top: 0,
-        width: '100%',
+        width: '100%'
     }
 };
 
@@ -89,7 +85,13 @@ export default class ModalView extends Component {
                         opacity: this.state.animatedValue
                     }}
                 >
-                    <View style={{height: 220, position: 'relative', overflow: 'hidden'}}>
+                    <View style={{
+                        height: 220,
+                        position: 'relative',
+                        overflow: 'hidden',
+                        borderRadius: 20,
+                        backgroundColor: '#FEFBEB'
+                    }}>
 
                         <ScrollView
                             ref={ref => (this.scrollViewRef = ref)}
