@@ -103,7 +103,7 @@ export default class ModalView extends Component {
                         shadowOpacity: 0.15,
                         shadowRadius: 20,
                         elevation: 3,
-                        opacity: this.state.animatedValue
+                        opacity: this.state.animatedValue,
                     }}
                 >
                     <View style={{
@@ -111,14 +111,13 @@ export default class ModalView extends Component {
                         position: 'relative',
                         overflow: 'hidden',
                         borderRadius: 20,
-                        backgroundColor: '#FEFBEB'
+                        backgroundColor: '#FEFBEB',
                     }}>
 
                         <ScrollView
                             ref={ref => (this.scrollViewRef = ref)}
                             onScroll={this.handleOnScroll}
                             scrollEventThrottle={16}
-                            style={styles.scrollView}
                         >
                             <ModalContent title={this.props.title}>
                                 {this.props.children}
@@ -156,6 +155,7 @@ export default class ModalView extends Component {
                             position: "absolute",
                             bottom: 0,
                             right: 0,
+                            zIndex: 0,
                             transform: [{
                                 rotate: this.state.animatedValue.interpolate({
                                     inputRange: [0, 1],
