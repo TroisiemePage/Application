@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Dimensions, Image, View, Text} from "react-native";
-import Decor from "../../../Assets/Images/Pages/Page1/01_EcranIpad_DEVELOPPEUR.png";
+import Decor from "../../../Assets/Images/Pages/Page1/fond.png";
 import {Overlay} from "../../PageRouter/PageRouter";
 import {words} from "../../../Stores/words";
 import ModalView from '../../Modal/ModalPopup/ModalPopupView';
@@ -8,9 +8,13 @@ import ModalView from '../../Modal/ModalPopup/ModalPopupView';
 import Nobles from "../../../Assets/Images/Pages/Page1/nobles.png";
 import Paysans from "../../../Assets/Images/Pages/Page1/paysans.png";
 import Clerc from "../../../Assets/Images/Pages/Page1/clerc.png";
-import ApngPlayer from "../../ApngPlayer/ApngPlayer";
+import {Sky} from "./Sky";
+
 import chateauAnim from "../../../Assets/Animations/Pages/compiled/CHATEAU_loop.png";
-import hommeBaton from "../../../Assets/Animations/Pages/compiled/HOMMEBATON_loop.png";
+import hommeColine from "../../../Assets/Animations/Pages/compiled/HOMME_COLLINE_02_loop.png";
+import group1 from "../../../Assets/Animations/Pages/compiled/GROUPE_01_loop.png";
+import ApngPlayer from "../../ApngPlayer/ApngPlayer";
+
 const {height, width} = Dimensions.get('window');
 const styles ={
     container: {
@@ -20,23 +24,55 @@ const styles ={
         height: height
     },
     image: {
+        position: "absolute",
+        left: 0,
+        top: 0,
         width: width,
         height: height,
         alignSelf: "flex-end"
     }
 };
+/*
 
+ */
 export class Page1 extends React.Component {
     render() {
         return (
             <Overlay {...this.props} wordList={words}>
                 <View style={styles.container}>
+
+                    <Sky/>
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 898,
+                            top: 68
+                        }}
+                        maxFrameSize={310}
+                        playlist={[chateauAnim]}/>
                     <Image
                         source={Decor}
                         style={styles.image}
                         resizeMode={"contain"}
                         resizeMethod={"scale"}
                     />
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 783,
+                            top: 369
+                        }}
+                        maxFrameSize={325}
+                        playlist={[hommeColine]}/>
+
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: -12,
+                            top: 561
+                        }}
+                        maxFrameSize={266}
+                        playlist={[group1]}/>
                     <ModalView
                         x={140}
                         y={380}
@@ -89,13 +125,13 @@ export class Page1 extends React.Component {
                         {"\n"}{"\n"}
                         <Text style={{fontWeight: 'bold'}}>ORATORES </Text>: ceux qui prient, les hommes d'Église
                         {"\n"}{"\n"}
-                            <Text style={{fontWeight: 'bold'}}>BELLATORES </Text>: ceux qui font la guerre, les nobles (prince, seigneurs, chevaliers)
+                        <Text style={{fontWeight: 'bold'}}>BELLATORES </Text>: ceux qui font la guerre, les nobles (prince, seigneurs, chevaliers)
                         {"\n"}{"\n"}
-                                <Text style={{fontWeight: 'bold'}}>LABORATORES </Text>: ceux qui travaillent, les paysans
+                        <Text style={{fontWeight: 'bold'}}>LABORATORES </Text>: ceux qui travaillent, les paysans
 
                     </ModalView>
-                </View>
 
+                </View>
             </Overlay>
         )
     }

@@ -36,7 +36,11 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Reconnaissance de mot pour un dictionnaire</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Reconnaissance de mot pour un dictionnaire</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AGaramondPro-Bold.otf</string>
@@ -77,10 +81,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Reconnaissance de mot pour un dictionnaire</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Reconnaissance de mot pour un dictionnaire</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>
