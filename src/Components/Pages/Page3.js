@@ -12,7 +12,7 @@ export class Page3 extends React.Component {
         return (
             <Overlay {...this.props} wordList={words}>
                 <ScrollView
-                    ref={(ref) => ref.scrollTo({x: 0, y: height * 2, animated: false})}
+                    ref={(ref) => (ref !== void 0) ? ref.scrollTo({x: 0, y: height * 2, animated: false}) : ""}
                     showsVerticalScrollIndicator={false}
                     pagingEnabled={true}
                     bounces={false}>

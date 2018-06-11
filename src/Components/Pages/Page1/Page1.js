@@ -13,6 +13,9 @@ import {Sky} from "./Sky";
 import chateauAnim from "../../../Assets/Animations/Pages/compiled/CHATEAU_loop.png";
 import hommeColine from "../../../Assets/Animations/Pages/compiled/HOMME_COLLINE_02_loop.png";
 import group1 from "../../../Assets/Animations/Pages/compiled/GROUPE_01_loop.png";
+import group2 from "../../../Assets/Animations/Pages/compiled/GROUPE_02_loop.png";
+import group3 from "../../../Assets/Animations/Pages/compiled/GROUPE_03_loop.png";
+import hommeCape from "../../../Assets/Animations/Pages/compiled/HOMME_CAPE_loop.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 
 const {height, width} = Dimensions.get('window');
@@ -56,14 +59,6 @@ export class Page1 extends React.Component {
                         resizeMode={"contain"}
                         resizeMethod={"scale"}
                     />
-                    <ApngPlayer
-                        style={{
-                            position: "absolute",
-                            left: 783,
-                            top: 369
-                        }}
-                        maxFrameSize={325}
-                        playlist={[hommeColine]}/>
 
                     <ApngPlayer
                         style={{
@@ -73,6 +68,30 @@ export class Page1 extends React.Component {
                         }}
                         maxFrameSize={266}
                         playlist={[group1]}/>
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 237,
+                            top: 552
+                        }}
+                        maxFrameSize={289}
+                        playlist={[group2]}/>
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 471,
+                            top: 484
+                        }}
+                        maxFrameSize={155}
+                        playlist={[group3]}/>
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 783,
+                            top: 369
+                        }}
+                        maxFrameSize={325}
+                        playlist={[hommeColine]}/>
                     <ModalView
                         x={140}
                         y={380}
