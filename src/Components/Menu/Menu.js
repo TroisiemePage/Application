@@ -27,9 +27,7 @@ const styles = {
         fontFamily: "AGaramondPro-Bold",
     },
     image: {
-        width: 151.9,
-        height: 238.14,
-        //resizeMode: "center",
+        resizeMode: "center",
     },
     title: {
         fontSize: 20,
@@ -38,12 +36,14 @@ const styles = {
         fontWeight: "100",
         color: "#0E0637",
         marginTop: 40,
+        paddingHorizontal: 20,
     },
     text: {
         fontSize: 12,
         fontFamily: "Gotham Rounded",
         color: "#050A3A",
-        marginVertical: 20,
+        paddingHorizontal: 20,
+        marginTop: 20,
     }
 };
 
@@ -56,6 +56,8 @@ export class Menu extends React.Component {
         description: null,
         chateau: null,
         currentPage: 0,
+        imageWidth: 0,
+        imageHeight: 0,
     };
 
     componentWillMount() {
@@ -89,9 +91,15 @@ export class Menu extends React.Component {
                         padding: 20,
                         flex: 1,
                         alignItems: "center",
-                        flexDirection: "column"
+                        flexDirection: "column",
                     }}>
-                        <Image style={styles.image} source={this.state.chateau}/>
+                        <Image
+                            style={{
+                                ...styles.image,
+                                width: this.state.imageWidth >= 300 ? this.state.imageWidth/2 : 3 * this.state.imageWidth/4,
+                                height: this.state.imageWidth >= 300 ? this.state.imageHeight/2 : 3 * this.state.imageHeight/4
+                            }}
+                           source={this.state.chateau}/>
                         <View>
                             <Text style={styles.title}>{this.state.ville}</Text>
                             <Text style={styles.text}>{this.state.description}</Text>
@@ -112,7 +120,9 @@ export class Menu extends React.Component {
                         modalVisibleLeft: true,
                         ville: villes.grandgousier.title,
                         description: villes.grandgousier.description,
-                        chateau: villes.grandgousier.source
+                        chateau: villes.grandgousier.source,
+                        imageWidth: 246,
+                        imageHeight: 300,
                     })}
                     image={this.state.currentPage >= 1 ? villes.grandgousier.source : villes.grandgousier.sourceNB}
                 >
@@ -128,7 +138,9 @@ export class Menu extends React.Component {
                         modalVisibleLeft: true,
                         ville: villes.beauce.title,
                         description: villes.beauce.description,
-                        chateau: villes.beauce.source
+                        chateau: villes.beauce.source,
+                        imageWidth: 251,
+                        imageHeight: 157,
                     })}
                     image={this.state.currentPage >= 4 ? villes.beauce.source : villes.beauce.sourceNB}
                 >
@@ -144,7 +156,9 @@ export class Menu extends React.Component {
                         modalVisibleLeft: true,
                         ville: villes.paris.title,
                         description: villes.paris.description,
-                        chateau: villes.paris.source
+                        chateau: villes.paris.source,
+                        imageWidth: 208,
+                        imageHeight: 216,
                     })}
                     image={this.state.currentPage >= 8 ? villes.paris.source : villes.paris.sourceNB}
                 >
@@ -161,7 +175,9 @@ export class Menu extends React.Component {
                         ville: villes.picrochole.title,
                         description: villes.picrochole.description,
                         image: villes.picrochole.source,
-                        chateau: villes.picrochole.source
+                        chateau: villes.picrochole.source,
+                        imageWidth: 316,
+                        imageHeight: 156,
                     })}
                     image={this.state.currentPage >= 10 ? villes.picrochole.source : villes.picrochole.sourceNB}
                 >
@@ -177,7 +193,9 @@ export class Menu extends React.Component {
                         modalVisibleLeft: true,
                         ville: villes.theleme.title,
                         description: villes.theleme.description,
-                        chateau: villes.theleme.source
+                        chateau: villes.theleme.source,
+                        imageWidth: 335,
+                        imageHeight: 195,
                     })}
                     image={this.state.currentPage >= 13 ? villes.theleme.source : villes.theleme.sourceNB}
                 >
