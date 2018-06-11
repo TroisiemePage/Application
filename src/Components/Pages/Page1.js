@@ -1,13 +1,19 @@
 import * as React from "react";
-import {Dimensions, Image, View, Text} from "react-native";
+import {Dimensions, Image, View, Text, TouchableWithoutFeedback} from "react-native";
 import Decor from "../../Assets/Images/Pages/Page1/01_EcranIpad_DEVELOPPEUR.png";
 import {Overlay} from "../PageRouter/PageRouter";
 import {words} from "../../Stores/words";
 import ModalView from '../Modal/ModalPopup/ModalPopupView';
+import Sound from "react-native-sound/";
 
 import Nobles from "../../Assets/Images/Pages/Page1/nobles.png";
 import Paysans from "../../Assets/Images/Pages/Page1/paysans2.png";
 import Clerc from "../../Assets/Images/Pages/Page1/clerc.png";
+
+import SoundBapteme from "../../Assets/Sound/SONS_IPAD_BAPTEME.mp3";
+import SoundClerc from "../../Assets/Sound/CLERC.mp3";
+import SoundNobles from "../../Assets/Sound/FOULE EN LIESSE.mp3";
+import SoundPaysanes from "../../Assets/Sound/CHUCHOTEMENTS.mp3"
 
 const {height, width} = Dimensions.get('window');
 const styles ={
@@ -25,6 +31,12 @@ const styles ={
 };
 
 export class Page1 extends React.Component {
+
+    soundBapteme = new Sound(SoundBapteme, null);
+    soundClerc = new Sound(SoundClerc, null);
+    SoundNobles = new Sound(SoundNobles, null);
+    SoundPaysanes = new Sound(SoundPaysanes, null);
+
     render() {
         return (
             <Overlay {...this.props} wordList={words}>
