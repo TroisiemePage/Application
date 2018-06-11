@@ -1,8 +1,5 @@
 import * as React from "react";
 import {Image, Dimensions, View} from "react-native";
-import decor from "../../../Assets/Images/Pages/Page4/Decor_pageMoines.png";
-import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
-import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 import {LetterSelector} from "./LetterSelector";
 import GameChapterOneLetterB from "./GameChapterOne";
@@ -11,6 +8,13 @@ import {Overlay} from "../../PageRouter/PageRouter";
 import ModalView from '../../Modal/ModalPopup/ModalPopupView';
 import Manicule from '../../Manicule/Manicule';
 import {words} from "../../../Stores/words";
+import Sound from "react-native-sound/";
+
+import decor from "../../../Assets/Images/Pages/Page4/Decor_pageMoines.png";
+import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
+import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
+
+import SoundMoines from "../../../Assets/Sound/MOINES.mp3";
 
 const {height, width} = Dimensions.get('window');
 const styles = {
@@ -51,6 +55,8 @@ class Page4Content extends React.Component {
             animated: true
         };
     }
+
+    soundMoines = new Sound(SoundMoines, null);
 
     render() {
         //console.log("CONTENT", this.props.navigation);

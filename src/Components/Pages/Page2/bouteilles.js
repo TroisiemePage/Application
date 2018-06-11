@@ -13,6 +13,13 @@ import Bouteille10 from "../../../Assets/Images/Pages/Page2/bouteille10.png";
 import Passerelle from "../../../Assets/Images/Pages/Page2/passerelle.png";
 import Meuble from "../../../Assets/Images/Pages/Page2/meuble.png";
 
+import Glass1 from "../../../Assets/Sound/GLASS_01.mp3";
+import Glass2 from "../../../Assets/Sound/GLASS_02.mp3";
+import Glass3 from "../../../Assets/Sound/GLASS_03.mp3";
+import Glass4 from "../../../Assets/Sound/GLASS_04.mp3";
+import Glass5 from "../../../Assets/Sound/GLASS_05.mp3";
+import Glass6 from "../../../Assets/Sound/GLASS_06.mp3";
+
 export class Bouteilles extends React.Component {
 
     state = {
@@ -41,12 +48,12 @@ export class Bouteilles extends React.Component {
         Animated.sequence(this.animatedBottlesArray).start();
     }
 
-    glass1 = new Sound('Sound/GLASS_01.mp3', Sound.MAIN_BUNDLE);
-    glass2 = new Sound('Sound/GLASS_02.mp3', Sound.MAIN_BUNDLE);
-    glass3 = new Sound('Sound/GLASS_03.mp3', Sound.MAIN_BUNDLE);
-    glass4 = new Sound('Sound/GLASS_04.mp3', Sound.MAIN_BUNDLE);
-    glass5 = new Sound('Sound/GLASS_05.mp3', Sound.MAIN_BUNDLE);
-    glass6 = new Sound('Sound/GLASS_06.mp3', Sound.MAIN_BUNDLE);
+    glass1 = new Sound(Glass1, null);
+    glass2 = new Sound(Glass2, null);
+    glass3 = new Sound(Glass3, null);
+    glass4 = new Sound(Glass4, null);
+    glass5 = new Sound(Glass5, null);
+    glass6 = new Sound(Glass6, null);
 
     render() {
         return(

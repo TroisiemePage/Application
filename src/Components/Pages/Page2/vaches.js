@@ -1,9 +1,9 @@
 import * as React from "react";
 import {Dimensions, Image, View, TouchableOpacity, TouchableWithoutFeedback, Animated, Easing} from "react-native";
+import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 import Sound from "react-native-sound/";
 
 const {height, width} = Dimensions.get('window');
-import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 
 import Lait from "../../../Assets/Animations/Pages/compiled/LAIT.png";
 import Roue1 from "../../../Assets/Images/Pages/Page2/roue1.png";
@@ -14,6 +14,10 @@ import Roue5 from "../../../Assets/Images/Pages/Page2/roues5.png";
 import Vache1 from "../../../Assets/Images/Pages/Page2/vache1.png";
 import Vache2 from "../../../Assets/Images/Pages/Page2/vache2.png";
 import Tuyeaux from "../../../Assets/Images/Pages/Page2/tuyeaux.png";
+
+import RoueQuiTournent from "../../../Assets/Sound/ROUE_QUI_TOURNE.mp3";
+import LaitVache1 from "../../../Assets/Sound/LAIT_VACHE.mp3";
+import LaitVache2 from "../../../Assets/Sound/LAIT_VACHE_2.mp3";
 
 export class Vaches extends React.Component {
 
@@ -29,10 +33,9 @@ export class Vaches extends React.Component {
         vache3Cliqued: false,
     };
 
-    rouesQuiTournent = new Sound('Sound/ROUE_QUI_TOURNE.mp3', Sound.MAIN_BUNDLE);
-    laitVache1 = new Sound('Sound/LAIT_VACHE.mp3', Sound.MAIN_BUNDLE);
-    laitVache2 = new Sound('Sound/LAIT_VACHE_2.mp3', Sound.MAIN_BUNDLE);
-
+    rouesQuiTournent = new Sound(RoueQuiTournent, null);
+    laitVache1 = new Sound(LaitVache1, null);
+    laitVache2 = new Sound(LaitVache2, null);
 
     rouesAnimation() {
         this.rouesQuiTournent.play();

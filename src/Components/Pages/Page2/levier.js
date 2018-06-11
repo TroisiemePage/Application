@@ -5,6 +5,9 @@ import Sound from "react-native-sound/";
 import Pots from "../../../Assets/Images/Pages/Page2/pots.png";
 import LevierImg from "../../../Assets/Images/Pages/Page2/levier.png";
 
+import TapisRoulant from "../../../Assets/Sound/TAPIS_ROULANT.mp3";
+import LevierSound from "../../../Assets/Sound/LEVIER.mp3";
+
 export class Levier extends React.Component {
 
     state = {
@@ -30,8 +33,8 @@ export class Levier extends React.Component {
         ]).start();
     }
 
-    tapisRoulant = new Sound('Sound/TAPIS_ROULANT.mp3', Sound.MAIN_BUNDLE);
-    levier = new Sound('Sound/LEVIER.mp3', Sound.MAIN_BUNDLE);
+    tapisRoulant = new Sound(TapisRoulant, null);
+    levier = new Sound(LevierSound, null);
 
     render() {
         return(
@@ -44,7 +47,7 @@ export class Levier extends React.Component {
                         position: 'absolute',
                         left: this.state.moveLevier.interpolate({
                             inputRange: [0, 1],
-                            outputRange: [-508 , -1000],
+                            outputRange: [-508 , -1200],
                         }),
                         top: 329,
                     }}
