@@ -17,7 +17,8 @@ const styles = {
         flex: 1,
         flexDirection: "row",
         width: width,
-        height: height
+        height: height,
+        backgroundColor: "#fff1d0"
     },
     image: {
         width: width,

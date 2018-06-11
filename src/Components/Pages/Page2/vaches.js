@@ -23,14 +23,13 @@ export class Vaches extends React.Component {
 
     vaches = [Vache1, Vache2, Vache1, Vache2, Vache2];
 
-    offsetValues = [230, 460, 690, 910, -200];
-    vacheAnimStep = new Array(this.offsetValues.length).fill("").map((v, i) => i);
+    offsetValues = [width, 900, 635, 350, 0];
+
     state = {
         vacheAnimValues: new Array(this.offsetValues.length).fill("").map((v, i) => new Animated.Value(i)),
+        generalStep: 1,
         moveRoues: new Animated.Value(0),
-        vache1Cliqued: false,
-        vache2Cliqued: false,
-        vache3Cliqued: false,
+        vacheCliqued: false
     };
 
     rouesQuiTournent = new Sound(RoueQuiTournent, null);
@@ -38,41 +37,63 @@ export class Vaches extends React.Component {
     laitVache2 = new Sound(LaitVache2, null);
 
     rouesAnimation() {
+        this.setState({
+            generalStep: this.state.generalStep + 1,
+            vacheCliqued: false
+        });
         this.rouesQuiTournent.play();
-        this.vacheAnimStep.map((step) => step + 1);
-        Animated.parallel(this.vacheAnimStep
-            .map((step) => step + 1)
-            .map((vacheStep, i) => {
-                return Animated.timing(this.state.vacheAnimValues[i], {
-                    toValue: vacheStep,
-                    duration: (vacheStep === (this.offsetValues.length - 1)) ? 0 : 1000
+
+        Animated.parallel([
+            ...this.state.vacheAnimValues.map((val, i) => {
+                let targetValue = ((this.state.generalStep + i) % (this.vaches.length));
+                console.log("target value", targetValue);
+                return Animated.timing(val, {
+                    toValue: targetValue,
+                    duration: targetValue > 0 ? 1000 : 0
+                });
+            }),
+            Animated.sequence([
+                Animated.timing(this.state.moveRoues, {
+                    toValue: 1,
+                    duration: 1000
+                }),
+                Animated.timing(this.state.moveRoues, {
+                    toValue: 0,
+                    duration: 0
                 })
-            })
-        ).start();
+            ])
+        ]).start();
+
     }
 
     render() {
-
         return (
             <View>
                 {this.vaches.map((vacheImage, i) => {
-                    this.offsetValues.push(this.offsetValues.shift());
                     return (
-                        <TouchableWithoutFeedback key={i}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                if(((this.state.generalStep + i) % (this.vaches.length)) === 4) {
+                                    this.setState({vacheCliqued: true});
+                                }
+                                this.laitVache1.play();
+                            }}
+                        >
                             <Animated.Image
+                                key={i}
                                 source={vacheImage}
                                 style={{
                                     width: 178,
                                     height: 178,
-                                    position: 'absolute',
-                                    right: this.state.vacheAnimValues[i].interpolate({
+                                    position: "absolute",
+                                    left: this.state.vacheAnimValues[i].interpolate({
                                         inputRange: [0, 1, 2, 3, 4],
-                                        outputRange: this.offsetValues,
+                                        outputRange: this.offsetValues
                                     }),
                                     top: 92
                                 }}
                             />
-                        </TouchableWithoutFeedback>
+                        </TouchableOpacity>
                     );
                 })}
 
@@ -117,8 +138,8 @@ export class Vaches extends React.Component {
                             top: 285,
                             transform: [{
                                 rotate: this.state.moveRoues.interpolate({
-                                    inputRange: [0, 3],
-                                    outputRange: ["0deg", "360deg"],
+                                    inputRange: [0, 1],
+                                    outputRange: ["0deg", "-360deg"],
                                 }),
                             }],
                         }}
@@ -277,6 +298,32 @@ export class Vaches extends React.Component {
                         }],
                     }}
                 />
+                {(() => {
+                    if(this.state.vacheCliqued) {
+                        return (
+                            <Animated.View
+                                style={{
+                                    position: "absolute",
+                                    top: 186,
+                                    width: 100,
+                                    height: height / 1.7,
+                                    left: 399,
+                                }}
+                            >
+                                <ApngPlayer
+                                    ref={"lait"}
+                                    scale={0.45}
+                                    maxFrameSize={height / 1.7}
+                                    playlist={[Lait]}
+                                    onPlaylistItemFinish={(playlistIndex) => {
+                                        this.setState({vacheCliqued: false})
+                                    }}
+                                />
+                            </Animated.View>
+                        );
+                    }
+                })()}
+
 
             </View>
 
