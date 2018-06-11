@@ -14,7 +14,6 @@
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		01A5DAD8D4454E32A5B62FEE /* AGaramondPro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71BA14917C9A455AB2DF1F3B /* AGaramondPro-Italic.otf */; };
 		03FFA6B0F47F406A8B332FF7 /* bouteille7.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BF080E6DFF4C569A9BE432 /* bouteille7.png */; };
-		04EB2D07931040FF8F2CD112 /* HOMME_BRASLEVE_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = 48C1AA4983714E4CBA763A0C /* HOMME_BRASLEVE_loop.png */; };
 		068DD8DCFD5048089514D094 /* AGaramondPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA7CC3DF23DA471A8B48AB26 /* AGaramondPro-Semibold.otf */; };
 		07A5F61612C5416CA84CA3D8 /* Gargantua_Page_3_COSTUME.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A69AB96F44B45369F5D236F /* Gargantua_Page_3_COSTUME.png */; };
 		09B04DAA62404D008B0FE262 /* faucon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA67F3D9983F47F6AC8D3A77 /* faucon.png */; };
@@ -64,7 +63,6 @@
 		412D7C6D9E0943C68CFDE43B /* onagre_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 8595F84303704959A0DA4FC0 /* onagre_intro.png */; };
 		44069E0E6B6742E485ADF4B0 /* picto_ROUGE.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE72224983D4C7A87362F48 /* picto_ROUGE.png */; };
 		4683BE844CD943BBA55D94B1 /* ARBRE_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = D11416BCC2B44EFEB9D2359B /* ARBRE_loop.png */; };
-		4685D9A74F33438EB5582BAC /* PAYSANE_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C15D6912FB04585AFB05E72 /* PAYSANE_loop.png */; };
 		46DA9AB4F62F40ABA2B73676 /* levrier_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E9D806A9C91498AB87510BC /* levrier_intro.png */; };
 		4B4E68F2944B4E5290C1CB3F /* DRAPEAU_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = 812CA2CCCE15420EB365D1E6 /* DRAPEAU_loop.png */; };
 		4DEBD8771BAC4DD2B7668260 /* fil2.png in Resources */ = {isa = PBXBuildFile; fileRef = 995621D5805149B893D9BA66 /* fil2.png */; };
@@ -90,7 +88,6 @@
 		6607C54FCAF94520B3451670 /* perdrix_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = 62D3395AEE4A4C83B8EAF56F /* perdrix_loop.png */; };
 		669BB1FF8D614A92838EECD6 /* oiseau_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = 061715286744412EA8D304F5 /* oiseau_loop.png */; };
 		6928FC1A388246D2914C2875 /* roue2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D215A2AAE71458EA4EEFF27 /* roue2.png */; };
-		6A7A0B242BE64FD8B4638DF1 /* HOMME_COLLINE_02_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = 174839C420D144D1AE21FD9A /* HOMME_COLLINE_02_loop.png */; };
 		6D8E421108A747FEA8780B5F /* gallinace.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B891C4AD9DC431C9A3ED344 /* gallinace.png */; };
 		6D8FA8F9D74D4AEE893847E7 /* livre.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6B933BE9244E4DB6DE9DA3 /* livre.png */; };
 		6F0B859990CD444486E21EBF /* autour-tiercelet_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EBBD08F9CA4F1AB7749DF6 /* autour-tiercelet_loop.png */; };
@@ -166,10 +163,8 @@
 		DBFE0976946D4067A2162DFC /* chaussures.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D20515BFD544A8EB6C9BBCA /* chaussures.png */; };
 		DE367791D0F74D3FB4718539 /* CHATEAU_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = 617E1F5D24D4446BA46CEBAD /* CHATEAU_loop.png */; };
 		E11D29CF63B54B81BDF5253C /* close_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 6340C122F3384783B0E8CB95 /* close_button.png */; };
-		E1775CEB81504399A88BEA6E /* ARBRE_ANIM_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = D3C3E944B378498D8B38FB32 /* ARBRE_ANIM_loop.png */; };
 		E1E3BB68C42F416289B039F7 /* officier.png in Resources */ = {isa = PBXBuildFile; fileRef = A8755C3209614D599937E100 /* officier.png */; };
 		E33F97A625594D8095C468DF /* GothamRoundedMedium_21022.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC7B22580A8F4FC19D9816CA /* GothamRoundedMedium_21022.ttf */; };
-		E340C9208C7F486C9BF99459 /* CHEVALIERCOLLINE_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = DF504305832F4CEC9E5BE1EC /* CHEVALIERCOLLINE_loop.png */; };
 		E4D2DB73915E44C1A502837C /* GothamRounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE1F262EA31E4982AB29CAF2 /* GothamRounded-Light.otf */; };
 		E63EA4ACF0304A4CB3E2983C /* chaussures_loop.png in Resources */ = {isa = PBXBuildFile; fileRef = 194E86CE0FE1473FB38C50CB /* chaussures_loop.png */; };
 		E8E56EF349EA4B06BA603952 /* bouteille5.png in Resources */ = {isa = PBXBuildFile; fileRef = A478B6B9FF1D40E9B2BDAD38 /* bouteille5.png */; };
@@ -524,7 +519,6 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		15ADF3D34B264F9082E2A4D9 /* GothamRoundedBold_21016.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GothamRoundedBold_21016.ttf; path = "../src/Assets/Fonts/gotham-rounded/GothamRoundedBold_21016.ttf"; sourceTree = "<group>"; };
 		17462AC052FA4220B0B7DF6E /* AGaramondPro-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AGaramondPro-Regular.otf"; path = "../src/Assets/Fonts/Adobe Garamond Pro/AGaramondPro-Regular.otf"; sourceTree = "<group>"; };
-		174839C420D144D1AE21FD9A /* HOMME_COLLINE_02_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = HOMME_COLLINE_02_loop.png; path = ../src/Assets/Animations/Pages/compiled/HOMME_COLLINE_02_loop.png; sourceTree = "<group>"; };
 		194E86CE0FE1473FB38C50CB /* chaussures_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = chaussures_loop.png; path = ../src/Assets/Animations/Synonyms/compiled/chaussures_loop.png; sourceTree = "<group>"; };
 		1A1B2C8130AB46F984C1FAD3 /* bouteille2.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bouteille2.png; path = ../src/Assets/Images/Pages/Page2/bouteille2.png; sourceTree = "<group>"; };
 		1AE283C2932D46DD96ADABB2 /* NUAGE_04.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = NUAGE_04.png; path = ../src/Assets/Images/Pages/Page1/NUAGE_04.png; sourceTree = "<group>"; };
@@ -549,7 +543,6 @@
 		4046510877BE477FAA37A385 /* Decor_pageMoines.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Decor_pageMoines.png; path = ../src/Assets/Images/Pages/Page4/Decor_pageMoines.png; sourceTree = "<group>"; };
 		476B53F1084249F898A2DDB5 /* GothamRounded-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamRounded-Medium.otf"; path = "../src/Assets/Fonts/gotham-rounded/GothamRounded-Medium.otf"; sourceTree = "<group>"; };
 		48B5C5EC0F524912AAE5D871 /* passerelle.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = passerelle.png; path = ../src/Assets/Images/Pages/Page2/passerelle.png; sourceTree = "<group>"; };
-		48C1AA4983714E4CBA763A0C /* HOMME_BRASLEVE_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = HOMME_BRASLEVE_loop.png; path = ../src/Assets/Animations/Pages/compiled/HOMME_BRASLEVE_loop.png; sourceTree = "<group>"; };
 		4B483D13F7A44DAA8471A959 /* cuve_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cuve_loop.png; path = ../src/Assets/Animations/Synonyms/compiled/cuve_loop.png; sourceTree = "<group>"; };
 		4B563A11F6BA4A8D8581CA08 /* epagneul_intro.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = epagneul_intro.png; path = ../src/Assets/Animations/Words/compiled/epagneul_intro.png; sourceTree = "<group>"; };
 		4D181B6B03964C2FA18F3FF4 /* gallinace_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = gallinace_loop.png; path = ../src/Assets/Animations/Synonyms/compiled/gallinace_loop.png; sourceTree = "<group>"; };
@@ -570,7 +563,6 @@
 		59652E168CCE4D87B04C7584 /* nobles.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = nobles.png; path = ../src/Assets/Images/Pages/Page1/nobles.png; sourceTree = "<group>"; };
 		5B0114B6BC504AA687986979 /* INFO.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = INFO.png; path = ../src/Assets/Images/Elements/INFO.png; sourceTree = "<group>"; };
 		5B3606CA927C48A383CD61C1 /* clerc.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = clerc.png; path = ../src/Assets/Images/Pages/Page1/clerc.png; sourceTree = "<group>"; };
-		5C15D6912FB04585AFB05E72 /* PAYSANE_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = PAYSANE_loop.png; path = ../src/Assets/Animations/Pages/compiled/PAYSANE_loop.png; sourceTree = "<group>"; };
 		5D215A2AAE71458EA4EEFF27 /* roue2.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = roue2.png; path = ../src/Assets/Images/Pages/Page2/roue2.png; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5E9D806A9C91498AB87510BC /* levrier_intro.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = levrier_intro.png; path = ../src/Assets/Animations/Words/compiled/levrier_intro.png; sourceTree = "<group>"; };
@@ -651,7 +643,6 @@
 		CC3917A179D94F2DA5FF6FD8 /* contrefort_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = contrefort_loop.png; path = ../src/Assets/Animations/Synonyms/compiled/contrefort_loop.png; sourceTree = "<group>"; };
 		CD517FEE065B43C880C0D479 /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
 		D11416BCC2B44EFEB9D2359B /* ARBRE_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ARBRE_loop.png; path = ../src/Assets/Animations/Pages/compiled/ARBRE_loop.png; sourceTree = "<group>"; };
-		D3C3E944B378498D8B38FB32 /* ARBRE_ANIM_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ARBRE_ANIM_loop.png; path = ../src/Assets/Animations/Pages/compiled/ARBRE_ANIM_loop.png; sourceTree = "<group>"; };
 		D76CCE8A2A7040B18C95D4DD /* perso-carotte.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "perso-carotte.png"; path = "../src/Assets/Images/Pages/Page0/perso-carotte.png"; sourceTree = "<group>"; };
 		D9CCF6DD046A4585A8CD9AA9 /* RNMotionManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNMotionManager.xcodeproj; path = "../node_modules/react-native-motion-manager/RNMotionManager.xcodeproj"; sourceTree = "<group>"; };
 		DA203585E4354C19BFC81A95 /* pressoir_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pressoir_loop.png; path = ../src/Assets/Animations/Words/compiled/pressoir_loop.png; sourceTree = "<group>"; };
@@ -661,7 +652,6 @@
 		DC85BD689C53497F889FEFDB /* logis_intro.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = logis_intro.png; path = ../src/Assets/Animations/Words/compiled/logis_intro.png; sourceTree = "<group>"; };
 		DDCD32EBCE7347C1B5E5A9F2 /* autour-tiercelet_intro.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "autour-tiercelet_intro.png"; path = "../src/Assets/Animations/Words/compiled/autour-tiercelet_intro.png"; sourceTree = "<group>"; };
 		DEE72224983D4C7A87362F48 /* picto_ROUGE.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = picto_ROUGE.png; path = ../src/Assets/Images/Picto_login/picto_ROUGE.png; sourceTree = "<group>"; };
-		DF504305832F4CEC9E5BE1EC /* CHEVALIERCOLLINE_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = CHEVALIERCOLLINE_loop.png; path = ../src/Assets/Animations/Pages/compiled/CHEVALIERCOLLINE_loop.png; sourceTree = "<group>"; };
 		E2FE2A99607D423C8408F9A3 /* bourrique_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bourrique_loop.png; path = ../src/Assets/Animations/Synonyms/compiled/bourrique_loop.png; sourceTree = "<group>"; };
 		E80982D3293D4B49BF0B3F72 /* AGaramondPro-SemiboldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AGaramondPro-SemiboldItalic.otf"; path = "../src/Assets/Fonts/Adobe Garamond Pro/AGaramondPro-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		EB9249C0BEE3406FA7EE7EC3 /* favorise_defavorise_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = favorise_defavorise_loop.png; path = ../src/Assets/Animations/Synonyms/compiled/favorise_defavorise_loop.png; sourceTree = "<group>"; };
@@ -981,22 +971,17 @@
 		CEF47D21A3E54EC2977E78D0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D3C3E944B378498D8B38FB32 /* ARBRE_ANIM_loop.png */,
 				D11416BCC2B44EFEB9D2359B /* ARBRE_loop.png */,
 				617E1F5D24D4446BA46CEBAD /* CHATEAU_loop.png */,
-				DF504305832F4CEC9E5BE1EC /* CHEVALIERCOLLINE_loop.png */,
 				812CA2CCCE15420EB365D1E6 /* DRAPEAU_loop.png */,
 				4F66AEAC520F4352BF3242CB /* GROUPE_01_loop.png */,
 				9D22BF27BF61442FAA6D4AE4 /* GROUPE_02_loop.png */,
 				8A0C6C985E6F48A59AF9433E /* GROUPE_03_loop.png */,
 				C517B61760AA4CA6B39D63BF /* GROUPE_04_loop.png */,
 				6A57CBAB62224AEC858446CC /* HOMME_BRAS_LEVE_loop.png */,
-				48C1AA4983714E4CBA763A0C /* HOMME_BRASLEVE_loop.png */,
 				8D7DEE450EFF4B08AF421286 /* HOMME_CAPE_loop.png */,
-				174839C420D144D1AE21FD9A /* HOMME_COLLINE_02_loop.png */,
 				6EA87F17730E43DFAB8E7DF1 /* LAIT.png */,
 				81B0D3D53C624CFBB79A1E07 /* MOINES_loop.png */,
-				5C15D6912FB04585AFB05E72 /* PAYSANE_loop.png */,
 				52746011B1424960BB7D5607 /* PAYSANNE_loop.png */,
 				ACC5CFAB240B4BA997669F69 /* PRECEPTEUR_loop.png */,
 				C16AEC6550544B65A09F76C2 /* ane_loop.png */,
@@ -1566,22 +1551,17 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				59B5EDE120CEB40F00B700D5 /* main.jsbundle in Resources */,
-				E1775CEB81504399A88BEA6E /* ARBRE_ANIM_loop.png in Resources */,
 				4683BE844CD943BBA55D94B1 /* ARBRE_loop.png in Resources */,
 				DE367791D0F74D3FB4718539 /* CHATEAU_loop.png in Resources */,
-				E340C9208C7F486C9BF99459 /* CHEVALIERCOLLINE_loop.png in Resources */,
 				4B4E68F2944B4E5290C1CB3F /* DRAPEAU_loop.png in Resources */,
 				A4A06A142F8941A0AE4BCF1E /* GROUPE_01_loop.png in Resources */,
 				CA8B142E254D440E84194570 /* GROUPE_02_loop.png in Resources */,
 				9E541E9B96934798BF2972D5 /* GROUPE_03_loop.png in Resources */,
 				3CF52DAB53E44142A5578CC3 /* GROUPE_04_loop.png in Resources */,
 				DBD77F2BE6804BC68284446F /* HOMME_BRAS_LEVE_loop.png in Resources */,
-				04EB2D07931040FF8F2CD112 /* HOMME_BRASLEVE_loop.png in Resources */,
 				BC3A6018D42D44099A86327E /* HOMME_CAPE_loop.png in Resources */,
-				6A7A0B242BE64FD8B4638DF1 /* HOMME_COLLINE_02_loop.png in Resources */,
 				D658FBC476B54495B713771A /* LAIT.png in Resources */,
 				B8AE805B07234C87A8FF5DCA /* MOINES_loop.png in Resources */,
-				4685D9A74F33438EB5582BAC /* PAYSANE_loop.png in Resources */,
 				BC2A1DC804574D0AB044E2F7 /* PAYSANNE_loop.png in Resources */,
 				E96DB1BEF54E4477A0CA3E5B /* PRECEPTEUR_loop.png in Resources */,
 				3C0E1781568F4816A901BE44 /* ane_loop.png in Resources */,
