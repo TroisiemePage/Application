@@ -34,7 +34,7 @@ export default class Chateaux extends Component {
                 >
                     <Image
                         style={this.styles.image}
-                        source={require('../../Assets/Images/Menu/chateauNB.png')}
+                        source={this.props.image}
                     />
                 </TouchableOpacity>
                 <Text style={this.styles.title}>
