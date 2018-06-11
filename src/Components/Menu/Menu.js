@@ -78,7 +78,8 @@ export class Menu extends React.Component {
                             }}>
                                 <Button
                                     onPress={() => this.props.navigation.navigate('Home')}
-                                    title={"Retour"}/>
+                                    title={"Retour"}
+                                />
                             </View>
                         );
                     }
