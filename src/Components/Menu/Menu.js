@@ -27,9 +27,7 @@ const styles = {
         fontFamily: "AGaramondPro-Bold",
     },
     image: {
-        width: 151.9,
-        height: 238.14,
-        //resizeMode: "center",
+        resizeMode: "center",
     },
     title: {
         fontSize: 20,
@@ -38,24 +36,28 @@ const styles = {
         fontWeight: "100",
         color: "#0E0637",
         marginTop: 40,
+        paddingHorizontal: 20,
     },
     text: {
         fontSize: 12,
         fontFamily: "Gotham Rounded",
         color: "#050A3A",
-        marginVertical: 20,
+        paddingHorizontal: 20,
+        marginTop: 20,
     }
 };
 
 export class Menu extends React.Component {
-
 
     state = {
         modalVisibleLeft: false,
         modalVisibleRight: false,
         ville: null,
         description: null,
-        currentPage: 0
+        chateau: null,
+        currentPage: 0,
+        imageWidth: 0,
+        imageHeight: 0,
     };
 
     componentWillMount() {
@@ -89,9 +91,15 @@ export class Menu extends React.Component {
                         padding: 20,
                         flex: 1,
                         alignItems: "center",
-                        flexDirection: "column"
+                        flexDirection: "column",
                     }}>
-                        <Image style={styles.image} source={require("../../Assets/Images/Menu/chateauNB.png")}/>
+                        <Image
+                            style={{
+                                ...styles.image,
+                                width: this.state.imageWidth >= 300 ? this.state.imageWidth/2 : 3 * this.state.imageWidth/4,
+                                height: this.state.imageWidth >= 300 ? this.state.imageHeight/2 : 3 * this.state.imageHeight/4
+                            }}
+                           source={this.state.chateau}/>
                         <View>
                             <Text style={styles.title}>{this.state.ville}</Text>
                             <Text style={styles.text}>{this.state.description}</Text>
@@ -104,76 +112,92 @@ export class Menu extends React.Component {
                 />
 
                 <Chateaux
-                    x={145}
-                    y={144}
-                    width={178}
-                    height={280}
-                    opacity={this.state.currentPage >= 1 ? 1 : 0.5}
+                    x={99}
+                    y={121}
+                    width={246}
+                    height={300}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.grandgousier.title,
-                        description: villes.grandgousier.description
+                        description: villes.grandgousier.description,
+                        chateau: villes.grandgousier.source,
+                        imageWidth: 246,
+                        imageHeight: 300,
                     })}
+                    image={this.state.currentPage >= 1 ? villes.grandgousier.source : villes.grandgousier.sourceNB}
                 >
                     {villes.grandgousier.title}
                 </Chateaux>
 
                 <Chateaux
-                    x={461}
-                    y={137}
-                    width={122}
-                    height={190}
-                    opacity={this.state.currentPage >= 4 ? 1 : 0.5}
+                    x={404}
+                    y={169}
+                    width={251}
+                    height={157}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.beauce.title,
-                        description: villes.beauce.description
+                        description: villes.beauce.description,
+                        chateau: villes.beauce.source,
+                        imageWidth: 251,
+                        imageHeight: 157,
                     })}
+                    image={this.state.currentPage >= 4 ? villes.beauce.source : villes.beauce.sourceNB}
                 >
                     {villes.beauce.title}
                 </Chateaux>
 
                 <Chateaux
-                    x={713}
-                    y={70}
-                    width={186}
-                    height={177}
-                    opacity={this.state.currentPage >= 8 ? 1 : 0.5}
+                    x={695}
+                    y={32}
+                    width={208}
+                    height={216}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.paris.title,
-                        description: villes.paris.description
+                        description: villes.paris.description,
+                        chateau: villes.paris.source,
+                        imageWidth: 208,
+                        imageHeight: 216,
                     })}
+                    image={this.state.currentPage >= 8 ? villes.paris.source : villes.paris.sourceNB}
                 >
                     {villes.paris.title}
                 </Chateaux>
 
                 <Chateaux
-                    x={165}
+                    x={107}
                     y={525}
-                    width={104}
-                    height={165}
-                    opacity={this.state.currentPage >= 10 ? 1 : 0.5}
+                    width={316}
+                    height={156}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.picrochole.title,
-                        description: villes.picrochole.description
+                        description: villes.picrochole.description,
+                        image: villes.picrochole.source,
+                        chateau: villes.picrochole.source,
+                        imageWidth: 316,
+                        imageHeight: 156,
                     })}
+                    image={this.state.currentPage >= 10 ? villes.picrochole.source : villes.picrochole.sourceNB}
                 >
                     {villes.picrochole.title}
                 </Chateaux>
 
                 <Chateaux
-                    x={692}
-                    y={363}
-                    width={205}
-                    height={323}
-                    opacity={this.state.currentPage >= 13 ? 1 : 0.5}
+                    x={621}
+                    y={484}
+                    width={335}
+                    height={195}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.theleme.title,
-                        description: villes.theleme.description
+                        description: villes.theleme.description,
+                        chateau: villes.theleme.source,
+                        imageWidth: 335,
+                        imageHeight: 195,
                     })}
+                    image={this.state.currentPage >= 13 ? villes.theleme.source : villes.theleme.sourceNB}
                 >
                     {villes.theleme.title}
                 </Chateaux>
