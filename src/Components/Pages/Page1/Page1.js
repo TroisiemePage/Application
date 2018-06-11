@@ -1,14 +1,16 @@
 import * as React from "react";
 import {Dimensions, Image, View, Text} from "react-native";
-import Decor from "../../Assets/Images/Pages/Page1/01_EcranIpad_DEVELOPPEUR.png";
-import {Overlay} from "../PageRouter/PageRouter";
-import {words} from "../../Stores/words";
-import ModalView from '../Modal/ModalPopup/ModalPopupView';
+import Decor from "../../../Assets/Images/Pages/Page1/01_EcranIpad_DEVELOPPEUR.png";
+import {Overlay} from "../../PageRouter/PageRouter";
+import {words} from "../../../Stores/words";
+import ModalView from '../../Modal/ModalPopup/ModalPopupView';
 
-import Nobles from "../../Assets/Images/Pages/Page1/nobles.png";
-import Paysans from "../../Assets/Images/Pages/Page1/paysans.png";
-import Clerc from "../../Assets/Images/Pages/Page1/clerc.png";
-
+import Nobles from "../../../Assets/Images/Pages/Page1/nobles.png";
+import Paysans from "../../../Assets/Images/Pages/Page1/paysans.png";
+import Clerc from "../../../Assets/Images/Pages/Page1/clerc.png";
+import ApngPlayer from "../../ApngPlayer/ApngPlayer";
+import chateauAnim from "../../../Assets/Animations/Pages/compiled/CHATEAU_loop.png";
+import hommeBaton from "../../../Assets/Animations/Pages/compiled/HOMMEBATON_loop.png";
 const {height, width} = Dimensions.get('window');
 const styles ={
     container: {
@@ -92,8 +94,8 @@ export class Page1 extends React.Component {
                                 <Text style={{fontWeight: 'bold'}}>LABORATORES </Text>: ceux qui travaillent, les paysans
 
                     </ModalView>
-
                 </View>
+
             </Overlay>
         )
     }

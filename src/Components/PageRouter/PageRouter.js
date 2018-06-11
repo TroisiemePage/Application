@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Page4} from "../Pages/Page4/Page4";
 import {Page2} from "../Pages/Page2/Page2";
-import {Page1} from "../Pages/Page1";
+import {Page1} from "../Pages/Page1/Page1";
 import {Button, Dimensions, Image, Text, TouchableOpacity, View} from "react-native";
 import menuPicto from "../../Assets/Images/Elements/MENU2.png";
 import trompette from "../../Assets/Images/Elements/MICRO.png";
@@ -149,7 +149,7 @@ export const PageRouter = createStackNavigator({
         screen: Page0
     }
 }, {
-    initialRouteName: 'Page3'
+    initialRouteName: 'Page2'
 });
 PageRouter.navigationOptions = {
     header: null
