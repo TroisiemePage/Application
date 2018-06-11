@@ -103,6 +103,7 @@ class SynonymSelector extends React.Component {
                         fontFamily: "AGaramondPro-Bold",
                         color: "#0E0637",
                         textAlign: "left",
+                        paddingTop: 20
                     }}>
                         {this.props.word.synonyms[this.state.selectedWord].word},<Text style={{
                         fontSize: 35,

@@ -21,12 +21,12 @@ export const words = [
             {
                 word: "Barútonos",
                 gender: "n. masc.",
-                definition: "cet adjectif grec signifiait «à la voix grave»."
+                definition: "Cet adjectif grec signifiait «à la voix grave»."
             },
             {
                 word: "Baryton",
                 gender: "n. masc.",
-                definition: "En grammaire grecque il désigne les mots dont la dernière syllabe est grave"
+                definition: "En grammaire grecque il désigne les mots dont la dernière syllabe est grave."
             }
         ]
     },
@@ -93,7 +93,7 @@ export const words = [
                 word: "Onager",
                 gender: "n. masc.",
                 definition: "Dès 1284 ce terme latin est utilisé pour décrire\n" +
-                "une catapulte, une machine de guerre destinée à lancer des pierres.\n" +
+                "une catapulte, une machine de guerre destinée à lancer des pierres. " +
                 "Dans son livre Bestiaire (1827), Philippe de Thaon utilise ce terme pour désigner un «âne sauvage»."
             }
         ]
@@ -121,17 +121,12 @@ export const words = [
             {
                 word: "Calx",
                 gender: "latin.",
-                definition: "Il désigne le talon ou le pied en latin"
+                definition: "Il désigne le talon ou le pied en latin."
             },
             {
                 word: "Calceus",
                 gender: "latin.",
-                definition: "En latin ce terme signifie «soulier»"
-            },
-            {
-                word: "Chausse",
-                gender: "n. fém.",
-                definition: "Sorte de bas constitué d’un tube de tissu ou de tricot qui monte jusqu’en haut des cuisses. Il était très répandu au Moyen Âge."
+                definition: "En latin ce terme signifie «soulier»."
             },
             {
                 word: "Chaussure",
@@ -193,7 +188,7 @@ export const words = [
             {
                 word: "Cuve",
                 gender: "n. fém.",
-                definition: "Grand récipient destiné à recevoir un liquide (eau, vin, huile…).",
+                definition: "Grand récipient destiné à recevoir un liquide\n(eau, vin, huile…).",
                 animation: [
                     require("../Assets/Animations/Synonyms/compiled/cuve_loop.png")
                 ]
@@ -300,9 +295,17 @@ export const words = [
                 word: "Faucon",
                 gender: "n. masc.",
                 definition: "Rapace qui peut atteindre 50cm de long. Il est adroit, puissant et rapide. Au Moyen-Âge ils étaient\n" +
-                "dressés pour la chasse par des fauconiers.",
+                "dressés pour la chasse par des fauconniers.",
                 animation: [
                     require("../Assets/Animations/Synonyms/compiled/faucon_loop.png")
+                ]
+            },
+            {
+                word: "Oiseau",
+                gender: "n. masc.",
+                definition: "Animal à plumes muni d’un bec pouvant généralement voler. Les oiseaux pondent des oeufs, ils sont ovipares.",
+                animation: [
+                    require("../Assets/Animations/Synonyms/compiled/oiseau_loop.png")
                 ]
             }
         ],
@@ -358,7 +361,8 @@ export const words = [
             },
             {
                 word: "Chiens d’Oysel",
-                gender: "n. masc.",
+                gender: "\nn. masc.",
+                gender: "\nn. masc.",
                 definition: "Race de chien originaire d'Allemagne utilisée pour la chasse d'oiseaux."
             }
         ]
@@ -414,7 +418,7 @@ export const words = [
             {
                 word: "Oiseau",
                 gender: "n. masc.",
-                definition: "Animal à plumes muni d’un bec pouvant généralement voler. Les oiseaux pondent des oeufs, ils sont ovipare.",
+                definition: "Animal à plumes muni d’un bec pouvant généralement voler. Les oiseaux pondent des oeufs, ils sont ovipares.",
                 animation: [
                     require("../Assets/Animations/Synonyms/compiled/oiseau_loop.png")
                 ]
@@ -446,7 +450,7 @@ export const words = [
         ],
         synonyms: [
             {
-                word: "(Dé)favorisé",
+                word: "(dé)favorisé",
                 gender: "adjectif.",
                 definition: "Personne à qui la chance. Pour qui la situation est favorable.",
                 animation: [

@@ -16,6 +16,11 @@ import group1 from "../../../Assets/Animations/Pages/compiled/GROUPE_01_loop.png
 import group2 from "../../../Assets/Animations/Pages/compiled/GROUPE_02_loop.png";
 import group3 from "../../../Assets/Animations/Pages/compiled/GROUPE_03_loop.png";
 import hommeCape from "../../../Assets/Animations/Pages/compiled/HOMME_CAPE_loop.png";
+import hommeBrasLeve from "../../../Assets/Animations/Pages/compiled/HOMME_BRAS_LEVE_loop.png";
+import arbre from "../../../Assets/Animations/Pages/compiled/ARBRE_loop.png";
+import paysanne from "../../../Assets/Animations/Pages/compiled/PAYSANE_loop.png";
+import group4 from "../../../Assets/Animations/Pages/compiled/GROUPE_04_loop.png";
+import drapo from "../../../Assets/Animations/Pages/compiled/DRAPEAU_loop.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 
 const {height, width} = Dimensions.get('window');
@@ -48,7 +53,7 @@ export class Page1 extends React.Component {
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: 898,
+                            left: 930,
                             top: 68
                         }}
                         maxFrameSize={310}
@@ -92,6 +97,59 @@ export class Page1 extends React.Component {
                         }}
                         maxFrameSize={325}
                         playlist={[hommeColine]}/>
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 479,
+                            top: 560
+                        }}
+                        maxFrameSize={172}
+                        playlist={[hommeCape]}/>
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 109,
+                            top: 535
+                        }}
+                        maxFrameSize={289}
+                        playlist={[hommeBrasLeve]}/>
+
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 424,
+                            top: 479
+                        }}
+                        maxFrameSize={75}
+                        playlist={[arbre]}/>
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 377,
+                            top: 511
+                        }}
+                        maxFrameSize={67}
+                        playlist={[paysanne]}/>
+
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 654,
+                            top: 490
+                        }}
+                        maxFrameSize={182}
+                        playlist={[group4]}/>
+
+
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 774,
+                            top: 166
+                        }}
+                        maxFrameSize={135}
+                        playlist={[drapo]}/>
+
                     <ModalView
                         x={140}
                         y={380}

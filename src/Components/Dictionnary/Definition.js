@@ -45,20 +45,32 @@ export class Definition extends React.Component {
                     opacity: this.state.definitionOpacity,
                     marginTop: 50
                 }}>
-                    <Text style={{
-                        fontSize: 60,
-                        fontFamily: "AGaramondPro-Bold",
-                        color: "#0E0637",
-                        textAlign: "left",
+                    <View style={{
+                        flexDirection: "row",
+                        flexWrap: "wrap",
+                        justifyContent: "flex-start",
+                        alignContent: "flex-start",
+                        alignItems: "flex-end"
                     }}>
-                        {this.props.word.word},<Text style={{
-                        fontSize: 35,
-                        fontFamily: "AGaramondPro-Semibold",
-                        color: "#0E0637",
-                        marginTop: 20
-                    }}> {this.props.word.gender}</Text>
-                    </Text>
+                        <Text style={{
+                            fontSize: 60,
+                            fontFamily: "AGaramondPro-Bold",
+                            color: "#0E0637",
+                            textAlign: "left",
+                            lineHeight: 60
+                        }}>
+                            {this.props.word.word},
+                        </Text>
+                        <Text style={{
+                            fontSize: 35,
+                            lineHeight: 35,
+                            fontFamily: "AGaramondPro-Semibold",
+                            color: "#0E0637",
+                            marginBottom: 13
+                        }}> {this.props.word.gender}</Text>
+                    </View>
                     <Text style={{
+                        marginTop: 20,
                         textAlign: "left",
                         fontSize: 20,
                         fontFamily: "AGaramondPro-Regular",
