@@ -55,29 +55,26 @@ export class Vaches extends React.Component {
 
         return (
             <View>
-
                 {this.vaches.map((vacheImage, i) => {
-                        this.offsetValues.push(this.offsetValues.shift());
-                        return (
-                            <TouchableWithoutFeedback key={i}>
-                                <Animated.Image
-                                    source={vacheImage}
-                                    style={{
-                                        width: 178,
-                                        height: 178,
-                                        position: 'absolute',
-                                        right: this.state.vacheAnimValues[i].interpolate({
-                                            inputRange: [0, 1, 2, 3, 4],
-                                            outputRange: this.offsetValues,
-                                        }),
-                                        top: 92
-                                    }}
-                                />
-                            </TouchableWithoutFeedback>
-                        );
-                    })
-                }
-
+                    this.offsetValues.push(this.offsetValues.shift());
+                    return (
+                        <TouchableWithoutFeedback key={i}>
+                            <Animated.Image
+                                source={vacheImage}
+                                style={{
+                                    width: 178,
+                                    height: 178,
+                                    position: 'absolute',
+                                    right: this.state.vacheAnimValues[i].interpolate({
+                                        inputRange: [0, 1, 2, 3, 4],
+                                        outputRange: this.offsetValues,
+                                    }),
+                                    top: 92
+                                }}
+                            />
+                        </TouchableWithoutFeedback>
+                    );
+                })}
 
                 <Image
                     source={Tuyeaux}
@@ -109,8 +106,7 @@ export class Vaches extends React.Component {
                 />
 
                 <TouchableWithoutFeedback
-                    onPress={() => this.rouesAnimation()}
-                >
+                    onPress={() => this.rouesAnimation()}>
                     <Animated.Image
                         source={Roue1}
                         style={{

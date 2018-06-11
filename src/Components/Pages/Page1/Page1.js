@@ -11,14 +11,14 @@ import Clerc from "../../../Assets/Images/Pages/Page1/clerc.png";
 import {Sky} from "./Sky";
 
 import chateauAnim from "../../../Assets/Animations/Pages/compiled/CHATEAU_loop.png";
-import hommeColine from "../../../Assets/Animations/Pages/compiled/HOMME_COLLINE_02_loop.png";
+import hommeColine from "../../../Assets/Animations/Pages/compiled/CHEVALIER_COLLINE_loop.png";
 import group1 from "../../../Assets/Animations/Pages/compiled/GROUPE_01_loop.png";
 import group2 from "../../../Assets/Animations/Pages/compiled/GROUPE_02_loop.png";
 import group3 from "../../../Assets/Animations/Pages/compiled/GROUPE_03_loop.png";
 import hommeCape from "../../../Assets/Animations/Pages/compiled/HOMME_CAPE_loop.png";
 import hommeBrasLeve from "../../../Assets/Animations/Pages/compiled/HOMME_BRAS_LEVE_loop.png";
 import arbre from "../../../Assets/Animations/Pages/compiled/ARBRE_loop.png";
-import paysanne from "../../../Assets/Animations/Pages/compiled/PAYSANE_loop.png";
+import paysanne from "../../../Assets/Animations/Pages/compiled/PAYSANNE_loop.png";
 import group4 from "../../../Assets/Animations/Pages/compiled/GROUPE_04_loop.png";
 import drapo from "../../../Assets/Animations/Pages/compiled/DRAPEAU_loop.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
