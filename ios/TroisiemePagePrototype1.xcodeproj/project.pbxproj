@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -151,6 +152,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 19825A1E1BD4A89800EE0337;
 			remoteInfo = RNSound;
+		};
+		28C33D1020CE7FDF007DD03A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9CCF6DD046A4585A8CD9AA9 /* RNMotionManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BB9CC7F81AE0A2EB008A1D08;
+			remoteInfo = RNMotionManagerTests;
 		};
 		2D16E6711FA4F8DC00B85C8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -643,6 +651,7 @@
 			isa = PBXGroup;
 			children = (
 				5974683C2088B72D00608E07 /* libRNMotionManager.a */,
+				28C33D1120CE7FDF007DD03A /* RNMotionManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -995,6 +1004,13 @@
 			fileType = archive.ar;
 			path = libRNSound.a;
 			remoteRef = 289B45EE20CD6B9B002E7F7C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		28C33D1120CE7FDF007DD03A /* RNMotionManagerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RNMotionManagerTests.xctest;
+			remoteRef = 28C33D1020CE7FDF007DD03A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */ = {

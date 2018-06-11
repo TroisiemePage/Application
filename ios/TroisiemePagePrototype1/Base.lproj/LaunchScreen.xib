@@ -29,7 +29,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="g9O-qp-I2c">
-                    <rect key="frame" x="7" y="0.0" width="467" height="480"/>
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
             </subviews>
