@@ -6,7 +6,7 @@ import {words} from "../../Stores/words";
 import ModalView from '../Modal/ModalPopup/ModalPopupView';
 
 import Nobles from "../../Assets/Images/Pages/Page1/nobles.png";
-import Paysans from "../../Assets/Images/Pages/Page1/paysans.png";
+import Paysans from "../../Assets/Images/Pages/Page1/paysans2.png";
 import Clerc from "../../Assets/Images/Pages/Page1/clerc.png";
 
 const {height, width} = Dimensions.get('window');
@@ -90,9 +90,7 @@ export class Page1 extends React.Component {
                             <Text style={{fontWeight: 'bold'}}>BELLATORES </Text>: ceux qui font la guerre, les nobles (prince, seigneurs, chevaliers)
                         {"\n"}{"\n"}
                                 <Text style={{fontWeight: 'bold'}}>LABORATORES </Text>: ceux qui travaillent, les paysans
-
                     </ModalView>
-
                 </View>
             </Overlay>
         )
