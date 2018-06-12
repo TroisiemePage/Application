@@ -49,8 +49,9 @@ export class Page0 extends React.Component {
             <View>
                 <ScrollView
                     ref={(ref) => (ref !== null) ? (this.scrollview = ref) : ""}
-                    horizontal={true}
+                    horizontal={false}
                     showsHorizontalScrollIndicator={false}
+                    showsVerticalScrollIndicator={false}
                     pagingEnabled={true}
                     bounces={false}
                     style={{
@@ -170,18 +171,16 @@ export class Page0 extends React.Component {
                         <TouchableOpacity
                             onPress={() => this.scrollview.scrollTo({x: width, y: 0, animated: true})}
                             style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            position: "absolute",
-                            right: 20,
-                            bottom: 50,
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                position: "absolute",
+                                bottom: 20
                         }}>
                             <Text style={{
-                                fontSize: 25,
+                                fontSize: 20,
                                 fontFamily: "AGaramondPro-Regular",
                                 color: "white",
-                                marginRight: 10
                             }}>Suivant</Text>
                             <Image
                                 source={flecheDroite}
@@ -190,7 +189,12 @@ export class Page0 extends React.Component {
                                 style={{
                                     width: 20,
                                     height: 20,
-                                    marginBottom: 5
+                                    marginTop: 5,
+                                    transform: [
+                                        {
+                                            rotate: "90deg"
+                                        }
+                                    ]
                                 }}/>
                         </TouchableOpacity>
 
@@ -280,20 +284,18 @@ export class Page0 extends React.Component {
                                 marginTop: 50
                             }}/>
                         <TouchableOpacity
-                            onPress={() => this.scrollview.scrollTo({x: width * 2, y: 0, animated: true})}
+                            onPress={() => this.scrollview.scrollTo({x: width, y: 0, animated: true})}
                             style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            position: "absolute",
-                            right: 20,
-                            bottom: 50,
-                        }}>
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                position: "absolute",
+                                bottom: 20
+                            }}>
                             <Text style={{
-                                fontSize: 25,
+                                fontSize: 20,
                                 fontFamily: "AGaramondPro-Regular",
                                 color: "white",
-                                marginRight: 10
                             }}>Suivant</Text>
                             <Image
                                 source={flecheDroite}
@@ -302,7 +304,11 @@ export class Page0 extends React.Component {
                                 style={{
                                     width: 20,
                                     height: 20,
-                                    marginBottom: 5
+                                    transform: [
+                                        {
+                                            rotate: "90deg"
+                                        }
+                                    ]
                                 }}/>
                         </TouchableOpacity>
 
