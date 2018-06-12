@@ -394,10 +394,10 @@ export class Page0 extends React.Component {
                     resizeMode={"contain"}
                     style={{
                         position: "absolute",
-                        left: 20,
+                        left: -100,
                         bottom: 50,
-                        height: height / 2,
-                        width: width / 4
+                        height: 370,
+                        width: 578
                     }}/>
             </View>
 

@@ -54,7 +54,7 @@ export class Page1 extends React.Component {
                         style={{
                             position: "absolute",
                             left: 930,
-                            top: 68
+                            top: 99
                         }}
                         maxFrameSize={310}
                         playlist={[chateauAnim]}/>
