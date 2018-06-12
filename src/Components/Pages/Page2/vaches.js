@@ -1,7 +1,6 @@
 import * as React from "react";
 import {Dimensions, Image, View, TouchableOpacity, TouchableWithoutFeedback, Animated, Easing} from "react-native";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
-import Sound from "react-native-sound/";
 
 const {height, width} = Dimensions.get('window');
 
@@ -15,8 +14,12 @@ import Vache1 from "../../../Assets/Images/Pages/Page2/vache1.png";
 import Vache2 from "../../../Assets/Images/Pages/Page2/vache2.png";
 import Tuyeaux from "../../../Assets/Images/Pages/Page2/tuyeaux.png";
 
+import Sound from 'react-native-sound';
+import resolveAssetSource from "resolveAssetSource";
 import RoueQuiTournent from "../../../Assets/Sound/ROUE_QUI_TOURNE.mp3";
+import SoundVache1 from "../../../Assets/Sound/VACHE_01.mp3";
 import LaitVache1 from "../../../Assets/Sound/LAIT_VACHE.mp3";
+import SoundVache2 from "../../../Assets/Sound/VACHE_02.mp3";
 import LaitVache2 from "../../../Assets/Sound/LAIT_VACHE_2.mp3";
 
 export class Vaches extends React.Component {
@@ -32,9 +35,11 @@ export class Vaches extends React.Component {
         vacheCliqued: false
     };
 
-    rouesQuiTournent = new Sound(RoueQuiTournent, null);
-    laitVache1 = new Sound(LaitVache1, null);
-    laitVache2 = new Sound(LaitVache2, null);
+    rouesQuiTournent = new Sound(resolveAssetSource(RoueQuiTournent).uri, null);
+    laitVache1 = new Sound(resolveAssetSource(LaitVache1).uri, null);
+    soundVache1 = new Sound(resolveAssetSource(SoundVache1).uri, null);
+    laitVache2 = new Sound((resolveAssetSource(LaitVache2).uri, null);
+    soundVache2 = new Sound(resolveAssetSource(SoundVache2).uri, null);
 
     rouesAnimation() {
         this.setState({
@@ -74,8 +79,9 @@ export class Vaches extends React.Component {
                             onPress={() => {
                                 if(((this.state.generalStep + i) % (this.vaches.length)) === 4) {
                                     this.setState({vacheCliqued: true});
+                                    this.laitVache1.play();
                                 }
-                                this.laitVache1.play();
+                                this.soundVache1.play();
                             }}
                         >
                             <Animated.Image

@@ -23,6 +23,13 @@ import group4 from "../../../Assets/Animations/Pages/compiled/GROUPE_04_loop.png
 import drapo from "../../../Assets/Images/Pages/Page1/DRAPEAU.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 
+import Sound from "react-native-sound/";
+import resolveAssetSource from "resolveAssetSource";
+import SoundNobles from "../../../Assets/Sound/FOULEENLIESSE.mp3";
+import SoundPaysans from "../../../Assets/Sound/CHUCHOTEMENTS.mp3";
+import SoundClerc from "../../../Assets/Sound/CLERC.mp3";
+import SoundBapteme from "../../../Assets/Sound/SONS_IPAD_BAPTEME_1.mp3";
+
 const {height, width} = Dimensions.get('window');
 const styles ={
     container: {
@@ -40,15 +47,26 @@ const styles ={
         alignSelf: "flex-end"
     }
 };
-/*
 
- */
 export class Page1 extends React.Component {
+
+    soundBapteme = new Sound(resolveAssetSource(SoundBapteme).uri, null, (error) => {
+        if (error) {
+            //console.log('failed to load the sound', error);
+            return;
+        }
+        this.soundBapteme.play();
+        this.soundBapteme.setNumberOfLoops(-1);
+    });
+
+    soundClerc = new Sound(resolveAssetSource(SoundClerc).uri, null);
+    soundPaysans = new Sound(resolveAssetSource(SoundPaysans).uri, null);
+    soundNobles = new Sound(resolveAssetSource(SoundNobles).uri, null);
+
     render() {
         return (
             <Overlay {...this.props} wordList={words}>
                 <View style={styles.container}>
-
                     <Sky/>
                     <Image
                         style={{
@@ -59,7 +77,8 @@ export class Page1 extends React.Component {
                             height: 135
                         }}
                         resizeMode={"contain"}
-                        source={drapo}/>
+                        source={drapo}
+                    />
                     <ApngPlayer
                         style={{
                             position: "absolute",
@@ -67,14 +86,14 @@ export class Page1 extends React.Component {
                             top: 99
                         }}
                         maxFrameSize={310}
-                        playlist={[chateauAnim]}/>
+                        playlist={[chateauAnim]}
+                    />
                     <Image
                         source={Decor}
                         style={styles.image}
                         resizeMode={"contain"}
                         resizeMethod={"scale"}
                     />
-
                     <ApngPlayer
                         style={{
                             position: "absolute",
@@ -82,7 +101,8 @@ export class Page1 extends React.Component {
                             top: 561
                         }}
                         maxFrameSize={266}
-                        playlist={[group1]}/>
+                        playlist={[group1]}
+                    />
                     <ApngPlayer
                         style={{
                             position: "absolute",
@@ -90,7 +110,9 @@ export class Page1 extends React.Component {
                             top: 552
                         }}
                         maxFrameSize={289}
-                        playlist={[group2]}/>
+                        playlist={[group2]}
+                        onPress={() => this.soundClerc.play()}
+                    />
                     <ApngPlayer
                         style={{
                             position: "absolute",
@@ -98,7 +120,9 @@ export class Page1 extends React.Component {
                             top: 484
                         }}
                         maxFrameSize={155}
-                        playlist={[group3]}/>
+                        playlist={[group3]}
+                        onPress={() => this.soundPaysans.play()}
+                    />
                     <ApngPlayer
                         style={{
                             position: "absolute",
@@ -106,7 +130,9 @@ export class Page1 extends React.Component {
                             top: 359
                         }}
                         maxFrameSize={325}
-                        playlist={[hommeColine]}/>
+                        playlist={[hommeColine]}
+                        onPress={() => this.soundNobles.play()}
+                    />
                     <ApngPlayer
                         style={{
                             position: "absolute",
@@ -114,7 +140,8 @@ export class Page1 extends React.Component {
                             top: 560
                         }}
                         maxFrameSize={172}
-                        playlist={[hommeCape]}/>
+                        playlist={[hommeCape]}
+                    />
                     <ApngPlayer
                         style={{
                             position: "absolute",
@@ -122,8 +149,8 @@ export class Page1 extends React.Component {
                             top: 535
                         }}
                         maxFrameSize={289}
-                        playlist={[hommeBrasLeve]}/>
-
+                        playlist={[hommeBrasLeve]}
+                    />
                     <Image
                         style={{
                             position: "absolute",
@@ -141,8 +168,9 @@ export class Page1 extends React.Component {
                             top: 511
                         }}
                         maxFrameSize={67}
-                        playlist={[paysanne]}/>
-
+                        playlist={[paysanne]}
+                        onPress={() => this.soundPaysans.play()}
+                    />
                     <ApngPlayer
                         style={{
                             position: "absolute",
@@ -150,11 +178,8 @@ export class Page1 extends React.Component {
                             top: 490
                         }}
                         maxFrameSize={182}
-                        playlist={[group4]}/>
-
-
-
-
+                        playlist={[group4]}
+                    />
                     <ModalView
                         x={140}
                         y={380}
@@ -210,9 +235,7 @@ export class Page1 extends React.Component {
                         <Text style={{fontWeight: 'bold'}}>BELLATORES </Text>: ceux qui font la guerre, les nobles (prince, seigneurs, chevaliers)
                         {"\n"}{"\n"}
                         <Text style={{fontWeight: 'bold'}}>LABORATORES </Text>: ceux qui travaillent, les paysans
-
                     </ModalView>
-
                 </View>
             </Overlay>
         )

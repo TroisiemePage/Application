@@ -1,6 +1,5 @@
 import * as React from "react";
 import {Dimensions, Image, View, TouchableOpacity, TouchableWithoutFeedback, Animated, Easing} from "react-native";
-import Sound from "react-native-sound/";
 
 import Bouteille3 from "../../../Assets/Images/Pages/Page2/bouteille3.png";
 import Bouteilles4 from "../../../Assets/Images/Pages/Page2/bouteilles4.png";
@@ -13,6 +12,8 @@ import Bouteille10 from "../../../Assets/Images/Pages/Page2/bouteille10.png";
 import Passerelle from "../../../Assets/Images/Pages/Page2/passerelle.png";
 import Meuble from "../../../Assets/Images/Pages/Page2/meuble.png";
 
+import Sound from 'react-native-sound';
+import resolveAssetSource from "resolveAssetSource";
 import Glass1 from "../../../Assets/Sound/GLASS_01.mp3";
 import Glass2 from "../../../Assets/Sound/GLASS_02.mp3";
 import Glass3 from "../../../Assets/Sound/GLASS_03.mp3";
@@ -34,13 +35,7 @@ export class Bouteilles extends React.Component {
                 duration: 290,
                 delay: 0,
                 easing: Easing.inOut(Easing.cubic)
-            })/*,
-            Animated.timing(animationValue, {
-                toValue: 0,
-                duration: 290,
-                delay: 0,
-                easing: Easing.inOut(Easing.cubic)
-            })*/
+            })
         );
     });
 
@@ -48,12 +43,12 @@ export class Bouteilles extends React.Component {
         Animated.sequence(this.animatedBottlesArray).start();
     }
 
-    glass1 = new Sound(Glass1, null);
-    glass2 = new Sound(Glass2, null);
-    glass3 = new Sound(Glass3, null);
-    glass4 = new Sound(Glass4, null);
-    glass5 = new Sound(Glass5, null);
-    glass6 = new Sound(Glass6, null);
+    glass1 = new Sound(resolveAssetSource(Glass1).uri, null);
+    glass2 = new Sound(resolveAssetSource(Glass2).uri, null);
+    glass3 = new Sound(resolveAssetSource(Glass3).uri, null);
+    glass4 = new Sound(resolveAssetSource(Glass4).uri, null);
+    glass5 = new Sound(resolveAssetSource(Glass5).uri, null);
+    glass6 = new Sound(resolveAssetSource(Glass6).uri, null);
 
     render() {
         return(

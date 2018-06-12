@@ -61,11 +61,10 @@ class Page4Content extends React.Component {
         if (error) {
             console.log('failed to load the sound', error);
             return;
-        }});
-
-    componentDidMount() {
+        }
         this.soundMoines.play();
-    }
+        this.soundMoines.setNumberOfLoops(-1);
+    });
 
     render() {
         return (

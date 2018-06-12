@@ -34,19 +34,8 @@ export class Levier extends React.Component {
         ]).start();
     }
 
-    tapisRoulant = new Sound(resolveAssetSource(TapisRoulant).uri, null, (error) => {
-        if (error) {
-            console.log('failed to load the sound', error);
-            return;
-        }
-    });
-
-    levier = new Sound(resolveAssetSource(LevierSound).uri, null, (error) => {
-        if (error) {
-            console.log('failed to load the sound', error);
-            return;
-        }
-    });
+    tapisRoulant = new Sound(resolveAssetSource(TapisRoulant).uri, null);
+    levier = new Sound(resolveAssetSource(LevierSound).uri, null);
 
     render() {
         return(
