@@ -14,6 +14,7 @@ import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
 import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
 
 import Sound from "react-native-sound/";
+Sound.setCategory('Playback');
 import resolveAssetSource from "resolveAssetSource";
 import SoundMoines from "../../../Assets/Sound/MOINES.mp3";
 import {ModalSlider} from "../../Modal/ModalSlider/ModalSlider";

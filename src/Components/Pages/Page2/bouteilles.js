@@ -13,6 +13,7 @@ import Passerelle from "../../../Assets/Images/Pages/Page2/passerelle.png";
 import Meuble from "../../../Assets/Images/Pages/Page2/meuble.png";
 
 import Sound from 'react-native-sound';
+Sound.setCategory('Playback');
 import resolveAssetSource from "resolveAssetSource";
 import Glass1 from "../../../Assets/Sound/GLASS_01.mp3";
 import Glass2 from "../../../Assets/Sound/GLASS_02.mp3";

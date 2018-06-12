@@ -24,6 +24,7 @@ import drapo from "../../../Assets/Images/Pages/Page1/DRAPEAU.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 
 import Sound from "react-native-sound/";
+Sound.setCategory('Playback');
 import resolveAssetSource from "resolveAssetSource";
 import SoundNobles from "../../../Assets/Sound/FOULEENLIESSE.mp3";
 import SoundPaysans from "../../../Assets/Sound/CHUCHOTEMENTS.mp3";

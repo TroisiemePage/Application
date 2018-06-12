@@ -5,6 +5,7 @@ import Pots from "../../../Assets/Images/Pages/Page2/pots.png";
 import LevierImg from "../../../Assets/Images/Pages/Page2/levier.png";
 
 import Sound from "react-native-sound/";
+Sound.setCategory('Playback');
 import resolveAssetSource from "resolveAssetSource";
 import TapisRoulant from "../../../Assets/Sound/TAPIS_ROULANT.mp3";
 import LevierSound from "../../../Assets/Sound/LEVIER.mp3";
