@@ -147,8 +147,7 @@ export class PageRouter extends React.Component {
                 pagingEnabled={true}
                 data={this.pages}
                 renderItem={(page) => {
-                    const Page = page.item;
-                    return (<Page {...this.props}/>)
+                    return (<page.item navigation={this.props.navigation}/>)
                 }}
             />
         )
