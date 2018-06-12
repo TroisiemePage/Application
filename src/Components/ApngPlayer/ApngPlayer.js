@@ -31,8 +31,6 @@ export default class ApngPlayer extends Component {
             scale = this.props.scale;
         }
 
-        console.log("SCALE", scale);
-
         return (<View
                 style={{
                     ...this.props.style,

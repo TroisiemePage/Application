@@ -59,7 +59,6 @@ class Page4Content extends React.Component {
     soundMoines = new Sound(SoundMoines, null);
 
     render() {
-        //console.log("CONTENT", this.props.navigation);
         return (
             <Overlay {...this.props} wordList={words}>
             <View style={styles.container}>
@@ -98,7 +97,6 @@ class Page4Content extends React.Component {
                     scale={0.5}
                     playlist={[precepteur]}
                     onPress={() => {
-                        console.log("Precepteur");
                     }}
                 />
                 <ModalView

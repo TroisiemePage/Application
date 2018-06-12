@@ -22,11 +22,9 @@ export class Page0 extends React.Component {
     constructor() {
         super();
         PageDetector.onPageChange((currentPage) => {
-            console.log(currentPage);
             let pageNumber = 5;
             let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pageNumber ? currentPage : (pageNumber - 1)) : 0);
             this.props.navigation.navigate("Page" + (currentPageIntervalized + 1));
-            console.log("PAGE ROUTER", currentPageIntervalized);
         });
     }
 

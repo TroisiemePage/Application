@@ -18,10 +18,8 @@ export const WordDetector = new class WordDetector {
         Voice.start("fr-FR");
         return new Promise((resolve, reject) => {
             Voice.onSpeechResults = (e) => {
-                console.log(e);
                 e.value
                     .forEach((result) => {
-                        console.log(result);
                         let searchResult = this.matcher.find(result);
                         if (searchResult.length === 0) {
                             reject(new Error("no result found"));

@@ -59,9 +59,42 @@ class SynonymSelector extends React.Component {
                             const theta = i * this.deltaWord;
                             let radius = 25;
                             let color = "#999999";
+                            let legend = "";
                             if (i === this.state.selectedWord) {
                                 radius = 50;
                                 color = "#fd5641";
+                            } else {
+                                legend = (
+                                    <Animated.Text style={{
+                                        textAlign: "center",
+                                        width: 300,
+                                        fontSize: 20,
+                                        fontFamily: "AGaramondPro-Bold",
+                                        color: "#0E0637",
+                                        transform: [
+                                            {
+                                                translateY: this.state.animatedDelta.interpolate({
+                                                    inputRange: [0, Math.PI / 2, Math.PI, 1.5 * Math.PI],
+                                                    outputRange: [0, radius + 20, 0, -(radius + 20)].reverse()
+                                                })
+                                            },
+                                            {
+                                                translateX: this.state.animatedDelta.interpolate({
+                                                    inputRange: [0, Math.PI / 2, Math.PI, 1.5 * Math.PI],
+                                                    outputRange: [-(radius + 20), 0, radius + 20, 0].reverse()
+                                                })
+                                            },
+                                            {
+                                                rotateZ: this.state.animatedDelta.interpolate({
+                                                    inputRange: [0, 2 * Math.PI],
+                                                    outputRange: ["-0rad", "-" + 2 * Math.PI + "rad"]
+                                                })
+                                            }
+                                        ]
+                                    }}>
+                                        {this.props.word.synonyms[i].word}
+                                    </Animated.Text>
+                                );
                             }
 
                             return (
@@ -75,9 +108,12 @@ class SynonymSelector extends React.Component {
                                         position: "absolute",
                                         left: this.radius * ((Math.cos(theta) + 1) / 2) - (radius / 2),
                                         bottom: this.radius * ((Math.sin(theta) + 1) / 2) - (radius / 2),
-                                        backgroundColor: color
+                                        backgroundColor: color,
+                                        alignItems: "center",
+                                        flexDirection: "column"
                                     }}>
 
+                                        {legend}
                                     </View>
 
                                 </TouchableWithoutFeedback>
@@ -151,10 +187,6 @@ export class Synonym extends React.Component {
     state = {
         leftOffset: new Animated.Value(0)
     };
-
-    onSwipe(gestureName, gestureState) {
-        console.log("warzazate");
-    }
 
     render() {
         return (

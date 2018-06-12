@@ -53,6 +53,14 @@ export class Page1 extends React.Component {
                     <ApngPlayer
                         style={{
                             position: "absolute",
+                            left: 778,
+                            top: 140
+                        }}
+                        maxFrameSize={135}
+                        playlist={[drapo]}/>
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
                             left: 930,
                             top: 68
                         }}
@@ -141,14 +149,7 @@ export class Page1 extends React.Component {
                         playlist={[group4]}/>
 
 
-                    <ApngPlayer
-                        style={{
-                            position: "absolute",
-                            left: 774,
-                            top: 166
-                        }}
-                        maxFrameSize={135}
-                        playlist={[drapo]}/>
+
 
                     <ModalView
                         x={140}

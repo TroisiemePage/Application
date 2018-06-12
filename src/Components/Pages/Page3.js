@@ -3,6 +3,8 @@ import * as React from "react";
 import {Overlay} from "../PageRouter/PageRouter";
 import {Dimensions, Image, ScrollView} from "react-native";
 import costume from "../../Assets/Images/Pages/Page3/Gargantua_Page_3_COSTUME.png";
+import costume1 from "../../Assets/Images/Pages/Page3/Gargantua_Page_3_COSTUME2.png";
+import costume2 from "../../Assets/Images/Pages/Page3/Gargantua_Page_3_COSTUME3.png";
 import ModalView from "../Modal/ModalPopup/ModalPopupView";
 
 const {height, width} = Dimensions.get('window');
@@ -19,10 +21,26 @@ export class Page3 extends React.Component {
                     <Image
                         style={{
                             width: width,
-                            height: 3 * height
+                            height: height
                         }}
                         resizeMode={"contain"}
                         source={costume}
+                    />
+                    <Image
+                        style={{
+                            width: width,
+                            height: height
+                        }}
+                        resizeMode={"contain"}
+                        source={costume1}
+                    />
+                    <Image
+                        style={{
+                            width: width,
+                            height: height
+                        }}
+                        resizeMode={"contain"}
+                        source={costume2}
                     />
                     <ModalView
                         x={744}

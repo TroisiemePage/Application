@@ -45,5 +45,5 @@ export default class App extends React.Component {
 }
 
 //If Production
-console.disableYellowBox = false;
-console.reportErrorsAsExceptions = true;
+console.disableYellowBox = true;
+console.reportErrorsAsExceptions = false;

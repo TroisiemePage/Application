@@ -69,7 +69,6 @@ export default class WordList extends React.Component {
             getSectionData,
             getRowData,
         });
-        console.log(words);
         const {dataBlob, sectionIds, rowIds} = this.formatData(words.map((word) => word.word));
         this.state = {
             dataSource: ds.cloneWithRowsAndSections(dataBlob, sectionIds, rowIds),

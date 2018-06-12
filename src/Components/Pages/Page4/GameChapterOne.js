@@ -182,7 +182,6 @@ export default class GameChapterOneLetterA extends Component {
                     toValue: 1,
                     duration: 200
                 }).start();
-                //console.log(this.state.puzzlePiece[i].movingPos, this.state.puzzlePiece[i].initPos);
                 if (
                     (
                         (this.state.puzzlePiece[i].movingPos.x >= this.state.puzzlePiece[i].initPos.x - MAGFIELD)

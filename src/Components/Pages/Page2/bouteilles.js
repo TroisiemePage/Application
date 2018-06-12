@@ -60,7 +60,6 @@ export class Bouteilles extends React.Component {
             <View>
                 <TouchableOpacity
                     onPress={ () => {
-                            console.log("pressed on bouteille10"),
                             this.glass1.play()
                         }
                     }
@@ -91,9 +90,8 @@ export class Bouteilles extends React.Component {
 
                 <TouchableOpacity
                     onPress={ () => {
-                            console.log("pressed on bouteille8"),
-                            this.bottlesAnimation(),
-                            this.glass2.play()
+                            this.bottlesAnimation();
+                            this.glass2.play();
                         }
                     }
                     style={{zIndex: 1}}
@@ -120,7 +118,6 @@ export class Bouteilles extends React.Component {
                 <TouchableOpacity
                     onPress={
                         () => {
-                            console.log("pressed on bouteille7");
                             this.bottlesAnimation();
                             this.glass3.play();
                         }
@@ -148,8 +145,7 @@ export class Bouteilles extends React.Component {
 
                 <TouchableOpacity
                     onPress={ () => {
-                            console.log("pressed on bouteille6"),
-                            this.bottlesAnimation(),
+                            this.bottlesAnimation();
                             this.glass4.play()
                         }
                     }
@@ -176,8 +172,7 @@ export class Bouteilles extends React.Component {
 
                 <TouchableOpacity
                     onPress={ () => {
-                            console.log("pressed on bouteille5"),
-                            this.bottlesAnimation(),
+                            this.bottlesAnimation();
                             this.glass5.play()
                         }
                     }

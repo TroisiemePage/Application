@@ -3,7 +3,7 @@ const Magnetometer = NativeModules.Magnetometer;
 import {DeviceEventEmitter} from "react-native";
 
 export const PageDetector = new class PageDetector {
-    step = 400;
+    step = 280;
     liftingRes = 10;
     liftingWindow = new Array(this.liftingRes).fill(0);
     lastStableValue = 0;
@@ -12,12 +12,12 @@ export const PageDetector = new class PageDetector {
     listeners = [];
     
     constructor() {
-        Magnetometer.setMagnetometerUpdateInterval(0.1);
+        Magnetometer.setMagnetometerUpdateInterval(0.5);
         DeviceEventEmitter.addListener('MagnetometerData', (data) => {
             this.liftingWindow.push(Math.abs(Math.round(data.magneticField.z)));
             if(this.liftingWindow.length >= this.liftingRes) {
                 const cleanSample = this.round(this.liftingWindow.reduce((a, c) => a + c) / this.liftingRes);
-
+                console.log(data.magneticField.z, cleanSample);
                 let spikeDirection = this.spikeDetector(cleanSample);
                 if((this.currentPage + spikeDirection) >= 0 && spikeDirection !== 0) {
                     this.currentPage += spikeDirection;

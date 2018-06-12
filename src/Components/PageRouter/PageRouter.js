@@ -2,12 +2,11 @@ import * as React from "react";
 import {Page4} from "../Pages/Page4/Page4";
 import {Page2} from "../Pages/Page2/Page2";
 import {Page1} from "../Pages/Page1/Page1";
-import {Button, Dimensions, Image, Text, TouchableOpacity, View} from "react-native";
+import {Dimensions, Image, TouchableOpacity, View} from "react-native";
 import menuPicto from "../../Assets/Images/Elements/MENU2.png";
 import trompette from "../../Assets/Images/Elements/MICRO.png";
 import {createStackNavigator} from "react-navigation";
 import {PageDetector} from "../../Modules/PageDetector";
-import {words} from "../../Stores/words";
 import {WordDetector} from "../../Modules/WordDetector";
 import {Menu} from "../Menu/Menu";
 import {Page3} from "../Pages/Page3";
@@ -23,17 +22,14 @@ export class Overlay extends React.Component {
     constructor() {
         super();
         PageDetector.onPageChange((currentPage) => {
-            console.log(currentPage);
             let pageNumber = 5;
             let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pageNumber ? currentPage : (pageNumber - 1)) : 0);
             this.props.navigation.navigate("Page" + (currentPageIntervalized + 1));
-            console.log("PAGE ROUTER", currentPageIntervalized);
         });
     }
 
     componentDidMount() {
         WordDetector.setWordList(this.props.wordList.map((word) => word.word));
-        console.log(WordDetector);
     }
 
     toggleRecognition() {
@@ -149,7 +145,7 @@ export const PageRouter = createStackNavigator({
         screen: Page0
     }
 }, {
-    initialRouteName: 'Page2'
+    initialRouteName: 'Page1'
 });
 PageRouter.navigationOptions = {
     header: null

@@ -19,8 +19,7 @@ export default class Matcher{
                 let wordToFindMetaphone = doubleMetaphone(wordToFind)[0];
                 let registeredWordMetaphone = doubleMetaphone(registeredWord)[0];
                 const matchingCoeff = Math.floor(distance(wordToFindMetaphone, registeredWordMetaphone) * 100) / 100;
-                console.log(wordToFind, wordToFindMetaphone, registeredWordMetaphone, matchingCoeff);
-                return {
+               return {
                     word: registeredWord,
                     matching: matchingCoeff,
                     metaphones: [

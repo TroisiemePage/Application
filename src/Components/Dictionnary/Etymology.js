@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Animated, Dimensions, TouchableWithoutFeedback} from 'react-native';
+import {Text, View, Animated, Dimensions, TouchableWithoutFeedback, PanResponder} from 'react-native';
 import ApngPlayer from "../ApngPlayer/ApngPlayer";
 
 const {height, width} = Dimensions.get('window');
@@ -18,7 +18,13 @@ export class Etymology extends React.Component {
             gender: this.props.word.gender,
             definition: this.props.word.definition,
             animation: [this.props.word.animation[1]]
-        })
+        });
+        this._panResponder = PanResponder.create({
+            onStartShouldSetPanResponder: (evt, gestureState) => true,
+            onStartShouldSetPanResponderCapture: (evt, gestureState) => true,
+            onMoveShouldSetPanResponder: (evt, gestureState) => true,
+            onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
+        });
     }
 
     selectWord(index) {
@@ -55,10 +61,8 @@ export class Etymology extends React.Component {
                         <ApngPlayer
                             playlist={[this.props.word.animation[1]]}
                             maxFrameSize={height / 2}
-
                             onPlaylistItemFinish={(playlistIndex) => {
                             }}
-
                         />
 
                     </Animated.View>

@@ -46,7 +46,6 @@ export class Vaches extends React.Component {
         Animated.parallel([
             ...this.state.vacheAnimValues.map((val, i) => {
                 let targetValue = ((this.state.generalStep + i) % (this.vaches.length));
-                console.log("target value", targetValue);
                 return Animated.timing(val, {
                     toValue: targetValue,
                     duration: targetValue > 0 ? 1000 : 0
