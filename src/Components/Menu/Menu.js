@@ -26,9 +26,6 @@ const styles = {
         fontSize: 22,
         fontFamily: "AGaramondPro-Bold",
     },
-    image: {
-        resizeMode: "center",
-    },
     title: {
         fontSize: 20,
         fontFamily: "Adobe Garamond Pro",
@@ -100,6 +97,7 @@ export class Menu extends React.Component {
                                 width: this.state.imageWidth >= 300 ? this.state.imageWidth/2 : 3 * this.state.imageWidth/4,
                                 height: this.state.imageWidth >= 300 ? this.state.imageHeight/2 : 3 * this.state.imageHeight/4
                             }}
+                            resizeMode={"contain"}
                            source={this.state.chateau}/>
                         <View>
                             <Text style={styles.title}>{this.state.ville}</Text>

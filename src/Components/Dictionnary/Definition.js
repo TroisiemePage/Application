@@ -13,7 +13,8 @@ export class Definition extends React.Component {
     showDefinition() {
         Animated.timing(this.state.definitionOpacity, {
             toValue: 1,
-            duration: 1000
+            duration: 1000,
+            useNativeDriver: true
         }).start();
     }
 

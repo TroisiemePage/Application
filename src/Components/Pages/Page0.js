@@ -50,7 +50,7 @@ export class Page0 extends React.Component {
         return (
             <View>
                 <ScrollView
-                    ref={(ref) => this.scrollview = ref}
+                    ref={(ref) => (ref !== null) ? (this.scrollview = ref) : ""}
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     pagingEnabled={true}

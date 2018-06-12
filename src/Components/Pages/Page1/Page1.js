@@ -92,8 +92,8 @@ export class Page1 extends React.Component {
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: 783,
-                            top: 369
+                            left: 813,
+                            top: 359
                         }}
                         maxFrameSize={325}
                         playlist={[hommeColine]}/>
