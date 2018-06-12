@@ -1,3 +1,10 @@
+import {Text} from "react-native";
+import * as React from "react";
+
+const TextWrapper = (props) => {
+    return (props.children)
+};
+
 export const words = [
     {
         word: "Barytonner",
@@ -27,7 +34,7 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Barútonos",
+                word: (() => (<TextWrapper>Bar<Text style={{color: "blue"}}>ú</Text>tonos</TextWrapper>))(),
                 gender: "n. masc.",
                 definition: "Cet adjectif grec signifiait «à la voix grave»."
             },
