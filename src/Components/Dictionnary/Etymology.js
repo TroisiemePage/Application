@@ -10,6 +10,16 @@ export class Etymology extends React.Component {
         selectedWord: 0,
         leftOffset: new Animated.Value(0)
     };
+    etymology = [...this.props.word.etymology];
+
+    componentWillMount() {
+        this.etymology.push({
+            word: this.props.word.word,
+            gender: this.props.word.gender,
+            definition: this.props.word.definition,
+            animation: [this.props.word.animation[1]]
+        })
+    }
 
     selectWord(index) {
         this.setState({selectedWord: index});
@@ -37,7 +47,7 @@ export class Etymology extends React.Component {
                 }}>
                     <Animated.View style={{
                         marginLeft: this.state.leftOffset.interpolate({
-                            inputRange: [0, this.props.word.etymology.length - 1],
+                            inputRange: [0, this.etymology.length - 1],
                             outputRange: [-400, 400]
                         }),
                         marginBottom: 50
@@ -67,7 +77,7 @@ export class Etymology extends React.Component {
                             borderBottomWidth: 1,
                             borderBottomColor: "#999999"
                         }}>
-                            {this.props.word.etymology.map((synonym, i) => {
+                            {this.etymology.map((synonym, i) => {
                                 let radius = 25;
                                 let color = "#999999";
                                 if (i === this.state.selectedWord) {
@@ -100,19 +110,19 @@ export class Etymology extends React.Component {
                                 color: "#0E0637",
                                 textAlign: "left",
                             }}>
-                                {this.props.word.etymology[this.state.selectedWord].word},<Text style={{
+                                {this.etymology[this.state.selectedWord].word},<Text style={{
                                 fontSize: 35,
                                 fontFamily: "AGaramondPro-Semibold",
                                 color: "#0E0637",
                                 marginTop: 20
-                            }}> {this.props.word.etymology[this.state.selectedWord].gender}</Text>
+                            }}> {this.etymology[this.state.selectedWord].gender}</Text>
                             </Text>
                             <Text style={{
                                 textAlign: "left",
                                 fontSize: 20,
                                 fontFamily: "AGaramondPro-Regular",
                                 color: "#0E0637",
-                            }}>{this.props.word.etymology[this.state.selectedWord].definition}</Text>
+                            }}>{this.etymology[this.state.selectedWord].definition}</Text>
                         </View>
                     </View>
                 </View>
