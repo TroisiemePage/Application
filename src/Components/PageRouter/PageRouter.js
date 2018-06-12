@@ -2,7 +2,7 @@ import * as React from "react";
 import {Page4} from "../Pages/Page4/Page4";
 import {Page2} from "../Pages/Page2/Page2";
 import {Page1} from "../Pages/Page1/Page1";
-import {Dimensions, Image, TouchableOpacity, View} from "react-native";
+import {Dimensions, FlatList, Image, TouchableOpacity, View} from "react-native";
 import menuPicto from "../../Assets/Images/Elements/MENU2.png";
 import trompette from "../../Assets/Images/Elements/MICRO.png";
 import {createStackNavigator} from "react-navigation";
@@ -18,15 +18,6 @@ export class Overlay extends React.Component {
     state = {
         recognizing: false,
     };
-
-    constructor() {
-        super();
-        PageDetector.onPageChange((currentPage) => {
-            let pageNumber = 5;
-            let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pageNumber ? currentPage : (pageNumber - 1)) : 0);
-            this.props.navigation.navigate("Page" + (currentPageIntervalized + 1));
-        });
-    }
 
     componentDidMount() {
         WordDetector.setWordList(this.props.wordList.map((word) => word.word));
@@ -62,7 +53,8 @@ export class Overlay extends React.Component {
             <View style={{
                 width: width,
                 height: height,
-                backgroundColor: '#FEFBEB'
+                backgroundColor: '#FEFBEB',
+                overflow: "hidden"
             }}>
                 {this.props.children}
 
@@ -128,6 +120,45 @@ export class Overlay extends React.Component {
 }
 
 
+export class PageRouter extends React.Component {
+
+    pages = [
+        Page0,
+        Page1,
+        Page2,
+        Page3,
+        Page4
+    ];
+
+    componentDidMount() {
+        PageDetector.onPageChange((currentPage) => {
+            let currentPageIntervalized = (currentPage >= 0 ? (currentPage < this.pages.length ? currentPage : (this.pages.length - 1)) : 0);
+        });
+        console.log(this.props)
+    }
+
+    render() {
+        return (
+            <FlatList
+                ref={(ref) => this.ref = ref}
+                bounces={false}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                pagingEnabled={true}
+                data={this.pages}
+                renderItem={(page) => {
+                    const Page = page.item;
+                    return (<Page {...this.props}/>)
+                }}
+            />
+        )
+    }
+}
+
+PageRouter.navigationOptions = {
+    header: null
+};
+/*
 export const PageRouter = createStackNavigator({
     Page5: {
         screen: Page4
@@ -147,6 +178,5 @@ export const PageRouter = createStackNavigator({
 }, {
     initialRouteName: 'Page1'
 });
-PageRouter.navigationOptions = {
-    header: null
-};
+
+*/
