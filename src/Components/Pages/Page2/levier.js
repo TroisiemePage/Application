@@ -1,10 +1,11 @@
 import * as React from "react";
 import {Dimensions, Image, View, TouchableOpacity, TouchableWithoutFeedback, Animated, Easing} from "react-native";
-import Sound from "react-native-sound/";
 
 import Pots from "../../../Assets/Images/Pages/Page2/pots.png";
 import LevierImg from "../../../Assets/Images/Pages/Page2/levier.png";
 
+import Sound from "react-native-sound/";
+import resolveAssetSource from "resolveAssetSource";
 import TapisRoulant from "../../../Assets/Sound/TAPIS_ROULANT.mp3";
 import LevierSound from "../../../Assets/Sound/LEVIER.mp3";
 
@@ -33,8 +34,19 @@ export class Levier extends React.Component {
         ]).start();
     }
 
-    tapisRoulant = new Sound(TapisRoulant, null);
-    levier = new Sound(LevierSound, null);
+    tapisRoulant = new Sound(resolveAssetSource(TapisRoulant).uri, null, (error) => {
+        if (error) {
+            console.log('failed to load the sound', error);
+            return;
+        }
+    });
+
+    levier = new Sound(resolveAssetSource(LevierSound).uri, null, (error) => {
+        if (error) {
+            console.log('failed to load the sound', error);
+            return;
+        }
+    });
 
     render() {
         return(

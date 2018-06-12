@@ -8,12 +8,13 @@ import {Overlay} from "../../PageRouter/PageRouter";
 import ModalView from '../../Modal/ModalPopup/ModalPopupView';
 import Manicule from '../../Manicule/Manicule';
 import {words} from "../../../Stores/words";
-import Sound from "react-native-sound/";
 
 import decor from "../../../Assets/Images/Pages/Page4/Decor_pageMoines.png";
 import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
 import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
 
+import Sound from "react-native-sound/";
+import resolveAssetSource from "resolveAssetSource";
 import SoundMoines from "../../../Assets/Sound/MOINES.mp3";
 
 const {height, width} = Dimensions.get('window');
@@ -56,7 +57,15 @@ class Page4Content extends React.Component {
         };
     }
 
-    soundMoines = new Sound(SoundMoines, null);
+    soundMoines = new Sound(resolveAssetSource(SoundMoines).uri, null, (error) => {
+        if (error) {
+            console.log('failed to load the sound', error);
+            return;
+        }});
+
+    componentDidMount() {
+        this.soundMoines.play();
+    }
 
     render() {
         return (
