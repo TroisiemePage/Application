@@ -53,7 +53,7 @@ export class Page1 extends React.Component {
                     <Image
                         style={{
                             position: "absolute",
-                            left: 748,
+                            left: 752,
                             top: 140,
                             width: 135,
                             height: 135
