@@ -55,3 +55,7 @@ buck-out/
 # Bundle artifact
 *.jsbundle
 ios/assets
+
+ios/TroisiemePagePrototype1\.xcodeproj/project\.pbxproj
+
+ios/

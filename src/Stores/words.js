@@ -15,6 +15,14 @@ export const words = [
                 animation: [
                     require("../Assets/Animations/Synonyms/compiled/flatuler_loop.png")
                 ]
+            },
+            {
+                word: "Chanter",
+                gender: "verbe.",
+                definition: "Faire entendre un chant, produire par la voix des sons mélodieux.",
+                animation: [
+                    require("../Assets/Animations/Synonyms/compiled/chanter_loop.png")
+                ]
             }
         ],
         etymology: [
@@ -115,6 +123,14 @@ export const words = [
                 animation: [
                     require("../Assets/Animations/Synonyms/compiled/botte_loop.png")
                 ]
+            },
+            {
+                word: "Chaussure",
+                gender: "n. fém.",
+                definition: "Objet vestimentaire destiné à habiller le pied et éventuellement la jambe.",
+                animation: [
+                    require("../Assets/Animations/Synonyms/compiled/chaussures_loop.png")
+                ]
             }
         ],
         etymology: [
@@ -127,11 +143,6 @@ export const words = [
                 word: "Calceus",
                 gender: "latin.",
                 definition: "En latin ce terme signifie «soulier»."
-            },
-            {
-                word: "Chaussure",
-                gender: "n. fém.",
-                definition: "Se porte aux pieds."
             }
         ]
     },
@@ -226,6 +237,14 @@ export const words = [
                 animation: [
                     require("../Assets/Animations/Synonyms/compiled/maison_loop.png")
                 ]
+            },
+            {
+                word: "Logement",
+                gender: "n. fém.",
+                definition: "Endroit où se loger, s'habiter.",
+                animation: [
+                    require("../Assets/Animations/Synonyms/compiled/logement_loop.png")
+                ]
             }
         ],
         etymology: [
@@ -256,6 +275,14 @@ export const words = [
                 definition: "Personne membre de l’armée, de la marine, qui a une position de responsabilité et d’encadrement.",
                 animation: [
                     require("../Assets/Animations/Synonyms/compiled/officier_loop.png")
+                ]
+            },
+            {
+                word: "Avant-coureur",
+                gender: "n. masc.",
+                definition: "Qui précède et annonce un événement prochain.",
+                animation: [
+                    require("../Assets/Animations/Synonyms/compiled/avant-coureur_loop.png")
                 ]
             }
         ],
@@ -311,9 +338,9 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Hostur",
-                gender: "",
-                definition: "En 1100, il design un oiseau de proies."
+                word: "Ostur",
+                gender: "ancien français.",
+                definition: "En 1100, il designe un oiseau de proies."
             },
             {
                 word: "Acceptor",
@@ -385,11 +412,11 @@ export const words = [
                 ]
             },
             {
-                word: "lévrier",
+                word: "Épagneul",
                 gender: "n. masc.",
-                definition: "Chien très fin à la tête allongée et à la musculature puissante. Il est très rapide et des courses de lévriers sont souvent organisées.",
+                definition: "Type de chien à poil long importé d’Espagne au XIVème siècle, couramment utilisé pour la chasse.",
                 animation: [
-                    require("../Assets/Animations/Synonyms/compiled/levrier_loop.png")
+                    require("../Assets/Animations/Words/compiled/epagneul_loop.png")
                 ]
             }
         ],

@@ -76,7 +76,10 @@ class SynonymSelector extends React.Component {
                                         left: this.radius * ((Math.cos(theta) + 1) / 2) - (radius / 2),
                                         bottom: this.radius * ((Math.sin(theta) + 1) / 2) - (radius / 2),
                                         backgroundColor: color
-                                    }}/>
+                                    }}>
+
+                                    </View>
+
                                 </TouchableWithoutFeedback>
                             );
                         })}
