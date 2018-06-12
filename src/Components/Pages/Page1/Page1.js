@@ -50,10 +50,10 @@ export class Page1 extends React.Component {
                 <View style={styles.container}>
 
                     <Sky/>
-                    <ApngPlayer
+                    <Image
                         style={{
                             position: "absolute",
-                            left: 778,
+                            left: 748,
                             top: 140,
                             width: 135,
                             height: 135

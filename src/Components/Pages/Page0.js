@@ -338,7 +338,7 @@ export class Page0 extends React.Component {
                                 textAlign: "center",
                                 marginTop: 50
                             }}>
-                            {"Si tu est perdu, la carte du menu t'indique ta progression dans l'histoire !"}
+                            {"Si tu es perdu, la carte du menu t'indique ta progression dans l'histoire !"}
                         </Text>
                         <Animated.View
                             style={{
