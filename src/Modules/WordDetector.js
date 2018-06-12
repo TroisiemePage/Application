@@ -27,6 +27,7 @@ export const WordDetector = new class WordDetector {
                             resolve(searchResult);
                         }
                     });
+                Voice.stop()
             };
         });
     }

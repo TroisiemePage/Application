@@ -5,7 +5,6 @@ import {Page1} from "../Pages/Page1/Page1";
 import {Dimensions, FlatList, Image, TouchableOpacity, View} from "react-native";
 import menuPicto from "../../Assets/Images/Elements/MENU2.png";
 import trompette from "../../Assets/Images/Elements/MICRO.png";
-import {createStackNavigator} from "react-navigation";
 import {PageDetector} from "../../Modules/PageDetector";
 import {WordDetector} from "../../Modules/WordDetector";
 import {Menu} from "../Menu/Menu";
