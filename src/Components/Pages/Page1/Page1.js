@@ -6,7 +6,7 @@ import {words} from "../../../Stores/words";
 import ModalView from '../../Modal/ModalPopup/ModalPopupView';
 
 import Nobles from "../../../Assets/Images/Pages/Page1/nobles.png";
-import Paysans from "../../../Assets/Images/Pages/Page1/paysans.png";
+import Paysans from "../../../Assets/Images/Pages/Page1/paysans2.png";
 import Clerc from "../../../Assets/Images/Pages/Page1/clerc.png";
 import {Sky} from "./Sky";
 
@@ -62,7 +62,7 @@ export class Page1 extends React.Component {
                         style={{
                             position: "absolute",
                             left: 930,
-                            top: 68
+                            top: 99
                         }}
                         maxFrameSize={310}
                         playlist={[chateauAnim]}/>
