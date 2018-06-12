@@ -10,7 +10,7 @@ import Roue1 from "../../../Assets/Images/Pages/Page2/roue1.png";
 import Roue2 from "../../../Assets/Images/Pages/Page2/roue2.png";
 import Roue3 from "../../../Assets/Images/Pages/Page2/roue3.png";
 import Roue4 from "../../../Assets/Images/Pages/Page2/roue4.png";
-import Roue5 from "../../../Assets/Images/Pages/Page2/roues5.png";
+import Roue5 from "../../../Assets/Images/Pages/Page2/roue5.png";
 import Vache1 from "../../../Assets/Images/Pages/Page2/vache1.png";
 import Vache2 from "../../../Assets/Images/Pages/Page2/vache2.png";
 import Tuyeaux from "../../../Assets/Images/Pages/Page2/tuyeaux.png";

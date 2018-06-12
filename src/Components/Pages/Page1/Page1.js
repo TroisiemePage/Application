@@ -17,10 +17,10 @@ import group2 from "../../../Assets/Animations/Pages/compiled/GROUPE_02_loop.png
 import group3 from "../../../Assets/Animations/Pages/compiled/GROUPE_03_loop.png";
 import hommeCape from "../../../Assets/Animations/Pages/compiled/HOMME_CAPE_loop.png";
 import hommeBrasLeve from "../../../Assets/Animations/Pages/compiled/HOMME_BRAS_LEVE_loop.png";
-import arbre from "../../../Assets/Animations/Pages/compiled/ARBRE_loop.png";
+import arbre from "../../../Assets/Images/Pages/Page1/ARBRE.png";
 import paysanne from "../../../Assets/Animations/Pages/compiled/PAYSANNE_loop.png";
 import group4 from "../../../Assets/Animations/Pages/compiled/GROUPE_04_loop.png";
-import drapo from "../../../Assets/Animations/Pages/compiled/DRAPEAU_loop.png";
+import drapo from "../../../Assets/Images/Pages/Page1/DRAPEAU.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 
 const {height, width} = Dimensions.get('window');
@@ -54,10 +54,12 @@ export class Page1 extends React.Component {
                         style={{
                             position: "absolute",
                             left: 778,
-                            top: 140
+                            top: 140,
+                            width: 135,
+                            height: 135
                         }}
-                        maxFrameSize={135}
-                        playlist={[drapo]}/>
+                        resizeMode={"contain"}
+                        source={drapo}/>
                     <ApngPlayer
                         style={{
                             position: "absolute",
@@ -122,14 +124,16 @@ export class Page1 extends React.Component {
                         maxFrameSize={289}
                         playlist={[hommeBrasLeve]}/>
 
-                    <ApngPlayer
+                    <Image
                         style={{
                             position: "absolute",
                             left: 424,
-                            top: 479
+                            top: 479,
+                            width: 75,
+                            height: 75,
                         }}
-                        maxFrameSize={75}
-                        playlist={[arbre]}/>
+                        resizeMode={"contain"}
+                        source={arbre}/>
                     <ApngPlayer
                         style={{
                             position: "absolute",
