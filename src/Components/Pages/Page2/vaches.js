@@ -38,7 +38,7 @@ export class Vaches extends React.Component {
     rouesQuiTournent = new Sound(resolveAssetSource(RoueQuiTournent).uri, null);
     laitVache1 = new Sound(resolveAssetSource(LaitVache1).uri, null);
     soundVache1 = new Sound(resolveAssetSource(SoundVache1).uri, null);
-    laitVache2 = new Sound((resolveAssetSource(LaitVache2).uri, null);
+    laitVache2 = new Sound(resolveAssetSource(LaitVache2).uri, null);
     soundVache2 = new Sound(resolveAssetSource(SoundVache2).uri, null);
 
     rouesAnimation() {

@@ -63,17 +63,14 @@ export class Page4 extends React.Component {
         if (error) {
             console.log('failed to load the sound', error);
             return;
-        }});
-    state = {
-        modalVisible: false
-    };
-
-    soundMoines = new Sound(SoundMoines, null);
-
-    componentDidMount() {
+        }
         this.soundMoines.play();
         this.soundMoines.setNumberOfLoops(-1);
     });
+
+    state = {
+        modalVisible: false
+    };
 
     render() {
         return (
