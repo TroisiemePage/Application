@@ -36,36 +36,20 @@ export class Page2 extends React.Component {
             console.log('failed to load the sound', error);
             return;
         }
+        this.fondSonoreVaches.play();
     });
-
-    componentWillMount() {
-        this.fondSonoreVaches.play((success) => {
-            if (success) {
-                console.log('successfully finished playing');
-            } else {
-                console.log('playback failed due to audio decoding errors');
-                // reset the player to its uninitialized state (android only)
-                // this is the only option to recover after an error occured and use the player again
-                //this.fondSonoreVaches.reset();
-            }
-        });
-    }
 
     render() {
         return (
             <Overlay {...this.props} wordList={words}>
                 <View style={styles.container}>
 
-                    <TouchableWithoutFeedback
-                        onPress={() => this.fondSonoreVaches.play()}
-                    >
-                        <Image
-                            source={Decor}
-                            style={styles.image}
-                            resizeMode={"contain"}
-                            resizeMethod={"scale"}
-                        />
-                    </TouchableWithoutFeedback>
+                    <Image
+                        source={Decor}
+                        style={styles.image}
+                        resizeMode={"contain"}
+                        resizeMethod={"scale"}
+                    />
 
                     <Bouteilles/>
                     <Vaches/>
