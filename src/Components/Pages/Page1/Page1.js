@@ -6,7 +6,7 @@ import {words} from "../../../Stores/words";
 import ModalView from '../../Modal/ModalPopup/ModalPopupView';
 
 import Nobles from "../../../Assets/Images/Pages/Page1/nobles.png";
-import Paysans from "../../../Assets/Images/Pages/Page1/paysans.png";
+import Paysans from "../../../Assets/Images/Pages/Page1/paysans2.png";
 import Clerc from "../../../Assets/Images/Pages/Page1/clerc.png";
 import {Sky} from "./Sky";
 
