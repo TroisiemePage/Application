@@ -9,8 +9,9 @@ import {Bouteilles} from "./bouteilles";
 import Decor from "../../../Assets/Images/Pages/Page2/decor.png";
 
 import Sound from 'react-native-sound';
+Sound.setCategory('Playback');
 import resolveAssetSource from "resolveAssetSource";
-import SoundVaches from  "../../../Assets/Sound/FOND_SONORE_MACHINE_VACHE.mp3";
+import SoundVaches from  "../../../Assets/Sound/ROUE_MACHINE_VACHE.mp3";
 
 const {height, width} = Dimensions.get('window');
 const styles = {
