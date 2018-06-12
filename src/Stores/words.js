@@ -5,6 +5,8 @@ const TextWrapper = (props) => {
     return (props.children)
 };
 
+const Strong = (props) => (<Text style={{color: "blue"}}>props.children</Text>);
+
 export const words = [
     {
         word: "Barytonner",
@@ -34,13 +36,13 @@ export const words = [
         ],
         etymology: [
             {
-                word: (() => (<TextWrapper>Bar<Text style={{color: "blue"}}>ú</Text>tonos</TextWrapper>))(),
-                gender: "n. masc.",
+                word: "Bar<Strong>ú</Strong>t<Strong>onos</Strong>",
+                gender: "Grec",
                 definition: "Cet adjectif grec signifiait «à la voix grave»."
             },
             {
                 word: "Baryton",
-                gender: "n. masc.",
+                gender: "Latin",
                 definition: "En grammaire grecque il désigne les mots dont la dernière syllabe est grave."
             }
         ]
@@ -65,12 +67,12 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Arc",
+                word: "Arc +",
                 gender: "n. masc.",
                 definition: "Arc vient du latin «arcus» qui signifait «arme à lancer des flèches»."
             },
             {
-                word: "Boutant",
+                word: " Bout<Strong>er</Strong>",
                 gender: "n. masc.",
                 definition: "Bouter signifait «pousser, repousser»."
             }
@@ -105,8 +107,8 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Onager",
-                gender: "n. masc.",
+                word: "Onag<Strong>er</Strong>",
+                gender: "Latin",
                 definition: "Dès 1284 ce terme latin est utilisé pour décrire\n" +
                 "une catapulte, une machine de guerre destinée à lancer des pierres. " +
                 "Dans son livre Bestiaire (1827), Philippe de Thaon utilise ce terme pour désigner un «âne sauvage»."
@@ -142,14 +144,19 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Calx",
+                word: "Cal<Strong>x</Strong>",
                 gender: "latin.",
                 definition: "Il désigne le talon ou le pied en latin."
             },
             {
-                word: "Calceus",
-                gender: "latin.",
-                definition: "En latin ce terme signifie «soulier»."
+                word: "Chausse",
+                gender: "n. fém.",
+                definition: "Sorte de bas constitué d’un tube de tis- su ou de tricot qui monte jusqu’en haut des cuisses (répandu au Moyen Âge)."
+            },
+            {
+                word: "chausss<Strong>ure</Strong>",
+                gender: "n. fém.",
+                definition: "Ce que l’on met au pied pour se chausser."
             }
         ]
     },
@@ -183,14 +190,19 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Mula",
+                word: "Mul<Strong>a</Strong>",
                 gender: "latin.",
                 definition: "Ce mot apparait vers 1100 et du latin «mulet femelle»."
             },
             {
-                word: "Mullus",
+                word: "Mul<Strong>lus</Strong>",
                 gender: "latin.",
                 definition: "Au XIIème siècle, «mullus» est le diminituf du latin «mulleus» qui signifie «surmulet», ou «rouget». Il s’agit d’un poisson de couleur rouge avec deux longues barbes sous la mâchoire inférieure."
+            },
+            {
+                word: "Mul<Strong>leus</Strong>",
+                gender: "latin.",
+                definition: "1556, un brodequin rouge, c’est à dire une pièce de tissu portée par les."
             }
         ]
     },
@@ -222,7 +234,7 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Pressorium",
+                word: "Pressori<Strong>um</Strong>",
                 gender: "latin.",
                 definition: "En 1190, pressorium vient du latin premere qui signifie «presser»."
             }
@@ -256,12 +268,12 @@ export const words = [
         ],
         etymology: [
             {
-                word: "laubja",
+                word: "l<Strong>aubja</Strong>",
                 gender: "vieux francique.",
                 definition: "Ce terme signifiait en vieux francique (ancienne langue allemande) un abri de feuillages."
             },
             {
-                word: "loge",
+                word: "log<Strong>e</Strong>",
                 gender: "n. fém.",
                 definition: "La loge peut désigner à la fois une petite cabane, cabanon, hutte. Ainsi qu’un petit logement situé habituellement au rez-de-chaussée d’une habitation près de la porte d’entrée, et destiné au concierge."
             }
@@ -295,22 +307,22 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Fodar",
+                word: "Fo<Strong>dar</Strong>",
                 gender: "n. masc.",
                 definition: "Ce terme vieux-francique nous vient des Francs Saliens, un peuple qui vivait entre la France et l’Allemagne au Vème siècle. Il signifiait alors «fourrage pour les animaux»."
             },
             {
-                word: "Fuere",
+                word: "Fu<Strong>ere</Strong>",
                 gender: "n. masc.",
                 definition: "Ancien français de fourrage. Il désigne plusieurs espèces d’herbes comme la paille et le foin qu’on donne comme nourriture aux animaux lorsqu’on ne les fait pas brouter l’herbe."
             },
             {
-                word: "Feurre",
+                word: "F<Strong>eu</Strong>rr<Strong>e</Strong>",
                 gender: "n. masc.",
                 definition: "Ancien français de fourrage. Il désigne plusieurs espèces d’herbes comme la paille et le foin qu’on donne comme nourriture aux animaux lorsqu’on ne les fait pas brouter l’herbe."
             },
             {
-                word: "Fourrage",
+                word: "Fourr<Strong>age</Strong>",
                 gender: "n. masc.",
                 definition: "La paille, le foin et toutes autres espèces d’herbes qu’on donne comme nourriture aux bestiaux, aux chevaux, etc..."
             }
@@ -345,12 +357,12 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Ostur",
+                word: "<Strong>Host</Strong>ur",
                 gender: "ancien français.",
                 definition: "En 1100, il designe un oiseau de proies."
             },
             {
-                word: "Acceptor",
+                word: "A<Strong>ccept</Strong>or",
                 gender: "Latin",
                 definition: "Il signifie «autour, épervier». Ce sont généralement de petits oiseaux de proie."
             }
@@ -384,12 +396,12 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Espeigner",
-                gender: "verbe.",
+                word: "<Strong>s</Strong>'e<Strong>s</Strong>p<Strong>ei</Strong>gn<Strong>ir</Strong>",
+                gender: "ancien verbe.",
                 definition: "En vieux français, Espeigner est le fait de se coucher devant le gibier afin de le bloquer et ainsi de permettre aux chasseurs de le recouvrir d’un filet qui piégeait le gibier du même coup."
             },
             {
-                word: "Espainholz",
+                word: "E<Strong>s</Strong>pa<Strong>i</Strong>n<Strong>holz</Strong>",
                 gender: "espagnol",
                 definition: "Ce mot signifie «qui vient d’Espagne». Les épagneuls auraient été ramenés d’Espagne au XIVème siècle."
             },
@@ -429,12 +441,12 @@ export const words = [
         ],
         etymology: [
             {
-                word: "Lĕpŏrem",
+                word: "Lĕ<Strong>pŏrem</Strong>",
                 gender: "Latin",
                 definition: "En latin il signifie «lièvre». À la différence du lapin il est plus grand et fin avec de longues oreilles."
             },
             {
-                word: "lièvre",
+                word: "L<Strong>i</Strong>è<Strong>vre</Strong>",
                 gender: "n. masc.",
                 definition: "Mammifère sauvage aux pattes de derrière plus longues que celles de devant, ce qui le rend très rapide à la course."
             }
