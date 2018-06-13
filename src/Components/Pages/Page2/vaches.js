@@ -17,7 +17,7 @@ import Tuyeaux from "../../../Assets/Images/Pages/Page2/tuyeaux.png";
 import Sound from 'react-native-sound';
 Sound.setCategory('Playback');
 import resolveAssetSource from "resolveAssetSource";
-import RoueQuiTournent from "../../../Assets/Sound/ROUE_QUI_TOURNE.mp3";
+import RoueQuiTournent from "../../../Assets/Sound/ROUE_MACHINE_VACHE.mp3";
 import SoundVache1 from "../../../Assets/Sound/VACHE_01.mp3";
 import LaitVache1 from "../../../Assets/Sound/LAIT_VACHE.mp3";
 import SoundVache2 from "../../../Assets/Sound/VACHE_02.mp3";
