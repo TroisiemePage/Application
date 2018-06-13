@@ -125,7 +125,6 @@ export class Page1 extends React.Component {
                         }}
                         maxFrameSize={289}
                         playlist={[group2]}
-                        onPress={() => soundClerc.play()}
                     />
                     <ApngPlayer
                         style={{
@@ -135,7 +134,6 @@ export class Page1 extends React.Component {
                         }}
                         maxFrameSize={155}
                         playlist={[group3]}
-                        onPress={() => soundPaysans.play()}
                     />
                     <ApngPlayer
                         style={{
@@ -145,7 +143,6 @@ export class Page1 extends React.Component {
                         }}
                         maxFrameSize={325}
                         playlist={[hommeColine]}
-                        onPress={() => soundNobles.play()}
                     />
                     <ApngPlayer
                         style={{
@@ -183,7 +180,6 @@ export class Page1 extends React.Component {
                         }}
                         maxFrameSize={67}
                         playlist={[paysanne]}
-                        onPress={() => soundPaysans.play()}
                     />
                     <ApngPlayer
                         style={{
@@ -199,6 +195,7 @@ export class Page1 extends React.Component {
                         y={380}
                         title="ABBÉ BENOÎT"
                         popupImage={Clerc}
+                        onPress={() => soundClerc.play()}
                     >
                         Il est venu accompagné de l’évêque Aubertin pour baptiser le nouveau prince. Il fait parti du clergé qui constitue  l’ensemble des personnes religieuses.  Dans le monde chrétien du Moyen-Âge, il existait deux genres de clergé :
                         {"\n"}{"\n"}
@@ -216,6 +213,7 @@ export class Page1 extends React.Component {
                         y={250}
                         title="HUGON ET GERSINDE "
                         popupImage={Paysans}
+                        onPress={() => soundPaysans.play()}
                     >
                         Serf du seigneur Anguerrand, Hugon cultive ses terres. Gersinde, fille du charpentier, est une paysanne libre. Ils profitent d’un événement royal pour festoyer.
                         {"\n"}{"\n"}
@@ -228,6 +226,7 @@ export class Page1 extends React.Component {
                         y={300}
                         title="MONSEIGNEUR ANGUERRAND ET DAME HERMELINE "
                         popupImage={Nobles}
+                        onPress={() => soundNobles.play()}
                     >
                         Ils se sont rencontrés lors d’une joute et fêtent aujourd’hui leurs fiançailles. Il a gagné sa main en combattant aux côtés de Grandgousier, car les nobles appartiennent à la classe des guerriers.
                         {"\n"}{"\n"}

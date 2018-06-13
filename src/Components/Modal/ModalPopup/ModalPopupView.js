@@ -28,6 +28,9 @@ export default class ModalView extends Component {
 
     toggleModal() {
         if (this.isOpen) {
+            if(this.props.onPress !== void 0) {
+                this.props.onPress();
+            }
             Animated.timing(this.state.animatedValue, {
                 toValue: 0,
                 duration: 200,
@@ -147,7 +150,9 @@ export default class ModalView extends Component {
                         </Svg>
                     </View>
                 </Animated.View>
-                <TouchableWithoutFeedback onPress={() => this.toggleModal()}>
+                <TouchableWithoutFeedback onPress={() => {
+                    this.toggleModal()
+                }}>
                     <Animated.Image
                         style={{
                             height: 40,
