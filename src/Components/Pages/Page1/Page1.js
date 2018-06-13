@@ -70,6 +70,9 @@ export class Page1 extends React.Component {
 
     static componentWillDisapear() {
         soundBapteme.stop();
+        soundClerc.stop();
+        soundPaysans.stop();
+        soundNobles.stop();
     }
 
     render() {
@@ -122,7 +125,7 @@ export class Page1 extends React.Component {
                         }}
                         maxFrameSize={289}
                         playlist={[group2]}
-                        onPress={() => this.soundClerc.play()}
+                        onPress={() => soundClerc.play()}
                     />
                     <ApngPlayer
                         style={{
@@ -132,7 +135,7 @@ export class Page1 extends React.Component {
                         }}
                         maxFrameSize={155}
                         playlist={[group3]}
-                        onPress={() => this.soundPaysans.play()}
+                        onPress={() => soundPaysans.play()}
                     />
                     <ApngPlayer
                         style={{
@@ -142,7 +145,7 @@ export class Page1 extends React.Component {
                         }}
                         maxFrameSize={325}
                         playlist={[hommeColine]}
-                        onPress={() => this.soundNobles.play()}
+                        onPress={() => soundNobles.play()}
                     />
                     <ApngPlayer
                         style={{
@@ -180,7 +183,7 @@ export class Page1 extends React.Component {
                         }}
                         maxFrameSize={67}
                         playlist={[paysanne]}
-                        onPress={() => this.soundPaysans.play()}
+                        onPress={() => soundPaysans.play()}
                     />
                     <ApngPlayer
                         style={{
