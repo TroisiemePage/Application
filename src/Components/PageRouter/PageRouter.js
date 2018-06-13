@@ -11,7 +11,13 @@ import {Menu} from "../Menu/Menu";
 import {Page3} from "../Pages/Page3";
 import {Page0} from "../Pages/Page0";
 const {height, width} = Dimensions.get('window');
-
+const pages = [
+    Page0,
+    Page1,
+    Page2,
+    Page3,
+    Page4
+];
 export class Overlay extends React.Component {
 
     state = {
@@ -36,6 +42,8 @@ export class Overlay extends React.Component {
                     this.setState({
                         recognizing: false
                     });
+
+                    pages.forEach((page) => page.componentWillDisapear());
                     this.props.navigation.navigate("Dictionnary", {word: recognizedWord[0].word});
                 });
         } else {
@@ -121,13 +129,7 @@ export class Overlay extends React.Component {
     }
 }
 
-const pages = [
-    Page0,
-    Page1,
-    Page2,
-    Page3,
-    Page4
-];
+
 
 export class PageRouter extends React.Component {
 
@@ -150,6 +152,9 @@ export class PageRouter extends React.Component {
 
     handleItemsInViewPort(params) {
         console.log("hello", params);
+        pages.forEach((page, i) => {
+            if(i !== params.changed[0].index) page.componentWillDisapear();
+        });
         pages[params.changed[0].index].componentVisible();
     }
 

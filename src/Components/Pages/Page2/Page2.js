@@ -30,21 +30,12 @@ const styles = {
         position: 'absolute',
     }
 };
-const fondSonoreVaches = new Sound(resolveAssetSource(SoundVaches).uri, null, (error) => {
-    if (error) {
-        console.log('failed to load the sound', error);
-        return;
-    }
-    fondSonoreVaches.setNumberOfLoops(-1);
-});
 export class Page2 extends React.Component {
 
     static componentVisible() {
-        fondSonoreVaches.play();
     }
 
     static componentWillDisapear() {
-        fondSonoreVaches.stop();
         Levier.stopSound();
         Bouteilles.stopSound();
         Vaches.stopSound();

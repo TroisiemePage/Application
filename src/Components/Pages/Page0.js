@@ -166,7 +166,7 @@ export class Page0 extends React.Component {
                             }}/>
                         </Animated.View>
                         <TouchableOpacity
-                            onPress={() => this.scrollview.scrollTo({x: width, y: 0, animated: true})}
+                            onPress={() => this.scrollview.scrollTo({x: 0, y: height, animated: true})}
                             style={{
                                 display: "flex",
                                 flexDirection: "column",
@@ -281,7 +281,7 @@ export class Page0 extends React.Component {
                                 marginTop: 50
                             }}/>
                         <TouchableOpacity
-                            onPress={() => this.scrollview.scrollTo({x: width, y: 0, animated: true})}
+                            onPress={() => this.scrollview.scrollTo({x: 0, y: height * 2, animated: true})}
                             style={{
                                 display: "flex",
                                 flexDirection: "column",

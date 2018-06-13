@@ -150,12 +150,12 @@ export const words = [
             },
             {
                 word: "Chausse",
-                gender: "n. fém.",
-                definition: "Sorte de bas constitué d’un tube de tis- su ou de tricot qui monte jusqu’en haut des cuisses (répandu au Moyen Âge)."
+                gender: "n. fém.",
+                definition: "Sorte de bas constitué d’un tube de tissu ou de tricot qui monte jusqu’en haut des cuisses (répandu au Moyen Âge)."
             },
             {
-                word: (() => (<TextWrapper>chausss<Strong>ure</Strong></TextWrapper>))(),
-                gender: "n. fém.",
+                word: (() => (<TextWrapper>chauss<Strong>ure</Strong></TextWrapper>))(),
+                gender: "n. fém.",
                 definition: "Ce que l’on met au pied pour se chausser."
             }
         ]

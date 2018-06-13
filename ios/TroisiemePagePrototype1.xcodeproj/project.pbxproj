@@ -483,6 +483,107 @@
 		FD175EC167634C009F05755D /* (null) in Resources */ = {isa = PBXBuildFile; };
 		FE6C658CC07246EE8E416148 /* arc-boutant_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = EF58CB5069B24EEE8152A2AA /* arc-boutant_intro.png */; };
 		FF7E36989F7546C6B47D99A3 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		963577067C4E43DFB040233C /* chausses051.png in Resources */ = {isa = PBXBuildFile; fileRef = CB340E2F0F1342EF98E9DC3F /* chausses051.png */; };
+		F456101DC58D4AECAED2D160 /* chausses052.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A15FF7543E7429A802C7701 /* chausses052.png */; };
+		887D89FE09DF42F5B5D41BED /* chausses053.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B5342D72AC47A0ACCA813F /* chausses053.png */; };
+		C6AE61F61A674160AF7A60B7 /* chausses054.png in Resources */ = {isa = PBXBuildFile; fileRef = B204C01BAB554E3FA149878F /* chausses054.png */; };
+		6A4259B5E6BE44ABA2C3A0CF /* chausses055.png in Resources */ = {isa = PBXBuildFile; fileRef = AC240BD243AC4F99AABE2B11 /* chausses055.png */; };
+		0D60E060A8CC4F8EAA801B72 /* chausses056.png in Resources */ = {isa = PBXBuildFile; fileRef = 603EE1A53F6D42DF97A033EA /* chausses056.png */; };
+		DA80E9EC96F04F2EBF9F4231 /* chausses057.png in Resources */ = {isa = PBXBuildFile; fileRef = F50C5E6DDF1C4F968CC1A674 /* chausses057.png */; };
+		FC12B0B0C4CC4F459E44F086 /* chausses058.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D1410E60C41E889306213 /* chausses058.png */; };
+		6C9289F80110460E961B9D79 /* chausses059.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA072471A604C4C8CCBB491 /* chausses059.png */; };
+		5D518FE9CF0E4DF09F58F3CA /* chausses060.png in Resources */ = {isa = PBXBuildFile; fileRef = 003E6CDD16874054946E02FC /* chausses060.png */; };
+		8A62E95D21C14947B59F86CA /* chausses061.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE7575B2A2649A19783E75A /* chausses061.png */; };
+		84124749483D498B93A67382 /* chausses062.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EA109DEEC64B549F968D3F /* chausses062.png */; };
+		3D6DE367423343D0A48F58D6 /* chausses063.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FC0BA2F13FB42899D45F4E0 /* chausses063.png */; };
+		72673AF496EB4B9EB8380314 /* chausses064.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF7B1C36DE1464C8D2D2816 /* chausses064.png */; };
+		937F31A8A1FC46499527E80A /* chausses065.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B3270D30F42FD931917E1 /* chausses065.png */; };
+		56E065A7D52C4278BF98A478 /* chausses066.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D95E09BB3354AE99A47B515 /* chausses066.png */; };
+		F385EA969C1E402A936AACF0 /* chausses067.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B79FDB0F817461FB422A7BC /* chausses067.png */; };
+		36CB383844AE4AA8B4B1A27D /* chausses068.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FD97D32FA04EF8A819F841 /* chausses068.png */; };
+		1653AEB31E0D46978AF604A2 /* chausses069.png in Resources */ = {isa = PBXBuildFile; fileRef = AB84F579DB7943C580C1A353 /* chausses069.png */; };
+		96C91209F3244DF39365CD09 /* chausses070.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B95BACDB1B84CDBB343B51B /* chausses070.png */; };
+		77DCF4F54888428FA05CA90B /* chausses071.png in Resources */ = {isa = PBXBuildFile; fileRef = 129E90FB8C6F4759B830DC94 /* chausses071.png */; };
+		AD9407538771450F993F8564 /* chausses072.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A8274CBC15444189AE8EE7 /* chausses072.png */; };
+		62EAC0193A46483E9965FC33 /* chausses073.png in Resources */ = {isa = PBXBuildFile; fileRef = 95722EFB76704CD7A3221411 /* chausses073.png */; };
+		72375862D0794D37B2EA30A1 /* chausses074.png in Resources */ = {isa = PBXBuildFile; fileRef = 929B3E4851F74EAEA41D208A /* chausses074.png */; };
+		24A90A2567144EFD8FF7515B /* chausses075.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7B0B936924446E96079601 /* chausses075.png */; };
+		9DD3DDA6BC8E415AA91BBC0B /* chausses076.png in Resources */ = {isa = PBXBuildFile; fileRef = 3807D5082DD04201AC7CC0C9 /* chausses076.png */; };
+		442D3C34920C4064B814EFCE /* chausses077.png in Resources */ = {isa = PBXBuildFile; fileRef = 092B893C390C44BE8AEBEDAA /* chausses077.png */; };
+		8A8C14486EEC48A1A518D4AC /* chausses078.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD55822B3574A40B40DD96B /* chausses078.png */; };
+		3BD2D913128F456A8DA38E15 /* chausses079.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FD12EEC2E644AD85421EF4 /* chausses079.png */; };
+		2BD4583AA54A4BB480C81B30 /* chausses080.png in Resources */ = {isa = PBXBuildFile; fileRef = DD58E51A0F914BB8992B5A3D /* chausses080.png */; };
+		68FB9D7C29CB44A1AD2C35D9 /* chausses081.png in Resources */ = {isa = PBXBuildFile; fileRef = D37982E400DE4FE3B43C5EDD /* chausses081.png */; };
+		17E80D8ECB904108B4C78512 /* chausses082.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B02D22DBF74CD6A3683C36 /* chausses082.png */; };
+		181C35D91F004F1AA07EC1C5 /* chausses083.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC489822C0498C8FC2CE9A /* chausses083.png */; };
+		5F5B4DA52108440AB58B34ED /* chausses084.png in Resources */ = {isa = PBXBuildFile; fileRef = 451E5691BB3A4447A95326D7 /* chausses084.png */; };
+		E1F19CC5C79E4484A36070B5 /* chausses085.png in Resources */ = {isa = PBXBuildFile; fileRef = F9553ABDAE4D4D19B1CD39DA /* chausses085.png */; };
+		2F30CD0B263347EEA916BBE6 /* chausses086.png in Resources */ = {isa = PBXBuildFile; fileRef = 8282809136F74DEA8C943804 /* chausses086.png */; };
+		2343EDF28B264287B0357FAE /* chausses087.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B5E9A6BADA245C585A17F05 /* chausses087.png */; };
+		CF1DE01C0A084E9C8E6ED70B /* chausses088.png in Resources */ = {isa = PBXBuildFile; fileRef = A6383A033A8149A6880F17B4 /* chausses088.png */; };
+		9FC62BC85B464C6BAD8943DF /* chausses089.png in Resources */ = {isa = PBXBuildFile; fileRef = EB00E8A1334C4B1DB4740D71 /* chausses089.png */; };
+		6267739A42AA452990292BC6 /* chausses090.png in Resources */ = {isa = PBXBuildFile; fileRef = 389795BECAB34F02A1368F3A /* chausses090.png */; };
+		3AFF950A1165492386BCC521 /* chausses091.png in Resources */ = {isa = PBXBuildFile; fileRef = 521BF80019C24B019834E792 /* chausses091.png */; };
+		9F784DD0D16247C5AC668FD2 /* chausses092.png in Resources */ = {isa = PBXBuildFile; fileRef = 924D644996EA4B5AA2B12DC7 /* chausses092.png */; };
+		8F332725AB61418E88139E7D /* chausses093.png in Resources */ = {isa = PBXBuildFile; fileRef = 97DBD371BAFE479996FCF97D /* chausses093.png */; };
+		E0E6AE1A22F84C44AB6004D0 /* chausses094.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C046E10222C4A2E909FAA44 /* chausses094.png */; };
+		F42D9D16B84E41DC8852F3FE /* chausses095.png in Resources */ = {isa = PBXBuildFile; fileRef = 113A3C17E6884F07ACF66359 /* chausses095.png */; };
+		8BF4E08412814768A74B6FE0 /* chausses096.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC37BC587B425FA707F1E8 /* chausses096.png */; };
+		167B477C574E4F41918739B8 /* chausses097.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E6DFEDD961545CC8E912B29 /* chausses097.png */; };
+		E3F485CA56BA48F3A8E1B292 /* chausses098.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA6C59E483B403784274D39 /* chausses098.png */; };
+		8765438B1EAB4821BD92DD44 /* chausses099.png in Resources */ = {isa = PBXBuildFile; fileRef = 20B1536B951D4D558B173033 /* chausses099.png */; };
+		E96602CCE1FD4F2493378F99 /* chausses100.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1000002F24EB7A4AF6557 /* chausses100.png */; };
+		91FFD2DBD47C4954AAE60CAE /* chausses101.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D2E6FDA23A4F31AB528962 /* chausses101.png */; };
+		BD8A329D7F08466C950B5FB4 /* chausses102.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FE2AF4F094B4532B5A09C19 /* chausses102.png */; };
+		751EE4795AD04521886DAD4D /* chausses103.png in Resources */ = {isa = PBXBuildFile; fileRef = C07D8A16E1254CDE922B67DD /* chausses103.png */; };
+		CCC22DC8173A4903840DE102 /* chausses104.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2DA3F8827D41E4811C3D67 /* chausses104.png */; };
+		2B690DBF49C24FE89E8CA7F6 /* chausses105.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B2C97171AA049EC907C6FCF /* chausses105.png */; };
+		B0BB59AF33F249BDA218FD2D /* chausses106.png in Resources */ = {isa = PBXBuildFile; fileRef = FF53727BED5643A09FCFACBC /* chausses106.png */; };
+		0CA0D7B549D64FA88B7BF042 /* chausses107.png in Resources */ = {isa = PBXBuildFile; fileRef = 51AD308211AD43CA80576B24 /* chausses107.png */; };
+		31FF4500814E4E5B938A6BA5 /* chausses108.png in Resources */ = {isa = PBXBuildFile; fileRef = ADAAAE69EA34440F9EAED567 /* chausses108.png */; };
+		B87063430ACC46EB9630A557 /* chausses109.png in Resources */ = {isa = PBXBuildFile; fileRef = B1128AE005994C009715B921 /* chausses109.png */; };
+		707777F746B744EA864AE951 /* chausses110.png in Resources */ = {isa = PBXBuildFile; fileRef = CD16AA93FF4D4223AF75B07C /* chausses110.png */; };
+		E093F6E020FE4A1DABF14DF9 /* chausses111.png in Resources */ = {isa = PBXBuildFile; fileRef = F222F5CAE425470BABA7A079 /* chausses111.png */; };
+		F57F19F6F0C64297A78C77B3 /* chausses112.png in Resources */ = {isa = PBXBuildFile; fileRef = 89EEF6CF790C4D83988BEA38 /* chausses112.png */; };
+		62900BAC9874405F8E313959 /* chausses113.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BEF13C5F75472CBA3269ED /* chausses113.png */; };
+		34B8CE2FB94E4C07B601A5A0 /* chausses114.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2819F470374C308854949B /* chausses114.png */; };
+		CBC07A6F47754257B307DDEA /* chausses115.png in Resources */ = {isa = PBXBuildFile; fileRef = C6F8B3880050404BB2839EA3 /* chausses115.png */; };
+		51B4E72FCA644C0D843064B4 /* chausses116.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A68D2B9A3D74EDABC87F650 /* chausses116.png */; };
+		A39E08DA6A474C46ABA7CA85 /* chausses117.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB628A1E3754BC893B610DC /* chausses117.png */; };
+		EC5E308C451848F7BEFF3B31 /* chausses118.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B55F1652267472AA047A3EF /* chausses118.png */; };
+		58B24515BCDC43FC8356046C /* chausses119.png in Resources */ = {isa = PBXBuildFile; fileRef = 4072EE6DD8E84D92A4CC87E0 /* chausses119.png */; };
+		D175CC00F77244E9ACD5C2AD /* chausses120.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A1512E248C49FAA25D989D /* chausses120.png */; };
+		64968ADF64234965AA3C8779 /* chausses121.png in Resources */ = {isa = PBXBuildFile; fileRef = AD02246F011247CE8548C1FD /* chausses121.png */; };
+		C6382BB0135E4C0997137B36 /* chausses122.png in Resources */ = {isa = PBXBuildFile; fileRef = 9420AE3F183840568CCEAF13 /* chausses122.png */; };
+		78F5C2729ED9494A8D678831 /* chausses123.png in Resources */ = {isa = PBXBuildFile; fileRef = 25448B26113B49B48934E615 /* chausses123.png */; };
+		85E87C76FC9C41AD9E2913AB /* chausses124.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AD95E4BCF24BA28682AD67 /* chausses124.png */; };
+		6670FD4702D5498C9E419137 /* chausses125.png in Resources */ = {isa = PBXBuildFile; fileRef = D98AA3B2EF594ADB930A7103 /* chausses125.png */; };
+		0834A936592B4418BF859BD4 /* chausses126.png in Resources */ = {isa = PBXBuildFile; fileRef = E87B3D1CEC344DE789B33BC6 /* chausses126.png */; };
+		9E180988B0FF469E86C07943 /* chausses127.png in Resources */ = {isa = PBXBuildFile; fileRef = F73434E2D97F4336A5B0B919 /* chausses127.png */; };
+		0F37B02053EE4EC99E8E52AB /* chausses128.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B656004D24B40B39F1151C5 /* chausses128.png */; };
+		DC8F0415ADAF48AB8D89F132 /* chausses129.png in Resources */ = {isa = PBXBuildFile; fileRef = 39E3137F91134AA2A2253C1C /* chausses129.png */; };
+		9AA32205D712446E82B60660 /* chausses130.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A7D95237645449DEE0CB2 /* chausses130.png */; };
+		F6CECCF0202049F89E3D6D03 /* chausses131.png in Resources */ = {isa = PBXBuildFile; fileRef = 5090BC6D2C144A49BAC3B89C /* chausses131.png */; };
+		7F78E32A6B4F4AE0BEEA36AF /* chausses132.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B671919A1184BA4899F248C /* chausses132.png */; };
+		D50A81664DF440BB9C49CBA9 /* chausses133.png in Resources */ = {isa = PBXBuildFile; fileRef = DB2A36EFD2F8471687BEA42A /* chausses133.png */; };
+		EE02170F4C03492D95F41C4A /* chausses134.png in Resources */ = {isa = PBXBuildFile; fileRef = C95F52E016EE4205BD178827 /* chausses134.png */; };
+		353446299EEA4131A3261C4C /* chausses135.png in Resources */ = {isa = PBXBuildFile; fileRef = E46B9BF691C54BE19BD772F7 /* chausses135.png */; };
+		AEE30A85550F4F64B963609C /* chausses136.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D209C4CBCA43C3B62E5B32 /* chausses136.png */; };
+		FB28A5C438A245C295F7E17D /* chausses137.png in Resources */ = {isa = PBXBuildFile; fileRef = 522457C139F94BF1BD4DB81D /* chausses137.png */; };
+		A1CC79CE2BCB4E9496D8C086 /* chausses138.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A21604B27F8410FB01457AC /* chausses138.png */; };
+		E7938685414C4447898FB624 /* chausses139.png in Resources */ = {isa = PBXBuildFile; fileRef = 20D89DAE2F73492D9F87D75A /* chausses139.png */; };
+		75DEE51A47B544E4B07A7173 /* chausses140.png in Resources */ = {isa = PBXBuildFile; fileRef = 530EDEA357624DD6BA3F034D /* chausses140.png */; };
+		DA9D1DF743C14FAA992B70B1 /* chausses141.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F96DFD2DFCC46D5A6D6A005 /* chausses141.png */; };
+		4749A8CF4CE143BFB29A82F8 /* chausses142.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F2078CD2F04664A04FF999 /* chausses142.png */; };
+		57064AB2A2FC443DBEB12533 /* chausses143.png in Resources */ = {isa = PBXBuildFile; fileRef = 4172F90F6C48403B8335A92F /* chausses143.png */; };
+		316B98ACD8D743D7A8B44DAC /* chausses144.png in Resources */ = {isa = PBXBuildFile; fileRef = 499565D5A3F047B7AFF71D83 /* chausses144.png */; };
+		A2E3149B52584B05B36AA13B /* chausses145.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AE0E86CA8D4FDBB04B2F3E /* chausses145.png */; };
+		01B2AA8AED664E9491DDC385 /* chausses146.png in Resources */ = {isa = PBXBuildFile; fileRef = EB98A88815A649D6BAB1088D /* chausses146.png */; };
+		0C6806926DA44D3781F03191 /* chausses147.png in Resources */ = {isa = PBXBuildFile; fileRef = FED1A58A206148F0AE217D24 /* chausses147.png */; };
+		7EAE0F0259004989A1BB2A61 /* chausses148.png in Resources */ = {isa = PBXBuildFile; fileRef = 843B532AE59C448AB050ADD2 /* chausses148.png */; };
+		866D8DAB853044E2B4A3908F /* chausses149.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F702E81B8C044DDBB721EFB /* chausses149.png */; };
+		879DFC12B3114422B2E5A25C /* chausses150.png in Resources */ = {isa = PBXBuildFile; fileRef = 782FD83920364F969C4711B8 /* chausses150.png */; };
+		A7D391D364694CFB850E9C5F /* chausses151.png in Resources */ = {isa = PBXBuildFile; fileRef = CD879D9488264860BEC6A1CC /* chausses151.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -977,6 +1078,107 @@
 		FAB3F7CE2F914594A7E6B1E9 /* levrier_loop.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = levrier_loop.png; path = ../src/Assets/Animations/Synonyms/compiled/levrier_loop.png; sourceTree = "<group>"; };
 		FE1F262EA31E4982AB29CAF2 /* GothamRounded-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GothamRounded-Light.otf"; path = "../src/Assets/Fonts/gotham-rounded/GothamRounded-Light.otf"; sourceTree = "<group>"; };
 		FFD85949B4324B6B8E0D8718 /* MENU2.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MENU2.png; path = ../src/Assets/Images/Elements/MENU2.png; sourceTree = "<group>"; };
+		CB340E2F0F1342EF98E9DC3F /* chausses051.png */ = {isa = PBXFileReference; name = "chausses051.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses051.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2A15FF7543E7429A802C7701 /* chausses052.png */ = {isa = PBXFileReference; name = "chausses052.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses052.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A4B5342D72AC47A0ACCA813F /* chausses053.png */ = {isa = PBXFileReference; name = "chausses053.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses053.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B204C01BAB554E3FA149878F /* chausses054.png */ = {isa = PBXFileReference; name = "chausses054.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses054.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AC240BD243AC4F99AABE2B11 /* chausses055.png */ = {isa = PBXFileReference; name = "chausses055.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses055.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		603EE1A53F6D42DF97A033EA /* chausses056.png */ = {isa = PBXFileReference; name = "chausses056.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses056.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F50C5E6DDF1C4F968CC1A674 /* chausses057.png */ = {isa = PBXFileReference; name = "chausses057.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses057.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1C2D1410E60C41E889306213 /* chausses058.png */ = {isa = PBXFileReference; name = "chausses058.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses058.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8AA072471A604C4C8CCBB491 /* chausses059.png */ = {isa = PBXFileReference; name = "chausses059.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses059.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		003E6CDD16874054946E02FC /* chausses060.png */ = {isa = PBXFileReference; name = "chausses060.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses060.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9BE7575B2A2649A19783E75A /* chausses061.png */ = {isa = PBXFileReference; name = "chausses061.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses061.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		29EA109DEEC64B549F968D3F /* chausses062.png */ = {isa = PBXFileReference; name = "chausses062.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses062.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1FC0BA2F13FB42899D45F4E0 /* chausses063.png */ = {isa = PBXFileReference; name = "chausses063.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses063.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CEF7B1C36DE1464C8D2D2816 /* chausses064.png */ = {isa = PBXFileReference; name = "chausses064.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses064.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		847B3270D30F42FD931917E1 /* chausses065.png */ = {isa = PBXFileReference; name = "chausses065.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses065.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6D95E09BB3354AE99A47B515 /* chausses066.png */ = {isa = PBXFileReference; name = "chausses066.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses066.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0B79FDB0F817461FB422A7BC /* chausses067.png */ = {isa = PBXFileReference; name = "chausses067.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses067.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F2FD97D32FA04EF8A819F841 /* chausses068.png */ = {isa = PBXFileReference; name = "chausses068.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses068.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AB84F579DB7943C580C1A353 /* chausses069.png */ = {isa = PBXFileReference; name = "chausses069.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses069.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6B95BACDB1B84CDBB343B51B /* chausses070.png */ = {isa = PBXFileReference; name = "chausses070.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses070.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		129E90FB8C6F4759B830DC94 /* chausses071.png */ = {isa = PBXFileReference; name = "chausses071.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses071.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B8A8274CBC15444189AE8EE7 /* chausses072.png */ = {isa = PBXFileReference; name = "chausses072.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses072.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		95722EFB76704CD7A3221411 /* chausses073.png */ = {isa = PBXFileReference; name = "chausses073.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses073.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		929B3E4851F74EAEA41D208A /* chausses074.png */ = {isa = PBXFileReference; name = "chausses074.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses074.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2C7B0B936924446E96079601 /* chausses075.png */ = {isa = PBXFileReference; name = "chausses075.png"; path = "../src/Assets/Animations/Words/raw/chausses_intro/chausses075.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3807D5082DD04201AC7CC0C9 /* chausses076.png */ = {isa = PBXFileReference; name = "chausses076.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses076.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		092B893C390C44BE8AEBEDAA /* chausses077.png */ = {isa = PBXFileReference; name = "chausses077.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses077.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FFD55822B3574A40B40DD96B /* chausses078.png */ = {isa = PBXFileReference; name = "chausses078.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses078.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		67FD12EEC2E644AD85421EF4 /* chausses079.png */ = {isa = PBXFileReference; name = "chausses079.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses079.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DD58E51A0F914BB8992B5A3D /* chausses080.png */ = {isa = PBXFileReference; name = "chausses080.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses080.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D37982E400DE4FE3B43C5EDD /* chausses081.png */ = {isa = PBXFileReference; name = "chausses081.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses081.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		68B02D22DBF74CD6A3683C36 /* chausses082.png */ = {isa = PBXFileReference; name = "chausses082.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses082.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5DBC489822C0498C8FC2CE9A /* chausses083.png */ = {isa = PBXFileReference; name = "chausses083.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses083.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		451E5691BB3A4447A95326D7 /* chausses084.png */ = {isa = PBXFileReference; name = "chausses084.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses084.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F9553ABDAE4D4D19B1CD39DA /* chausses085.png */ = {isa = PBXFileReference; name = "chausses085.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses085.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8282809136F74DEA8C943804 /* chausses086.png */ = {isa = PBXFileReference; name = "chausses086.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses086.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6B5E9A6BADA245C585A17F05 /* chausses087.png */ = {isa = PBXFileReference; name = "chausses087.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses087.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A6383A033A8149A6880F17B4 /* chausses088.png */ = {isa = PBXFileReference; name = "chausses088.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses088.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EB00E8A1334C4B1DB4740D71 /* chausses089.png */ = {isa = PBXFileReference; name = "chausses089.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses089.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		389795BECAB34F02A1368F3A /* chausses090.png */ = {isa = PBXFileReference; name = "chausses090.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses090.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		521BF80019C24B019834E792 /* chausses091.png */ = {isa = PBXFileReference; name = "chausses091.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses091.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		924D644996EA4B5AA2B12DC7 /* chausses092.png */ = {isa = PBXFileReference; name = "chausses092.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses092.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		97DBD371BAFE479996FCF97D /* chausses093.png */ = {isa = PBXFileReference; name = "chausses093.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses093.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5C046E10222C4A2E909FAA44 /* chausses094.png */ = {isa = PBXFileReference; name = "chausses094.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses094.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		113A3C17E6884F07ACF66359 /* chausses095.png */ = {isa = PBXFileReference; name = "chausses095.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses095.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0AEC37BC587B425FA707F1E8 /* chausses096.png */ = {isa = PBXFileReference; name = "chausses096.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses096.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1E6DFEDD961545CC8E912B29 /* chausses097.png */ = {isa = PBXFileReference; name = "chausses097.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses097.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FDA6C59E483B403784274D39 /* chausses098.png */ = {isa = PBXFileReference; name = "chausses098.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses098.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		20B1536B951D4D558B173033 /* chausses099.png */ = {isa = PBXFileReference; name = "chausses099.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses099.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7BD1000002F24EB7A4AF6557 /* chausses100.png */ = {isa = PBXFileReference; name = "chausses100.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses100.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		94D2E6FDA23A4F31AB528962 /* chausses101.png */ = {isa = PBXFileReference; name = "chausses101.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses101.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6FE2AF4F094B4532B5A09C19 /* chausses102.png */ = {isa = PBXFileReference; name = "chausses102.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses102.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C07D8A16E1254CDE922B67DD /* chausses103.png */ = {isa = PBXFileReference; name = "chausses103.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses103.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DC2DA3F8827D41E4811C3D67 /* chausses104.png */ = {isa = PBXFileReference; name = "chausses104.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses104.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5B2C97171AA049EC907C6FCF /* chausses105.png */ = {isa = PBXFileReference; name = "chausses105.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses105.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FF53727BED5643A09FCFACBC /* chausses106.png */ = {isa = PBXFileReference; name = "chausses106.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses106.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		51AD308211AD43CA80576B24 /* chausses107.png */ = {isa = PBXFileReference; name = "chausses107.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses107.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ADAAAE69EA34440F9EAED567 /* chausses108.png */ = {isa = PBXFileReference; name = "chausses108.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses108.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B1128AE005994C009715B921 /* chausses109.png */ = {isa = PBXFileReference; name = "chausses109.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses109.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CD16AA93FF4D4223AF75B07C /* chausses110.png */ = {isa = PBXFileReference; name = "chausses110.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses110.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F222F5CAE425470BABA7A079 /* chausses111.png */ = {isa = PBXFileReference; name = "chausses111.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses111.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		89EEF6CF790C4D83988BEA38 /* chausses112.png */ = {isa = PBXFileReference; name = "chausses112.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses112.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		77BEF13C5F75472CBA3269ED /* chausses113.png */ = {isa = PBXFileReference; name = "chausses113.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses113.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4F2819F470374C308854949B /* chausses114.png */ = {isa = PBXFileReference; name = "chausses114.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses114.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C6F8B3880050404BB2839EA3 /* chausses115.png */ = {isa = PBXFileReference; name = "chausses115.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses115.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5A68D2B9A3D74EDABC87F650 /* chausses116.png */ = {isa = PBXFileReference; name = "chausses116.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses116.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EAB628A1E3754BC893B610DC /* chausses117.png */ = {isa = PBXFileReference; name = "chausses117.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses117.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1B55F1652267472AA047A3EF /* chausses118.png */ = {isa = PBXFileReference; name = "chausses118.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses118.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4072EE6DD8E84D92A4CC87E0 /* chausses119.png */ = {isa = PBXFileReference; name = "chausses119.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses119.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A8A1512E248C49FAA25D989D /* chausses120.png */ = {isa = PBXFileReference; name = "chausses120.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses120.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AD02246F011247CE8548C1FD /* chausses121.png */ = {isa = PBXFileReference; name = "chausses121.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses121.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9420AE3F183840568CCEAF13 /* chausses122.png */ = {isa = PBXFileReference; name = "chausses122.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses122.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		25448B26113B49B48934E615 /* chausses123.png */ = {isa = PBXFileReference; name = "chausses123.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses123.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C9AD95E4BCF24BA28682AD67 /* chausses124.png */ = {isa = PBXFileReference; name = "chausses124.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses124.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D98AA3B2EF594ADB930A7103 /* chausses125.png */ = {isa = PBXFileReference; name = "chausses125.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses125.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E87B3D1CEC344DE789B33BC6 /* chausses126.png */ = {isa = PBXFileReference; name = "chausses126.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses126.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F73434E2D97F4336A5B0B919 /* chausses127.png */ = {isa = PBXFileReference; name = "chausses127.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses127.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9B656004D24B40B39F1151C5 /* chausses128.png */ = {isa = PBXFileReference; name = "chausses128.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses128.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		39E3137F91134AA2A2253C1C /* chausses129.png */ = {isa = PBXFileReference; name = "chausses129.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses129.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		421A7D95237645449DEE0CB2 /* chausses130.png */ = {isa = PBXFileReference; name = "chausses130.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses130.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5090BC6D2C144A49BAC3B89C /* chausses131.png */ = {isa = PBXFileReference; name = "chausses131.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses131.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9B671919A1184BA4899F248C /* chausses132.png */ = {isa = PBXFileReference; name = "chausses132.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses132.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DB2A36EFD2F8471687BEA42A /* chausses133.png */ = {isa = PBXFileReference; name = "chausses133.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses133.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C95F52E016EE4205BD178827 /* chausses134.png */ = {isa = PBXFileReference; name = "chausses134.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses134.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E46B9BF691C54BE19BD772F7 /* chausses135.png */ = {isa = PBXFileReference; name = "chausses135.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses135.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F9D209C4CBCA43C3B62E5B32 /* chausses136.png */ = {isa = PBXFileReference; name = "chausses136.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses136.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		522457C139F94BF1BD4DB81D /* chausses137.png */ = {isa = PBXFileReference; name = "chausses137.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses137.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0A21604B27F8410FB01457AC /* chausses138.png */ = {isa = PBXFileReference; name = "chausses138.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses138.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		20D89DAE2F73492D9F87D75A /* chausses139.png */ = {isa = PBXFileReference; name = "chausses139.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses139.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		530EDEA357624DD6BA3F034D /* chausses140.png */ = {isa = PBXFileReference; name = "chausses140.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses140.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2F96DFD2DFCC46D5A6D6A005 /* chausses141.png */ = {isa = PBXFileReference; name = "chausses141.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses141.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		37F2078CD2F04664A04FF999 /* chausses142.png */ = {isa = PBXFileReference; name = "chausses142.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses142.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4172F90F6C48403B8335A92F /* chausses143.png */ = {isa = PBXFileReference; name = "chausses143.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses143.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		499565D5A3F047B7AFF71D83 /* chausses144.png */ = {isa = PBXFileReference; name = "chausses144.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses144.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A0AE0E86CA8D4FDBB04B2F3E /* chausses145.png */ = {isa = PBXFileReference; name = "chausses145.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses145.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EB98A88815A649D6BAB1088D /* chausses146.png */ = {isa = PBXFileReference; name = "chausses146.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses146.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FED1A58A206148F0AE217D24 /* chausses147.png */ = {isa = PBXFileReference; name = "chausses147.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses147.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		843B532AE59C448AB050ADD2 /* chausses148.png */ = {isa = PBXFileReference; name = "chausses148.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses148.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3F702E81B8C044DDBB721EFB /* chausses149.png */ = {isa = PBXFileReference; name = "chausses149.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses149.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		782FD83920364F969C4711B8 /* chausses150.png */ = {isa = PBXFileReference; name = "chausses150.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses150.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CD879D9488264860BEC6A1CC /* chausses151.png */ = {isa = PBXFileReference; name = "chausses151.png"; path = "../src/Assets/Animations/Words/raw/chausses_loop/chausses151.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1434,6 +1636,107 @@
 				EF821E20802540C3AAC321DA /* DRAPEAU.png */,
 				2CF9DF2D2358461DAE39AA58 /* Gargantua_Page_3_COSTUME2.png */,
 				73055251D8DC43E7B03B7110 /* Gargantua_Page_3_COSTUME3.png */,
+				CB340E2F0F1342EF98E9DC3F /* chausses051.png */,
+				2A15FF7543E7429A802C7701 /* chausses052.png */,
+				A4B5342D72AC47A0ACCA813F /* chausses053.png */,
+				B204C01BAB554E3FA149878F /* chausses054.png */,
+				AC240BD243AC4F99AABE2B11 /* chausses055.png */,
+				603EE1A53F6D42DF97A033EA /* chausses056.png */,
+				F50C5E6DDF1C4F968CC1A674 /* chausses057.png */,
+				1C2D1410E60C41E889306213 /* chausses058.png */,
+				8AA072471A604C4C8CCBB491 /* chausses059.png */,
+				003E6CDD16874054946E02FC /* chausses060.png */,
+				9BE7575B2A2649A19783E75A /* chausses061.png */,
+				29EA109DEEC64B549F968D3F /* chausses062.png */,
+				1FC0BA2F13FB42899D45F4E0 /* chausses063.png */,
+				CEF7B1C36DE1464C8D2D2816 /* chausses064.png */,
+				847B3270D30F42FD931917E1 /* chausses065.png */,
+				6D95E09BB3354AE99A47B515 /* chausses066.png */,
+				0B79FDB0F817461FB422A7BC /* chausses067.png */,
+				F2FD97D32FA04EF8A819F841 /* chausses068.png */,
+				AB84F579DB7943C580C1A353 /* chausses069.png */,
+				6B95BACDB1B84CDBB343B51B /* chausses070.png */,
+				129E90FB8C6F4759B830DC94 /* chausses071.png */,
+				B8A8274CBC15444189AE8EE7 /* chausses072.png */,
+				95722EFB76704CD7A3221411 /* chausses073.png */,
+				929B3E4851F74EAEA41D208A /* chausses074.png */,
+				2C7B0B936924446E96079601 /* chausses075.png */,
+				3807D5082DD04201AC7CC0C9 /* chausses076.png */,
+				092B893C390C44BE8AEBEDAA /* chausses077.png */,
+				FFD55822B3574A40B40DD96B /* chausses078.png */,
+				67FD12EEC2E644AD85421EF4 /* chausses079.png */,
+				DD58E51A0F914BB8992B5A3D /* chausses080.png */,
+				D37982E400DE4FE3B43C5EDD /* chausses081.png */,
+				68B02D22DBF74CD6A3683C36 /* chausses082.png */,
+				5DBC489822C0498C8FC2CE9A /* chausses083.png */,
+				451E5691BB3A4447A95326D7 /* chausses084.png */,
+				F9553ABDAE4D4D19B1CD39DA /* chausses085.png */,
+				8282809136F74DEA8C943804 /* chausses086.png */,
+				6B5E9A6BADA245C585A17F05 /* chausses087.png */,
+				A6383A033A8149A6880F17B4 /* chausses088.png */,
+				EB00E8A1334C4B1DB4740D71 /* chausses089.png */,
+				389795BECAB34F02A1368F3A /* chausses090.png */,
+				521BF80019C24B019834E792 /* chausses091.png */,
+				924D644996EA4B5AA2B12DC7 /* chausses092.png */,
+				97DBD371BAFE479996FCF97D /* chausses093.png */,
+				5C046E10222C4A2E909FAA44 /* chausses094.png */,
+				113A3C17E6884F07ACF66359 /* chausses095.png */,
+				0AEC37BC587B425FA707F1E8 /* chausses096.png */,
+				1E6DFEDD961545CC8E912B29 /* chausses097.png */,
+				FDA6C59E483B403784274D39 /* chausses098.png */,
+				20B1536B951D4D558B173033 /* chausses099.png */,
+				7BD1000002F24EB7A4AF6557 /* chausses100.png */,
+				94D2E6FDA23A4F31AB528962 /* chausses101.png */,
+				6FE2AF4F094B4532B5A09C19 /* chausses102.png */,
+				C07D8A16E1254CDE922B67DD /* chausses103.png */,
+				DC2DA3F8827D41E4811C3D67 /* chausses104.png */,
+				5B2C97171AA049EC907C6FCF /* chausses105.png */,
+				FF53727BED5643A09FCFACBC /* chausses106.png */,
+				51AD308211AD43CA80576B24 /* chausses107.png */,
+				ADAAAE69EA34440F9EAED567 /* chausses108.png */,
+				B1128AE005994C009715B921 /* chausses109.png */,
+				CD16AA93FF4D4223AF75B07C /* chausses110.png */,
+				F222F5CAE425470BABA7A079 /* chausses111.png */,
+				89EEF6CF790C4D83988BEA38 /* chausses112.png */,
+				77BEF13C5F75472CBA3269ED /* chausses113.png */,
+				4F2819F470374C308854949B /* chausses114.png */,
+				C6F8B3880050404BB2839EA3 /* chausses115.png */,
+				5A68D2B9A3D74EDABC87F650 /* chausses116.png */,
+				EAB628A1E3754BC893B610DC /* chausses117.png */,
+				1B55F1652267472AA047A3EF /* chausses118.png */,
+				4072EE6DD8E84D92A4CC87E0 /* chausses119.png */,
+				A8A1512E248C49FAA25D989D /* chausses120.png */,
+				AD02246F011247CE8548C1FD /* chausses121.png */,
+				9420AE3F183840568CCEAF13 /* chausses122.png */,
+				25448B26113B49B48934E615 /* chausses123.png */,
+				C9AD95E4BCF24BA28682AD67 /* chausses124.png */,
+				D98AA3B2EF594ADB930A7103 /* chausses125.png */,
+				E87B3D1CEC344DE789B33BC6 /* chausses126.png */,
+				F73434E2D97F4336A5B0B919 /* chausses127.png */,
+				9B656004D24B40B39F1151C5 /* chausses128.png */,
+				39E3137F91134AA2A2253C1C /* chausses129.png */,
+				421A7D95237645449DEE0CB2 /* chausses130.png */,
+				5090BC6D2C144A49BAC3B89C /* chausses131.png */,
+				9B671919A1184BA4899F248C /* chausses132.png */,
+				DB2A36EFD2F8471687BEA42A /* chausses133.png */,
+				C95F52E016EE4205BD178827 /* chausses134.png */,
+				E46B9BF691C54BE19BD772F7 /* chausses135.png */,
+				F9D209C4CBCA43C3B62E5B32 /* chausses136.png */,
+				522457C139F94BF1BD4DB81D /* chausses137.png */,
+				0A21604B27F8410FB01457AC /* chausses138.png */,
+				20D89DAE2F73492D9F87D75A /* chausses139.png */,
+				530EDEA357624DD6BA3F034D /* chausses140.png */,
+				2F96DFD2DFCC46D5A6D6A005 /* chausses141.png */,
+				37F2078CD2F04664A04FF999 /* chausses142.png */,
+				4172F90F6C48403B8335A92F /* chausses143.png */,
+				499565D5A3F047B7AFF71D83 /* chausses144.png */,
+				A0AE0E86CA8D4FDBB04B2F3E /* chausses145.png */,
+				EB98A88815A649D6BAB1088D /* chausses146.png */,
+				FED1A58A206148F0AE217D24 /* chausses147.png */,
+				843B532AE59C448AB050ADD2 /* chausses148.png */,
+				3F702E81B8C044DDBB721EFB /* chausses149.png */,
+				782FD83920364F969C4711B8 /* chausses150.png */,
+				CD879D9488264860BEC6A1CC /* chausses151.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2316,6 +2619,107 @@
 				9574183060E64116A5AF6478 /* DRAPEAU.png in Resources */,
 				EF9FBC4E9F5E4BAD80DED17D /* Gargantua_Page_3_COSTUME2.png in Resources */,
 				D7CCC9EB9C8D47719BD8EFB0 /* Gargantua_Page_3_COSTUME3.png in Resources */,
+				963577067C4E43DFB040233C /* chausses051.png in Resources */,
+				F456101DC58D4AECAED2D160 /* chausses052.png in Resources */,
+				887D89FE09DF42F5B5D41BED /* chausses053.png in Resources */,
+				C6AE61F61A674160AF7A60B7 /* chausses054.png in Resources */,
+				6A4259B5E6BE44ABA2C3A0CF /* chausses055.png in Resources */,
+				0D60E060A8CC4F8EAA801B72 /* chausses056.png in Resources */,
+				DA80E9EC96F04F2EBF9F4231 /* chausses057.png in Resources */,
+				FC12B0B0C4CC4F459E44F086 /* chausses058.png in Resources */,
+				6C9289F80110460E961B9D79 /* chausses059.png in Resources */,
+				5D518FE9CF0E4DF09F58F3CA /* chausses060.png in Resources */,
+				8A62E95D21C14947B59F86CA /* chausses061.png in Resources */,
+				84124749483D498B93A67382 /* chausses062.png in Resources */,
+				3D6DE367423343D0A48F58D6 /* chausses063.png in Resources */,
+				72673AF496EB4B9EB8380314 /* chausses064.png in Resources */,
+				937F31A8A1FC46499527E80A /* chausses065.png in Resources */,
+				56E065A7D52C4278BF98A478 /* chausses066.png in Resources */,
+				F385EA969C1E402A936AACF0 /* chausses067.png in Resources */,
+				36CB383844AE4AA8B4B1A27D /* chausses068.png in Resources */,
+				1653AEB31E0D46978AF604A2 /* chausses069.png in Resources */,
+				96C91209F3244DF39365CD09 /* chausses070.png in Resources */,
+				77DCF4F54888428FA05CA90B /* chausses071.png in Resources */,
+				AD9407538771450F993F8564 /* chausses072.png in Resources */,
+				62EAC0193A46483E9965FC33 /* chausses073.png in Resources */,
+				72375862D0794D37B2EA30A1 /* chausses074.png in Resources */,
+				24A90A2567144EFD8FF7515B /* chausses075.png in Resources */,
+				9DD3DDA6BC8E415AA91BBC0B /* chausses076.png in Resources */,
+				442D3C34920C4064B814EFCE /* chausses077.png in Resources */,
+				8A8C14486EEC48A1A518D4AC /* chausses078.png in Resources */,
+				3BD2D913128F456A8DA38E15 /* chausses079.png in Resources */,
+				2BD4583AA54A4BB480C81B30 /* chausses080.png in Resources */,
+				68FB9D7C29CB44A1AD2C35D9 /* chausses081.png in Resources */,
+				17E80D8ECB904108B4C78512 /* chausses082.png in Resources */,
+				181C35D91F004F1AA07EC1C5 /* chausses083.png in Resources */,
+				5F5B4DA52108440AB58B34ED /* chausses084.png in Resources */,
+				E1F19CC5C79E4484A36070B5 /* chausses085.png in Resources */,
+				2F30CD0B263347EEA916BBE6 /* chausses086.png in Resources */,
+				2343EDF28B264287B0357FAE /* chausses087.png in Resources */,
+				CF1DE01C0A084E9C8E6ED70B /* chausses088.png in Resources */,
+				9FC62BC85B464C6BAD8943DF /* chausses089.png in Resources */,
+				6267739A42AA452990292BC6 /* chausses090.png in Resources */,
+				3AFF950A1165492386BCC521 /* chausses091.png in Resources */,
+				9F784DD0D16247C5AC668FD2 /* chausses092.png in Resources */,
+				8F332725AB61418E88139E7D /* chausses093.png in Resources */,
+				E0E6AE1A22F84C44AB6004D0 /* chausses094.png in Resources */,
+				F42D9D16B84E41DC8852F3FE /* chausses095.png in Resources */,
+				8BF4E08412814768A74B6FE0 /* chausses096.png in Resources */,
+				167B477C574E4F41918739B8 /* chausses097.png in Resources */,
+				E3F485CA56BA48F3A8E1B292 /* chausses098.png in Resources */,
+				8765438B1EAB4821BD92DD44 /* chausses099.png in Resources */,
+				E96602CCE1FD4F2493378F99 /* chausses100.png in Resources */,
+				91FFD2DBD47C4954AAE60CAE /* chausses101.png in Resources */,
+				BD8A329D7F08466C950B5FB4 /* chausses102.png in Resources */,
+				751EE4795AD04521886DAD4D /* chausses103.png in Resources */,
+				CCC22DC8173A4903840DE102 /* chausses104.png in Resources */,
+				2B690DBF49C24FE89E8CA7F6 /* chausses105.png in Resources */,
+				B0BB59AF33F249BDA218FD2D /* chausses106.png in Resources */,
+				0CA0D7B549D64FA88B7BF042 /* chausses107.png in Resources */,
+				31FF4500814E4E5B938A6BA5 /* chausses108.png in Resources */,
+				B87063430ACC46EB9630A557 /* chausses109.png in Resources */,
+				707777F746B744EA864AE951 /* chausses110.png in Resources */,
+				E093F6E020FE4A1DABF14DF9 /* chausses111.png in Resources */,
+				F57F19F6F0C64297A78C77B3 /* chausses112.png in Resources */,
+				62900BAC9874405F8E313959 /* chausses113.png in Resources */,
+				34B8CE2FB94E4C07B601A5A0 /* chausses114.png in Resources */,
+				CBC07A6F47754257B307DDEA /* chausses115.png in Resources */,
+				51B4E72FCA644C0D843064B4 /* chausses116.png in Resources */,
+				A39E08DA6A474C46ABA7CA85 /* chausses117.png in Resources */,
+				EC5E308C451848F7BEFF3B31 /* chausses118.png in Resources */,
+				58B24515BCDC43FC8356046C /* chausses119.png in Resources */,
+				D175CC00F77244E9ACD5C2AD /* chausses120.png in Resources */,
+				64968ADF64234965AA3C8779 /* chausses121.png in Resources */,
+				C6382BB0135E4C0997137B36 /* chausses122.png in Resources */,
+				78F5C2729ED9494A8D678831 /* chausses123.png in Resources */,
+				85E87C76FC9C41AD9E2913AB /* chausses124.png in Resources */,
+				6670FD4702D5498C9E419137 /* chausses125.png in Resources */,
+				0834A936592B4418BF859BD4 /* chausses126.png in Resources */,
+				9E180988B0FF469E86C07943 /* chausses127.png in Resources */,
+				0F37B02053EE4EC99E8E52AB /* chausses128.png in Resources */,
+				DC8F0415ADAF48AB8D89F132 /* chausses129.png in Resources */,
+				9AA32205D712446E82B60660 /* chausses130.png in Resources */,
+				F6CECCF0202049F89E3D6D03 /* chausses131.png in Resources */,
+				7F78E32A6B4F4AE0BEEA36AF /* chausses132.png in Resources */,
+				D50A81664DF440BB9C49CBA9 /* chausses133.png in Resources */,
+				EE02170F4C03492D95F41C4A /* chausses134.png in Resources */,
+				353446299EEA4131A3261C4C /* chausses135.png in Resources */,
+				AEE30A85550F4F64B963609C /* chausses136.png in Resources */,
+				FB28A5C438A245C295F7E17D /* chausses137.png in Resources */,
+				A1CC79CE2BCB4E9496D8C086 /* chausses138.png in Resources */,
+				E7938685414C4447898FB624 /* chausses139.png in Resources */,
+				75DEE51A47B544E4B07A7173 /* chausses140.png in Resources */,
+				DA9D1DF743C14FAA992B70B1 /* chausses141.png in Resources */,
+				4749A8CF4CE143BFB29A82F8 /* chausses142.png in Resources */,
+				57064AB2A2FC443DBEB12533 /* chausses143.png in Resources */,
+				316B98ACD8D743D7A8B44DAC /* chausses144.png in Resources */,
+				A2E3149B52584B05B36AA13B /* chausses145.png in Resources */,
+				01B2AA8AED664E9491DDC385 /* chausses146.png in Resources */,
+				0C6806926DA44D3781F03191 /* chausses147.png in Resources */,
+				7EAE0F0259004989A1BB2A61 /* chausses148.png in Resources */,
+				866D8DAB853044E2B4A3908F /* chausses149.png in Resources */,
+				879DFC12B3114422B2E5A25C /* chausses150.png in Resources */,
+				A7D391D364694CFB850E9C5F /* chausses151.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
