@@ -19,13 +19,10 @@ export class Page0 extends React.Component {
         animation: new Animated.Value(0)
     };
 
-    constructor() {
-        super();
-        PageDetector.onPageChange((currentPage) => {
-            let pageNumber = 5;
-            let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pageNumber ? currentPage : (pageNumber - 1)) : 0);
-            this.props.navigation.navigate("Page" + (currentPageIntervalized + 1));
-        });
+    static componentWillDisapear() {
+    }
+
+    static componentVisible() {
     }
 
     componentWillMount() {

@@ -9,7 +9,7 @@ import {Bouteilles} from "./bouteilles";
 import Decor from "../../../Assets/Images/Pages/Page2/decor.png";
 
 import Sound from 'react-native-sound';
-Sound.setCategory('Playback');
+Sound.setCategory('PlayAndRecord');
 import resolveAssetSource from "resolveAssetSource";
 import SoundVaches from  "../../../Assets/Sound/ROUE_MACHINE_VACHE.mp3";
 
@@ -29,18 +29,23 @@ const styles = {
         position: 'absolute',
     }
 };
-
+const fondSonoreVaches = new Sound(resolveAssetSource(SoundVaches).uri, null, (error) => {
+    if (error) {
+        console.log('failed to load the sound', error);
+        return;
+    }
+    fondSonoreVaches.setNumberOfLoops(-1);
+});
 export class Page2 extends React.Component {
 
-    fondSonoreVaches = new Sound(resolveAssetSource(SoundVaches).uri, null, (error) => {
-        if (error) {
-            console.log('failed to load the sound', error);
-            return;
-        }
-        this.fondSonoreVaches.play();
-        this.fondSonoreVaches.setNumberOfLoops(-1);
-    });
 
+    static componentVisible() {
+        fondSonoreVaches.play();
+    }
+
+    static componentWillDisapear() {
+        fondSonoreVaches.stop();
+    }
     render() {
         return (
             <Overlay {...this.props} wordList={words}>

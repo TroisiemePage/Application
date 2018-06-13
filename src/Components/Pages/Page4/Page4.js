@@ -3,7 +3,6 @@ import {Image, Dimensions, View} from "react-native";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 import {LetterSelector} from "./LetterSelector";
 import GameChapterOneLetterB from "./GameChapterOne";
-import {createDrawerNavigator} from "react-navigation";
 import {Overlay} from "../../PageRouter/PageRouter";
 import ModalView from '../../Modal/ModalPopup/ModalPopupView';
 import Manicule from '../../Manicule/Manicule';
@@ -14,7 +13,7 @@ import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
 import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
 
 import Sound from "react-native-sound/";
-Sound.setCategory('Playback');
+Sound.setCategory('PlayAndRecord');
 import resolveAssetSource from "resolveAssetSource";
 import SoundMoines from "../../../Assets/Sound/MOINES.mp3";
 import {ModalSlider} from "../../Modal/ModalSlider/ModalSlider";
@@ -49,6 +48,13 @@ const styles = {
 
 let letterSelector = "";
 
+const soundMoines = new Sound(resolveAssetSource(SoundMoines).uri, null, (error) => {
+    if (error) {
+        console.log('failed to load the sound', error);
+        return;
+    }
+    soundMoines.setNumberOfLoops(-1);
+});
 export class Page4 extends React.Component {
 
     constructor() {
@@ -60,15 +66,13 @@ export class Page4 extends React.Component {
         };
     }
 
-    soundMoines = new Sound(resolveAssetSource(SoundMoines).uri, null, (error) => {
-        if (error) {
-            console.log('failed to load the sound', error);
-            return;
-        }
-        this.soundMoines.play();
-        this.soundMoines.setNumberOfLoops(-1);
-    });
+    static componentVisible() {
+        soundMoines.play();
+    }
 
+    static componentWillDisapear() {
+        soundMoines.stop();
+    }
     state = {
         modalVisible: false
     };

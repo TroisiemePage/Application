@@ -27,6 +27,9 @@ export class Overlay extends React.Component {
             this.setState({
                 recognizing: true
             });
+            if(this.props.onListening !== void 0) {
+                this.props.onListening(true);
+            }
             WordDetector
                 .recognizeWord()
                 .then((recognizedWord) => {
@@ -42,6 +45,7 @@ export class Overlay extends React.Component {
                     this.setState({
                         recognizing: false
                     });
+                    this.props.onListening(false)
                 });
         }
 
@@ -102,8 +106,7 @@ export class Overlay extends React.Component {
                         borderRadius: 50,
                         borderWidth: 1,
                         borderColor: this.state.recognizing ? "#ec4739": "#050A3A"
-                    }}
-                >
+                    }}>
                     <Image
                         resizeMode={"contain"}
                         source={trompette} style={{
@@ -118,36 +121,69 @@ export class Overlay extends React.Component {
     }
 }
 
+const pages = [
+    Page0,
+    Page1,
+    Page2,
+    Page3,
+    Page4
+];
 
 export class PageRouter extends React.Component {
 
-    pages = [
-        Page0,
-        Page1,
-        Page2,
-        Page3,
-        Page4
+
+    viewabilityConfig = [{
+        viewabilityConfig: {
+            minimumViewTime: 500,
+            itemVisiblePercentThreshold: 100
+        },
+        onViewableItemsChanged: this.handleItemsInViewPort
+    },
+        {
+            viewabilityConfig: {
+                minimumViewTime: 150,
+                itemVisiblePercentThreshold: 10
+            },
+            onViewableItemsChanged: this.handleItemsPartiallyVisible
+        }
     ];
 
-    componentDidMount() {
+    handleItemsInViewPort(params) {
+        console.log("hello", params);
+        pages[params.changed[0].index].componentVisible();
+    }
+
+    handleItemsPartiallyVisible(params) {
+        console.log("goodbye", params);
+        //stop all sounds
+        pages.forEach((page) => page.componentWillDisapear());
+    }
+
+    activatePageDetection(ref) {
         PageDetector.onPageChange((currentPage) => {
-            let currentPageIntervalized = (currentPage >= 0 ? (currentPage < this.pages.length ? currentPage : (this.pages.length - 1)) : 0);
+            let currentPageIntervalized = (currentPage >= 0 ? (currentPage < pages.length ? currentPage : (pages.length - 1)) : 0);
+
+            console.log(currentPageIntervalized, currentPage, pages.length);
+            ref.scrollToIndex({
+                index: currentPageIntervalized
+            });
         });
-        console.log(this.props)
     }
 
     render() {
         return (
             <FlatList
-                ref={(ref) => this.ref = ref}
+                ref={(ref) => this.activatePageDetection(ref)}
                 bounces={false}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 pagingEnabled={true}
-                data={this.pages}
+                data={pages}
                 renderItem={(page) => {
                     return (<page.item navigation={this.props.navigation}/>)
                 }}
+                viewabilityConfigCallbackPairs={this.viewabilityConfig}
+
             />
         )
     }

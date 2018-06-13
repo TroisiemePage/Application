@@ -24,7 +24,7 @@ import drapo from "../../../Assets/Images/Pages/Page1/DRAPEAU.png";
 import ApngPlayer from "../../ApngPlayer/ApngPlayer";
 
 import Sound from "react-native-sound/";
-Sound.setCategory('Playback');
+Sound.setCategory('PlayAndRecord');
 import resolveAssetSource from "resolveAssetSource";
 import SoundNobles from "../../../Assets/Sound/FOULEENLIESSE.mp3";
 import SoundPaysans from "../../../Assets/Sound/CHUCHOTEMENTS.mp3";
@@ -49,24 +49,34 @@ const styles ={
     }
 };
 
+const soundBapteme = new Sound(resolveAssetSource(SoundBapteme).uri, null, (error) => {
+    if (error) {
+        //console.log('failed to load the sound', error);
+        return;
+    }
+    soundBapteme.setNumberOfLoops(-1);
+});
+
+const soundClerc = new Sound(resolveAssetSource(SoundClerc).uri, null);
+const soundPaysans = new Sound(resolveAssetSource(SoundPaysans).uri, null);
+const soundNobles = new Sound(resolveAssetSource(SoundNobles).uri, null);
+
+
 export class Page1 extends React.Component {
 
-    soundBapteme = new Sound(resolveAssetSource(SoundBapteme).uri, null, (error) => {
-        if (error) {
-            //console.log('failed to load the sound', error);
-            return;
-        }
-        this.soundBapteme.play();
-        this.soundBapteme.setNumberOfLoops(-1);
-    });
+    static componentVisible() {
+        soundBapteme.play();
+    }
 
-    soundClerc = new Sound(resolveAssetSource(SoundClerc).uri, null);
-    soundPaysans = new Sound(resolveAssetSource(SoundPaysans).uri, null);
-    soundNobles = new Sound(resolveAssetSource(SoundNobles).uri, null);
+    static componentWillDisapear() {
+        soundBapteme.stop();
+    }
 
     render() {
         return (
-            <Overlay {...this.props} wordList={words}>
+            <Overlay {...this.props} wordList={words} onListening={(isListening) => {
+                isListening ? soundBapteme.pause() : soundBapteme.play();
+            }}>
                 <View style={styles.container}>
                     <Sky/>
                     <Image

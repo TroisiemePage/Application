@@ -77,6 +77,7 @@ export class Vaches extends React.Component {
                 {this.vaches.map((vacheImage, i) => {
                     return (
                         <TouchableOpacity
+                            key={i}
                             onPress={() => {
                                 if(((this.state.generalStep + i) % (this.vaches.length)) === 4) {
                                     this.setState({vacheCliqued: true});
@@ -86,7 +87,6 @@ export class Vaches extends React.Component {
                             }}
                         >
                             <Animated.Image
-                                key={i}
                                 source={vacheImage}
                                 style={{
                                     width: 178,
