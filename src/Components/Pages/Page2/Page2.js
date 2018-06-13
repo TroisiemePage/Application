@@ -12,6 +12,7 @@ import Sound from 'react-native-sound';
 Sound.setCategory('PlayAndRecord');
 import resolveAssetSource from "resolveAssetSource";
 import SoundVaches from  "../../../Assets/Sound/FOND_SONORE_MACHINE_VACHE.mp3";
+import Manicule from "../../Manicule/Manicule";
 
 const {height, width} = Dimensions.get('window');
 const styles = {
@@ -38,7 +39,6 @@ const fondSonoreVaches = new Sound(resolveAssetSource(SoundVaches).uri, null, (e
 });
 export class Page2 extends React.Component {
 
-
     static componentVisible() {
         fondSonoreVaches.play();
     }
@@ -62,6 +62,27 @@ export class Page2 extends React.Component {
                     <Bouteilles/>
                     <Vaches/>
                     <Levier/>
+                    <Manicule
+                        x={440}
+                        y={285}
+                        scale={0.7}
+                        rotation="0deg"
+                        color="black"
+                    />
+                    <Manicule
+                        x={655}
+                        y={417}
+                        scale={0.7}
+                        rotation="180deg"
+                        color="black"
+                    />
+                    <Manicule
+                        x={885}
+                        y={320}
+                        scale={0.7}
+                        rotation="90deg"
+                        color="black"
+                    />
                 </View>
             </Overlay>
         )

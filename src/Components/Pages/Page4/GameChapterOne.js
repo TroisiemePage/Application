@@ -664,6 +664,8 @@ export default class GameChapterOneLetterA extends Component {
                     <Manicule
                         x={600}
                         y={630}
+                        scale={1}
+                        rotation="0deg"
                         color="black"
                     />
                 </View>

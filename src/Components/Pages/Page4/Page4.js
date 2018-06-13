@@ -152,6 +152,8 @@ export class Page4 extends React.Component {
                     <Manicule
                         x={840}
                         y={640}
+                        scale={1}
+                        rotation="0deg"
                     />
                 </View>
                 <ModalSlider

@@ -27,7 +27,7 @@ export default class Manicule extends Component {
                     duration: 1000,
                     delay: 0,
                     easing: Easing.bezier(0,.53,.47,1),
-                })
+                }),
             ])
         ).start();
     }
@@ -36,13 +36,17 @@ export default class Manicule extends Component {
         return(
             <Animated.View
                 style={{
-                    left: this.props.x,
-                    top: this.state.moveManicule.interpolate({
+                    left: this.props.rotation === "90deg" ? this.state.moveManicule.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [this.props.x , this.props.x - 10]
+                    }) : this.props.x,
+                    top: this.props.rotation === "0deg" || "180deg" ? this.state.moveManicule.interpolate({
                         inputRange: [0, 1],
                         outputRange: [this.props.y , this.props.y - 10]
-                    }),
+                    }) : this.props.y,
                     flex: 1,
                     position: 'absolute',
+                    opacity: 1
                 }}
             >
                 <Image
@@ -50,6 +54,12 @@ export default class Manicule extends Component {
                         position: "absolute",
                         width: 49.1,
                         height: 80.99,
+                        transform: [{
+                            scale: this.props.scale
+                        }, {
+                            rotate: this.props.rotation
+                        }]
+
                     }}
                     source={this.props.color === 'black' ? BlackManicule : WhiteManicule}
                 />
