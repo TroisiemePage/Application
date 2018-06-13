@@ -37,7 +37,6 @@ export class Vaches extends React.Component {
         soundVache1.stop();
         laitVache2.stop();
         soundVache2.stop();
-
     }
 
     vaches = [Vache1, Vache2, Vache1, Vache2, Vache2];

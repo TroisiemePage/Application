@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Dimensions, Image, View, TouchableOpacity, TouchableWithoutFeedback, Animated, Easing} from "react-native";
+import {Dimensions, Image, View} from "react-native";
 import {Overlay} from "../../PageRouter/PageRouter";
 import {words} from "../../../Stores/words";
 import {Levier} from "./levier";
@@ -11,7 +11,7 @@ import Decor from "../../../Assets/Images/Pages/Page2/decor.png";
 import Sound from 'react-native-sound';
 Sound.setCategory('PlayAndRecord');
 import resolveAssetSource from "resolveAssetSource";
-import SoundVaches from  "../../../Assets/Sound/ROUE_MACHINE_VACHE.mp3";
+import SoundVaches from  "../../../Assets/Sound/FOND_SONORE_MACHINE_VACHE.mp3";
 
 const {height, width} = Dimensions.get('window');
 const styles = {
