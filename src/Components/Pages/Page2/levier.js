@@ -9,16 +9,24 @@ Sound.setCategory('Playback');
 import resolveAssetSource from "resolveAssetSource";
 import TapisRoulant from "../../../Assets/Sound/TAPIS_ROULANT.mp3";
 import LevierSound from "../../../Assets/Sound/LEVIER.mp3";
+const tapisRoulant = new Sound(resolveAssetSource(TapisRoulant).uri, null);
+const levier = new Sound(resolveAssetSource(LevierSound).uri, null);
 
 export class Levier extends React.Component {
+
+    static stopSound() {
+        tapisRoulant.stop();
+        levier.stop();
+    }
 
     state = {
         moveLevier: new Animated.Value(0),
     };
 
     levierAnimation() {
-        this.levier.play();
-        this.tapisRoulant.play();
+        levier.play();
+        tapisRoulant.play();
+
         Animated.sequence([
             Animated.timing(this.state.moveLevier, {
                 toValue: 1,
@@ -35,8 +43,7 @@ export class Levier extends React.Component {
         ]).start();
     }
 
-    tapisRoulant = new Sound(resolveAssetSource(TapisRoulant).uri, null);
-    levier = new Sound(resolveAssetSource(LevierSound).uri, null);
+
 
     render() {
         return(

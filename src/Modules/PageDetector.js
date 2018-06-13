@@ -7,7 +7,6 @@ export const PageDetector = new class PageDetector {
     liftingRes = 10;
     liftingWindow = new Array(this.liftingRes).fill(0);
     lastStableValue = 0;
-    stableSampleCounter = 0;
     currentPage = 0;
     listeners = [];
     
