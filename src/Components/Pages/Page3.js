@@ -8,16 +8,16 @@ import costume1 from "../../Assets/Images/Pages/Page3/Gargantua_Page_3_COSTUME2.
 import costume2 from "../../Assets/Images/Pages/Page3/Gargantua_Page_3_COSTUME3.png";
 
 import ModalView from "../Modal/ModalPopup/ModalPopupView";
+import SlidingManicule from "../Manicule/SlidingManicule";
 
 const {height, width} = Dimensions.get('window');
 
 export class Page3 extends React.Component {
 
-    static componentWillDisapear() {
 
+    static componentWillDisapear() {
     }
     static componentVisible() {
-
     }
     render() {
         return (
@@ -156,7 +156,13 @@ export class Page3 extends React.Component {
                     >
                         Les couleurs de Gargantua sont le blanc et le bleu. C’est son père qui les lui choisit ! Le blanc représente la joie, les plaisirs, les délices, les réjouissances et le bleu les choses célestes.
                     </ModalView>
+                    <SlidingManicule
+                        x={width - 100}
+                        y={(height * 2) + 50}
+                        color={"white"}
+                    />
                 </ScrollView>
+
             </Overlay>
         );
     }

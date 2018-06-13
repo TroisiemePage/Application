@@ -42,9 +42,8 @@ export class Overlay extends React.Component {
                     this.setState({
                         recognizing: false
                     });
-
-                    pages.forEach((page) => page.componentWillDisapear());
                     this.props.navigation.navigate("Dictionnary", {word: recognizedWord[0].word});
+                    pages.forEach((page) => page.componentWillDisapear());
                 });
         } else {
             WordDetector
@@ -72,6 +71,7 @@ export class Overlay extends React.Component {
                 <TouchableOpacity
                     activeOpacity={0.5}
                     onPress={() => {
+                        pages.forEach((page) => page.componentWillDisapear());
                         this.props.navigation.navigate('Menu')
                     }}
                     style={{
@@ -152,9 +152,7 @@ export class PageRouter extends React.Component {
 
     handleItemsInViewPort(params) {
         console.log("hello", params);
-        pages.forEach((page, i) => {
-            if(i !== params.changed[0].index) page.componentWillDisapear();
-        });
+        pages.forEach((page, ) => page.componentWillDisapear());
         pages[params.changed[0].index].componentVisible();
     }
 
