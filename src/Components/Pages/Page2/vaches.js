@@ -23,7 +23,22 @@ import LaitVache1 from "../../../Assets/Sound/LAIT_VACHE.mp3";
 import SoundVache2 from "../../../Assets/Sound/VACHE_02.mp3";
 import LaitVache2 from "../../../Assets/Sound/LAIT_VACHE_2.mp3";
 
+
+const rouesQuiTournent = new Sound(resolveAssetSource(RoueQuiTournent).uri, null);
+const laitVache1 = new Sound(resolveAssetSource(LaitVache1).uri, null);
+const soundVache1 = new Sound(resolveAssetSource(SoundVache1).uri, null);
+const laitVache2 = new Sound(resolveAssetSource(LaitVache2).uri, null);
+const soundVache2 = new Sound(resolveAssetSource(SoundVache2).uri, null);
 export class Vaches extends React.Component {
+
+    static stopSound() {
+        rouesQuiTournent.stop();
+        laitVache1.stop();
+        soundVache1.stop();
+        laitVache2.stop();
+        soundVache2.stop();
+
+    }
 
     vaches = [Vache1, Vache2, Vache1, Vache2, Vache2];
 
@@ -36,18 +51,12 @@ export class Vaches extends React.Component {
         vacheCliqued: false
     };
 
-    rouesQuiTournent = new Sound(resolveAssetSource(RoueQuiTournent).uri, null);
-    laitVache1 = new Sound(resolveAssetSource(LaitVache1).uri, null);
-    soundVache1 = new Sound(resolveAssetSource(SoundVache1).uri, null);
-    laitVache2 = new Sound(resolveAssetSource(LaitVache2).uri, null);
-    soundVache2 = new Sound(resolveAssetSource(SoundVache2).uri, null);
-
     rouesAnimation() {
         this.setState({
             generalStep: this.state.generalStep + 1,
             vacheCliqued: false
         });
-        this.rouesQuiTournent.play();
+        rouesQuiTournent.play();
 
         Animated.parallel([
             ...this.state.vacheAnimValues.map((val, i) => {
@@ -81,9 +90,9 @@ export class Vaches extends React.Component {
                             onPress={() => {
                                 if(((this.state.generalStep + i) % (this.vaches.length)) === 4) {
                                     this.setState({vacheCliqued: true});
-                                    this.laitVache1.play();
+                                    laitVache1.play();
                                 }
-                                this.soundVache1.play();
+                                soundVache1.play();
                             }}
                         >
                             <Animated.Image

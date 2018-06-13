@@ -21,8 +21,21 @@ import Glass3 from "../../../Assets/Sound/GLASS_03.mp3";
 import Glass4 from "../../../Assets/Sound/GLASS_04.mp3";
 import Glass5 from "../../../Assets/Sound/GLASS_05.mp3";
 import Glass6 from "../../../Assets/Sound/GLASS_06.mp3";
-
+const glass1 = new Sound(resolveAssetSource(Glass1).uri, null);
+const glass2 = new Sound(resolveAssetSource(Glass2).uri, null);
+const glass3 = new Sound(resolveAssetSource(Glass3).uri, null);
+const glass4 = new Sound(resolveAssetSource(Glass4).uri, null);
+const glass5 = new Sound(resolveAssetSource(Glass5).uri, null);
+const glass6 = new Sound(resolveAssetSource(Glass6).uri, null);
 export class Bouteilles extends React.Component {
+
+    static stopSound() {
+        glass1.stop();
+        glass2.stop();
+        glass3.stop();
+        glass4.stop();
+        glass6.stop();
+    }
 
     state = {
         moveBottles: new Array(6).fill("").map(() => new Animated.Value(0)),
@@ -44,19 +57,14 @@ export class Bouteilles extends React.Component {
         Animated.sequence(this.animatedBottlesArray).start();
     }
 
-    glass1 = new Sound(resolveAssetSource(Glass1).uri, null);
-    glass2 = new Sound(resolveAssetSource(Glass2).uri, null);
-    glass3 = new Sound(resolveAssetSource(Glass3).uri, null);
-    glass4 = new Sound(resolveAssetSource(Glass4).uri, null);
-    glass5 = new Sound(resolveAssetSource(Glass5).uri, null);
-    glass6 = new Sound(resolveAssetSource(Glass6).uri, null);
+
 
     render() {
         return(
             <View>
                 <TouchableOpacity
                     onPress={ () => {
-                            this.glass1.play()
+                            glass1.play()
                         }
                     }
                     style={{zIndex: 1}}
@@ -87,7 +95,7 @@ export class Bouteilles extends React.Component {
                 <TouchableOpacity
                     onPress={ () => {
                             this.bottlesAnimation();
-                            this.glass2.play();
+                            glass2.play();
                         }
                     }
                     style={{zIndex: 1}}
@@ -115,7 +123,7 @@ export class Bouteilles extends React.Component {
                     onPress={
                         () => {
                             this.bottlesAnimation();
-                            this.glass3.play();
+                            glass3.play();
                         }
                     }
                     style={{zIndex: 1}}
@@ -142,7 +150,7 @@ export class Bouteilles extends React.Component {
                 <TouchableOpacity
                     onPress={ () => {
                             this.bottlesAnimation();
-                            this.glass4.play()
+                            glass4.play()
                         }
                     }
                     style={{zIndex: 1}}
@@ -169,7 +177,7 @@ export class Bouteilles extends React.Component {
                 <TouchableOpacity
                     onPress={ () => {
                             this.bottlesAnimation();
-                            this.glass5.play()
+                            glass5.play()
                         }
                     }
                     style={{zIndex: 1}}
@@ -201,7 +209,7 @@ export class Bouteilles extends React.Component {
                 <TouchableOpacity
                     onPress={() => {
                         this.bottlesAnimation(),
-                        this.glass6.play()
+                        glass6.play()
                     }}
                     style={{zIndex: 1}}
                     setOpacityTo={0.5,100}

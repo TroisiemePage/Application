@@ -45,6 +45,9 @@ export class Page2 extends React.Component {
 
     static componentWillDisapear() {
         fondSonoreVaches.stop();
+        Levier.stopSound();
+        Bouteilles.stopSound();
+        Vaches.stopSound();
     }
     render() {
         return (
