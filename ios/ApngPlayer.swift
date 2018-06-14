@@ -26,6 +26,11 @@ public class ApngPlayer: UIView, APNGImageViewDelegate {
   
   }
   
+  deinit {
+    // perform the deinitialization
+    print("player is being deallocated")
+  }
+  
   public func apngImageView(_ imageView: APNGImageView, didFinishPlaybackForRepeatedCount count: Int) {
     _onFinish!(nil)
   }
@@ -52,14 +57,12 @@ public class ApngPlayer: UIView, APNGImageViewDelegate {
     if let url = URL(string: _source!) {
       do {
         let data = try Data(contentsOf: url)
-        let animation = APNGImage(data: data, progressive: false)
+        let animation = APNGImage(data: data, progressive: true)
         animationView.image = animation
         animationView.startAnimating()
       } catch {
         
       }
     }
-    
   }
-  
 }

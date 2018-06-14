@@ -2,7 +2,7 @@ import Voice from "react-native-voice";
 import Matcher from "./Matcher";
 
 
-export class WordDetector {
+export const WordDetector = new class WordDetector {
     matcher = new Matcher();
 
     constructor() {
@@ -27,6 +27,7 @@ export class WordDetector {
                             resolve(searchResult);
                         }
                     });
+                Voice.stop()
             };
         });
     }
@@ -36,4 +37,4 @@ export class WordDetector {
         };
         await Voice.stop()
     }
-}
+};

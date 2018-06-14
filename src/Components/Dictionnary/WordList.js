@@ -20,7 +20,11 @@ export default class WordList extends React.Component {
             const currentChar = alphabet[sectionId];
 
             // Get users whose first name starts with the current letter
-            const words = data.filter((word) => word.toUpperCase().indexOf(currentChar) === 0);
+            const words = data.filter((word) => word
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, "")
+                .toUpperCase()
+                .indexOf(currentChar) === 0);
 
             // If there are any users who have a first name starting with the current letter then we'll
             // add a new section otherwise we just skip over it
@@ -65,7 +69,6 @@ export default class WordList extends React.Component {
             getSectionData,
             getRowData,
         });
-        console.log(words);
         const {dataBlob, sectionIds, rowIds} = this.formatData(words.map((word) => word.word));
         this.state = {
             dataSource: ds.cloneWithRowsAndSections(dataBlob, sectionIds, rowIds),

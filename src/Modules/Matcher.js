@@ -16,10 +16,10 @@ export default class Matcher{
     find(wordToFind) {
         return this.wordlist
             .map((registeredWord, i) => {
-                wordToFindMetaphone = doubleMetaphone(wordToFind)[0];
-                registeredWordMetaphone = doubleMetaphone(registeredWord)[0];
+                let wordToFindMetaphone = doubleMetaphone(wordToFind)[0];
+                let registeredWordMetaphone = doubleMetaphone(registeredWord)[0];
                 const matchingCoeff = Math.floor(distance(wordToFindMetaphone, registeredWordMetaphone) * 100) / 100;
-                return {
+               return {
                     word: registeredWord,
                     matching: matchingCoeff,
                     metaphones: [

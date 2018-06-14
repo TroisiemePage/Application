@@ -3,16 +3,17 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "node --expose-gc --max_old_space_size=4096  ./node_modules/react-native/local-cli/cli.js start",
     "compileWordAnimations": "node Utils/APNGCompiler.js -i ./src/Assets/Animations/Words/raw/ -o ./src/Assets/Animations/Words/compiled/",
     "compilePageAnimations": "node Utils/APNGCompiler.js -i ./src/Assets/Animations/Pages/raw/ -o ./src/Assets/Animations/Pages/compiled/",
     "compileSynonymsAnimations": "node Utils/APNGCompiler.js -i ./src/Assets/Animations/Synonyms/raw/ -o ./src/Assets/Animations/Synonyms/compiled/",
     "postinstall": "node Utils/patch-react-native-babelrc.js; react-native link",
-    "ios:build": "react-native bundle --entry-file ./index.js  --bundle-output ./ios/main.jsbundle --assets-dest ./ios/ --platform ios"
+    "ios:build": "node --expose-gc --max_old_space_size=4096 ./node_modules/react-native/local-cli/cli.js bundle --reset-cache --platform ios --entry-file ./index.js  --bundle-output ./ios/main.jsbundle",
+    "postios:build": "react-native link"
   },
   "rnpm": {
     "assets": [
-      "./src/assets/fonts/"
+      "./src/Assets"
     ]
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "react-native": "0.55.2",
     "react-native-modal": "^6.0.0",
     "react-native-motion-manager": "0.0.7",
+    "react-native-sound": "^0.10.9",
     "react-native-svg": "^6.3.1",
     "react-native-swipe-gestures": "^1.0.2",
     "react-native-voice": "^0.2.6",

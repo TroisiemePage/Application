@@ -31,15 +31,12 @@ export default class ApngPlayer extends Component {
             scale = this.props.scale;
         }
 
-        console.log("SCALE", scale);
-
         return (<View
                 style={{
                     ...this.props.style,
                     width: playlist[this.state.playlistIndex].width * scale,
                     height: playlist[this.state.playlistIndex].height * scale
-                }}
-            >
+                }}>
                 <TouchableWithoutFeedback onPress={() => {
                     if (this.props.onPress !== void 0) {
                         this.props.onPress();

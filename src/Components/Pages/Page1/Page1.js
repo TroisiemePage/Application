@@ -1,20 +1,38 @@
 import * as React from "react";
-import {WordDetector} from "../../../Modules/WordDetector";
-import {Image, Dimensions, View} from "react-native";
-const wordDetector = new WordDetector();
-import decor from "../../../Assets/Images/Pages/Page1/Decor_pageMoines.png";
-import moines from "../../../Assets/Animations/Pages/compiled/MOINES_loop.png";
-import precepteur from "../../../Assets/Animations/Pages/compiled/PRECEPTEUR_loop.png";
-import ApngPlayer from "../../ApngPlayer/ApngPlayer";
-import {LetterSelector} from "./LetterSelector";
-import GameChapterOneLetterA from "./GameChapterOne";
-import {createDrawerNavigator} from "react-navigation";
+import {Dimensions, Image, View, Text} from "react-native";
+import Decor from "../../../Assets/Images/Pages/Page1/fond.png";
 import {Overlay} from "../../PageRouter/PageRouter";
+import {words} from "../../../Stores/words";
 import ModalView from '../../Modal/ModalPopup/ModalPopupView';
-import Manicule from '../../Manicule/Manicule';
+
+import Nobles from "../../../Assets/Images/Pages/Page1/nobles.png";
+import Paysans from "../../../Assets/Images/Pages/Page1/paysans2.png";
+import Clerc from "../../../Assets/Images/Pages/Page1/clerc.png";
+import {Sky} from "./Sky";
+
+import chateauAnim from "../../../Assets/Animations/Pages/compiled/CHATEAU_loop.png";
+import hommeColine from "../../../Assets/Animations/Pages/compiled/CHEVALIER_COLLINE_loop.png";
+import group1 from "../../../Assets/Animations/Pages/compiled/GROUPE_01_loop.png";
+import group2 from "../../../Assets/Animations/Pages/compiled/GROUPE_02_loop.png";
+import group3 from "../../../Assets/Animations/Pages/compiled/GROUPE_03_loop.png";
+import hommeCape from "../../../Assets/Animations/Pages/compiled/HOMME_CAPE_loop.png";
+import hommeBrasLeve from "../../../Assets/Animations/Pages/compiled/HOMME_BRAS_LEVE_loop.png";
+import arbre from "../../../Assets/Images/Pages/Page1/ARBRE.png";
+import paysanne from "../../../Assets/Animations/Pages/compiled/PAYSANNE_loop.png";
+import group4 from "../../../Assets/Animations/Pages/compiled/GROUPE_04_loop.png";
+import drapo from "../../../Assets/Images/Pages/Page1/DRAPEAU.png";
+import ApngPlayer from "../../ApngPlayer/ApngPlayer";
+
+import Sound from "react-native-sound/";
+Sound.setCategory('PlayAndRecord');
+import resolveAssetSource from "resolveAssetSource";
+import SoundNobles from "../../../Assets/Sound/FOULEENLIESSE.mp3";
+import SoundPaysans from "../../../Assets/Sound/CHUCHOTEMENTS.mp3";
+import SoundClerc from "../../../Assets/Sound/CLERC.mp3";
+import SoundBapteme from "../../../Assets/Sound/SONS_IPAD_BAPTEME_1.mp3";
 
 const {height, width} = Dimensions.get('window');
-const styles = {
+const styles ={
     container: {
         flex: 1,
         flexDirection: "row",
@@ -23,141 +41,219 @@ const styles = {
     },
     image: {
         position: "absolute",
-        width: width,
-        height: height,
         left: 0,
         top: 0,
-    },
-    letter: {
-        marginLeft: 280,
-        marginTop: 200
-    },
-    button: {
-        opacity: 0,
-        width: 200,
-        height: 200,
-        marginTop: 550,
-        marginLeft: 50,
-    },
+        width: width,
+        height: height,
+        alignSelf: "flex-end"
+    }
 };
 
-const letterSelector = "";
-class Page1Content extends React.Component {
+const soundBapteme = new Sound(resolveAssetSource(SoundBapteme).uri, null, (error) => {
+    if (error) {
+        //console.log('failed to load the sound', error);
+        return;
+    }
+    soundBapteme.setNumberOfLoops(-1);
+});
 
-    constructor() {
-        super();
-        wordDetector.setWordList([
-            "Lotis",
-            "Oriflant"
-        ]);
-        this.state = {
-            duration: 0,
-            imageNumber: 0,
-            animated: true
-        };
+const soundClerc = new Sound(resolveAssetSource(SoundClerc).uri, null);
+const soundPaysans = new Sound(resolveAssetSource(SoundPaysans).uri, null);
+const soundNobles = new Sound(resolveAssetSource(SoundNobles).uri, null);
+
+
+export class Page1 extends React.Component {
+
+    static componentVisible() {
+        soundBapteme.play();
+    }
+
+    static componentWillDisapear() {
+        soundBapteme.stop();
+        soundClerc.stop();
+        soundPaysans.stop();
+        soundNobles.stop();
     }
 
     render() {
-        //console.log("CONTENT", this.props.navigation);
         return (
-            <Overlay {...this.props}>
-            <View style={styles.container}>
-                <Image
-                    source={decor}
-                    style={styles.image}
-                    resizeMode={"contain"}
-                    resizeMethod={"scale"}
-                />
-                <LetterSelector
-                    style={styles.letter}
-                    ref={(letterSelectorRef) => {
-                        letterSelector = letterSelectorRef;
-                    }}
-                />
-                <ApngPlayer
-                    ref={"moines"}
-                    style={{
-                        position: "absolute",
-                        bottom: 30,
-                        right: 50
-                    }}
-                    scale={0.45}
-                    playlist={[moines]}
-                    onPress={() => {
-                        this.props.navigation.openDrawer();
-                    }}
-                />
-                <ApngPlayer
-                    ref={"precepteur"}
-                    style={{
-                        position: "absolute",
-                        bottom: 140,
-                        left: 110
-                    }}
-                    scale={0.5}
-                    playlist={[precepteur]}
-                    onPress={() => {
-                        console.log("Precepteur");
-                    }}
-                />
-                <ModalView
-                    x={530}
-                    y={60}
-                    title="ABBAYE ROYALE DE FONTEVRAUD"
-                >
-                    Sacrée Abbaye ! Dès sa création en 1101, son fondateur, Robert d’Abrissel,
-                    ouvre les portes de l’abbaye royale aux hommes mais aussi aux femmes
-                    ainsi qu’à des personnes de toutes origines sociales. {"\n"}De la mixité au Moyen-
-                    Âge ! Quel visionnaire ! À partir de 1189 l’abbaye devient nécropole royale,
-                    c’est-à-dire qu’elle abrite les tombeaux d’Henri II, d’Aliénor d’Aquitaine et
-                    de Richard Cœur de Lion. {"\n"}En 7 siècles, 36 abbesses se succèdent à la tête
-                    de l’abbaye mais tout dérape à la Révolution Française (1789) ! Napoléon
-                    Bonaparte aux commandes de la France, l’Abbaye est réquisitionnée
-                    comme prison ! {"\n"}2 000 hommes seront prisonniers et l’abbaye deviendra
-                    l’une des plus dures prisons de France. {"\n"}Il faudra attendre 1963 pour qu’elle
-                    soit fermée et 1975 pour que tu puisses enfin la visiter !
-                </ModalView>
-                <ModalView
-                    x={420}
-                    y={350}
-                    title="MOINES COPISTES"
-                >
-                    Au 12e siècle, l’Église a encore {"\n"}le monopole de la connaissance et du savoir.
-                    Elle les diffuse par le biais d’ouvrages réalisés au sein des scriptoria
-                    monastiques. {"\n"}Et oui l’imprimerie n’existe pas encore ! Faces à leur pupitre,
-                    armés d’une plume et d’un calame, les moines recopient des ouvrages
-                    pendant de longues heures. Pas le droit à l’erreur ! Ils écrivent mais
-                    dessinent aussi ! On appelle ça des enluminures. Cela consiste à mettre{"\n"} en
-                    lumière et en couleur les textes copiés. Encrer à la plume, habiller d’or une
-                    lettrine : un vrai travail d’orfèvre !
-                </ModalView>
-                <Manicule
-                    x={840}
-                    y={620}
-                />
-            </View>
+            <Overlay {...this.props} wordList={words} onListening={(isListening) => {
+                isListening ? soundBapteme.pause() : soundBapteme.play();
+            }}>
+                <View style={styles.container}>
+                    <Sky/>
+                    <Image
+                        style={{
+                            position: "absolute",
+                            left: 752,
+                            top: 140,
+                            width: 135,
+                            height: 135
+                        }}
+                        resizeMode={"contain"}
+                        source={drapo}
+                    />
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 930,
+                            top: 99
+                        }}
+                        maxFrameSize={310}
+                        playlist={[chateauAnim]}
+                    />
+                    <Image
+                        source={Decor}
+                        style={styles.image}
+                        resizeMode={"contain"}
+                        resizeMethod={"scale"}
+                    />
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: -12,
+                            top: 561
+                        }}
+                        maxFrameSize={266}
+                        playlist={[group1]}
+                    />
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 237,
+                            top: 552
+                        }}
+                        maxFrameSize={289}
+                        playlist={[group2]}
+                    />
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 471,
+                            top: 484
+                        }}
+                        maxFrameSize={155}
+                        playlist={[group3]}
+                    />
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 813,
+                            top: 359
+                        }}
+                        maxFrameSize={325}
+                        playlist={[hommeColine]}
+                    />
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 479,
+                            top: 560
+                        }}
+                        maxFrameSize={172}
+                        playlist={[hommeCape]}
+                    />
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 109,
+                            top: 535
+                        }}
+                        maxFrameSize={289}
+                        playlist={[hommeBrasLeve]}
+                    />
+                    <Image
+                        style={{
+                            position: "absolute",
+                            left: 424,
+                            top: 479,
+                            width: 75,
+                            height: 75,
+                        }}
+                        resizeMode={"contain"}
+                        source={arbre}/>
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 377,
+                            top: 511
+                        }}
+                        maxFrameSize={67}
+                        playlist={[paysanne]}
+                    />
+                    <ApngPlayer
+                        style={{
+                            position: "absolute",
+                            left: 654,
+                            top: 490
+                        }}
+                        maxFrameSize={182}
+                        playlist={[group4]}
+                    />
+                    <ModalView
+                        x={140}
+                        y={380}
+                        title="ABBÉ BENOÎT"
+                        popupImage={Clerc}
+                        onPress={() => soundClerc.play()}
+                    >
+                        Il est venu accompagné de l’évêque Aubertin pour baptiser le nouveau prince. Il fait parti du clergé qui constitue  l’ensemble des personnes religieuses.  Dans le monde chrétien du Moyen-Âge, il existait deux genres de clergé :
+                        {"\n"}{"\n"}
+                        <Text style={{fontWeight: 'bold'}}>Le clergé séculier</Text>{"\n"}
+                        Il est composé des prêtres (curés et évêques). Ils vivent au milieu du peuple. Ils enseignent, organisent la messe et sont à l'écoute des gens.
+                        {"\n"}{"\n"}
+                        <Text style={{fontWeight: 'bold'}}>Le clergé régulier</Text>{"\n"}
+                        Le clergé régulier comprend les moines et les nonnes, les religieux et religieuses. Ils vivent séparés des autres hommes. Ils ont des activités manuelles, écrivent des manuscrits et suivent des offices religieux. Ils vivent dans une abbaye, un monastère ou un couvent et doivent suivre un règlement strict qui organise leurs journées.
+                        {"\n"}{"\n"}
+                        Certains moines s'habillaient avec des vêtements en laine. La robe traditionnelle s'appelle la coule. Par dessus, les frères portaient une longue tunique noire.
+
+                    </ModalView>
+                    <ModalView
+                        x={405}
+                        y={250}
+                        title="HUGON ET GERSINDE "
+                        popupImage={Paysans}
+                        onPress={() => soundPaysans.play()}
+                    >
+                        Serf du seigneur Anguerrand, Hugon cultive ses terres. Gersinde, fille du charpentier, est une paysanne libre. Ils profitent d’un événement royal pour festoyer.
+                        {"\n"}{"\n"}
+                        Au Moyen Âge, les paysans forment les neuf dixièmes de la population. On en distingue deux sortes : <Text style={{fontWeight: 'bold'}}>les serfs</Text> et les <Text style={{fontWeight: 'bold'}}> paysans libres</Text> (les vilains). Les serfs appartiennent au seigneur qui a donc tous les droits sur eux tandis que les vilains doivent travailler pour lui et lui payer des impôts.
+                        {"\n"}{"\n"}
+                        Les gens modestes avaient des vêtements assez semblables entre eux. La robe courte était le costume ordinaire des paysans avec les chaussures à la poulaine, autrement dit celles ayant un bout pointu et relevé. Ils portaient le plus souvent les couleurs les moins nobles comme le gris, obtenu à l'aide d'écorce d'aulne, un arbre poussant en milieu humide.
+                    </ModalView>
+                    <ModalView
+                        x={672}
+                        y={300}
+                        title="MONSEIGNEUR ANGUERRAND ET DAME HERMELINE "
+                        popupImage={Nobles}
+                        onPress={() => soundNobles.play()}
+                    >
+                        Ils se sont rencontrés lors d’une joute et fêtent aujourd’hui leurs fiançailles. Il a gagné sa main en combattant aux côtés de Grandgousier, car les nobles appartiennent à la classe des guerriers.
+                        {"\n"}{"\n"}
+                        <Text style={{fontWeight: 'bold'}}>La grande noblesse</Text> détient les terres tandis que <Text style={{fontWeight: 'bold'}}>la petite noblesse</Text> garde des parcelles de terre en échange de services militaires et d’argent.
+                        {"\n"}{"\n"}
+                        Dans la vie de tous les jours, ils représentent les administrateurs et les fonctionnaires de la société : ils s’occupent de leurs terres, de l’application de la loi, du commandement des militaires et des tribunaux.
+                        {"\n"}{"\n"}
+                        Les nobles s'habillaient avec des collants, des tuniques et des vêtements qui étaient plus coûteux, comme de la fourrure (par exemple de la fourrure d'hermine) ou de la soie, et des teintures chères. Il y avait également beaucoup de parures et autres bijoux sur leurs vêtements pour montrer leur supériorité au peuple de pouvoir posséder de telles choses. Les couleurs principales étaient le bleu et le rouge.
+                    </ModalView>
+                    <ModalView
+                        x={635}
+                        y={30}
+                        title="À VOS ORDRES !"
+                    >
+                        La société médiévale se structure en trois ordres :
+                        {"\n"}{"\n"}
+                        <Text style={{fontWeight: 'bold'}}>ORATORES </Text>: ceux qui prient, les hommes d'Église
+                        {"\n"}{"\n"}
+                        <Text style={{fontWeight: 'bold'}}>BELLATORES </Text>: ceux qui font la guerre, les nobles (prince, seigneurs, chevaliers)
+                        {"\n"}{"\n"}
+                        <Text style={{fontWeight: 'bold'}}>LABORATORES </Text>: ceux qui travaillent, les paysans
+                    </ModalView>
+                </View>
             </Overlay>
-        );
+        )
     }
 }
-
-export const Page1 = createDrawerNavigator(
-    {
-        Game: {
-            screen: Page1Content
-        }
-    },
-    {
-        drawerPosition: 'right',
-        drawerBackgroundColor: '#FDFBEF',
-        initialRouteName: 'Game',
-        drawerWidth: 900,
-        drawerLockMode: "locked-closed",
-        contentComponent: (props) => {
-            return (<GameChapterOneLetterA {...props} letterSelector={letterSelector}/>)
-        }
-    }
-);
 Page1.navigationOptions = {
     header: null
 };

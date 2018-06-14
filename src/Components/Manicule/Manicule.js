@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {View, Image, Animated, Easing} from 'react-native';
+import WhiteManicule from "../../Assets/Images/Elements/WhiteManicule.png";
+import BlackManicule from "../../Assets/Images/Elements/BlackManicule.png";
 
 export default class Manicule extends Component {
 
@@ -25,7 +27,7 @@ export default class Manicule extends Component {
                     duration: 1000,
                     delay: 0,
                     easing: Easing.bezier(0,.53,.47,1),
-                })
+                }),
             ])
         ).start();
     }
@@ -34,22 +36,32 @@ export default class Manicule extends Component {
         return(
             <Animated.View
                 style={{
-                    left: this.props.x,
-                    top: this.state.moveManicule.interpolate({
+                    left: this.props.rotation === "90deg" ? this.state.moveManicule.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [this.props.x , this.props.x - 10]
+                    }) : this.props.x,
+                    top: this.props.rotation === "0deg" || "180deg" ? this.state.moveManicule.interpolate({
                         inputRange: [0, 1],
                         outputRange: [this.props.y , this.props.y - 10]
-                    }),
+                    }) : this.props.y,
                     flex: 1,
                     position: 'absolute',
+                    opacity: 1
                 }}
             >
                 <Image
                     style={{
                         position: "absolute",
-                        width: 34.1,
-                        height: 54.99,
+                        width: 49.1,
+                        height: 80.99,
+                        transform: [{
+                            scale: this.props.scale
+                        }, {
+                            rotate: this.props.rotation
+                        }]
+
                     }}
-                    source={require('../../Assets/Images/Elements/manicule.png')}
+                    source={this.props.color === 'black' ? BlackManicule : WhiteManicule}
                 />
             </Animated.View>
         )
