@@ -4,14 +4,14 @@ import {DeviceEventEmitter} from "react-native";
 
 export const PageDetector = new class PageDetector {
     step = 290;
-    liftingRes = 10;
+    liftingRes = 20;
     liftingWindow = new Array(this.liftingRes).fill(0);
     lastStableValue = 0;
     currentPage = 0;
     listeners = [];
     
     constructor() {
-        Magnetometer.setMagnetometerUpdateInterval(0.5);
+        Magnetometer.setMagnetometerUpdateInterval(0.1);
         DeviceEventEmitter.addListener('MagnetometerData', (data) => {
             this.liftingWindow.push(Math.abs(Math.round(data.magneticField.z)));
             if(this.liftingWindow.length >= this.liftingRes) {
