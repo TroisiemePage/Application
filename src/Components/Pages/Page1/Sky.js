@@ -7,6 +7,7 @@ import nuage2 from "../../../Assets/Images/Pages/Page1/NUAGE_02.png";
 import nuage3 from "../../../Assets/Images/Pages/Page1/NUAGE_03.png";
 import nuage4 from "../../../Assets/Images/Pages/Page1/NUAGE_04.png";
 import nuage5 from "../../../Assets/Images/Pages/Page1/NUAGE_05.png";
+import {SCREEN_RATIO} from "../../../Modules/ration";
 
 export class Sky extends React.Component {
 
@@ -96,83 +97,83 @@ export class Sky extends React.Component {
             }}>
                 <Animated.Image
                     style={{
-                        height: 80,
-                        width: 500,
+                        height: 80 * SCREEN_RATIO,
+                        width: 500 * SCREEN_RATIO,
                         position: "absolute",
-                        top: 50,
+                        top: 50 * SCREEN_RATIO,
                         transform: [{
                             translateX: this.state.nuage1.interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, height + 1000]
                             })
                         }],
-                        left: -500
+                        left: -500 * SCREEN_RATIO
                     }}
 
                     resizeMode={"contain"}
                     source={nuage1}/>
                 <Animated.Image
                     style={{
-                        height: 100,
-                        width: 500,
+                        height: 100 * SCREEN_RATIO,
+                        width: 500 * SCREEN_RATIO,
                         position: "absolute",
-                        top: 100,
+                        top: 100 * SCREEN_RATIO,
                         transform: [{
                             translateX: this.state.nuage2.interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, height + 500]
                             })
                         }],
-                        left: -500
+                        left: -500 * SCREEN_RATIO
                     }}
 
                     resizeMode={"contain"}
                     source={nuage2}/>
                 <Animated.Image
                     style={{
-                        height: 100,
-                        width: 500,
+                        height: 100 * SCREEN_RATIO,
+                        width: 500 * SCREEN_RATIO,
                         position: "absolute",
-                        top: 30,
+                        top: 30 * SCREEN_RATIO,
                         transform: [{
                             translateX: this.state.nuage3.interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, height + 500]
                             })
                         }],
-                        left: -500
+                        left: -500 * SCREEN_RATIO
                     }}
                     resizeMode={"contain"}
                     source={nuage3}/>
                 <Animated.Image
                     style={{
-                        height: 100,
-                        width: 500,
+                        height: 100 * SCREEN_RATIO,
+                        width: 500 * SCREEN_RATIO,
                         position: "absolute",
-                        top: 140,
+                        top: 140 * SCREEN_RATIO,
                         transform: [{
                             translateX: this.state.nuage4.interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, height + 500]
                             })
                         }],
-                        left: -500
+                        left: -500 * SCREEN_RATIO
                     }}
                     resizeMode={"contain"}
                     source={nuage4}/>
                 <Animated.Image
                     style={{
-                        height: 100,
-                        width: 500,
+                        height: 100 * SCREEN_RATIO,
+                        width: 500 * SCREEN_RATIO,
                         position: "absolute",
-                        top: 20,
+                        top: 20 * SCREEN_RATIO,
                         transform: [{
                             translateX: this.state.nuage4.interpolate({
                                 inputRange: [0, 1],
                                 outputRange: [0, height + 500]
                             })
                         }],
-                        left: -500
+                        left: -500 * SCREEN_RATIO
                     }}
                     resizeMode={"contain"}
                     source={nuage5}/>

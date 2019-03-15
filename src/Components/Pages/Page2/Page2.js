@@ -13,6 +13,7 @@ Sound.setCategory('PlayAndRecord');
 import resolveAssetSource from "resolveAssetSource";
 import SoundVaches from  "../../../Assets/Sound/FOND_SONORE_MACHINE_VACHE.mp3";
 import Manicule from "../../Manicule/Manicule";
+import {SCREEN_RATIO} from "../../../Modules/ration";
 
 const {height, width} = Dimensions.get('window');
 const styles = {
@@ -54,23 +55,23 @@ export class Page2 extends React.Component {
                     <Vaches/>
                     <Levier/>
                     <Manicule
-                        x={440}
-                        y={285}
-                        scale={0.7}
+                        x={440 * SCREEN_RATIO}
+                        y={285 * SCREEN_RATIO}
+                        scale={0.7 * SCREEN_RATIO}
                         rotation="0deg"
                         color="black"
                     />
                     <Manicule
-                        x={655}
-                        y={417}
-                        scale={0.7}
+                        x={655 * SCREEN_RATIO}
+                        y={417 * SCREEN_RATIO}
+                        scale={0.7 * SCREEN_RATIO}
                         rotation="180deg"
                         color="black"
                     />
                     <Manicule
-                        x={885}
-                        y={320}
-                        scale={0.7}
+                        x={885 * SCREEN_RATIO}
+                        y={320 * SCREEN_RATIO}
+                        scale={0.7 * SCREEN_RATIO}
                         rotation="90deg"
                         color="black"
                     />

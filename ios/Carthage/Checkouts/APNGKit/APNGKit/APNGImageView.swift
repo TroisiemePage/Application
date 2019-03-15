@@ -80,6 +80,9 @@ open class APNGImageView: APNGView {
     /// A Bool value indicating whether the animation is running.
     open fileprivate(set) var isAnimating: Bool
     
+    /// A Bool value indicating whether the animation was running before app resigned active
+    private var wasAnimating: Bool = false
+    
     /// A Bool value indicating whether the animation should be 
     /// started automatically after an image is set. Default is false.
     open var autoStartAnimation: Bool {
@@ -148,6 +151,8 @@ open class APNGImageView: APNGView {
         if let frame = image?.next(currentIndex: 0) {
             updateContents(frame.image)
         }
+        
+        addObservers()
     }
     
     deinit {
@@ -157,6 +162,13 @@ open class APNGImageView: APNGView {
             // fix issue that `APNGImageView` may cause crash when deinit
             layer?.contents = nil
             wantsLayer = false
+        #endif 
+        
+        #if os(iOS)
+            // fix issue that `APNGImageView` may cause crash when deinit
+            layer.contents = nil
+            NotificationCenter.default.removeObserver(self, name:  UIApplication.willResignActiveNotification, object: nil)
+            NotificationCenter.default.removeObserver(self, name:  UIApplication.didBecomeActiveNotification, object: nil)
         #endif
     }
 
@@ -173,6 +185,8 @@ open class APNGImageView: APNGView {
         isAnimating = false
         autoStartAnimation = false
         super.init(coder: aDecoder)
+        
+        addObservers()
     }
     
     /**
@@ -186,6 +200,8 @@ open class APNGImageView: APNGView {
         isAnimating = false
         autoStartAnimation = false
         super.init(frame: frame)
+        
+        addObservers()
     }
     
     /**
@@ -238,6 +254,33 @@ open class APNGImageView: APNGView {
         timer = nil
     }
     
+    /**
+     Stop animation when app send to background.
+     */
+    @objc private func appWillResignActive() {
+        wasAnimating = isAnimating
+        stopAnimating()
+    }
+    
+    /**
+     Start animation when app become active.
+     */
+    @objc func appDidBecomeActive() {
+        if wasAnimating {
+            startAnimating()
+        }
+    }
+    
+    /**
+     Add observers to the notification center to control app status
+     */
+    fileprivate func addObservers() {
+        #if os(iOS)
+            NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive), name: UIApplication.willResignActiveNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        #endif
+    }
+    
     func tick() {
         guard let image = image else {
             return
@@ -255,8 +298,11 @@ open class APNGImageView: APNGView {
         lastTimestamp = timestamp
         
         currentPassedDuration += elapsedTime
+        if let duration = image.duration, currentPassedDuration > duration {
+            currentPassedDuration = currentPassedDuration.truncatingRemainder(dividingBy: duration)
+        }
         
-        if currentPassedDuration >= currentFrameDuration {
+        while currentPassedDuration >= currentFrameDuration {
             currentFrameIndex = currentFrameIndex + 1
             
             if currentFrameIndex == image.frameCount {

@@ -21,6 +21,7 @@ import Glass3 from "../../../Assets/Sound/GLASS_03.mp3";
 import Glass4 from "../../../Assets/Sound/GLASS_04.mp3";
 import Glass5 from "../../../Assets/Sound/GLASS_05.mp3";
 import Glass6 from "../../../Assets/Sound/GLASS_06.mp3";
+import {SCREEN_RATIO} from "../../../Modules/ration";
 const glass1 = new Sound(resolveAssetSource(Glass1).uri, null);
 const glass2 = new Sound(resolveAssetSource(Glass2).uri, null);
 const glass3 = new Sound(resolveAssetSource(Glass3).uri, null);
@@ -72,11 +73,11 @@ export class Bouteilles extends React.Component {
                     <Animated.Image
                         source={Bouteille10}
                         style={{
-                            width: 49,
-                            height: 89,
+                            width: 49 * SCREEN_RATIO,
+                            height: 89 * SCREEN_RATIO,
                             position: 'absolute',
-                            left: 932,
-                            top: 451,
+                            left: 932 * SCREEN_RATIO,
+                            top: 451 * SCREEN_RATIO,
                             transform: [{
                                 rotate: this.state.moveBottles[0].interpolate({
                                     inputRange: [0, 1],
@@ -89,7 +90,13 @@ export class Bouteilles extends React.Component {
 
                 <Image
                     source={Bouteilles9}
-                    style={{width: 310, height: 393, position: 'absolute', left: 724, top: 409}}
+                    style={{
+                        width: 310 * SCREEN_RATIO,
+                        height: 393 * SCREEN_RATIO,
+                        position: 'absolute',
+                        left: 724 * SCREEN_RATIO,
+                        top: 409 * SCREEN_RATIO
+                    }}
                 />
 
                 <TouchableOpacity
@@ -104,11 +111,11 @@ export class Bouteilles extends React.Component {
                     <Animated.Image
                         source={Bouteille8}
                         style={{
-                            width: 41,
-                            height: 63,
+                            width: 41 * SCREEN_RATIO,
+                            height: 63 * SCREEN_RATIO,
                             position: 'absolute',
-                            left: 918,
-                            top: 481,
+                            left: 918 * SCREEN_RATIO,
+                            top: 481 * SCREEN_RATIO,
                             transform: [{
                                 rotate: this.state.moveBottles[1].interpolate({
                                     inputRange: [0, 1],
@@ -132,11 +139,11 @@ export class Bouteilles extends React.Component {
                     <Animated.Image
                         source={Bouteille7}
                         style={{
-                            width: 31,
-                            height: 112,
+                            width: 31 * SCREEN_RATIO,
+                            height: 112 * SCREEN_RATIO,
                             position: 'absolute',
-                            left: 1000,
-                            top: 689,
+                            left: 1000 * SCREEN_RATIO,
+                            top: 689 * SCREEN_RATIO,
                             transform: [{
                                 rotate: this.state.moveBottles[2].interpolate({
                                     inputRange: [0, 1],
@@ -159,11 +166,11 @@ export class Bouteilles extends React.Component {
                     <Animated.Image
                         source={Bouteille6}
                         style={{
-                            width: 69,
-                            height: 110,
+                            width: 69 * SCREEN_RATIO,
+                            height: 110 * SCREEN_RATIO,
                             position: 'absolute',
-                            left: 738,
-                            top: 556,
+                            left: 738 * SCREEN_RATIO,
+                            top: 556 * SCREEN_RATIO,
                             transform: [{
                                 rotate: this.state.moveBottles[3].interpolate({
                                     inputRange: [0, 1],
@@ -186,11 +193,11 @@ export class Bouteilles extends React.Component {
                     <Animated.Image
                         source={Bouteille5}
                         style={{
-                            width: 40,
-                            height: 117,
+                            width: 40 * SCREEN_RATIO,
+                            height: 117 * SCREEN_RATIO,
                             position: 'absolute',
-                            left: 817,
-                            top: 678,
+                            left: 817 * SCREEN_RATIO,
+                            top: 678 * SCREEN_RATIO,
                             transform: [{
                                 rotate: this.state.moveBottles[4].interpolate({
                                     inputRange: [0, 1],
@@ -203,7 +210,13 @@ export class Bouteilles extends React.Component {
 
                 <Image
                     source={Bouteilles4}
-                    style={{width: 314, height: 393, position: 'absolute', left: 744, top: 403}}
+                    style={{
+                        width: 314 * SCREEN_RATIO,
+                        height: 393 * SCREEN_RATIO,
+                        position: 'absolute',
+                        left: 744 * SCREEN_RATIO,
+                        top: 403 * SCREEN_RATIO
+                    }}
                 />
 
                 <TouchableOpacity
@@ -217,11 +230,11 @@ export class Bouteilles extends React.Component {
                     <Animated.Image
                         source={Bouteille3}
                         style={{
-                            width: 73,
-                            height: 105,
+                            width: 73 * SCREEN_RATIO,
+                            height: 105 * SCREEN_RATIO,
                             position: 'absolute',
-                            left: 922,
-                            top: 682,
+                            left: 922 * SCREEN_RATIO,
+                            top: 682 * SCREEN_RATIO,
                             transform: [{
                                 rotate: this.state.moveBottles[5].interpolate({
                                     inputRange: [0, 1],
@@ -234,12 +247,23 @@ export class Bouteilles extends React.Component {
 
                 <Image
                     source={Passerelle}
-                    style={{width: 67, height: 30, position: 'absolute', left: 910, top: 636}}
+                    style={{width: 67,
+                        height: 30 * SCREEN_RATIO,
+                        position: 'absolute',
+                        left: 910 * SCREEN_RATIO,
+                        top: 636 * SCREEN_RATIO
+                    }}
                 />
 
                 <Image
                     source={Meuble}
-                    style={{width: 476, height: 279, position: 'absolute', left: 601, top: 538}}
+                    style={{
+                        width: 476 * SCREEN_RATIO,
+                        height: 279 * SCREEN_RATIO,
+                        position: 'absolute',
+                        left: 601 * SCREEN_RATIO,
+                        top: 538 * SCREEN_RATIO
+                    }}
                 />
             </View>
         )

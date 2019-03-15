@@ -6,6 +6,7 @@ import {ModalSlider} from '../Modal/ModalSlider/ModalSlider';
 import {villes} from "./villes.js";
 import Chateaux from "./Chateaux";
 import {PageDetector} from "../../Modules/PageDetector";
+import {SCREEN_RATIO} from "../../Modules/ration";
 
 const styles = {
     container: {
@@ -111,17 +112,17 @@ export class Menu extends React.Component {
                 />
 
                 <Chateaux
-                    x={99}
-                    y={121}
-                    width={246}
-                    height={300}
+                    x={99 * SCREEN_RATIO}
+                    y={121 * SCREEN_RATIO}
+                    width={246 * SCREEN_RATIO}
+                    height={300 * SCREEN_RATIO}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.grandgousier.title,
                         description: villes.grandgousier.description,
                         chateau: villes.grandgousier.source,
-                        imageWidth: 246,
-                        imageHeight: 300,
+                        imageWidth: 246 * SCREEN_RATIO,
+                        imageHeight: 300 * SCREEN_RATIO,
                     })}
                     image={this.state.currentPage >= 1 ? villes.grandgousier.source : villes.grandgousier.sourceNB}
                 >
@@ -129,17 +130,17 @@ export class Menu extends React.Component {
                 </Chateaux>
 
                 <Chateaux
-                    x={404}
-                    y={169}
-                    width={251}
-                    height={157}
+                    x={404 * SCREEN_RATIO}
+                    y={169 * SCREEN_RATIO}
+                    width={251 * SCREEN_RATIO}
+                    height={157 * SCREEN_RATIO}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.beauce.title,
                         description: villes.beauce.description,
                         chateau: villes.beauce.source,
-                        imageWidth: 251,
-                        imageHeight: 157,
+                        imageWidth: 251 * SCREEN_RATIO,
+                        imageHeight: 157 * SCREEN_RATIO,
                     })}
                     image={this.state.currentPage >= 4 ? villes.beauce.source : villes.beauce.sourceNB}
                 >
@@ -147,17 +148,17 @@ export class Menu extends React.Component {
                 </Chateaux>
 
                 <Chateaux
-                    x={695}
-                    y={32}
-                    width={208}
-                    height={216}
+                    x={695 * SCREEN_RATIO}
+                    y={32 * SCREEN_RATIO}
+                    width={208 * SCREEN_RATIO}
+                    height={216 * SCREEN_RATIO}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.paris.title,
                         description: villes.paris.description,
                         chateau: villes.paris.source,
-                        imageWidth: 208,
-                        imageHeight: 216,
+                        imageWidth: 208 * SCREEN_RATIO,
+                        imageHeight: 216 * SCREEN_RATIO,
                     })}
                     image={this.state.currentPage >= 8 ? villes.paris.source : villes.paris.sourceNB}
                 >
@@ -165,18 +166,18 @@ export class Menu extends React.Component {
                 </Chateaux>
 
                 <Chateaux
-                    x={107}
-                    y={525}
-                    width={316}
-                    height={156}
+                    x={107 * SCREEN_RATIO}
+                    y={525 * SCREEN_RATIO}
+                    width={316 * SCREEN_RATIO}
+                    height={156 * SCREEN_RATIO}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.picrochole.title,
                         description: villes.picrochole.description,
                         image: villes.picrochole.source,
                         chateau: villes.picrochole.source,
-                        imageWidth: 316,
-                        imageHeight: 156,
+                        imageWidth: 316 * SCREEN_RATIO,
+                        imageHeight: 156 * SCREEN_RATIO,
                     })}
                     image={this.state.currentPage >= 10 ? villes.picrochole.source : villes.picrochole.sourceNB}
                 >
@@ -184,17 +185,17 @@ export class Menu extends React.Component {
                 </Chateaux>
 
                 <Chateaux
-                    x={621}
-                    y={484}
-                    width={335}
-                    height={195}
+                    x={621 * SCREEN_RATIO}
+                    y={484 * SCREEN_RATIO}
+                    width={335 * SCREEN_RATIO}
+                    height={195 * SCREEN_RATIO}
                     openModal={() => this.setState({
                         modalVisibleLeft: true,
                         ville: villes.theleme.title,
                         description: villes.theleme.description,
                         chateau: villes.theleme.source,
-                        imageWidth: 335,
-                        imageHeight: 195,
+                        imageWidth: 335 * SCREEN_RATIO,
+                        imageHeight: 195 * SCREEN_RATIO,
                     })}
                     image={this.state.currentPage >= 13 ? villes.theleme.source : villes.theleme.sourceNB}
                 >

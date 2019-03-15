@@ -30,6 +30,10 @@
     import UIKit
 #endif
 
+#if canImport(Clibpng)
+    import Clibpng
+#endif
+
 let signatureOfPNGLength = 8
 let kMaxPNGSize: UInt32 = 1000000;
 
@@ -395,9 +399,8 @@ class Disassembler {
             if blendOP == UInt8(PNG_BLEND_OP_SOURCE) {
                 memcpy(dp, sp, Int(width) * 4)
             } else { // APNG_BLEND_OP_OVER
-                for _ in 0 ... Int(width){
-                    sp = sp.advanced(by: 4)
-                    dp = dp.advanced(by: 4)
+                for _ in 0 ..< Int(width){
+                    
                     let srcAlpha = Int(sp.advanced(by: 3).pointee) // Blend alpha to dst
                     if srcAlpha == 0xff {
                         memcpy(dp, sp, 4)
@@ -419,6 +422,9 @@ class Disassembler {
                             memcpy(dp, sp, 4)
                         }
                     }
+                    
+                    sp = sp.advanced(by: 4)
+                    dp = dp.advanced(by: 4)
                 }
             }
         }

@@ -9,6 +9,7 @@ Sound.setCategory('Playback');
 import resolveAssetSource from "resolveAssetSource";
 import TapisRoulant from "../../../Assets/Sound/TAPIS_ROULANT.mp3";
 import LevierSound from "../../../Assets/Sound/LEVIER.mp3";
+import {SCREEN_RATIO} from "../../../Modules/ration";
 const tapisRoulant = new Sound(resolveAssetSource(TapisRoulant).uri, null);
 const levier = new Sound(resolveAssetSource(LevierSound).uri, null);
 
@@ -51,14 +52,14 @@ export class Levier extends React.Component {
                 <Animated.Image
                     source={Pots}
                     style={{
-                        width: 1074,
-                        height: 347,
+                        width: 1074 * SCREEN_RATIO,
+                        height: 347 * SCREEN_RATIO,
                         position: 'absolute',
                         left: this.state.moveLevier.interpolate({
                             inputRange: [0, 1],
-                            outputRange: [-508 , -1200],
+                            outputRange: [-508 * SCREEN_RATIO , -1200 * SCREEN_RATIO],
                         }),
-                        top: 329,
+                        top: 329 * SCREEN_RATIO,
                     }}
                 />
 
@@ -66,10 +67,10 @@ export class Levier extends React.Component {
                     onPress={() => this.levierAnimation()}
                 >
                     <Animated.View style={{
-                        width: 130,
-                        height: 200,
-                        left: 565,
-                        top: 515,
+                        width: 130 * SCREEN_RATIO,
+                        height: 200 * SCREEN_RATIO,
+                        left: 565 * SCREEN_RATIO,
+                        top: 515 * SCREEN_RATIO,
                         alignItems: "flex-end",
                         transform: [{
                             rotate: this.state.moveLevier.interpolate({
@@ -81,8 +82,8 @@ export class Levier extends React.Component {
                         <Image
                             source={LevierImg}
                             style={{
-                                width: 65,
-                                height: 100,
+                                width: 65 * SCREEN_RATIO,
+                                height: 100 * SCREEN_RATIO,
                                 position: 'absolute',
                             }}
                         />

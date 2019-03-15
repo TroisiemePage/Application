@@ -17,6 +17,7 @@ Sound.setCategory('PlayAndRecord');
 import resolveAssetSource from "resolveAssetSource";
 import SoundMoines from "../../../Assets/Sound/MOINES.mp3";
 import {ModalSlider} from "../../Modal/ModalSlider/ModalSlider";
+import {SCREEN_RATIO} from "../../../Modules/ration";
 
 const {height, width} = Dimensions.get('window');
 const styles = {
@@ -34,15 +35,15 @@ const styles = {
         top: 0,
     },
     letter: {
-        marginLeft: 280,
-        marginTop: 200
+        marginLeft: 280 * SCREEN_RATIO,
+        marginTop: 200 * SCREEN_RATIO
     },
     button: {
         opacity: 0,
-        width: 200,
-        height: 200,
-        marginTop: 550,
-        marginLeft: 50,
+        width: 200 * SCREEN_RATIO,
+        height: 200 * SCREEN_RATIO,
+        marginTop: 550 * SCREEN_RATIO,
+        marginLeft: 50 * SCREEN_RATIO,
     },
 };
 
@@ -97,10 +98,10 @@ export class Page4 extends React.Component {
                         ref={"moines"}
                         style={{
                             position: "absolute",
-                            bottom: 30,
-                            right: 50
+                            bottom: 30 * SCREEN_RATIO,
+                            right: 50 * SCREEN_RATIO
                         }}
-                        scale={0.45}
+                        scale={0.45 * SCREEN_RATIO}
                         playlist={[moines]}
                         onPress={() => {
                             this.setState({modalVisible: true})
@@ -110,17 +111,17 @@ export class Page4 extends React.Component {
                         ref={"precepteur"}
                         style={{
                             position: "absolute",
-                            bottom: 140,
-                            left: 110
+                            bottom: 140 * SCREEN_RATIO,
+                            left: 110 * SCREEN_RATIO
                         }}
-                        scale={0.5}
+                        scale={0.5 * SCREEN_RATIO}
                         playlist={[precepteur]}
                         onPress={() => {
                         }}
                     />
                     <ModalView
-                        x={530}
-                        y={60}
+                        x={530 * SCREEN_RATIO}
+                        y={60 * SCREEN_RATIO}
                         title="ABBAYE ROYALE DE FONTEVRAUD"
                     >
                         {"Sacrée Abbaye ! Dès sa création en 1101, son fondateur, Robert d’Abrissel, " +
@@ -136,8 +137,8 @@ export class Page4 extends React.Component {
                         "soit fermée et 1975 pour que tu puisses enfin la visiter !"}
                     </ModalView>
                     <ModalView
-                        x={420}
-                        y={350}
+                        x={420 * SCREEN_RATIO}
+                        y={350 * SCREEN_RATIO}
                         title="MOINES COPISTES"
                     >
                         {"Au XIIème siècle, l’Église a encore le monopole de la connaissance et du savoir." +
@@ -150,16 +151,16 @@ export class Page4 extends React.Component {
                         "lettrine : un vrai travail d’orfèvre !"}
                     </ModalView>
                     <Manicule
-                        x={840}
-                        y={640}
-                        scale={1}
+                        x={840 * SCREEN_RATIO}
+                        y={640 * SCREEN_RATIO}
+                        scale={1 * SCREEN_RATIO}
                         rotation="0deg"
                     />
                 </View>
                 <ModalSlider
                     open={this.state.modalVisible}
                     side="right"
-                    width={900}
+                    width={900 * SCREEN_RATIO}
                     onClose={() => this.setState({modalVisible: false})}>
                     <GameChapterOneLetterB letterSelector={letterSelector}/>
                 </ModalSlider>

@@ -22,6 +22,7 @@ import SoundVache1 from "../../../Assets/Sound/VACHE_01.mp3";
 import LaitVache1 from "../../../Assets/Sound/LAIT_VACHE.mp3";
 import SoundVache2 from "../../../Assets/Sound/VACHE_02.mp3";
 import LaitVache2 from "../../../Assets/Sound/LAIT_VACHE_2.mp3";
+import {SCREEN_RATIO} from "../../../Modules/ration";
 
 
 const rouesQuiTournent = new Sound(resolveAssetSource(RoueQuiTournent).uri, null);
@@ -41,7 +42,13 @@ export class Vaches extends React.Component {
 
     vaches = [Vache1, Vache2, Vache1, Vache2, Vache2];
 
-    offsetValues = [width, 900, 635, 350, 0];
+    offsetValues = [
+        width,
+        900 * SCREEN_RATIO,
+        635 * SCREEN_RATIO,
+        350 * SCREEN_RATIO,
+        0
+    ];
 
     state = {
         vacheAnimValues: new Array(this.offsetValues.length).fill("").map((v, i) => new Animated.Value(i)),
@@ -97,14 +104,14 @@ export class Vaches extends React.Component {
                             <Animated.Image
                                 source={vacheImage}
                                 style={{
-                                    width: 178,
-                                    height: 178,
+                                    width: 178 * SCREEN_RATIO,
+                                    height: 178 * SCREEN_RATIO,
                                     position: "absolute",
                                     left: this.state.vacheAnimValues[i].interpolate({
                                         inputRange: [0, 1, 2, 3, 4],
                                         outputRange: this.offsetValues
                                     }),
-                                    top: 92
+                                    top: 92 * SCREEN_RATIO
                                 }}
                             />
                         </TouchableOpacity>
@@ -114,11 +121,11 @@ export class Vaches extends React.Component {
                 <Image
                     source={Tuyeaux}
                     style={{
-                        width: 782,
-                        height: 358,
+                        width: 782 * SCREEN_RATIO,
+                        height: 358 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: -560,
-                        top: -40,
+                        left: -560 * SCREEN_RATIO,
+                        top: -40 * SCREEN_RATIO,
                         zIndex: 0
                     }}
                 />
@@ -126,11 +133,11 @@ export class Vaches extends React.Component {
                 <Animated.Image
                     source={Roue4}
                     style={{
-                        width: 87,
-                        height: 87,
+                        width: 87 * SCREEN_RATIO,
+                        height: 87 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: 1023,
-                        top: 96,
+                        left: 1023 * SCREEN_RATIO,
+                        top: 96 * SCREEN_RATIO,
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
@@ -145,11 +152,11 @@ export class Vaches extends React.Component {
                     <Animated.Image
                         source={Roue1}
                         style={{
-                            width: 127,
-                            height: 127,
+                            width: 127 * SCREEN_RATIO,
+                            height: 127 * SCREEN_RATIO,
                             position: 'absolute',
-                            left: 960,
-                            top: 285,
+                            left: 960 * SCREEN_RATIO,
+                            top: 285 * SCREEN_RATIO,
                             transform: [{
                                 rotate: this.state.moveRoues.interpolate({
                                     inputRange: [0, 1],
@@ -163,11 +170,11 @@ export class Vaches extends React.Component {
                 <Animated.Image
                     source={Roue2}
                     style={{
-                        width: 114,
-                        height: 115,
+                        width: 114 * SCREEN_RATIO,
+                        height: 115 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: 1000,
-                        top: 180,
+                        left: 1000 * SCREEN_RATIO,
+                        top: 180 * SCREEN_RATIO,
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
@@ -180,11 +187,11 @@ export class Vaches extends React.Component {
                 <Animated.Image
                     source={Roue3}
                     style={{
-                        width: 143,
-                        height: 140,
+                        width: 143 * SCREEN_RATIO,
+                        height: 140 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: 887,
-                        top: 97,
+                        left: 887 * SCREEN_RATIO,
+                        top: 97 * SCREEN_RATIO,
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
@@ -197,11 +204,11 @@ export class Vaches extends React.Component {
                 <Animated.Image
                     source={Roue5}
                     style={{
-                        width: 63,
-                        height: 60,
+                        width: 63 * SCREEN_RATIO,
+                        height: 60 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: 220,
-                        top: 36,
+                        left: 220 * SCREEN_RATIO,
+                        top: 36 * SCREEN_RATIO,
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
@@ -214,11 +221,11 @@ export class Vaches extends React.Component {
                 <Animated.Image
                     source={Roue5}
                     style={{
-                        width: 63,
-                        height: 60,
+                        width: 63 * SCREEN_RATIO,
+                        height: 60 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: 351,
-                        top: 36,
+                        left: 351 * SCREEN_RATIO,
+                        top: 36 * SCREEN_RATIO,
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
@@ -231,11 +238,11 @@ export class Vaches extends React.Component {
                 <Animated.Image
                     source={Roue5}
                     style={{
-                        width: 63,
-                        height: 60,
+                        width: 63 * SCREEN_RATIO,
+                        height: 60 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: 491,
-                        top: 36,
+                        left: 491 * SCREEN_RATIO,
+                        top: 36 * SCREEN_RATIO,
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
@@ -248,11 +255,11 @@ export class Vaches extends React.Component {
                 <Animated.Image
                     source={Roue5}
                     style={{
-                        width: 63,
-                        height: 60,
+                        width: 63 * SCREEN_RATIO,
+                        height: 60 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: 621,
-                        top: 36,
+                        left: 621 * SCREEN_RATIO,
+                        top: 36 * SCREEN_RATIO,
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
@@ -265,11 +272,11 @@ export class Vaches extends React.Component {
                 <Animated.Image
                     source={Roue5}
                     style={{
-                        width: 63,
-                        height: 60,
+                        width: 63 * SCREEN_RATIO,
+                        height: 60 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: 756,
-                        top: 36,
+                        left: 756 * SCREEN_RATIO,
+                        top: 36 * SCREEN_RATIO,
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
@@ -282,11 +289,11 @@ export class Vaches extends React.Component {
                 <Animated.Image
                     source={Roue5}
                     style={{
-                        width: 63,
-                        height: 60,
+                        width: 63 * SCREEN_RATIO,
+                        height: 60 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: 887,
-                        top: 36,
+                        left: 887 * SCREEN_RATIO,
+                        top: 36 * SCREEN_RATIO,
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
@@ -299,11 +306,11 @@ export class Vaches extends React.Component {
                 <Animated.Image
                     source={Roue5}
                     style={{
-                        width: 63,
-                        height: 60,
+                        width: 63 * SCREEN_RATIO,
+                        height: 60 * SCREEN_RATIO,
                         position: 'absolute',
-                        left: 1026,
-                        top: 36,
+                        left: 1026 * SCREEN_RATIO,
+                        top: 36 * SCREEN_RATIO,
                         transform: [{
                             rotate: this.state.moveRoues.interpolate({
                                 inputRange: [0, 1],
@@ -318,16 +325,16 @@ export class Vaches extends React.Component {
                             <Animated.View
                                 style={{
                                     position: "absolute",
-                                    top: 186,
-                                    width: 100,
-                                    height: height / 1.7,
-                                    left: 399,
+                                    top: 186 * SCREEN_RATIO,
+                                    width: 100 * SCREEN_RATIO,
+                                    height: (height / 1.7),
+                                    left: 399 * SCREEN_RATIO,
                                 }}
                             >
                                 <ApngPlayer
                                     ref={"lait"}
-                                    scale={0.45}
-                                    maxFrameSize={height / 1.7}
+                                    scale={0.45 * SCREEN_RATIO}
+                                    maxFrameSize={(height / 1.7)}
                                     playlist={[Lait]}
                                     onPlaylistItemFinish={(playlistIndex) => {
                                         this.setState({vacheCliqued: false})

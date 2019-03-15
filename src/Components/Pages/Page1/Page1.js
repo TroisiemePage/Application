@@ -30,6 +30,7 @@ import SoundNobles from "../../../Assets/Sound/FOULEENLIESSE.mp3";
 import SoundPaysans from "../../../Assets/Sound/CHUCHOTEMENTS.mp3";
 import SoundClerc from "../../../Assets/Sound/CLERC.mp3";
 import SoundBapteme from "../../../Assets/Sound/SONS_IPAD_BAPTEME_1.mp3";
+import {SCREEN_RATIO} from "../../../Modules/ration";
 
 const {height, width} = Dimensions.get('window');
 const styles ={
@@ -85,10 +86,10 @@ export class Page1 extends React.Component {
                     <Image
                         style={{
                             position: "absolute",
-                            left: 752,
-                            top: 140,
-                            width: 135,
-                            height: 135
+                            left: 752 * SCREEN_RATIO,
+                            top: 140 * SCREEN_RATIO,
+                            width: 135 * SCREEN_RATIO,
+                            height: 135 * SCREEN_RATIO
                         }}
                         resizeMode={"contain"}
                         source={drapo}
@@ -96,10 +97,10 @@ export class Page1 extends React.Component {
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: 930,
-                            top: 99
+                            left: 930 * SCREEN_RATIO,
+                            top: 99 * SCREEN_RATIO
                         }}
-                        maxFrameSize={310}
+                        maxFrameSize={310 * SCREEN_RATIO}
                         playlist={[chateauAnim]}
                     />
                     <Image
@@ -111,88 +112,88 @@ export class Page1 extends React.Component {
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: -12,
-                            top: 561
+                            left: -12 * SCREEN_RATIO,
+                            top: 561 * SCREEN_RATIO
                         }}
-                        maxFrameSize={266}
+                        maxFrameSize={266 * SCREEN_RATIO}
                         playlist={[group1]}
                     />
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: 237,
-                            top: 552
+                            left: 237 * SCREEN_RATIO,
+                            top: 552 * SCREEN_RATIO
                         }}
-                        maxFrameSize={289}
+                        maxFrameSize={289 * SCREEN_RATIO}
                         playlist={[group2]}
                     />
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: 471,
-                            top: 484
+                            left: 471 * SCREEN_RATIO,
+                            top: 484 * SCREEN_RATIO
                         }}
-                        maxFrameSize={155}
+                        maxFrameSize={155 * SCREEN_RATIO}
                         playlist={[group3]}
                     />
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: 813,
-                            top: 359
+                            left: 813 * SCREEN_RATIO,
+                            top: 359 * SCREEN_RATIO
                         }}
-                        maxFrameSize={325}
+                        maxFrameSize={325 * SCREEN_RATIO}
                         playlist={[hommeColine]}
                     />
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: 479,
-                            top: 560
+                            left: 479 * SCREEN_RATIO,
+                            top: 560 * SCREEN_RATIO
                         }}
-                        maxFrameSize={172}
+                        maxFrameSize={172 * SCREEN_RATIO}
                         playlist={[hommeCape]}
                     />
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: 109,
-                            top: 535
+                            left: 109 * SCREEN_RATIO,
+                            top: 535 * SCREEN_RATIO
                         }}
-                        maxFrameSize={289}
+                        maxFrameSize={289 * SCREEN_RATIO}
                         playlist={[hommeBrasLeve]}
                     />
                     <Image
                         style={{
                             position: "absolute",
-                            left: 424,
-                            top: 479,
-                            width: 75,
-                            height: 75,
+                            left: 424 * SCREEN_RATIO,
+                            top: 479 * SCREEN_RATIO,
+                            width: 75 * SCREEN_RATIO,
+                            height: 75 * SCREEN_RATIO,
                         }}
                         resizeMode={"contain"}
                         source={arbre}/>
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: 377,
-                            top: 511
+                            left: 377 * SCREEN_RATIO,
+                            top: 511 * SCREEN_RATIO
                         }}
-                        maxFrameSize={67}
+                        maxFrameSize={67 * SCREEN_RATIO}
                         playlist={[paysanne]}
                     />
                     <ApngPlayer
                         style={{
                             position: "absolute",
-                            left: 654,
-                            top: 490
+                            left: 654 * SCREEN_RATIO,
+                            top: 490 * SCREEN_RATIO
                         }}
-                        maxFrameSize={182}
+                        maxFrameSize={182 * SCREEN_RATIO}
                         playlist={[group4]}
                     />
                     <ModalView
-                        x={140}
-                        y={380}
+                        x={140 * SCREEN_RATIO}
+                        y={380 * SCREEN_RATIO}
                         title="ABBÉ BENOÎT"
                         popupImage={Clerc}
                         onPress={() => soundClerc.play()}
@@ -209,8 +210,8 @@ export class Page1 extends React.Component {
 
                     </ModalView>
                     <ModalView
-                        x={405}
-                        y={250}
+                        x={405 * SCREEN_RATIO}
+                        y={250 * SCREEN_RATIO}
                         title="HUGON ET GERSINDE "
                         popupImage={Paysans}
                         onPress={() => soundPaysans.play()}
@@ -222,8 +223,8 @@ export class Page1 extends React.Component {
                         Les gens modestes avaient des vêtements assez semblables entre eux. La robe courte était le costume ordinaire des paysans avec les chaussures à la poulaine, autrement dit celles ayant un bout pointu et relevé. Ils portaient le plus souvent les couleurs les moins nobles comme le gris, obtenu à l'aide d'écorce d'aulne, un arbre poussant en milieu humide.
                     </ModalView>
                     <ModalView
-                        x={672}
-                        y={300}
+                        x={672 * SCREEN_RATIO}
+                        y={300 * SCREEN_RATIO}
                         title="MONSEIGNEUR ANGUERRAND ET DAME HERMELINE "
                         popupImage={Nobles}
                         onPress={() => soundNobles.play()}
@@ -237,8 +238,8 @@ export class Page1 extends React.Component {
                         Les nobles s'habillaient avec des collants, des tuniques et des vêtements qui étaient plus coûteux, comme de la fourrure (par exemple de la fourrure d'hermine) ou de la soie, et des teintures chères. Il y avait également beaucoup de parures et autres bijoux sur leurs vêtements pour montrer leur supériorité au peuple de pouvoir posséder de telles choses. Les couleurs principales étaient le bleu et le rouge.
                     </ModalView>
                     <ModalView
-                        x={635}
-                        y={30}
+                        x={635 * SCREEN_RATIO}
+                        y={30 * SCREEN_RATIO}
                         title="À VOS ORDRES !"
                     >
                         La société médiévale se structure en trois ordres :

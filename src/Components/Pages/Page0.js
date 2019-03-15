@@ -13,6 +13,7 @@ import trompette from "../../Assets/Images/Elements/MICRO.png";
 import {InlineManicule} from "../Manicule/InlineManicule";
 import {PageDetector} from "../../Modules/PageDetector";
 import flecheDroite from "../../Assets/Images/Elements/fleche_02.png"
+import {SCREEN_RATIO} from "../../Modules/ration";
 export class Page0 extends React.Component {
 
     state = {
@@ -395,10 +396,10 @@ export class Page0 extends React.Component {
                     resizeMode={"contain"}
                     style={{
                         position: "absolute",
-                        left: -100,
-                        bottom: 50,
-                        height: 370,
-                        width: 578
+                        left: -100 * SCREEN_RATIO,
+                        bottom: 50 * SCREEN_RATIO,
+                        height: 370 * SCREEN_RATIO,
+                        width: 578 * SCREEN_RATIO
                     }}/>
             </View>
 
